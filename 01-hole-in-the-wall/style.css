@@ -384,3 +384,7 @@ a { color: inherit; }
   .js .hole img, .js .bullet-plain { clip-path: none !important; transform: none !important; transition: none; }
   .btn, .bullet, .mark span, .choice span { transition: none; }
 }
+
+/* real prices from the takeaway menu */
+.item h4 { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.item h4 .price { flex: none; font-weight: 700; font-variant-numeric: tabular-nums; }
