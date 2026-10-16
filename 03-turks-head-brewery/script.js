@@ -113,6 +113,8 @@
 
   // ---------- Scroll loop: pint, bar, parallax, catwalk ----------
   const pint = $("[data-pint]");
+  const barPint = $("[data-bar-pint]");
+  const barPintRead = $("[data-bar-pint-read]");
   const pintRead = $("[data-pint-read]");
   const bar = $("[data-bar]");
   const hero = $(".hero");
@@ -126,6 +128,12 @@
     const vh = window.innerHeight;
     const max = Math.max(1, document.documentElement.scrollHeight - vh);
     const p = Math.min(1, y / max);
+    root.style.setProperty("--fill", p.toFixed(3));
+    if (barPint) {
+      const full = p > 0.97;
+      barPint.classList.toggle("is-full", full);
+      if (barPintRead) barPintRead.textContent = full ? "Cheers!" : `${Math.round(p * 100)}%`;
+    }
     if (pint) {
       pint.style.setProperty("--fill", p.toFixed(3));
       const full = p > 0.97;

@@ -15,10 +15,11 @@
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add("js");</script>
 <meta name="robots" content="noindex, nofollow">
-  <style>.concept-strip{position:fixed;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}html{scroll-padding-top:110px!important}.bar{top:28px!important}</style>
+  <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}html{scroll-padding-top:110px!important}.bar{top:var(--strip,28px)!important}</style>
 </head>
 <body>
 <div class="concept-strip" role="note">Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+<script>(()=>{const r=document.documentElement;const f=()=>r.style.setProperty("--strip",Math.max(0,28-window.scrollY)+"px");f();addEventListener("scroll",f,{passive:true});})();</script>
 
 <header class="bar" data-bar>
   <a class="wordmark" href="#top">Captain Marvin's</a>
@@ -28,7 +29,8 @@
     <a href="#safety">Safety</a>
     <a href="#faq">FAQ</a>
   </nav>
-  <a class="btn btn-sun bar-cta" href="#book">Book a flight</a>
+  <span class="bar-alt" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M2 18C2 8 10 2 20 2s18 6 18 16c-3-2-6-2-9 0-3-2-6-2-9 0-3-2-6-2-9 0-3-2-6-2-9 0z" fill="currentColor"/><path d="M4 18l15 16M36 18L21 34M14 18l5 16M26 18l-5 16" stroke="currentColor" stroke-width="2" fill="none"/></svg><b data-alt-bar>0</b><small>ft</small></span>
+  <a class="btn btn-sun bar-cta" href="#book">Book<span class="sm-hide"> a flight</span></a>
 </header>
 
 <!-- Live altimeter: climbs as you scroll, lands at the bottom -->

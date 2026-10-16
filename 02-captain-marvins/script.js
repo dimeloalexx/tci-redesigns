@@ -54,6 +54,8 @@
   // ---------- Altimeter ----------
   const alt = $("[data-altimeter]");
   const altNum = $("[data-alt-num]");
+  const altBar = $("[data-alt-bar]");
+  let lastY = window.scrollY, dockHidden = false;
   const stageAlt = $("[data-stage-alt]");
   const flight = $(".flight");
   const finalSec = $(".final");
@@ -88,13 +90,23 @@
     if (Math.abs(target - shown) < 0.5) shown = target;
     const rounded = Math.round(shown / 5) * 5;
     if (altNum) altNum.textContent = rounded;
+    if (altBar) altBar.textContent = rounded;
+    document.documentElement.style.setProperty("--alt", (shown / MAX_ALT).toFixed(3));
     if (stageAlt) stageAlt.textContent = rounded;
     if (alt) alt.style.setProperty("--alt", (shown / MAX_ALT).toFixed(3));
 
     const y = window.scrollY;
     const heroH = hero ? hero.offsetHeight : 600;
     if (bar) bar.classList.toggle("is-solid", y > heroH - 90);
-    if (dock) dock.classList.toggle("is-on", y > heroH * 0.7 && !builderVisible);
+    // phones: hide the booking bar while scrolling down, bring it back on the way up
+    if (y > lastY + 6) dockHidden = true;
+    else if (y < lastY - 6) dockHidden = false;
+    lastY = y;
+    const nearEnd = y + window.innerHeight > document.documentElement.scrollHeight - 200;
+    if (dock) {
+      dock.classList.toggle("is-on", y > heroH * 0.7 && !builderVisible);
+      dock.classList.toggle("is-hidden", dockHidden || nearEnd);
+    }
 
     if (!reduce) parallax();
     requestAnimationFrame(frame);

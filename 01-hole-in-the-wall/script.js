@@ -143,6 +143,20 @@
   placePerf();
   window.addEventListener("resize", placePerf);
 
+  // ---------- Arches open as they arrive ----------
+  const holes = document.querySelectorAll(".hole:not(.hero-hole)");
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    const hio = new IntersectionObserver((entries) => {
+      entries.filter(e => e.isIntersecting).forEach((e, n) => {
+        setTimeout(() => e.target.classList.add("is-open"), n * 90);
+        hio.unobserve(e.target);
+      });
+    }, { threshold: 0.2 });
+    holes.forEach(h => hio.observe(h));
+  } else {
+    holes.forEach(h => h.classList.add("is-open"));
+  }
+
   // ---------- Entrances, staggered within each section ----------
   const items = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window) || reduceMotion) {

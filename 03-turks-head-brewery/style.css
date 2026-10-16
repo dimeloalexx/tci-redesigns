@@ -61,6 +61,11 @@ h3 { font-family: var(--text); font-weight: 700; letter-spacing: -0.01em; line-h
 .bar-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: right; transition: transform .3s var(--ease); }
 .bar-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 .bar-cta { min-height: 44px; padding: 0 22px; }
+.bar-pint { display: none; }
+.bp-glass { position: relative; width: 18px; height: 28px; background: rgba(255, 244, 226, .3); clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%); overflow: hidden; }
+.bp-beer { position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--fill, 0) * 100%); background: var(--pc); transition: background-color .6s ease; }
+.bp-foam { position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--cream); transform: translateY(-7px); transition: transform .4s var(--ease); }
+.bar-pint.is-full .bp-foam { transform: none; }
 
 /* ---------- The side pint ---------- */
 .pint { position: fixed; right: clamp(12px, 2vw, 28px); bottom: 28px; z-index: 30; display: flex; flex-direction: column; align-items: center; gap: 6px; pointer-events: none; background: rgba(18, 58, 37, .88); padding: 12px 10px 10px; border-radius: 18px; }
@@ -262,15 +267,22 @@ h3 { font-family: var(--text); font-weight: 700; letter-spacing: -0.01em; line-h
   .name-photo { max-height: 60svh; }
   .visit-grid { grid-template-columns: 1fr; }
   .tap-media { padding-bottom: 14%; }
+  /* phones and tablets: the pint lives in the bar instead of over the content */
+  .pint { display: none; }
+  .bar-pint { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; padding: 6px 10px; border-radius: 999px; background: rgba(18, 58, 37, .9); color: var(--cream); font: 600 .75rem/1 var(--text); font-variant-numeric: tabular-nums; }
+  .bar-pint + .bar-cta { margin-left: 8px; }
 }
 @media (max-width: 560px) {
   .hero-actions .btn { width: 100%; }
   .hero-title { font-size: 12.4vw; }
   .wordmark { font-size: 1.625rem; }
   .bar-cta { padding: 0 16px; }
-  .route { grid-template-columns: 1fr; }
-  .route::before { display: none; }
-  .stop::before { display: none; }
+  /* the catwalk becomes a vertical walk on phones */
+  .route { grid-template-columns: 1fr; gap: 36px; padding-left: 34px; }
+  .route::before { left: 8px; right: auto; top: 0; bottom: 0; width: 6px; height: auto; transform: scaleY(var(--walk, 0)); transform-origin: top; }
+  .stop::before { top: 0; left: -34px; width: 20px; height: 20px; margin-left: 1px; transition: background-color .3s, transform .4s var(--ease); }
+  .js .stop[data-reveal]::before { transform: scale(.3); }
+  .js .stop.is-in::before { transform: none; }
   .hero-foam { height: 110px; }
   .pint { bottom: 12px; right: 6px; padding: 8px 6px 6px; border-radius: 14px; }
   .pint-glass { width: 22px; height: 36px; }
@@ -283,4 +295,11 @@ h3 { font-family: var(--text); font-weight: 700; letter-spacing: -0.01em; line-h
   .js .hero-title .line, .js .hero-sub, .js .hero-actions, .js .hero-status { animation: none; opacity: 1; transform: none; }
   .g i { transition: none; }
   .js .beer .beer-text > *, .js [data-reveal] { transition: opacity .3s ease; transform: none; }
+}
+
+/* phones: keep the bar on one line */
+@media (max-width: 560px) {
+  .wordmark, .bar-cta, .bar-alt, .bar-pint { white-space: nowrap; }
+  .sm-hide { display: none; }
+  .bar { gap: 8px; }
 }

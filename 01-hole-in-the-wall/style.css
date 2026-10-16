@@ -327,6 +327,11 @@ a { color: inherit; }
 }
 
 /* ---------- Entrance motion ---------- */
+/* every arch opens from the ground up as it arrives */
+.js .hole:not(.hero-hole) img { clip-path: inset(100% 0 0 0); transition: clip-path 1.1s var(--ease-out), transform .3s var(--ease-out); }
+.js .hole.is-open img { clip-path: inset(0); }
+.js .bullet-plain { transform: scaleY(0); transform-origin: bottom; transition: transform .6s var(--ease-out); }
+.js .bullet-plain.is-open { transform: none; }
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
 .js .reveal.is-in { opacity: 1; transform: none; }
 
@@ -376,5 +381,6 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   .hero-hole img { animation: none; transition: none; }
   .js .reveal { transition: opacity .3s ease; transform: none; }
+  .js .hole img, .js .bullet-plain { clip-path: none !important; transform: none !important; transition: none; }
   .btn, .bullet, .mark span, .choice span { transition: none; }
 }
