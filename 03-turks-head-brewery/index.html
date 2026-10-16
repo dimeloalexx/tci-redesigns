@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turk's Head Brewery | Brewed in Providenciales since 2001 | Tours &amp; Taproom</title>
+  <meta name="description" content="The only brewery in Turks &amp; Caicos. Five island beers, a catwalk tour over the brewhouse at noon Monday to Saturday, and brick-oven pizza at the Taproom in Discovery Bay, Providenciales.">
+  <meta property="og:title" content="Turk's Head Brewery — brewed in Provo since 2001">
+  <meta property="og:description" content="I-Soon-Reach, I-Ain-Ga-Lie, Down-Da-Road, Gon-Ta-Nort, Gon-Ta-Sout. Tours at noon, pizza till late.">
+  <meta property="og:image" content="assets/free-beer-glass-bar-counter.jpg">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+<meta name="robots" content="noindex, nofollow">
+  <style>.concept-strip{position:fixed;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}html{scroll-padding-top:110px!important}.bar{top:28px!important}</style>
+</head>
+<body>
+<div class="concept-strip" role="note">Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+
+<header class="bar" data-bar>
+  <a class="wordmark" href="#top">Turk's Head</a>
+  <nav class="bar-links" aria-label="Main">
+    <a href="#beers">The beers</a>
+    <a href="#tour">Tour</a>
+    <a href="#taproom">Taproom</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <a class="btn btn-red bar-cta" href="#tour">Book the tour</a>
+</header>
+
+<!-- The pint: fills as you scroll, takes the colour of the beer on screen -->
+<div class="pint" aria-hidden="true" data-pint>
+  <div class="pint-glass">
+    <div class="pint-beer" data-pint-beer><span></span><span></span><span></span></div>
+    <div class="pint-foam" data-pint-foam></div>
+  </div>
+  <p class="pint-read" data-pint-read>0%</p>
+</div>
+
+<main id="top">
+
+  <!-- HERO: inside the glass -->
+  <section class="hero">
+    <div class="hero-photo" data-parallax>
+      <img src="assets/free-beer-bubbles-closeup-image.jpg" width="1024" height="826" alt="" fetchpriority="high">
+    </div>
+    <div class="hero-bubbles" aria-hidden="true" data-bubbles></div>
+    <div class="hero-foam" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 0h1440v62c-40 18-80 30-120 18s-70-38-120-30-70 44-120 44-80-34-130-36-80 38-130 40-70-30-120-34-90 34-140 36-70-28-120-30-80 30-130 30S80 64 0 74z" fill="currentColor"/></svg>
+    </div>
+    <div class="hero-inner">
+      <h1 class="hero-title"><span class="line">Brewed in Provo.</span><span class="line">Drunk in Provo.</span></h1>
+      <p class="hero-sub">The only brewery in Turks &amp; Caicos, since 2001. Tour the brewhouse at noon, then stay for pizza and a cold one.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red btn-lg" href="#tour">Book the noon tour, $20</a>
+        <a class="btn btn-ghost btn-lg" href="#beers">Meet the five beers</a>
+      </div>
+      <p class="hero-status" data-status>Taproom open today from 12pm</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE: the island in five phrases -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>I-Soon-Reach</span><span>I-Ain-Ga-Lie</span><span>Down-Da-Road</span><span>Gon-Ta-Nort</span><span>Gon-Ta-Sout</span>
+      <span>I-Soon-Reach</span><span>I-Ain-Ga-Lie</span><span>Down-Da-Road</span><span>Gon-Ta-Nort</span><span>Gon-Ta-Sout</span>
+    </div>
+  </div>
+
+  <!-- THE BEERS: one screen each, colour by chapter -->
+  <section class="beers" id="beers" aria-labelledby="beers-title">
+    <div class="beers-intro">
+      <h2 id="beers-title">Five beers, five island sayings.</h2>
+      <p>Every Turk's Head is named for something people here really say. Learn all five and you're half a local.</p>
+    </div>
+
+    <article class="beer" data-beer="#f2d46a" data-ink="#1b1406" style="--c:#f2d46a; --ink:#1b1406">
+      <div class="beer-glass" aria-hidden="true"><div class="g"><i></i></div></div>
+      <div class="beer-text">
+        <h3 class="beer-name">I-Soon-Reach</h3>
+        <p class="beer-style">Light lager · our best-seller · award-winning</p>
+        <p class="beer-means"><strong>“I'm nearly there.”</strong> Said with total confidence by someone who hasn't left the house yet.</p>
+        <p class="beer-desc">Pale, crisp and light on its feet. The beer for a long afternoon in the heat when you have nowhere to be, soon.</p>
+      </div>
+    </article>
+
+    <article class="beer" data-beer="#e3a224" data-ink="#1b1204" style="--c:#e3a224; --ink:#1b1204">
+      <div class="beer-glass" aria-hidden="true"><div class="g"><i></i></div></div>
+      <div class="beer-text">
+        <h3 class="beer-name">I-Ain-Ga-Lie</h3>
+        <p class="beer-style">Lager</p>
+        <p class="beer-means"><strong>“I'm not going to lie to you.”</strong> The phrase right before the truth, or right before a story.</p>
+        <p class="beer-desc">A clean golden lager with a little more malt behind it. Honest, like it says on the can.</p>
+      </div>
+    </article>
+
+    <article class="beer" data-beer="#d27a1c" data-ink="#160c02" style="--c:#d27a1c; --ink:#160c02">
+      <div class="beer-glass" aria-hidden="true"><div class="g"><i></i></div></div>
+      <div class="beer-text">
+        <h3 class="beer-name">Down-Da-Road</h3>
+        <p class="beer-style">IPA · award-winning</p>
+        <p class="beer-means"><strong>“Just down the road.”</strong> Island directions. Could be two minutes, could be the other end of Provo.</p>
+        <p class="beer-desc">Bright hops up front and a dry, bitter finish. The one for people who like their beer to say something.</p>
+      </div>
+    </article>
+
+    <article class="beer" data-beer="#9c3f17" data-ink="#fff4e2" style="--c:#9c3f17; --ink:#fff4e2">
+      <div class="beer-glass" aria-hidden="true"><div class="g"><i></i></div></div>
+      <div class="beer-text">
+        <h3 class="beer-name">Gon-Ta-Nort</h3>
+        <p class="beer-style">Amber ale</p>
+        <p class="beer-means"><strong>“Gone to North.”</strong> As in North Caicos: a ferry ride away, quieter, greener, slower.</p>
+        <p class="beer-desc">Copper-coloured and toasty, with caramel malt and a smooth finish. Easy company.</p>
+      </div>
+    </article>
+
+    <article class="beer" data-beer="#22140d" data-ink="#fff4e2" style="--c:#22140d; --ink:#fff4e2">
+      <div class="beer-glass" aria-hidden="true"><div class="g"><i></i></div></div>
+      <div class="beer-text">
+        <h3 class="beer-name">Gon-Ta-Sout</h3>
+        <p class="beer-style">Stout</p>
+        <p class="beer-means"><strong>“Gone to South.”</strong> South Caicos, the far end of the chain, where the night sky is darkest.</p>
+        <p class="beer-desc">Dark and roasty with a creamy tan head. Proof that a stout works at 30°C.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- QUIZ: which Turk's Head are you? -->
+  <section class="quiz" id="quiz" aria-labelledby="quiz-title">
+    <div class="quiz-head">
+      <h2 id="quiz-title">Which Turk's Head are you?</h2>
+      <p>Three questions. No wrong answers, only different beers.</p>
+    </div>
+    <form class="quiz-form" data-quiz>
+      <fieldset>
+        <legend>What time is it?</legend>
+        <label class="chip"><input type="radio" name="q1" value="a" required><span>Lunchtime</span></label>
+        <label class="chip"><input type="radio" name="q1" value="b"><span>Golden hour</span></label>
+        <label class="chip"><input type="radio" name="q1" value="c"><span>After dark</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>How hot is it out there?</legend>
+        <label class="chip"><input type="radio" name="q2" value="a" required><span>Melting</span></label>
+        <label class="chip"><input type="radio" name="q2" value="b"><span>Nice breeze</span></label>
+        <label class="chip"><input type="radio" name="q2" value="c"><span>I'm inside with the AC</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>What's the plan?</legend>
+        <label class="chip"><input type="radio" name="q3" value="a" required><span>Beach, then nothing</span></label>
+        <label class="chip"><input type="radio" name="q3" value="b"><span>Pizza with friends</span></label>
+        <label class="chip"><input type="radio" name="q3" value="c"><span>A long night</span></label>
+      </fieldset>
+    </form>
+    <div class="quiz-result" data-quiz-result aria-live="polite">
+      <p class="qr-pre">Answer all three and we'll pour you one.</p>
+    </div>
+  </section>
+
+  <!-- TOUR: the catwalk -->
+  <section class="tour" id="tour" aria-labelledby="tour-title">
+    <div class="tour-head">
+      <h2 id="tour-title">Walk the catwalk.</h2>
+      <div class="tour-ticket">
+        <p class="tt-time">12:00 noon</p>
+        <p class="tt-days">Monday to Saturday · about an hour</p>
+        <p class="tt-price"><span>$20</span> adults, up to four samples · <span>$15</span> kids</p>
+        <p class="tt-next" data-next-tour>Next tour: checking…</p>
+        <div class="tt-actions">
+          <a class="btn btn-red btn-lg" href="tel:+16499413637">Call to reserve</a>
+          <a class="btn btn-ghost-dark btn-lg" href="mailto:info@turksheadbeer.com?subject=Brewery%20tour%20reservation&amp;body=Hi%20Turk's%20Head%2C%0A%0AI'd%20like%20to%20reserve%20the%2012pm%20tour.%0ADate%3A%20%0AAdults%3A%20%0AKids%3A%20%0AName%20and%20phone%3A%20">Email us</a>
+        </div>
+      </div>
+    </div>
+    <div class="route">
+      <figure class="stop">
+        <img src="assets/malt-vert-orge-en-germination.jpg" width="1900" height="1272" alt="Sprouting barley grains, the start of malt" loading="lazy">
+        <figcaption><strong>The grain.</strong> Where every beer starts, before the brewhouse turns it sweet.</figcaption>
+      </figure>
+      <figure class="stop">
+        <img src="assets/cantillon-fermentation-tank.jpg" width="1900" height="1266" alt="A wide copper vessel under timber beams in a brewery" loading="lazy">
+        <figcaption><strong>Over the brewhouse.</strong> A catwalk above the brewery hall, the tanks right below your feet.</figcaption>
+      </figure>
+      <figure class="stop">
+        <img src="assets/hop-cone.jpg" width="1900" height="1426" alt="A green hop cone hanging on the vine" loading="lazy">
+        <figcaption><strong>Hops and packaging.</strong> How island water becomes the five beers, then into cans and bottles.</figcaption>
+      </figure>
+      <figure class="stop">
+        <img src="assets/beer-flight.jpg" width="1772" height="1772" alt="A tasting flight of four small beers seen from above" loading="lazy">
+        <figcaption><strong>The flight.</strong> The walk ends at the Taproom with your samples, and something hot from the oven if you want it.</figcaption>
+      </figure>
+    </div>
+    <p class="tour-note">Family friendly, all ages welcome. Call ahead to confirm the day's tour and save your spot.</p>
+  </section>
+
+  <!-- TAPROOM -->
+  <section class="taproom" id="taproom" aria-labelledby="taproom-title">
+    <div class="tap-media">
+      <img class="tap-big" src="assets/pizza-img-0793-39443275275.jpg" width="1178" height="784" alt="A blistered Neapolitan-style pizza with mozzarella and roasted peppers" loading="lazy">
+      <img class="tap-small" src="assets/free-beer-glass-bar-counter.jpg" width="1024" height="682" alt="A fresh pint on the bar under warm light" loading="lazy">
+    </div>
+    <div class="tap-text">
+      <h2 id="taproom-title">Pizza, pints, terrace.</h2>
+      <p class="tap-lead">A modern Caribbean speakeasy at the end of the catwalk: cool inside behind floor-to-ceiling glass, with a big terrace and a second bar out back.</p>
+      <div class="hh" data-hh>
+        <p class="hh-big" data-hh-big>Happy hour</p>
+        <p class="hh-small" data-hh-small>Monday to Thursday, 4:30–6pm. Draft beer, cocktails and shareable bites.</p>
+      </div>
+      <ul class="menu-list">
+        <li><strong>Neapolitan pizza</strong> baked on the terrace: funghi parmesan, spicy soppressata, sweet heat bacon</li>
+        <li><strong>Tacos, wings, quesadillas,</strong> sandwiches and salads</li>
+        <li><strong>All five beers on draft,</strong> plus Taproom-only brews like Belgian tripels, honey browns and ciders</li>
+        <li><strong>Cocktails</strong> and a full list of non-alcoholic drinks</li>
+        <li><strong>House-made ice cream</strong> to finish</li>
+      </ul>
+      <p class="tap-note">No reservations needed, though it fills up around 6pm.</p>
+    </div>
+  </section>
+
+  <!-- THE NAME -->
+  <section class="name" aria-labelledby="name-title">
+    <div class="name-photo">
+      <img src="assets/turk-s-head-cactus-at-pucp.jpg" width="1900" height="2534" alt="A Turk's head cactus, its red woolly cap sitting on a green ribbed body" loading="lazy">
+    </div>
+    <div class="name-text">
+      <h2 id="name-title">The cactus in the red hat.</h2>
+      <p>The Turk's head cactus grows wild along the dry, rocky coasts of these islands. Its red cap looks like a fez, which gave it the name. It's on the national coat of arms, and it's the name on every can we've filled since 2001.</p>
+      <div class="name-strip">
+        <img src="assets/melocactus-intortus-saint-martin-fwi-2.jpg" width="1900" height="1272" alt="Turk's head cacti scattered over a rocky Caribbean shore beside the sea" loading="lazy">
+        <img src="assets/melocactus-intortus-guanica.jpg" width="1900" height="848" alt="Turk's head cacti on a dry coastal plain above blue water" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAILER -->
+  <section class="trailer" aria-labelledby="trailer-title">
+    <div class="trailer-text">
+      <h2 id="trailer-title">We'll bring the bar to you.</h2>
+      <p>The Turk's Head mobile trailer pours at private parties, weddings, bachelor and bachelorette nights, and fundraisers anywhere on Provo.</p>
+    </div>
+    <div class="trailer-calc" data-trailer>
+      <div class="tc-row" role="group" aria-label="Party length">
+        <button type="button" class="tc-btn" data-tc="-1" aria-label="One hour less">−</button>
+        <p class="tc-hours"><span data-tc-hours>3</span>-hour party</p>
+        <button type="button" class="tc-btn" data-tc="1" aria-label="One hour more">+</button>
+      </div>
+      <p class="tc-price" data-tc-price>$350</p>
+      <p class="tc-note">Setup plus three hours of service is $350; each extra hour, or part of one, is $50. Beer priced on request.</p>
+      <a class="btn btn-red btn-block btn-lg" href="mailto:info@turksheadbeer.com" data-tc-mail>Ask about your date</a>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <h2 id="visit-title">Come find us in Discovery Bay.</h2>
+    <div class="visit-grid">
+      <div class="vg">
+        <h3>Where</h3>
+        <p>52 Universal Drive, Discovery Bay<br>Providenciales, Turks &amp; Caicos</p>
+        <p class="vg-small">About 7 minutes from the airport and 15 from the Grace Bay resorts. Handy for Chalk Sound, Taylor Bay and Sapodilla Bay.</p>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Turk%27s+Head+Brewery+Providenciales" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+      <div class="vg">
+        <h3>When</h3>
+        <dl class="hours" data-hours>
+          <div data-days="1,2,3,4"><dt>Mon–Thu</dt><dd>12pm–7pm</dd></div>
+          <div data-days="5,6,0"><dt>Fri–Sun</dt><dd>12pm–8pm</dd></div>
+          <div><dt>Tours</dt><dd>12pm, Mon–Sat</dd></div>
+          <div><dt>Happy hour</dt><dd>4:30–6pm, Mon–Thu</dd></div>
+        </dl>
+      </div>
+      <div class="vg">
+        <h3>Talk to us</h3>
+        <p><a class="link" href="tel:+16499413637">+1 649 941 3637</a></p>
+        <p><a class="link" href="mailto:info@turksheadbeer.com">info@turksheadbeer.com</a></p>
+        <p class="vg-small">Take some home: the shop sells beer by the case, plus shirts, glassware and koozies.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot-mark">Turk's Head</p>
+  <p class="foot-line">Brewed in Providenciales since 2001. Please drink responsibly.</p>
+  <div class="foot-social">
+    <a href="https://www.instagram.com/turksheadbrewery/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@turks_head_brewery" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.youtube.com/@turksheadbrewery7117" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <p class="credits">Photographs show beer, brewing and the Turk's head cactus, not Turk's Head Brewery's own beers, brewhouse or Taproom. Beer bubbles and bar counter (CC0, via Openverse); Beer Flight by Wanderstheworld; Hop cone by Nikita Karasik; Malt vert by Bapt-francois; Melocactus intortus, Saint Martin by William Ellison; Melocactus intortus, Guánica by Caballero1967 (all CC BY-SA 4.0); Cantillon fermentation tank by Awjrichards (CC BY-SA 3.0); Turk's head cactus at PUCP by NotAnyVirgo (CC0); Pizza by Nicola from Fiumicino (CC BY 2.0). Via Wikimedia Commons and Openverse.</p>
+  <p class="foot-legal">© Provo Beverages. Turk's Head Brewery, Providenciales, Turks &amp; Caicos Islands.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
