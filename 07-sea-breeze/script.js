@@ -88,7 +88,8 @@
         setTimeout(() => { t.remove(); m.classList.add("is-in"); i++; setTimeout(next, 700); }, 1100);
       } else { m.classList.add("is-in"); i++; setTimeout(next, 900); }
     };
-    setTimeout(next, 600);
+    msgs[0].classList.add("is-in"); i = 1;
+    setTimeout(next, 500);
   }
 
   // ---------- Ride builder → WhatsApp ----------

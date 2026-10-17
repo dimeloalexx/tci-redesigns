@@ -73,7 +73,7 @@ body.is-night { --ink: #f3f1ea; --ink-soft: #c9cfdb; --card: rgba(18, 30, 56, .7
 .phone-top { display: flex; align-items: center; gap: 10px; padding: 10px 10px 12px; color: #1b2430; }
 .phone-top small { display: block; color: var(--wa-dk); font-size: .8125rem; }
 .avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--sea); color: #fff; font-weight: 700; }
-.chat { display: grid; gap: 8px; padding: 6px 4px 10px; min-height: 360px; align-content: start; }
+.chat { display: grid; gap: 8px; padding: 6px 4px 10px; min-height: 230px; align-content: start; }
 .msg { max-width: 82%; padding: 10px 14px; border-radius: 18px; font-size: .9875rem; line-height: 1.4; color: #1b2430; }
 .msg.me { justify-self: end; background: #d8fdc8; border-bottom-right-radius: 6px; }
 .msg.them { justify-self: start; background: #fff; border-bottom-left-radius: 6px; }
@@ -179,3 +179,16 @@ body.is-night { --ink: #f3f1ea; --ink-soft: #c9cfdb; --card: rgba(18, 30, 56, .7
   .stars i, .typing i { animation: none; }
   .js [data-words] .w, .js [data-reveal], .js .chat .msg { transition: opacity .3s; transform: none; filter: none; }
 }
+
+/* fixes from the phone review */
+.builder .chip span { padding: 0 16px; margin: 0; }
+.foot-contact { display: grid; gap: 6px; }
+.foot-contact .sep { display: none; }
+@media (min-width: 720px) { .chat { min-height: 360px; } .foot-contact { display: block; } .foot-contact .sep { display: inline; } }
+/* hidden messages take no space until they arrive, so the chat grows like the real app */
+.js .chat .msg:not(.is-in) { display: none; }
+.js .chat .msg.is-in { animation: msgIn .45s cubic-bezier(.22,1,.36,1) both; }
+@keyframes msgIn { from { opacity: 0; transform: translateY(12px) scale(.96); } }
+.chat { min-height: 0; }
+@media (min-width: 720px) { .chat { min-height: 300px; } }
+@media (prefers-reduced-motion: reduce) { .js .chat .msg.is-in { animation: none; } }
