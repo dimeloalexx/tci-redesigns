@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=author@400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}.bar{top:var(--strip,28px)!important}</style>
   <script>document.documentElement.classList.add("js");</script>
@@ -56,74 +57,56 @@
     </ul>
   </section>
 
-  <!-- THE CHART: the live thing -->
-  <section class="chart" id="chart" aria-labelledby="chart-title">
-    <div class="chart-head">
-      <h2 id="chart-title" data-words>Chart your day.</h2>
-      <p>Pick how long you want to be out. The places you can reach light up. Tap them to plot your route from the marina.</p>
+  <!-- DESIGN YOUR DAY: the postcard -->
+  <section class="design" id="chart" aria-labelledby="design-title">
+    <div class="design-head">
+      <h2 id="design-title" data-words>Design your day.</h2>
+      <p>Three taps and we'll print you a postcard of your day on the water. Tap the postcard to flip it.</p>
     </div>
-    <div class="hours" role="radiogroup" aria-label="Charter length" data-hours>
-      <button type="button" data-h="2">2 hrs</button>
-      <button type="button" data-h="3">3 hrs</button>
-      <button type="button" data-h="4" aria-pressed="true">4 hrs</button>
-      <button type="button" data-h="5">5 hrs</button>
-      <button type="button" data-h="8">Full day</button>
-    </div>
-    <div class="map-wrap">
-      <svg class="map" viewBox="0 0 400 300" role="img" aria-label="Chart of Providenciales and nearby cays, not to scale" data-map>
-        <defs>
-          <radialGradient id="bank" cx="50%" cy="40%" r="75%">
-            <stop offset="0" stop-color="#7ee8e4"/><stop offset=".55" stop-color="#2fc6cf"/><stop offset="1" stop-color="#1590a6"/>
-          </radialGradient>
-          <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06263b"/><stop offset="1" stop-color="#0b3a57"/></linearGradient>
-          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
-          <filter id="glow"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <pattern id="waves" width="24" height="12" patternUnits="userSpaceOnUse">
-            <path d="M0 6q6-5 12 0t12 0" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
-            <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="24 0" dur="6s" repeatCount="indefinite"/>
-          </pattern>
-        </defs>
-        <rect width="400" height="300" fill="url(#deep)"/>
-        <!-- the shallow Caicos Bank glows turquoise south of the islands -->
-        <path class="bank" d="M-10 196C40 170 110 168 170 168c40 0 70-14 110-30 40-16 80-6 130 20V310H-10z" fill="url(#bank)" filter="url(#soft)"/>
-        <path d="M150 160c20-10 50-18 70-32" fill="none" stroke="#7ee8e4" stroke-width="14" opacity=".55" filter="url(#soft)"/>
-        <rect width="400" height="300" fill="url(#waves)"/>
-        <!-- reef line along the north shore -->
-        <path class="reef" d="M14 136C64 114 116 104 166 88S232 64 300 50"/>
-        <text class="sea-label" x="40" y="40">Atlantic Ocean</text>
-        <text class="sea-label bank-label" x="210" y="292">Caicos Bank</text>
-        <!-- land -->
-        <path class="land" d="M38 168c10-22 40-34 70-38 30-4 56-14 84-24 14-5 26-4 34 2 6 6 4 14-6 20-16 8-26 22-44 30-26 12-56 18-84 26-24 6-48 6-56-4-4-4-2-8 2-12z"/>
-        <path class="land" d="M18 214c6-10 18-12 26-6 6 6 4 16-4 22-8 6-20 4-24-4-2-4-1-8 2-12z"/>
-        <ellipse class="land" cx="236" cy="104" rx="9" ry="4"/>
-        <ellipse class="land" cx="252" cy="96" rx="9" ry="4"/>
-        <ellipse class="land" cx="270" cy="88" rx="11" ry="4"/>
-        <ellipse class="land" cx="290" cy="80" rx="9" ry="3.5"/>
-        <ellipse class="land" cx="122" cy="272" rx="6" ry="3"/>
-        <ellipse class="land" cx="334" cy="248" rx="12" ry="4"/>
-        <text class="map-label" x="100" y="166">Providenciales</text>
-        <!-- compass rose -->
-        <g class="rose" transform="translate(360 44)"><circle r="20"/><path d="M0-18l4 18-4 18-4-18z"/><path class="rose-n" d="M0-18l4 18h-8z"/><text y="-23">N</text></g>
-        <path class="route" data-route d=""/>
-        <g class="marina"><circle cx="220" cy="114" r="6"/><text x="232" y="132">Blue Haven Marina</text></g>
-        <g data-pins></g>
-        <g class="boat" data-boat-icon><path class="wake" d="M-16 0h-14"/><path d="M-9-4h12l6 4-6 4h-12z"/><rect x="-5" y="-2.5" width="6" height="5" rx="1.2" class="cabin"/></g>
-      </svg>
-      <p class="map-note">Simplified chart, not to scale or for navigation.</p>
-      <div class="spot-chips" data-chips></div>
-    </div>
-    <div class="plan" aria-live="polite">
-      <p class="plan-title">Your route</p>
-      <ol class="plan-list" data-plan></ol>
-      <p class="plan-boat" data-boat></p>
-      <div class="plan-actions">
-        <a class="btn btn-brass btn-block btn-lg" href="https://www.okeanoscharters.com" target="_blank" rel="noopener">Book online</a>
-        <a class="btn btn-line btn-block" href="mailto:hello@okeanoscharters.com" data-mail>Email us this route</a>
+    <div class="design-grid">
+      <div class="picks" data-picks>
+        <fieldset><legend>Who's coming?</legend>
+          <button type="button" data-q="who" data-v="couple" aria-pressed="true">Two of us</button>
+          <button type="button" data-q="who" data-v="family" aria-pressed="false">Family</button>
+          <button type="button" data-q="who" data-v="friends" aria-pressed="false">Friends</button>
+        </fieldset>
+        <fieldset><legend>What's the vibe?</legend>
+          <button type="button" data-q="vibe" data-v="chill" aria-pressed="true">Sandbars</button>
+          <button type="button" data-q="vibe" data-v="snorkel" aria-pressed="false">Snorkel</button>
+          <button type="button" data-q="vibe" data-v="explore" aria-pressed="false">Explore</button>
+        </fieldset>
+        <fieldset><legend>How long?</legend>
+          <button type="button" data-q="time" data-v="4" aria-pressed="true">4 hrs<small>Half day</small></button>
+          <button type="button" data-q="time" data-v="5" aria-pressed="false">5 hrs<small>+ beach BBQ</small></button>
+          <button type="button" data-q="time" data-v="8" aria-pressed="false">8 hrs<small>Full day + BBQ</small></button>
+        </fieldset>
       </div>
-    </div>
-    <div class="group">
-      <p class="q-label">How many of you?</p>
-      <div class="stepper"><button type="button" data-g="-1" aria-label="Fewer people">−</button><output data-group>4</output><button type="button" data-g="1" aria-label="More people">+</button></div>
+      <div class="post-wrap">
+        <button type="button" class="postcard" data-postcard data-ui aria-pressed="false">
+          <span class="pc-front">
+            <img data-pc-img src="assets/turtle-cove.jpg" alt="A palm and turquoise shallows at Turtle Cove, Providenciales" width="1400" height="934">
+            <span class="pc-greet">Greetings from<b>the Caicos Cays</b></span>
+            <span class="pc-stamp" aria-hidden="true">OKEANOS<small>TCI</small></span>
+            <span class="pc-hint">Tap to flip ↻</span>
+          </span>
+          <span class="pc-back">
+            <span class="pc-lines">
+              <span class="pc-title" data-pc-title>Our half day on the water</span>
+              <span data-pc-plan></span>
+              <span class="pc-boat" data-pc-boat></span>
+              <span class="pc-sign">Wish you were here!</span>
+            </span>
+            <span class="pc-addr">
+              <span class="pc-stamp small" aria-hidden="true">OKEANOS<small>TCI</small></span>
+              <span class="pc-to"><span>Okeanos Charters</span><span>Blue Haven Marina</span><span>Providenciales, TCI</span></span>
+            </span>
+          </span>
+        </button>
+        <div class="pc-actions">
+          <a class="btn btn-brass btn-lg" href="https://www.okeanoscharters.com" target="_blank" rel="noopener">Book this day</a>
+          <a class="btn btn-line" href="mailto:hello@okeanoscharters.com" data-mail>Email us the postcard</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -134,8 +117,8 @@
       <div><h3>Sandbars off Pine Cay</h3><p>Stand in ankle-deep turquoise water in the middle of the sea.</p></div>
     </article>
     <article class="moment m2">
-      <img src="assets/boat-wake.jpg" width="1536" height="1024" alt="A speedboat carving a white wake across deep blue water, seen from above" loading="lazy">
-      <div><h3>Hop from cay to cay</h3><p>Shallow-draft boats skim across the bank to the beaches and wrecks the big boats can't reach.</p></div>
+      <img src="assets/angelfish.jpg" width="1200" height="900" alt="A French angelfish swimming over a Caribbean reef" loading="lazy">
+      <div><h3>Reefs, wrecks and cannons</h3><p>Snorkel over the old cannons at Fort George Cay and the wreck of La Famille Express. Gear is on board.</p></div>
     </article>
     <article class="moment m3">
       <img src="assets/dolphins.jpg" width="1600" height="1099" alt="Two bottlenose dolphins leaping out of the water side by side" loading="lazy">
@@ -173,7 +156,7 @@
 <footer class="foot">
   <p class="foot-mark">Okeanos</p>
   <p>Blue Haven Marina, Marina Road, Leeward, Providenciales · <a href="tel:+16494316327">649 431 6327</a> · <a href="tel:+16493336328">649 333 6328</a></p>
-  <p class="credits">Photographs are openly licensed stand-ins, not Okeanos' own boats or guests. Drones in Turks by Jay Cee shotzjc (CC0); sandbar (CC0, via Openverse); Parasailer's boat by Kfengler (CC BY 3.0); Bottlenose dolphin with young by Peter Asprey (CC BY-SA 3.0); Sunset in Grace Bay by Jason Boldero (CC BY 2.0).</p>
+  <p class="credits">Photographs are openly licensed stand-ins, not Okeanos' own boats or guests. Drones in Turks by Jay Cee shotzjc (CC0); sandbar (CC0, via Openverse); Bottlenose dolphin with young by Peter Asprey (CC BY-SA 3.0); French Angelfish and Turtle Cove Providenciales Beach by Tim Sackton (CC BY-SA 2.0); Sunset in Grace Bay by Jason Boldero (CC BY 2.0).</p>
   <p class="credits">© Okeanos Charters, Turks &amp; Caicos.</p>
 </footer>
 

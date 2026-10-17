@@ -2,152 +2,63 @@
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const NS = "http://www.w3.org/2000/svg";
-  const MARINA = [220, 114];
 
-  // Destinations from Okeanos' own listing; min = shortest charter that reaches them.
-  const SPOTS = [
-    { id: "water-cay", name: "Water Cay", x: 252, y: 96, lx: 244, ly: 88, la: "end", min: 2, note: "Quiet beaches right next to Pine Cay" },
-    { id: "pine-cay", name: "Pine Cay sandbars", x: 270, y: 88, lx: 274, ly: 70, la: "middle", min: 3, note: "Ankle-deep turquoise in the middle of the sea" },
-    { id: "fort-george", name: "Fort George Cay", x: 290, y: 80, lx: 300, ly: 84, la: "start", min: 3, note: "Snorkel over old cannons" },
-    { id: "wreck", name: "La Famille Express", x: 186, y: 182, lx: 196, ly: 186, la: "start", south: true, min: 2, note: "The grounded freighter in Long Bay" },
-    { id: "west-caicos", name: "West Caicos", x: 32, y: 222, lx: 32, ly: 248, la: "middle", south: true, min: 5, note: "Wild, uninhabited and clear" },
-    { id: "french-cay", name: "French Cay", x: 122, y: 272, lx: 134, ly: 276, la: "start", south: true, min: 8, note: "Far-out cay for a full day" },
-    { id: "ambergris", name: "Little Ambergris", x: 334, y: 248, lx: 334, ly: 268, la: "middle", south: true, min: 8, note: "Remote sands across the bank" },
-  ];
-  let hours = 4, group = 4;
-  const picked = new Set(["water-cay", "pine-cay"]);
+  // ---------- Design your day: three taps print a postcard ----------
+  // Stops come from Okeanos' own listing; longer days reach further.
+  const BBQ = "Beach BBQ cooked by the crew";
+  const PLANS = {
+    chill: { img: "assets/turtle-cove.jpg", alt: "A palm and turquoise shallows at Turtle Cove, Providenciales",
+      4: ["Pine Cay sandbars", "Water Cay, beach to ourselves"],
+      5: ["Pine Cay sandbars", "Water Cay, beach to ourselves", BBQ],
+      8: ["Pine Cay sandbars", "Water Cay, beach to ourselves", BBQ, "West Caicos, wild and empty"] },
+    snorkel: { img: "assets/angelfish.jpg", alt: "A French angelfish swimming over a Caribbean reef",
+      4: ["Fort George Cay cannons", "La Famille Express wreck"],
+      5: ["Fort George Cay cannons", "La Famille Express wreck", "Water Cay", BBQ],
+      8: ["Fort George Cay cannons", "La Famille Express wreck", BBQ, "Snorkel French Cay"] },
+    explore: { img: "assets/drones-in-turks-unsplash.jpg", alt: "Turquoise water, a rocky point and a private dock seen from above",
+      4: ["Water Cay", "Fort George Cay", "La Famille Express wreck", "Eyes peeled for JoJo"],
+      5: ["Water Cay", "Fort George Cay", BBQ, "West Caicos"],
+      8: ["Water Cay and Fort George Cay", "West Caicos", BBQ, "French Cay and Little Ambergris"] },
+  };
+  const BOAT = { couple: "On the Axopar 22, made for two.", family: "On an Axopar, room for all.", friends: "On the Chris Craft, built for groups." };
+  const LEN = { 4: "half day", 5: "extended half day", 8: "full day" };
+  const WHO = { couple: "the two of us", family: "the family", friends: "a group of friends" };
+  const state = { who: "couple", vibe: "chill", time: "4" };
 
-  // pins
-  const pinsG = $("[data-pins]");
-  SPOTS.forEach(s => {
-    const g = document.createElementNS(NS, "g");
-    g.setAttribute("class", "pin");
-    g.setAttribute("tabindex", "0");
-    g.setAttribute("role", "button");
-    g.setAttribute("aria-label", s.name);
-    const c = document.createElementNS(NS, "circle");
-    c.setAttribute("cx", s.x); c.setAttribute("cy", s.y); c.setAttribute("r", 5);
-    const t = document.createElementNS(NS, "text");
-    t.setAttribute("x", s.lx); t.setAttribute("y", s.ly);
-    t.setAttribute("text-anchor", s.la);
-    t.textContent = s.name;
-    g.append(c, t);
-    const toggle = () => {
-      if (hours < s.min) return;
-      picked.has(s.id) ? picked.delete(s.id) : picked.add(s.id);
-      render(true);
-
-    };
-    g.addEventListener("click", toggle);
-    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
-    s.el = g;
-    pinsG.appendChild(g);
-  });
-
-  // big chips under the chart mirror the pins (easier to tap on phones)
-  const chipsEl = $("[data-chips]");
-  SPOTS.forEach(s => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.addEventListener("click", () => { if (hours < s.min) return; picked.has(s.id) ? picked.delete(s.id) : picked.add(s.id); render(true); });
-    s.chip = b;
-    chipsEl.appendChild(b);
-  });
-
-  // hours
-  $$("[data-h]").forEach(b => b.addEventListener("click", () => {
-    hours = Number(b.dataset.h);
-    $$("[data-h]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
-    SPOTS.forEach(s => { if (hours < s.min) picked.delete(s.id); });
-    render(true);
-  }));
-  $$("[data-g]").forEach(b => b.addEventListener("click", () => {
-    group = Math.max(1, Math.min(20, group + Number(b.dataset.g)));
-    render(false);
-  }));
-
-  const route = $("[data-route]"), planEl = $("[data-plan]"), boatEl = $("[data-boat]"), mail = $("[data-mail]");
-  function order(list) {
-    // nearest-neighbour from the marina, so the line looks like a real day out
-    const out = [], left = [...list];
-    let cur = MARINA;
-    while (left.length) {
-      left.sort((a, b) => Math.hypot(a.x - cur[0], a.y - cur[1]) - Math.hypot(b.x - cur[0], b.y - cur[1]));
-      const n = left.shift(); out.push(n); cur = [n.x, n.y];
+  const card = $("[data-postcard]"), img = $("[data-pc-img]"), title = $("[data-pc-title]"), plan = $("[data-pc-plan]"), boat = $("[data-pc-boat]"), mail = $("[data-mail]");
+  function print(animate) {
+    const p = PLANS[state.vibe], stops = p[state.time];
+    if (img.getAttribute("src") !== p.img) img.src = p.img;
+    img.alt = p.alt;
+    title.textContent = `Our ${state.time === "5" ? "5 hours" : LEN[state.time]} on the water`;
+    plan.innerHTML = stops.map(s => `<span class="pc-line">${s}</span>`).join("");
+    boat.textContent = BOAT[state.who];
+    const body = `Hi Okeanos,\n\nWe designed our day on your website:\nWho: ${WHO[state.who]}\nLength: ${LEN[state.time]} (${state.time} hours)\nPlan: ${stops.join("; ")}\nBoat: ${BOAT[state.who].replace(/^On /, "")}\n\nDate:\nNumber of guests:\nPickup (Blue Haven Marina or Grace Bay beach):\nName and phone:`;
+    mail.href = `mailto:hello@okeanoscharters.com?subject=${encodeURIComponent("Our day on the water")}&body=${encodeURIComponent(body)}`;
+    if (animate) {
+      card.classList.remove("is-flipped"); card.setAttribute("aria-pressed", "false");
+      if (!reduce) { card.classList.remove("print"); void card.offsetWidth; card.classList.add("print"); }
     }
-    return out;
   }
-  function render(redraw) {
-    $("[data-group]").textContent = group;
-    SPOTS.forEach(s => {
-      const reach = hours >= s.min;
-      s.el.classList.toggle("reach", reach && !picked.has(s.id));
-      s.el.classList.toggle("on", picked.has(s.id));
-      s.chip.className = picked.has(s.id) ? "on" : reach ? "reach" : "";
-      s.chip.disabled = !reach;
-      s.chip.setAttribute("aria-pressed", String(picked.has(s.id)));
-      s.chip.innerHTML = reach ? s.name : `${s.name}<small>${s.min}h+</small>`;
-    });
-    const north = SPOTS.filter(s => picked.has(s.id) && !s.south).sort((a, b) => a.x - b.x);
-    const south = SPOTS.filter(s => picked.has(s.id) && s.south).sort((a, b) => b.x - a.x);
-    const stops = [...north, ...south];
-    const EAST = [250, 142], NORTH_OUT = [242, 112], SOUTH_BACK = [160, 214];
-    if (stops.length) {
-      const pts = [MARINA, ...north.map(s => [s.x, s.y])];
-      if (south.length) {
-        if (north.length) pts.push(NORTH_OUT);
-        pts.push(EAST, ...south.map(s => [s.x, s.y]));
-        if (south[south.length - 1].x < 170) pts.push(SOUTH_BACK);
-        pts.push(EAST);
-      }
-      pts.push(MARINA);
-      let d = `M${pts[0][0]} ${pts[0][1]}`;
-      for (let i = 1; i < pts.length; i++) {
-        const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
-        const mx = (x0 + x1) / 2, my = (y0 + y1) / 2 - 6;
-        d += ` Q${mx} ${my} ${x1} ${y1}`;
-      }
-      route.setAttribute("d", d);
-      if (redraw && !reduce) { route.classList.remove("draw"); void route.getBBox(); route.classList.add("draw"); }
-    } else route.setAttribute("d", "");
+  $$("[data-q]").forEach(b => b.addEventListener("click", () => {
+    state[b.dataset.q] = b.dataset.v;
+    $$(`[data-q="${b.dataset.q}"]`).forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    print(true);
+    // on a phone the card sits under the questions: bring it into view so the change is seen
+    const r = card.getBoundingClientRect();
+    if (r.top > innerHeight * .55) scrollBy({ top: r.top - innerHeight * .4, behavior: reduce ? "auto" : "smooth" });
+  }));
+  card.addEventListener("click", () => card.setAttribute("aria-pressed", String(card.classList.toggle("is-flipped"))));
+  card.addEventListener("animationend", e => { if (e.target === card) card.classList.remove("print"); });
+  print(false);
+  Object.values(PLANS).forEach(p => { const i = new Image(); i.src = p.img; });
 
-    planEl.innerHTML = "";
-    if (!stops.length) planEl.innerHTML = '<li class="empty">Tap the glowing spots on the chart.</li>';
-    stops.forEach(s => { const li = document.createElement("li"); li.innerHTML = `${s.name}<small>${s.note}</small>`; planEl.appendChild(li); });
-    if (hours >= 5 && stops.length) { const li = document.createElement("li"); li.innerHTML = `Beach BBQ<small>A local lunch cooked by the captain and crew</small>`; planEl.appendChild(li); }
-
-    const boat = group <= 2 ? "the Axopar 22, made for two" : group <= 6 ? "one of our Axopars" : "the Chris Craft, built for bigger groups";
-    boatEl.textContent = `${hours === 8 ? "Full day" : hours + " hours"} for ${group}: we'd suggest ${boat}. Want the luxe version? Ask about the Saxdor 400.`;
-
-    const body = `Hi Okeanos,\n\nWe'd like a private charter:\nLength: ${hours === 8 ? "full day (8 hours)" : hours + " hours"}\nGroup: ${group}\nRoute: ${stops.map(s => s.name).join(", ") || "open to suggestions"}${hours >= 5 ? "\nBeach BBQ: yes please" : ""}\n\nDate:\nPickup (Blue Haven Marina or Grace Bay beach):\nName and phone:`;
-    mail.href = `mailto:hello@okeanoscharters.com?subject=${encodeURIComponent("Private charter request")}&body=${encodeURIComponent(body)}`;
-  }
-  render(true);
-
-  // ---------- A little boat sails the route ----------
-  const boatIcon = $("[data-boat-icon]");
-  let dist = 0, last = performance.now();
-  function sail(now) {
-    const dt = Math.min(64, now - last); last = now;
-    const len = route.getTotalLength ? route.getTotalLength() : 0;
-    if (len > 0 && route.getAttribute("d")) {
-      dist = (dist + dt * 0.045) % len;
-      const p = route.getPointAtLength(dist), q = route.getPointAtLength(Math.min(len, dist + 1));
-      const ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI;
-      boatIcon.setAttribute("transform", `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${ang.toFixed(1)}) scale(1.6)`);
-      boatIcon.style.opacity = 1;
-    } else boatIcon.style.opacity = 0;
-    if (!reduce) requestAnimationFrame(sail);
-  }
-  if (reduce) { boatIcon.style.display = "none"; } else requestAnimationFrame(sail);
-
-  // ---------- Headlines, reveals ----------
+  // ---------- Headlines word by word, reveals ----------
   $$("[data-words]").forEach(h => {
     const t = h.textContent.trim(); h.setAttribute("aria-label", t);
     h.innerHTML = t.split(/\s+/).map((w, i) => `<span class="w" aria-hidden="true" style="transition-delay:${i * 80}ms">${w}</span>`).join(" ");
   });
-  const rev = $$(".incl li, .moment, .f, .plan, .group, .map-wrap, .hero-sub, .hero-actions, .hero-proof, .final-inner > *");
+  const rev = $$(".incl li, .moment, .f, .picks fieldset, .post-wrap, .design-head p, .hero-sub, .hero-actions, .hero-proof, .final-inner > *");
   rev.forEach(el => { if (!el.classList.contains("moment")) el.setAttribute("data-reveal", ""); });
   const all = [...$$("[data-words]"), ...rev];
   if (!("IntersectionObserver" in window) || reduce) all.forEach(el => el.classList.add("is-in"));
