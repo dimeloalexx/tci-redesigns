@@ -7,13 +7,13 @@
 
   // Destinations from Okeanos' own listing; min = shortest charter that reaches them.
   const SPOTS = [
-    { id: "water-cay", name: "Water Cay", x: 252, y: 96, min: 2, note: "Quiet beaches right next to Pine Cay" },
-    { id: "pine-cay", name: "Pine Cay sandbars", x: 270, y: 88, min: 3, note: "Ankle-deep turquoise in the middle of the sea" },
-    { id: "fort-george", name: "Fort George Cay", x: 290, y: 80, min: 3, note: "Snorkel over old cannons" },
-    { id: "wreck", name: "La Famille Express", x: 186, y: 182, min: 2, note: "The grounded freighter in Long Bay" },
-    { id: "west-caicos", name: "West Caicos", x: 32, y: 222, min: 5, note: "Wild, uninhabited and clear" },
-    { id: "french-cay", name: "French Cay", x: 122, y: 272, min: 8, note: "Far-out cay for a full day" },
-    { id: "ambergris", name: "Little Ambergris", x: 334, y: 248, min: 8, note: "Remote sands across the bank" },
+    { id: "water-cay", name: "Water Cay", x: 252, y: 96, lx: 244, ly: 88, la: "end", min: 2, note: "Quiet beaches right next to Pine Cay" },
+    { id: "pine-cay", name: "Pine Cay sandbars", x: 270, y: 88, lx: 274, ly: 70, la: "middle", min: 3, note: "Ankle-deep turquoise in the middle of the sea" },
+    { id: "fort-george", name: "Fort George Cay", x: 290, y: 80, lx: 300, ly: 84, la: "start", min: 3, note: "Snorkel over old cannons" },
+    { id: "wreck", name: "La Famille Express", x: 186, y: 182, lx: 196, ly: 186, la: "start", south: true, min: 2, note: "The grounded freighter in Long Bay" },
+    { id: "west-caicos", name: "West Caicos", x: 32, y: 222, lx: 32, ly: 248, la: "middle", south: true, min: 5, note: "Wild, uninhabited and clear" },
+    { id: "french-cay", name: "French Cay", x: 122, y: 272, lx: 134, ly: 276, la: "start", south: true, min: 8, note: "Far-out cay for a full day" },
+    { id: "ambergris", name: "Little Ambergris", x: 334, y: 248, lx: 334, ly: 268, la: "middle", south: true, min: 8, note: "Remote sands across the bank" },
   ];
   let hours = 4, group = 4;
   const picked = new Set(["water-cay", "pine-cay"]);
@@ -29,9 +29,8 @@
     const c = document.createElementNS(NS, "circle");
     c.setAttribute("cx", s.x); c.setAttribute("cy", s.y); c.setAttribute("r", 5);
     const t = document.createElementNS(NS, "text");
-    const right = s.x < 300;
-    t.setAttribute("x", right ? s.x + 9 : s.x - 9); t.setAttribute("y", s.y - 8);
-    t.setAttribute("text-anchor", right ? "start" : "end");
+    t.setAttribute("x", s.lx); t.setAttribute("y", s.ly);
+    t.setAttribute("text-anchor", s.la);
     t.textContent = s.name;
     g.append(c, t);
     const toggle = () => {
@@ -89,13 +88,23 @@
       s.chip.setAttribute("aria-pressed", String(picked.has(s.id)));
       s.chip.innerHTML = reach ? s.name : `${s.name}<small>${s.min}h+</small>`;
     });
-    const stops = order(SPOTS.filter(s => picked.has(s.id)));
+    const north = SPOTS.filter(s => picked.has(s.id) && !s.south).sort((a, b) => a.x - b.x);
+    const south = SPOTS.filter(s => picked.has(s.id) && s.south).sort((a, b) => b.x - a.x);
+    const stops = [...north, ...south];
+    const EAST = [250, 142], NORTH_OUT = [242, 112], SOUTH_BACK = [160, 214];
     if (stops.length) {
-      const pts = [MARINA, ...stops.map(s => [s.x, s.y]), MARINA];
+      const pts = [MARINA, ...north.map(s => [s.x, s.y])];
+      if (south.length) {
+        if (north.length) pts.push(NORTH_OUT);
+        pts.push(EAST, ...south.map(s => [s.x, s.y]));
+        if (south[south.length - 1].x < 170) pts.push(SOUTH_BACK);
+        pts.push(EAST);
+      }
+      pts.push(MARINA);
       let d = `M${pts[0][0]} ${pts[0][1]}`;
       for (let i = 1; i < pts.length; i++) {
         const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
-        const mx = (x0 + x1) / 2, my = (y0 + y1) / 2 - 14;
+        const mx = (x0 + x1) / 2, my = (y0 + y1) / 2 - 6;
         d += ` Q${mx} ${my} ${x1} ${y1}`;
       }
       route.setAttribute("d", d);

@@ -128,11 +128,11 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; letter-spacing: -0.0
 .fleet h2 { font-size: clamp(2.2rem, 9vw, 4.5rem); max-width: 14em; }
 .fleet-list { margin-top: 26px; display: grid; gap: 10px; }
 .f { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 18px 20px; border-radius: 18px; background: var(--white); transition: transform .3s var(--ease); }
-.f b { font-family: var(--display); font-size: 1.375rem; font-weight: 500; white-space: nowrap; }
-.f span { color: #4a5560; text-align: right; }
+.f h3 { font-family: var(--display); font-size: 1.375rem; font-weight: 500; white-space: nowrap; }
+.f p { color: #4a5560; text-align: right; }
 .f-lux { background: var(--navy); color: var(--white); }
-.f-lux b { color: var(--brass); }
-.f-lux span { color: rgba(251, 250, 246, .8); }
+.f-lux h3 { color: var(--brass); }
+.f-lux p { color: rgba(251, 250, 246, .8); }
 
 /* Final */
 .final { position: relative; min-height: 80svh; display: flex; align-items: flex-end; overflow: hidden; }
@@ -172,6 +172,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; letter-spacing: -0.0
   .moments { grid-template-columns: 2fr 1fr 1fr; }
   .m1 { grid-column: auto; }
   .fleet-list { grid-template-columns: 1fr 1fr; }
+  .fleet-list .f:last-child { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -188,7 +189,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; letter-spacing: -0.0
 .spot-chips small { font-weight: 500; opacity: .8; margin-left: 4px; }
 @media (max-width: 719px) {
   .f { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .f span { text-align: left; }
+  .f p { text-align: left; }
   .pin text { display: none; }
   .pin circle { r: 7; }
 }
