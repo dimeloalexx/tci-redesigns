@@ -70,9 +70,29 @@
       <button type="button" data-h="8">Full day</button>
     </div>
     <div class="map-wrap">
-      <svg class="map" viewBox="0 0 400 300" role="img" aria-label="Simplified chart of Providenciales and nearby cays, not to scale" data-map>
-        <defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/></pattern></defs>
-        <rect width="400" height="300" fill="url(#grid)"/>
+      <svg class="map" viewBox="0 0 400 300" role="img" aria-label="Chart of Providenciales and nearby cays, not to scale" data-map>
+        <defs>
+          <radialGradient id="bank" cx="50%" cy="40%" r="75%">
+            <stop offset="0" stop-color="#7ee8e4"/><stop offset=".55" stop-color="#2fc6cf"/><stop offset="1" stop-color="#1590a6"/>
+          </radialGradient>
+          <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06263b"/><stop offset="1" stop-color="#0b3a57"/></linearGradient>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
+          <filter id="glow"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <pattern id="waves" width="24" height="12" patternUnits="userSpaceOnUse">
+            <path d="M0 6q6-5 12 0t12 0" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+            <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="24 0" dur="6s" repeatCount="indefinite"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="300" fill="url(#deep)"/>
+        <!-- the shallow Caicos Bank glows turquoise south of the islands -->
+        <path class="bank" d="M-10 196C40 170 110 168 170 168c40 0 70-14 110-30 40-16 80-6 130 20V310H-10z" fill="url(#bank)" filter="url(#soft)"/>
+        <path d="M150 160c20-10 50-18 70-32" fill="none" stroke="#7ee8e4" stroke-width="14" opacity=".55" filter="url(#soft)"/>
+        <rect width="400" height="300" fill="url(#waves)"/>
+        <!-- reef line along the north shore -->
+        <path class="reef" d="M14 136C64 114 116 104 166 88S232 64 300 50"/>
+        <text class="sea-label" x="40" y="40">Atlantic Ocean</text>
+        <text class="sea-label bank-label" x="210" y="292">Caicos Bank</text>
+        <!-- land -->
         <path class="land" d="M38 168c10-22 40-34 70-38 30-4 56-14 84-24 14-5 26-4 34 2 6 6 4 14-6 20-16 8-26 22-44 30-26 12-56 18-84 26-24 6-48 6-56-4-4-4-2-8 2-12z"/>
         <path class="land" d="M18 214c6-10 18-12 26-6 6 6 4 16-4 22-8 6-20 4-24-4-2-4-1-8 2-12z"/>
         <ellipse class="land" cx="236" cy="104" rx="9" ry="4"/>
@@ -81,10 +101,13 @@
         <ellipse class="land" cx="290" cy="80" rx="9" ry="3.5"/>
         <ellipse class="land" cx="122" cy="272" rx="6" ry="3"/>
         <ellipse class="land" cx="334" cy="248" rx="12" ry="4"/>
-        <text class="map-label" x="96" y="168">Providenciales</text>
+        <text class="map-label" x="100" y="166">Providenciales</text>
+        <!-- compass rose -->
+        <g class="rose" transform="translate(360 44)"><circle r="20"/><path d="M0-18l4 18-4 18-4-18z"/><path class="rose-n" d="M0-18l4 18h-8z"/><text y="-23">N</text></g>
         <path class="route" data-route d=""/>
         <g class="marina"><circle cx="220" cy="114" r="6"/><text x="232" y="132">Blue Haven Marina</text></g>
         <g data-pins></g>
+        <g class="boat" data-boat-icon><path class="wake" d="M-16 0h-14"/><path d="M-9-4h12l6 4-6 4h-12z"/><rect x="-5" y="-2.5" width="6" height="5" rx="1.2" class="cabin"/></g>
       </svg>
       <p class="map-note">Simplified chart, not to scale or for navigation.</p>
       <div class="spot-chips" data-chips></div>

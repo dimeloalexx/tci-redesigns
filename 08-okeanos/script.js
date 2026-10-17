@@ -37,6 +37,7 @@
       if (hours < s.min) return;
       picked.has(s.id) ? picked.delete(s.id) : picked.add(s.id);
       render(true);
+
     };
     g.addEventListener("click", toggle);
     g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
@@ -123,6 +124,23 @@
     mail.href = `mailto:hello@okeanoscharters.com?subject=${encodeURIComponent("Private charter request")}&body=${encodeURIComponent(body)}`;
   }
   render(true);
+
+  // ---------- A little boat sails the route ----------
+  const boatIcon = $("[data-boat-icon]");
+  let dist = 0, last = performance.now();
+  function sail(now) {
+    const dt = Math.min(64, now - last); last = now;
+    const len = route.getTotalLength ? route.getTotalLength() : 0;
+    if (len > 0 && route.getAttribute("d")) {
+      dist = (dist + dt * 0.045) % len;
+      const p = route.getPointAtLength(dist), q = route.getPointAtLength(Math.min(len, dist + 1));
+      const ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI;
+      boatIcon.setAttribute("transform", `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${ang.toFixed(1)}) scale(1.6)`);
+      boatIcon.style.opacity = 1;
+    } else boatIcon.style.opacity = 0;
+    if (!reduce) requestAnimationFrame(sail);
+  }
+  if (reduce) { boatIcon.style.display = "none"; } else requestAnimationFrame(sail);
 
   // ---------- Headlines, reveals ----------
   $$("[data-words]").forEach(h => {

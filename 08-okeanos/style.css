@@ -193,3 +193,27 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; letter-spacing: -0.0
   .pin text { display: none; }
   .pin circle { r: 7; }
 }
+
+/* living chart: Atlantic, the turquoise Caicos Bank, reef, rose and a boat that sails the route */
+.map-wrap { background: #06263b; padding: 0; overflow: hidden; }
+.map { border-radius: var(--radius) var(--radius) 0 0; }
+.land { fill: #f4ecd9; opacity: 1; filter: drop-shadow(0 0 3px rgba(255, 255, 255, .55)); }
+.reef { fill: none; stroke: rgba(255, 255, 255, .35); stroke-width: 1.2; stroke-dasharray: 2 4; }
+.sea-label { fill: rgba(255, 255, 255, .4); font: italic 500 11px var(--display); letter-spacing: .12em; text-transform: uppercase; }
+.bank-label { fill: rgba(6, 38, 59, .55); }
+.map-label { fill: rgba(6, 38, 59, .7); font: 600 11px var(--text); }
+.rose circle { fill: rgba(6, 38, 59, .4); stroke: rgba(255, 255, 255, .35); }
+.rose path { fill: rgba(255, 255, 255, .55); }
+.rose .rose-n { fill: var(--brass); }
+.rose text { fill: var(--brass); font: 700 9px var(--text); text-anchor: middle; }
+.route { stroke: #fff; stroke-width: 2; opacity: .9; }
+.boat path:not(.wake) { fill: var(--brass); stroke: #fff; stroke-width: .8; }
+.boat .cabin { fill: #fff; }
+.boat .wake { stroke: rgba(255, 255, 255, .8); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 2 3; }
+.pin.reach circle { fill: #fff; stroke: var(--sea); stroke-width: 2.5; }
+.pin.on circle { fill: var(--brass); stroke: #fff; stroke-width: 2; }
+.pin text { paint-order: stroke; stroke: rgba(6, 38, 59, .85); stroke-width: 3px; }
+.pin.on text, .pin.reach text { fill: #fff; }
+.pin.on text { fill: var(--brass); }
+.marina text { paint-order: stroke; stroke: rgba(6, 38, 59, .85); stroke-width: 3px; }
+.map-note { padding: 8px 12px 0; }
