@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Driftwood Studio | Island Art, Paint Nights &amp; Kids Art Camp | Grace Bay, Turks &amp; Caicos</title>
+  <meta name="description" content="Driftwood Studio is an art studio and gallery in Caicos Café Plaza, Grace Bay. Original island art by Lucie Winton Stubbs and local artists, Corks &amp; Canvas paint nights, kids art camps and private groups.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Driftwood Studio — come play, paint and chat">
+  <meta property="og:image" content="assets/flamingo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="concept-strip" role="note">Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+
+<main id="top">
+
+  <!-- HERO: turquoise, like the studio wall -->
+  <section class="hero field-teal" aria-labelledby="hero-title">
+    <header class="top">
+      <a class="mono" href="#top" aria-label="Driftwood Studio, home">DS</a>
+      <nav class="links" aria-label="Sections">
+        <a href="#paint">Paint</a>
+        <a href="#classes">Classes</a>
+        <a href="#lucie">Lucie</a>
+        <a class="btn btn-sm" href="#book">Book</a>
+      </nav>
+    </header>
+    <h1 id="hero-title" class="name"><span class="line l1"><span>Driftwood</span></span><span class="line l2"><span>Studio</span></span></h1>
+    <div class="hero-foot">
+      <p>Original island art, made barefoot in the heart of Grace Bay. Come in, play, paint and chat.</p>
+      <a class="btn" href="#book">Book a paint night</a>
+    </div>
+  </section>
+
+  <!-- INTRO: one heavy paragraph on flamingo pink -->
+  <section class="intro field-pink" aria-label="About the studio">
+    <img class="chip chip-b" src="assets/flamingo-sq.jpg" width="700" height="700" alt="Lucie's flamingo painting" loading="lazy">
+    <img class="chip" src="assets/lucie-painting.jpg" width="900" height="1125" alt="Lucie painting a canvas with a palette knife in front of the studio's turquoise wall" loading="lazy">
+    <p class="heavy">Lucie Winton Stubbs paints in full view of Grace Bay Road, usually barefoot and singing to island music. Everything on the walls was made right here or by artists from these islands: canvases, sculpture, jewellery, textiles and crafts.</p>
+  </section>
+
+  <!-- THE LIVE THING: paint on the page -->
+  <section class="paint field-sand" id="paint" aria-labelledby="paint-title">
+    <div class="paint-head">
+      <h2 id="paint-title" class="statement">Pick up a brush.</h2>
+      <p>Paint with the colours of the studio. Trace Lucie's flamingo, or make your own, then save it.</p>
+    </div>
+    <div class="easel" data-easel>
+      <div class="canvas-wrap">
+        <img class="ghost" src="assets/flamingo.jpg" width="900" height="1125" alt="" aria-hidden="true" data-ghost>
+        <canvas data-canvas aria-label="Drawing canvas: drag to paint" role="img"></canvas>
+        <p class="hint" data-hint>Drag to paint</p>
+      </div>
+      <div class="tools" role="toolbar" aria-label="Painting tools">
+        <div class="swatches" role="radiogroup" aria-label="Colour" data-swatches>
+          <button type="button" role="radio" aria-checked="true" aria-label="Flamingo pink" style="--c:#f2557a" data-c="#f2557a"></button>
+          <button type="button" role="radio" aria-checked="false" aria-label="Studio turquoise" style="--c:#2bbfb3" data-c="#2bbfb3"></button>
+          <button type="button" role="radio" aria-checked="false" aria-label="Ocean blue" style="--c:#2456d6" data-c="#2456d6"></button>
+          <button type="button" role="radio" aria-checked="false" aria-label="Sun yellow" style="--c:#ffc83d" data-c="#ffc83d"></button>
+          <button type="button" role="radio" aria-checked="false" aria-label="Seafoam white" style="--c:#fbf7ee" data-c="#fbf7ee"></button>
+          <button type="button" role="radio" aria-checked="false" aria-label="Driftwood black" style="--c:#161615" data-c="#161615"></button>
+        </div>
+        <div class="sizes" role="radiogroup" aria-label="Brush size" data-sizes>
+          <button type="button" role="radio" aria-checked="false" data-s="6" aria-label="Fine brush"><i style="--d:6px"></i></button>
+          <button type="button" role="radio" aria-checked="true" data-s="16" aria-label="Medium brush"><i style="--d:12px"></i></button>
+          <button type="button" role="radio" aria-checked="false" data-s="34" aria-label="Wide brush"><i style="--d:20px"></i></button>
+        </div>
+        <div class="tool-actions">
+          <button type="button" class="pill" aria-pressed="true" data-trace>Trace the flamingo</button>
+          <button type="button" class="pill" data-clear>Start again</button>
+          <button type="button" class="pill pill-solid" data-save>Save my painting</button>
+        </div>
+      </div>
+    </div>
+    <p class="paint-cta">Liked that? Do it properly with a canvas, a glass of wine and Lucie beside you. <a href="#book">Book a Corks &amp; Canvas night</a></p>
+  </section>
+
+  <!-- GALLERY: a wall of tiles -->
+  <section class="wall field-ink" aria-labelledby="wall-title">
+    <div class="tiles" data-tiles>
+      <div class="tile t-teal"><span class="tw" id="wall-title">On the walls</span></div>
+      <figure class="tile tile-photo"><img src="assets/flamingo-sq.jpg" width="700" height="700" alt="Lucie's painting of a pink flamingo on a blue ground" loading="lazy"><figcaption class="cap cap-photo">Flamingo, by Lucie</figcaption></figure>
+      <div class="tile t-pink"><span class="tw">Paint</span><span class="cap">Acrylic, oil, palette knife</span></div>
+      <figure class="tile tile-photo"><img src="assets/wall-left.jpg" width="700" height="700" alt="A studio wall hung with paintings of shells, spirals and a flamingo" loading="lazy"><figcaption class="cap cap-photo">The studio wall</figcaption></figure>
+      <div class="tile t-sand"><span class="tw">Sculpt</span><span class="cap">Driftwood and found pieces</span></div>
+      <div class="tile t-ocean"><span class="tw">Jewels</span><span class="cap">Handmade jewellery</span></div>
+      <figure class="tile tile-photo"><img src="assets/lucie-sq.jpg" width="700" height="700" alt="Lucie painting at her easel" loading="lazy"><figcaption class="cap cap-photo">Lucie at work</figcaption></figure>
+      <div class="tile t-pink"><span class="tw">Textiles</span><span class="cap">Her first love</span></div>
+      <figure class="tile tile-photo"><img src="assets/wall-teal.jpg" width="700" height="700" alt="The studio's turquoise wall with prints, an easel and the Driftwood Studio sign" loading="lazy"><figcaption class="cap cap-photo">The turquoise wall</figcaption></figure>
+      <div class="tile t-sand"><span class="tw">4.9</span><span class="cap">Rated by visitors</span></div>
+      <figure class="tile tile-photo"><img src="assets/palette.jpg" width="700" height="700" alt="A paint box and brushes" loading="lazy"><figcaption class="cap cap-photo">Paint nights</figcaption></figure>
+      <div class="tile t-teal"><span class="tw">Local</span><span class="cap">Island artists and makers</span></div>
+      <figure class="tile tile-photo"><img src="assets/wall-back.jpg" width="700" height="700" alt="Sea paintings, a striped fish and blue spirals on the back wall" loading="lazy"><figcaption class="cap cap-photo">Sea, fish and spirals</figcaption></figure>
+      <div class="tile t-ocean"><span class="tw">Barefoot</span><span class="cap">The studio dress code</span></div>
+      <div class="tile t-sand"><span class="tw">Kids</span><span class="cap">Art camp</span></div>
+      <figure class="tile tile-photo"><img src="assets/studio.jpg" width="700" height="700" alt="Inside Driftwood Studio" loading="lazy"><figcaption class="cap cap-photo">Come in</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- CLASSES: one item per poster line -->
+  <section class="poster field-teal" id="classes" aria-labelledby="classes-title">
+    <h2 id="classes-title" class="sr-only">Classes and services</h2>
+    <ul class="lines">
+      <li><a href="#book" data-pick="Kids art camp"><span class="big">Kids art camp</span><span class="fact">Painting, papermaking, sculpture, crafts</span></a></li>
+      <li><a href="#book" data-pick="Corks &amp; Canvas paint night"><span class="big">Corks &amp; Canvas</span><span class="fact">Wine, snacks, a canvas, a lesson</span></a></li>
+      <li><a href="#book" data-pick="Private group or party"><span class="big">Private groups</span><span class="fact">At the studio, or we come to you</span></a></li>
+      <li><a href="#book" data-pick="Commission"><span class="big">Commissions</span><span class="fact">Paintings and gifts made to order</span></a></li>
+      <li><a href="#book" data-pick="Visit the gallery"><span class="big">Local artists</span><span class="fact">Art, jewellery and textiles from TCI</span></a></li>
+    </ul>
+  </section>
+
+  <!-- LUCIE: inset panel, shaped portrait -->
+  <section class="lucie" id="lucie" aria-labelledby="lucie-title">
+    <div class="panel">
+      <h2 id="lucie-title" class="statement pale">Barefoot, singing, painting.</h2>
+      <div class="panel-text">
+        <div>
+          <h3>From textiles to the Caribbean</h3>
+          <p>Lucie studied Constructed Textiles, then set off to travel the world. She stopped in the Turks and Caicos, fell for the clear water and the bold colours, and decided this was home.</p>
+        </div>
+        <div>
+          <h3>Shown around the world</h3>
+          <p>Her work has been exhibited in the USA, Spain, England and New Zealand, and hangs in private collections and galleries on the island. You can feel the textures in it: try touching one.</p>
+        </div>
+        <a class="btn" href="#book">Paint with Lucie</a>
+      </div>
+      <img class="arch" src="assets/lucie-portrait.jpg" width="900" height="1100" alt="Lucie Winton Stubbs in her studio" loading="lazy">
+    </div>
+  </section>
+
+  <!-- BOOK: photo strip and a three-cell bar -->
+  <section class="book field-pink" id="book" aria-labelledby="book-title">
+    <div class="strip" aria-hidden="true"><div class="strip-track" data-strip><img src="assets/strip-dolphins.jpg" alt="" loading="lazy"><img src="assets/strip-nautilus.jpg" alt="" loading="lazy"><img src="assets/strip-fish.jpg" alt="" loading="lazy"><img src="assets/strip-spiral.jpg" alt="" loading="lazy"><img src="assets/strip-prints.jpg" alt="" loading="lazy"><img src="assets/strip-sign.jpg" alt="" loading="lazy"><img src="assets/strip-seahorse.jpg" alt="" loading="lazy"><img src="assets/strip-swirls.jpg" alt="" loading="lazy"><img src="assets/flamingo-sq.jpg" alt="" loading="lazy"><img src="assets/lucie-sq.jpg" alt="" loading="lazy"><img src="assets/wall-teal.jpg" alt="" loading="lazy"><img src="assets/palette.jpg" alt="" loading="lazy"><img src="assets/strip-dolphins.jpg" alt="" loading="lazy"><img src="assets/strip-nautilus.jpg" alt="" loading="lazy"><img src="assets/strip-fish.jpg" alt="" loading="lazy"><img src="assets/strip-spiral.jpg" alt="" loading="lazy"><img src="assets/strip-prints.jpg" alt="" loading="lazy"><img src="assets/strip-sign.jpg" alt="" loading="lazy"><img src="assets/strip-seahorse.jpg" alt="" loading="lazy"><img src="assets/strip-swirls.jpg" alt="" loading="lazy"><img src="assets/flamingo-sq.jpg" alt="" loading="lazy"><img src="assets/lucie-sq.jpg" alt="" loading="lazy"><img src="assets/wall-teal.jpg" alt="" loading="lazy"><img src="assets/palette.jpg" alt="" loading="lazy"></div></div>
+    <h2 id="book-title" class="statement">Come and play.</h2>
+    <form class="bar" data-book novalidate>
+      <label class="cell"><span class="sr-only">What would you like?</span>
+        <select name="what" data-what>
+          <option>Corks &amp; Canvas paint night</option>
+          <option>Kids art camp</option>
+          <option>Private group or party</option>
+          <option>Commission</option>
+          <option>Visit the gallery</option>
+        </select>
+      </label>
+      <label class="cell"><span class="sr-only">When, and how many people?</span>
+        <input name="when" type="text" placeholder="When, and how many?" autocomplete="off">
+      </label>
+      <a class="cell cell-go" href="mailto:driftwoodtci@gmail.com" data-send>Email Lucie</a>
+    </form>
+    <p class="small">Or call the studio on <a href="tel:+16493423052">649 342 3052</a>. Unit 2, Caicos Café Plaza, 295 Grace Bay Road.</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="ft ft-statement field-sand"><p>A relaxed, cultural little studio, unlike any other in the islands.</p><p class="legal" data-credits>Artwork, studio and portrait photographs are Driftwood Studio's own, from its original website. Paint box photograph: "New Orleans Square Caricature Artist Tools 2014" by Patrick Pelletier (CC BY-SA 3.0), via Wikimedia Commons, a stand-in. © Driftwood Studio, Turks &amp; Caicos.</p></div>
+  <nav class="ft ft-nav field-teal" aria-label="Footer"><a href="#paint">Paint</a><a href="#classes">Classes</a><a href="#lucie">Lucie</a><a href="#book">Book</a><a href="https://www.instagram.com/driftwoodtci/" target="_blank" rel="noopener">Instagram</a></nav>
+  <div class="ft ft-time field-pink"><p>Grace Bay, Providenciales</p><p class="clock"><span data-time>—</span> on the island</p></div>
+  <div class="ft ft-mail field-sand"><a href="mailto:driftwoodtci@gmail.com">driftwoodtci@gmail.com</a><a href="tel:+16493423052">649 342 3052</a></div>
+  <div class="ft ft-mark field-ink"><p>Driftwood</p></div>
+  <a class="ft ft-go" href="#book"><span>Book a paint night</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 40 8M16 8h24v24" fill="none" stroke="currentColor" stroke-width="4"/></svg></a>
+</footer>
+
+<script src="script.js?v=1"></script>
+</body>
+</html>
