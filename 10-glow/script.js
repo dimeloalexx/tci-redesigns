@@ -156,15 +156,33 @@
       max: Math.max(1, document.documentElement.scrollHeight - innerHeight), vh: innerHeight,
     };
   }
-  // the first reel frame is a clip: it plays only while it is the frame in the middle
-  let clipOn = null;
+  // the first reel frame is a live Tabata clock (40s work, 20s rest, 8 rounds); it runs only while it is in the middle
+  const timer = $("[data-timer]"), tDigits = $("[data-t-digits]"), tPhase = $("[data-t-phase]"), tRound = $("[data-t-round]");
+  const WORK = 40, REST = 20, ROUNDS = 8;
+  let tState = { round: 1, work: true, left: WORK }, tId = null, clipOn = null;
+  function drawTimer(bump) {
+    tDigits.textContent = `0:${String(tState.left).padStart(2, "0")}`;
+    tPhase.textContent = tState.work ? "Work" : "Rest";
+    tRound.textContent = `Round ${tState.round} of ${ROUNDS}`;
+    timer.classList.toggle("is-work", tState.work);
+    timer.classList.toggle("is-rest", !tState.work);
+    if (bump && !reduce) { timer.classList.remove("tick"); void timer.offsetWidth; timer.classList.add("tick"); }
+  }
+  function tickTimer() {
+    tState.left -= 1;
+    if (tState.left <= 0) {
+      if (tState.work) tState = { round: tState.round, work: false, left: REST };
+      else tState = { round: tState.round % ROUNDS + 1, work: true, left: WORK };
+    }
+    drawTimer(tState.left === WORK || tState.left === REST || tState.left <= 3);
+  }
   function heroClip(on) {
     if (on === clipOn) return;
     clipOn = on;
-    const el = frames[0].firstElementChild;
-    if (el.tagName === "VIDEO") { if (on) tryPlay(el); else el.pause(); }
-    else if (el.tagName === "IMG") el.src = on ? "assets/clip-mural.mp4" : "assets/clip-mural.jpg";
+    if (on && !tId) tId = setInterval(tickTimer, 1000);
+    if (!on && tId) { clearInterval(tId); tId = null; }
   }
+  drawTimer(false);
   let ticking = false, lastClock = "", lastDock = null;
   function onScroll() {
     ticking = false;

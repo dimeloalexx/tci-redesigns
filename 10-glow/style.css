@@ -56,6 +56,14 @@ button, input { font: inherit; color: inherit; }
 .reel { position: absolute; left: 0; right: 0; top: calc(var(--gap) + var(--peek)); display: flex; flex-direction: column; gap: var(--gap); will-change: transform; }
 .frame { display: block; height: var(--fh); border-radius: var(--radius); overflow: hidden; background: var(--surface); transform: translateZ(0); }
 .frame img, .frame video { width: 100%; height: 100%; object-fit: cover; }
+/* the live interval clock: 40s work in cyan, 20s rest in yellow */
+.frame-timer { display: flex; flex-direction: column; justify-content: space-between; padding: 14px 18px; background: var(--ink); color: var(--cyan); transition: background-color .35s ease, color .35s ease; }
+.frame-timer.is-rest { background: var(--yellow); color: var(--ink); }
+.t-top { display: flex; justify-content: space-between; font-size: .9375rem; font-weight: 600; letter-spacing: .02em; }
+.t-digits { align-self: center; font-weight: 800; font-stretch: 62%; line-height: .8; font-size: calc(var(--fh) * .56); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.t-phase { align-self: center; font-weight: 800; font-stretch: 62%; text-transform: uppercase; word-spacing: .08em; font-size: calc(var(--fh) * .14); line-height: 1; }
+.frame-timer.tick .t-digits { animation: tick .3s var(--ease); }
+@keyframes tick { from { transform: scale(1.06); } }
 .hero-foot { display: grid; gap: 14px; }
 .support { font-size: 1rem; max-width: 36ch; }
 
