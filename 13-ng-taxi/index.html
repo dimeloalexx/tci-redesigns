@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>N&amp;G Taxi and Tours | Taxis &amp; Island Tours | Providenciales, Turks &amp; Caicos</title>
+  <meta name="description" content="N&amp;G Taxi and Tours: local taxis and island tours on Providenciales, Turks and Caicos. Pay per ride, one flat rate for your whole stay, or send your itinerary and we arrange it. Book on WhatsApp.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="N&amp;G Taxi and Tours — taxi this way">
+  <meta property="og:image" content="assets/signpost.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="concept-strip" role="note">Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+
+<main id="top">
+
+  <!-- HERO: an airport sign -->
+  <section class="hero" aria-labelledby="hero-title">
+    <header class="top">
+      <a class="mark" href="#top">N&amp;G <span>Taxi &amp; Tours</span></a>
+      <nav class="links" aria-label="Sections">
+        <a href="#board">Your rides</a>
+        <a href="#gates">Ways to pay</a>
+        <a href="#where">Where to</a>
+      </nav>
+    </header>
+    <div class="sign">
+      <h1 id="hero-title" class="shout"><span class="ln">Taxi</span><span class="ln">this way <span class="arrow" aria-hidden="true">→</span></span></h1>
+      <span class="picto" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M14 30l5-11c1-2 3-3 5-3h16c2 0 4 1 5 3l5 11"/><rect x="9" y="30" width="46" height="14" rx="3"/><circle cx="20" cy="46" r="5"/><circle cx="44" cy="46" r="5"/><rect x="26" y="9" width="12" height="6" rx="1"/></svg>
+      </span>
+    </div>
+    <img class="scrap" src="assets/signpost.jpg" width="750" height="1000" alt="A beach signpost covered in painted arrows pointing to cities around the world, under a palm tree" fetchpriority="high">
+    <div class="hero-band">
+      <p>Local taxi and island tours on Providenciales. Send us your plans on WhatsApp and we'll arrange your rides.</p>
+      <a class="btn" href="https://wa.me/16492432859" target="_blank" rel="noopener">Message us on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- THE LIVE THING: a departures board of your rides -->
+  <section class="board-sec" id="board" aria-labelledby="board-title">
+    <div class="board-head">
+      <h2 id="board-title" class="sign-title"><span class="tag">1</span> Your rides</h2>
+      <p>Tap the rides you'll need. They land on the board, and we'll tell you which way of paying suits your trip.</p>
+    </div>
+
+    <div class="board-grid">
+      <div class="picker">
+        <div class="day-pick">
+          <span id="day-l">Add to</span>
+          <span class="stepper" role="group" aria-labelledby="day-l"><button type="button" data-day="-1" aria-label="Earlier day">‹</button><output data-day-out>Day 1</output><button type="button" data-day="1" aria-label="Later day">›</button></span>
+        </div>
+        <div class="chips" data-chips>
+          <button type="button" data-ride="arrive">Land at the airport</button>
+          <button type="button" data-ride="dinner">Dinner in Grace Bay</button>
+          <button type="button" data-ride="groceries">Supermarket run</button>
+          <button type="button" data-ride="chalk">Chalk Sound &amp; Sapodilla Hill</button>
+          <button type="button" data-ride="turtle">Turtle Cove</button>
+          <button type="button" data-ride="fishfry">Thursday Fish Fry</button>
+          <button type="button" data-ride="tour">Island tour</button>
+          <button type="button" data-ride="depart">Fly home</button>
+        </div>
+        <p class="hint">Tap a row on the board to take it off.</p>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" data-ui role="table" aria-label="Your rides">
+          <div class="b-row b-head" role="row"><span role="columnheader">Day</span><span role="columnheader">Time</span><span role="columnheader">Ride</span><span role="columnheader">Status</span></div>
+          <div class="b-rows" data-rows aria-live="polite"></div>
+        </div>
+        <div class="verdict" data-verdict aria-live="polite">
+          <p class="v-gate" data-v-gate>Gate A</p>
+          <div>
+            <p class="v-title" data-v-title>Pay as you go</p>
+            <p class="v-why" data-v-why>Add your rides and we'll suggest the best way to pay.</p>
+          </div>
+        </div>
+        <a class="btn btn-wide" href="https://wa.me/16492432859" target="_blank" rel="noopener" data-send>Send my rides on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAYS TO PAY: three gates -->
+  <section class="gates" id="gates" aria-labelledby="gates-title">
+    <h2 id="gates-title" class="sign-title dark"><span class="tag">2</span> Three ways to pay</h2>
+    <div class="passes">
+      <article class="pass" data-ui>
+        <p class="p-gate">Gate A</p>
+        <h3>Pay as you go</h3>
+        <p>Pay per ride as you move from one place to another.</p>
+        <p class="p-best">Best for: a few rides, a laid-back stay.</p>
+      </article>
+      <article class="pass" data-ui>
+        <p class="p-gate">Gate B</p>
+        <h3>Pay for your whole trip</h3>
+        <p>Enjoy unlimited rides for a flat rate throughout your stay.</p>
+        <p class="p-best">Best for: out every day, dinners every night.</p>
+      </article>
+      <article class="pass" data-ui>
+        <p class="p-gate">Gate C</p>
+        <h3>Planned travel</h3>
+        <p>Send us your itinerary, and we'll arrange your transport for you.</p>
+        <p class="p-best">Best for: a plan with times and places.</p>
+      </article>
+    </div>
+    <p class="gates-note">Rates are quoted on WhatsApp for your dates and group. <a href="https://wa.me/16492432859" target="_blank" rel="noopener">Ask for yours</a></p>
+  </section>
+
+  <!-- WHERE TO: wayfinding signs -->
+  <section class="where" id="where" aria-labelledby="where-title">
+    <h2 id="where-title" class="sign-title"><span class="tag">3</span> Where to?</h2>
+    <ul class="dests">
+      <li><img src="assets/grace-bay.jpg" width="1400" height="933" alt="Umbrellas and loungers on Grace Bay Beach" loading="lazy"><div><b>Grace Bay <span aria-hidden="true">→</span></b><p>The famous beach, its resorts and restaurants.</p></div></li>
+      <li><img src="assets/chalk-sound.jpg" width="1200" height="900" alt="The turquoise lagoon of Chalk Sound dotted with small green cays" loading="lazy"><div><b>Chalk Sound <span aria-hidden="true">→</span></b><p>A turquoise lagoon dotted with tiny cays, and Sapodilla Hill just above it.</p></div></li>
+      <li><img src="assets/turtle-cove.jpg" width="1400" height="934" alt="A palm and turquoise shallows at Turtle Cove" loading="lazy"><div><b>Turtle Cove <span aria-hidden="true">→</span></b><p>Marina restaurants and the reef right off the beach.</p></div></li>
+      <li><img src="assets/cheshire-hall.jpg" width="1200" height="900" alt="Stone ruins of the main house at Cheshire Hall plantation" loading="lazy"><div><b>Cheshire Hall <span aria-hidden="true">→</span></b><p>Ruins of a Loyalist cotton plantation from the 1790s.</p></div></li>
+      <li><img src="assets/sunset.jpg" width="1600" height="940" alt="Sunset over the beach" loading="lazy"><div><b>The Bight Fish Fry <span aria-hidden="true">→</span></b><p>Thursday nights, local food and music by the beach.</p></div></li>
+      <li><img src="assets/ride.jpg" width="1024" height="768" alt="The road ahead seen from inside a car on Leeward Highway" loading="lazy"><div><b>Anywhere else <span aria-hidden="true">→</span></b><p>Supermarket, ferry, doctor, a friend's villa. Just ask.</p></div></li>
+    </ul>
+  </section>
+
+  <!-- LAST CALL -->
+  <section class="last" aria-labelledby="last-title">
+    <h2 id="last-title" class="shout small">Last call</h2>
+    <p>Book your ride on WhatsApp, or call us directly.</p>
+    <div class="last-actions">
+      <a class="btn btn-dark" href="https://wa.me/16492432859" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      <a class="call" href="tel:+16492432859">+1 (649) 243-2859</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot-mark">N&amp;G Taxi &amp; Tours</p>
+  <p>Providenciales, Turks &amp; Caicos · <a href="https://wa.me/16492432859" target="_blank" rel="noopener">WhatsApp +1 (649) 243-2859</a></p>
+  <p class="credits">Stand-in photographs, via Wikimedia Commons: Long Bay Beach signpost by Deanna Ritchie (CC0); Chalk Sound by Simone Costa (public domain); Cheshire Hall main house by Dwkaminski (CC BY-SA 4.0); Leeward Highway by Rian Castillo (CC BY 2.0); Grace Bay by VV Nincic (CC BY 2.0); Turtle Cove by Tim Sackton (CC BY-SA 2.0); Sunset in Grace Bay by Jason Boldero (CC BY 2.0). © N&amp;G Taxi and Tours.</p>
+</footer>
+
+<script src="script.js?v=1"></script>
+</body>
+</html>
