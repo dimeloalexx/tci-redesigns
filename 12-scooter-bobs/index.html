@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scooter Bob's | Car, Van, E-bike &amp; Bicycle Rental | Turtle Cove, Providenciales</title>
+  <meta name="description" content="Scooter Bob's has rented cars, vans, trucks, e-bikes and bicycles in Turtle Cove, Providenciales since 1984. Your car waits at the airport with your name on the windshield. Master Baits tackle shop inside.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Scooter Bob's — your car is waiting at the airport">
+  <meta property="og:image" content="assets/suv.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="concept-strip" role="note">Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+
+<main id="top">
+
+  <!-- HERO: the badge, built huge -->
+  <section class="hero" aria-labelledby="hero-title">
+    <header class="top">
+      <a class="brand" href="#top"><img src="assets/badge.png" width="600" height="600" alt=""><span>Scooter Bob's</span></a>
+      <nav class="links" aria-label="Sections">
+        <a href="#rides">Rides</a>
+        <a href="#baits">Master Baits</a>
+        <a href="#story">Since 1984</a>
+        <a class="btn btn-sm" href="#quote">Get my quote</a>
+      </nav>
+    </header>
+    <div class="disc-hero" aria-hidden="true">
+      <svg class="ring" viewBox="0 0 400 400" data-ring>
+        <defs><path id="ringpath" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"/></defs>
+        <circle cx="200" cy="200" r="200" class="ring-fill"/>
+        <text class="ring-text"><textPath href="#ringpath" startOffset="0">SCOOTER BOB'S · TURTLE COVE · SINCE 1984 · CARS · VANS · E-BIKES · BICYCLES ·</textPath></text>
+      </svg>
+      <img class="disc-photo" src="assets/suv.jpg" width="900" height="900" alt="" fetchpriority="high">
+    </div>
+    <div class="hero-text">
+      <h1 id="hero-title" class="display"><span class="wr">Your car is waiting</span> <span class="wr">at the airport.</span></h1>
+      <p class="lead">Car, van, e-bike and bicycle rental in Turtle Cove since 1984. Clear customs, find your name on the windshield, take the key from the visor.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#quote">Get my quote</a>
+        <a class="link" href="tel:+16499464684">Call 649 946 4684</a>
+      </div>
+      <p class="status" data-status>Open today, 9am to 5pm</p>
+    </div>
+  </section>
+
+  <!-- RIDES: object on a disc -->
+  <section class="rides" id="rides" aria-labelledby="rides-title">
+    <div class="disc-stage">
+      <div class="disc" data-disc>
+        <img class="is-on" data-ride-img="economy" src="assets/economy.jpg" width="900" height="900" alt="Scooter Bob's small rental cars parked under the trees in Turtle Cove">
+        <img data-ride-img="suv" src="assets/suv.jpg" width="900" height="900" alt="A white rental SUV parked on the sand beside turquoise water" loading="lazy">
+        <img data-ride-img="van" src="assets/van.jpg" width="700" height="700" alt="Scooter Bob's Toyota Hi-Ace passenger van" loading="lazy">
+        <img data-ride-img="truck" src="assets/truck.jpg" width="680" height="680" alt="A Scooter Bob's work truck with the maple-leaf badge on the door" loading="lazy">
+        <img data-ride-img="ebike" src="assets/ebike.jpg" width="700" height="700" alt="A Rad electric bike" loading="lazy">
+        <img data-ride-img="cruiser" src="assets/cruiser.jpg" width="717" height="717" alt="A row of beach cruiser bicycles outside the shop" loading="lazy">
+        <img data-ride-img="snorkel" src="assets/snorkel.jpg" width="770" height="770" alt="A snorkel set: mask, snorkel and fins" loading="lazy">
+      </div>
+    </div>
+    <div class="ride-list">
+      <h2 id="rides-title" class="list-head">Pick your ride</h2>
+      <div class="ride-names" role="tablist" aria-label="Rides" data-ride-tabs>
+        <button type="button" role="tab" aria-selected="true" data-ride="economy">Economy cars</button>
+        <button type="button" role="tab" aria-selected="false" data-ride="suv">SUVs &amp; Jeeps</button>
+        <button type="button" role="tab" aria-selected="false" data-ride="van">Vans</button>
+        <button type="button" role="tab" aria-selected="false" data-ride="truck">Pick-up truck</button>
+        <button type="button" role="tab" aria-selected="false" data-ride="ebike">E-bikes</button>
+        <button type="button" role="tab" aria-selected="false" data-ride="cruiser">Beach cruisers</button>
+        <button type="button" role="tab" aria-selected="false" data-ride="snorkel">Snorkel sets</button>
+      </div>
+      <div class="ride-facts" role="tabpanel" aria-live="polite" data-ride-facts></div>
+    </div>
+  </section>
+
+  <!-- THE LIVE THING: your name on the windshield -->
+  <section class="quote" id="quote" aria-labelledby="quote-title">
+    <h2 id="quote-title" class="display small-display">Your name on the windshield.</h2>
+    <div class="quote-grid">
+      <form class="coupon" data-ui data-quote novalidate>
+        <div class="c-left">
+          <p class="c-title">Reserve<br>a ride</p>
+          <p class="c-note">Advance reservations are needed. Scooter Bob's confirms by email.</p>
+        </div>
+        <div class="c-right">
+          <label><span class="sr-only">Family name</span><input name="family" type="text" placeholder="Your family name" maxlength="18" autocomplete="family-name"></label>
+          <label><span class="sr-only">Ride</span><select name="model" data-model></select></label>
+          <div class="c-row">
+            <span class="c-label" id="days-l">Days</span>
+            <span class="stepper" role="group" aria-labelledby="days-l"><button type="button" data-d="-1" aria-label="One day fewer">−</button><output data-days>5</output><button type="button" data-d="1" aria-label="One more day">+</button></span>
+          </div>
+          <label><span class="sr-only">Pick up</span>
+            <select name="where">
+              <option value="the airport parking lot">Waiting at the airport</option>
+              <option value="our hotel or villa">Delivered to my hotel or villa</option>
+              <option value="the Turtle Cove office">I'll come to Turtle Cove</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" name="cdw"><span>Add collision cover, $15 a day</span></label>
+        </div>
+      </form>
+
+      <div class="windshield-wrap">
+        <div class="windshield" data-ui aria-live="polite">
+          <div class="placard">
+            <p class="p-top">Welcome to Provo</p>
+            <p class="p-name" data-p-name>The Your-Name family</p>
+            <p class="p-ride" data-p-ride>Toyota Vitz · key in the visor</p>
+          </div>
+          <span class="visor" aria-hidden="true"></span>
+        </div>
+        <dl class="bill" data-bill></dl>
+        <div class="bill-actions">
+          <a class="btn" href="mailto:scooterbobs@gmail.com" data-send>Send this to Scooter Bob's</a>
+          <a class="link" href="tel:+16499464684">or call 649 946 4684</a>
+        </div>
+        <p class="fine">Unlimited mileage. Extra driver free. Gas: no charge if you return it at the same level. Drivers on anything with a motor must be 25 or older. Airport parking booth: $2 an hour. Visa, Mastercard, Amex. Rates from Scooter Bob's own rate sheet; final price confirmed when you book.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE BAND that splits the page -->
+  <div class="band" aria-hidden="true"><div class="band-track"><span>Cars · Vans · Trucks · E-bikes · Bicycles · Bait · Tackle · Since 1984 · </span><span>Cars · Vans · Trucks · E-bikes · Bicycles · Bait · Tackle · Since 1984 · </span></div></div>
+
+  <!-- MASTER BAITS: two-column menu with round photo bullets -->
+  <section class="baits" id="baits" aria-labelledby="baits-title">
+    <div class="baits-head">
+      <h2 id="baits-title" class="display small-display">Master Baits</h2>
+      <p>The tackle shop inside the rental office. Grab your fishing licence here, then load up on the way to Turtle Cove.</p>
+    </div>
+    <img class="baits-photo" src="assets/master-baits.jpg" width="1000" height="1000" alt="Inside Master Baits: a counter under a wooden sign, walls of lures, hats and fishing shirts" loading="lazy">
+    <ul class="items">
+      <li><img src="assets/lures.jpg" width="700" height="700" alt="" loading="lazy"><div><b>Lures, squid &amp; ballyhoo</b><p>Frozen bait and bright lures for the reef, the flats or the deep.</p></div></li>
+      <li><img src="assets/rods.jpg" width="700" height="700" alt="" loading="lazy"><div><b>Rods, reels &amp; line</b><p>For bonefishing, shore, dock and deep-sea fishing.</p></div></li>
+      <li><img src="assets/fly-corner.jpg" width="700" height="700" alt="" loading="lazy"><div><b>The Fly Corner</b><p>A make-your-own-fly station, right in the shop.</p></div></li>
+      <li><img src="assets/flies.jpg" width="600" height="600" alt="" loading="lazy"><div><b>Custom bonefish flies</b><p>Tied for the flats around Provo.</p></div></li>
+      <li><img src="assets/kids-poles.jpg" width="700" height="700" alt="" loading="lazy"><div><b>Kids' fishing poles</b><p>Child-sized, and a fun one for adults too.</p></div></li>
+      <li><img src="assets/hats.jpg" width="700" height="700" alt="" loading="lazy"><div><b>Hats &amp; fishing shirts</b><p>Master Baits on the front, a sedate Scooter Bob's badge on the back.</p></div></li>
+      <li><img src="assets/cold-drinks.jpg" width="700" height="700" alt="" loading="lazy"><div><b>Cold drinks, sunblock &amp; snacks</b><p>Soda, ice chests, neck gaiters and Cheetos for the road.</p></div></li>
+      <li><img src="assets/snorkel.jpg" width="770" height="770" alt="" loading="lazy"><div><b>Snorkel sets to rent</b><p>Mask, fins and snorkel, $15 a day. No room needed in your carry-on.</p></div></li>
+    </ul>
+  </section>
+
+  <!-- STORY: inset panel, round photo -->
+  <section class="story" id="story" aria-labelledby="story-title">
+    <div class="panel">
+      <h2 id="story-title" class="display small-display pale"><span class="wr">On the way to Turtle Cove</span> <span class="wr">since 1984.</span></h2>
+      <div class="panel-text">
+        <div>
+          <h3>Every car has a name</h3>
+          <p>One family of eleven found their van, Dawg Breath, waiting in the airport lot with their name on the windshield. Another guest fell for a little car called Pine.</p>
+        </div>
+        <div>
+          <h3>Not corporate</h3>
+          <p>Decades on the water at Turtle Cove Marina, on Suzy Turn Road since 2020. Bob has been known to drive guests to the airport himself, and Yan has saved more than one vacation.</p>
+        </div>
+        <a class="btn btn-light" href="#quote">Get my quote</a>
+      </div>
+      <img class="round" src="assets/aerial.jpg" width="640" height="640" alt="Scooter Bob's from the air: the orange building, the deck and the parking area" loading="lazy">
+    </div>
+  </section>
+
+  <!-- PROOF: big words on tiles -->
+  <section class="proof" aria-labelledby="proof-title">
+    <div class="tiles">
+      <div class="tile tile-head"><h2 id="proof-title">4.7 from 276 reviews</h2><p>What guests say, in their own words.</p></div>
+      <blockquote class="tile"><p>“Great folks, honest prices, not corporate.”</p></blockquote>
+      <blockquote class="tile"><p>“We literally cleared customs and were in our vehicle within 5 minutes.”</p></blockquote>
+      <blockquote class="tile"><p>“Keys and map were on the front seat, labeled with our name.”</p></blockquote>
+      <blockquote class="tile"><p>“Scooter Bob himself even gave us a ride to the airport.”</p></blockquote>
+      <blockquote class="tile"><p>“Yan literally saved our vacation twice.”</p></blockquote>
+      <blockquote class="tile"><p>“We switched our car for the 4WD for a day with no extra charge.”</p></blockquote>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <svg class="foot-badge" viewBox="0 0 400 400" aria-hidden="true">
+    <defs><path id="ringpath2" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"/></defs>
+    <circle cx="200" cy="200" r="200" class="ring-fill"/>
+    <circle cx="200" cy="200" r="138" class="ring-inner"/>
+    <text class="ring-text"><textPath href="#ringpath2">SCOOTER BOB'S · BEAV AIR LTD · 946-4684 · SINCE 1984 ·</textPath></text>
+    <text x="200" y="196" text-anchor="middle" class="foot-big">Bob's</text>
+    <text x="200" y="244" text-anchor="middle" class="foot-small">Turtle Cove · Provo</text>
+  </svg>
+  <div class="foot-cols">
+    <nav aria-label="Footer"><a href="#rides">Rides</a><a href="#quote">Get my quote</a><a href="#baits">Master Baits</a><a href="#story">Since 1984</a></nav>
+    <div><p>Suzy Turn Road, Turtle Cove<br>Providenciales, Turks &amp; Caicos</p><p>Mon to Sat 9am to 5pm<br>Sundays &amp; holidays 9am to 1pm</p></div>
+    <div><p><a href="tel:+16499464684">649 946 4684</a><br><a href="mailto:scooterbobs@gmail.com">scooterbobs@gmail.com</a></p></div>
+  </div>
+  <div class="foot-last"><p>Photographs and the badge are Scooter Bob's own, from its website. Reviews are guests' words quoted from that site; rating from VisitTCI. © Scooter Bob's, Turks &amp; Caicos.</p><a class="btn btn-sm" href="#quote">Get my quote</a></div>
+</footer>
+
+<script src="script.js?v=1"></script>
+</body>
+</html>
