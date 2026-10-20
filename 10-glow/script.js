@@ -16,9 +16,17 @@
     const size = Math.min(fs * room / longest.scrollWidth, desk.matches ? innerHeight * 0.3 : innerWidth * 0.3);
     halves.forEach(h => (h.style.fontSize = `${size}px`));
   }
-  document.fonts.ready.then(fitHalves);
-  addEventListener("resize", fitHalves);
-  fitHalves();
+  const giant = $(".giant");
+  function fitGiant() {
+    giant.style.fontSize = "";
+    const pad = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--pad")) || 16;
+    const fs = parseFloat(getComputedStyle(giant).fontSize);
+    giant.style.fontSize = `${Math.floor(fs * (innerWidth - 2 * pad) / giant.scrollWidth)}px`;
+  }
+  const fitAll = () => { fitHalves(); fitGiant(); };
+  document.fonts.ready.then(fitAll);
+  addEventListener("resize", fitAll);
+  fitAll();
 
   // ---------- Reveals ----------
   const rev = $$(".features .picture-para, .ft-foot, .price-foot, .pl-inputs > *, .pl-result, .facts li, .bio > *, .contact-ask, .contact-corners, .foot-top > *");
@@ -33,16 +41,25 @@
   }
 
   // ---------- Videos only play while they are on screen ----------
+  // They are short, silent loops of Nancy's own workouts, so they keep playing with reduced motion too.
+  // When a phone refuses to autoplay (iPhone Low Power Mode, in-app browsers), swap the clip for an <img>
+  // pointing at the same MP4: Safari animates MP4 in an image; anything else falls back to the poster.
+  function toImage(v) {
+    if (!v.isConnected) return;
+    const img = new Image();
+    img.className = v.className; img.alt = ""; img.setAttribute("aria-hidden", "true");
+    img.onerror = () => { img.onerror = null; img.src = v.getAttribute("poster"); };
+    img.src = v.getAttribute("src");
+    v.replaceWith(img);
+  }
   const vids = $$("video");
+  const tryPlay = v => { if (v.preload === "none") v.preload = "auto"; const p = v.play(); if (p) p.catch(err => { if (err && err.name === "NotAllowedError") toImage(v); }); };
   if ("IntersectionObserver" in window) {
     const vio = new IntersectionObserver(es => es.forEach(e => {
-      const v = e.target;
-      if (e.isIntersecting && !reduce) { if (v.preload === "none") v.preload = "auto"; v.play().catch(() => {}); }
-      else v.pause();
+      if (e.isIntersecting) tryPlay(e.target); else if (e.target.isConnected) e.target.pause();
     }), { rootMargin: "200px 0px" });
     vids.forEach(v => vio.observe(v));
-  }
-  if (reduce) vids.forEach(v => { v.removeAttribute("autoplay"); v.pause(); });
+  } else vids.forEach(tryPlay);
 
   // ---------- Class card planner ----------
   const PACKS = [{ n: 20, cost: 460, months: 6 }, { n: 10, cost: 240, months: 4 }, { n: 5, cost: 125, months: 2 }, { n: 1, cost: 30 }];
@@ -133,7 +150,7 @@
     const h = hero.getBoundingClientRect();
     const run = Math.max(1, h.height - innerHeight);
     const p = Math.min(1, Math.max(0, -h.top / run));
-    if (!reduce) {
+    {
       const step = frames[0].offsetHeight + parseFloat(getComputedStyle(reel).rowGap || 0);
       reel.style.transform = `translate3d(0, ${(-p * (frames.length - 1) * step).toFixed(1)}px, 0)`;
     }

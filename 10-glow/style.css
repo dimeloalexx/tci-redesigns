@@ -153,7 +153,7 @@ button, input { font: inherit; color: inherit; }
 .invite { font-weight: 800; font-stretch: 62%; text-transform: uppercase; word-spacing: .08em; line-height: .9; font-size: 15vw; margin-bottom: 20px; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: .9375rem; }
 .legal { margin-top: 48px; display: grid; gap: 8px; font-size: var(--step-small); color: var(--ink); max-width: 70ch; }
-.giant { font-weight: 800; font-stretch: 62%; line-height: .8; font-size: 52vw; letter-spacing: -0.02em; color: var(--ink); white-space: nowrap; transform: translateY(28%); margin-top: 8px; }
+.giant { font-weight: 800; font-stretch: 62%; line-height: .8; font-size: 40vw; letter-spacing: -0.02em; color: var(--ink); white-space: nowrap; margin: 24px 0 0; padding-bottom: 20px; text-align: center; }
 
 /* ---------- Dock: the GFIT45 clock ---------- */
 .dock { position: fixed; z-index: 30; left: 12px; right: 12px; bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 8px 8px 16px; border-radius: var(--radius); background: var(--ink); color: var(--bg); font-size: .9375rem; transform: translateY(calc(100% + 24px)); transition: transform .45s var(--ease); }
@@ -193,7 +193,7 @@ button, input { font: inherit; color: inherit; }
   .panel::after { content: none; }
   .panel-media { inset: auto; left: 50%; top: 50%; transform: translate(-50%, -50%); width: auto; height: 84svh; max-width: 70vw; aspect-ratio: 9 / 16; border-radius: var(--radius); }
   .panel:first-child .panel-media { aspect-ratio: 1; }
-  .panel img.panel-media { aspect-ratio: 3 / 2; }
+  .panel .panel-photo { aspect-ratio: 3 / 2; }
   .panel-line { background: var(--ink); }
   .price { min-height: 80svh; padding: 160px var(--pad) 140px; }
   .price-line { font-size: 9vw; }
@@ -217,7 +217,7 @@ button, input { font: inherit; color: inherit; }
   .foot-links { flex-direction: column; gap: 10px; font-size: 1rem; }
   .legal { margin-top: auto; padding-top: 48px; display: flex; justify-content: space-between; gap: 32px; max-width: none; }
   .legal p:first-child { max-width: 70ch; }
-  .giant { font-size: 34vw; }
+  .giant { padding-bottom: 32px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
