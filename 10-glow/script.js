@@ -25,7 +25,8 @@
   }
   const fitAll = () => { fitHalves(); fitGiant(); };
   document.fonts.ready.then(fitAll);
-  addEventListener("resize", fitAll);
+  let lastW = innerWidth;
+  addEventListener("resize", () => { if (innerWidth !== lastW) { lastW = innerWidth; fitAll(); } });
   fitAll();
 
   // ---------- Reveals ----------
@@ -58,7 +59,7 @@
     const vio = new IntersectionObserver(es => es.forEach(e => {
       if (e.isIntersecting) tryPlay(e.target); else if (e.target.isConnected) e.target.pause();
     }), { rootMargin: "200px 0px" });
-    vids.forEach(v => vio.observe(v));
+    vids.filter(v => !v.closest(".reel")).forEach(v => vio.observe(v));
   } else vids.forEach(tryPlay);
 
   // ---------- Class card planner ----------
@@ -142,28 +143,49 @@
   render();
 
   // ---------- Scroll: the reel, the dock and the GFIT45 clock ----------
+  // Everything is measured once (and again only when the width changes); a scroll frame does arithmetic only.
   const hero = $("[data-hero]"), reel = $("[data-reel]"), frames = $$(".frame", reel);
   const dock = $("[data-dock]"), clock = $("[data-clock]"), contact = $("#contact"), plan = $("#plan");
-  let ticking = false;
+  const top = el => el.getBoundingClientRect().top + scrollY;
+  let m = {};
+  function measure() {
+    m = {
+      heroTop: top(hero), heroRun: Math.max(1, hero.offsetHeight - innerHeight), heroBottom: top(hero) + hero.offsetHeight,
+      step: frames[0].offsetHeight + (parseFloat(getComputedStyle(reel).rowGap) || 0),
+      planTop: top(plan), planBottom: top(plan) + plan.offsetHeight, contactTop: top(contact),
+      max: Math.max(1, document.documentElement.scrollHeight - innerHeight), vh: innerHeight,
+    };
+  }
+  // the first reel frame is a clip: it plays only while it is the frame in the middle
+  let clipOn = null;
+  function heroClip(on) {
+    if (on === clipOn) return;
+    clipOn = on;
+    const el = frames[0].firstElementChild;
+    if (el.tagName === "VIDEO") { if (on) tryPlay(el); else el.pause(); }
+    else if (el.tagName === "IMG") el.src = on ? "assets/clip-mural.mp4" : "assets/clip-mural.jpg";
+  }
+  let ticking = false, lastClock = "", lastDock = null;
   function onScroll() {
     ticking = false;
-    const h = hero.getBoundingClientRect();
-    const run = Math.max(1, h.height - innerHeight);
-    const p = Math.min(1, Math.max(0, -h.top / run));
-    {
-      const step = frames[0].offsetHeight + parseFloat(getComputedStyle(reel).rowGap || 0);
-      reel.style.transform = `translate3d(0, ${(-p * (frames.length - 1) * step).toFixed(1)}px, 0)`;
-    }
-    const doc = document.documentElement;
-    const page = Math.min(1, scrollY / Math.max(1, doc.scrollHeight - innerHeight));
-    const secs = Math.round(45 * 60 * (1 - page));
-    clock.textContent = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
-    const c = contact.getBoundingClientRect();
-    const pr = plan.getBoundingClientRect();
-    const atPlan = pr.top < innerHeight && pr.bottom > 0;
-    dock.classList.toggle("is-on", h.bottom < innerHeight * 0.5 && c.top > innerHeight * 0.6 && !atPlan);
+    const y = scrollY;
+    const p = Math.min(1, Math.max(0, (y - m.heroTop) / m.heroRun));
+    reel.style.transform = `translate3d(0, ${(-p * (frames.length - 1) * m.step).toFixed(1)}px, 0)`;
+    heroClip(p < 0.2 && y < m.heroBottom);
+    const secs = Math.round(45 * 60 * (1 - Math.min(1, y / m.max)));
+    const txt = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
+    if (txt !== lastClock) { clock.textContent = txt; lastClock = txt; }
+    const atPlan = m.planTop < y + m.vh && m.planBottom > y;
+    const show = m.heroBottom - y < m.vh * 0.5 && m.contactTop - y > m.vh * 0.6 && !atPlan;
+    if (show !== lastDock) { dock.classList.toggle("is-on", show); lastDock = show; }
   }
+  const refresh = () => { measure(); onScroll(); };
   addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-  addEventListener("resize", onScroll);
-  onScroll();
+  let lastWidth = innerWidth;
+  addEventListener("resize", () => { if (innerWidth !== lastWidth) { lastWidth = innerWidth; refresh(); } });
+  addEventListener("load", refresh);
+  document.fonts.ready.then(refresh);
+  // the class planner and reveals can change the page height a little; re-measure now and then
+  setInterval(measure, 2000);
+  refresh();
 })();
