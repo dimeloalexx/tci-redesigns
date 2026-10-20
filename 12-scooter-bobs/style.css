@@ -25,9 +25,10 @@ a { color: inherit; }
 button, input, select { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.display { font-weight: 800; letter-spacing: -0.05em; line-height: .88; font-size: clamp(2.6rem, 11vw, 7rem); }
+.display { font-weight: 800; letter-spacing: -0.05em; word-spacing: .1em; line-height: 1; font-size: clamp(2.6rem, 11vw, 7rem); }
 .small-display { font-size: clamp(2.25rem, 8vw, 4.5rem); }
 .pale { color: var(--paper); }
+.story h2 .wr { display: block; white-space: nowrap; }
 
 .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .8s var(--ease); }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
@@ -47,12 +48,12 @@ button, input, select { font: inherit; color: inherit; }
 .brand img { width: 46px; height: 46px; border-radius: 50%; background: #fff; }
 .links { display: flex; align-items: center; gap: 18px; font-size: .9375rem; font-weight: 600; }
 .links a:not(.btn) { display: none; text-decoration: none; }
-.disc-hero { position: absolute; z-index: 1; width: 118vw; aspect-ratio: 1; right: -48vw; top: 36px; }
+.disc-hero { position: absolute; z-index: 1; width: 96vw; aspect-ratio: 1; right: -34vw; top: 76px; }
 .ring { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ring-fill { fill: var(--red); }
 .ring-text { fill: #fff; font: 800 19px var(--font); letter-spacing: .12em; }
 .disc-photo { position: absolute; inset: 17%; width: 66%; height: 66%; border-radius: 50%; object-fit: cover; }
-.hero-text { position: relative; z-index: 2; margin-top: auto; display: grid; gap: 18px; padding-top: 70vw; }
+.hero-text { position: relative; z-index: 2; margin-top: auto; display: grid; gap: 18px; padding-top: calc(96vw + 18px); }
 .hero h1 { font-size: 9.2vw; }
 .hero h1 .wr { display: block; white-space: nowrap; }
 .status { display: inline-flex; align-items: center; gap: 10px; justify-self: start; padding: 8px 14px; border-radius: 999px; background: var(--navy-2); font-size: .9375rem; font-weight: 600; }
@@ -112,11 +113,11 @@ button, input, select { font: inherit; color: inherit; }
 .placard.pop { animation: pop .45s var(--ease); }
 @keyframes pop { 40% { transform: rotate(-2deg) scale(1.05); } }
 .p-top { font-size: .9375rem; font-weight: 800; color: var(--red); }
-.p-name { margin-top: 4px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-size: clamp(1.5rem, 6.4vw, 2.4rem); overflow-wrap: anywhere; }
-.p-ride { margin-top: 8px; font-size: .9375rem; color: #44507a; }
+.p-name { margin-top: 8px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; font-size: clamp(1.5rem, 6.4vw, 2.4rem); overflow-wrap: anywhere; }
+.p-ride { margin-top: 10px; font-size: .9375rem; color: #44507a; }
 .bill { display: grid; gap: 2px; }
 .bill div { display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; }
-.bill dd { font-variant-numeric: tabular-nums; }
+.bill dd { white-space: nowrap; }
 .bill dt { color: var(--soft); }
 .bill .total { margin-top: 6px; padding-top: 12px; border-top: 2px solid var(--navy-2); font-size: 1.375rem; font-weight: 800; }
 .bill .total dt { color: var(--paper); }
@@ -176,8 +177,8 @@ button, input, select { font: inherit; color: inherit; }
   :root { --pad: 36px; }
   .links a:not(.btn) { display: inline; }
   .links a:not(.btn):hover { color: var(--red); }
-  .disc-hero { width: 96vw; right: -40vw; top: 40px; }
-  .hero-text { padding-top: 46vw; max-width: 640px; }
+  .disc-hero { width: 70vw; right: -22vw; top: 84px; }
+  .hero-text { padding-top: calc(70vw - 10px); max-width: 640px; }
   .hero h1 { font-size: 8.4vw; }
   .quote-grid { grid-template-columns: 1fr 1fr; align-items: start; gap: 40px; }
   .items { grid-template-columns: 1fr 1fr; column-gap: 48px; row-gap: 32px; }
@@ -223,8 +224,7 @@ button, input, select { font: inherit; color: inherit; }
   .items img { width: 64px; height: 64px; }
   .story { padding: 20px; }
   .panel { min-height: 100svh; grid-template-columns: 1fr 340px; padding: 64px; align-content: start; gap: 40px 64px; }
-  .panel h2 { font-size: 3.4vw; }
-  .panel h2 .wr { display: block; white-space: nowrap; }
+  .panel h2 { font-size: clamp(2.5rem, 4.2vw, 4.25rem); }
   .panel-text { grid-column: 2; grid-row: 1 / span 2; gap: 56px; }
   .round { position: absolute; left: 64px; bottom: -14%; width: 40vw; max-width: 600px; margin: 0; }
   .proof { padding: 120px 20px; }
