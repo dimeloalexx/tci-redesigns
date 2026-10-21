@@ -333,13 +333,26 @@
 
   // ---------- The name in the footer always fits, whole ----------
   const fitBox = $("[data-fit]"), fitText = $("[data-fit] span");
+  // Bricolage changes its letter widths with size (optical sizing), and phones can swap the font in late,
+  // so measure, scale, then step down until it really fits, and fit again whenever the font or width changes.
   function fit() {
+    const room = fitBox.clientWidth;
+    if (!room) return;
     fitBox.style.fontSize = "100px";
     const w = fitText.getBoundingClientRect().width;
-    if (w) fitBox.style.fontSize = Math.floor((fitBox.clientWidth / w) * 100 * .98) + "px";
+    if (!w) return;
+    let size = Math.floor((room / w) * 100 * .96);
+    fitBox.style.fontSize = size + "px";
+    while (fitText.getBoundingClientRect().width > room && size > 12) fitBox.style.fontSize = (size -= 2) + "px";
   }
-  fit(); window.addEventListener("resize", fit);
-  if (document.fonts) document.fonts.ready.then(fit);
+  fit();
+  window.addEventListener("resize", fit);
+  window.addEventListener("load", fit);
+  if (document.fonts) {
+    document.fonts.ready.then(fit);
+    document.fonts.addEventListener("loadingdone", fit);
+  }
+  if ("ResizeObserver" in window) { const ro = new ResizeObserver(fit); ro.observe(fitBox); ro.observe(fitText); }
 
   // ---------- Entrances ----------
   const rev = $$(".h2:not(.title), .menu-head p, .board, .bakery, .extras > div, .run-row li, .score, .stars, .q, .mentions, .leave, .owner, .about-text p, .map, .vcard");

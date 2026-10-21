@@ -280,7 +280,7 @@ body[data-side="island"] .board-island, body[data-side="wok"] .board-wok { outli
 
 /* ---------- footer ---------- */
 .foot { background: var(--coal); color: var(--rice); padding: 84px 0 32px; overflow: hidden; }
-.bigname { font: 800 19vw/1 var(--display); letter-spacing: -0.02em; text-transform: uppercase; color: var(--ember); white-space: nowrap; }
+.bigname { font: 800 12vw/1 var(--display); font-optical-sizing: none; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ember); white-space: nowrap; }
 .bigname span { display: inline-block; }
 .foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 24px; font-weight: 500; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 18px; }
