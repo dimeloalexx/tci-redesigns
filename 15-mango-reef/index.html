@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mango Reef | Dockside Restaurant at Turtle Cove Marina | Providenciales, Turks &amp; Caicos</title>
+  <meta name="description" content="Mango Reef: dockside restaurant and bar at Turtle Cove Marina, Providenciales. Fresh local seafood, a French chef and international favourites, open daily. See tonight's sunset and book a table.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Mango Reef — dinner on the dock at Turtle Cove">
+  <meta property="og:image" content="assets/mango-reef-dock-night.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,400&family=Albert+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="concept-strip" role="note" data-ui>Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+
+<main id="top">
+
+  <!-- HERO: the menu sheets, stacked like folders. The front one is tonight. -->
+  <section class="hero" aria-labelledby="hero-title">
+    <header class="top">
+      <span class="top-spacer" aria-hidden="true"></span>
+      <a class="mark" href="#top"><img src="assets/logo.jpg" width="235" height="174" alt="Mango Reef restaurant logo"></a>
+      <a class="top-link" href="#tonight">Book a table</a>
+    </header>
+    <h1 id="hero-title" class="display"><span class="ln">Mango</span> <span class="ln">Reef</span></h1>
+    <p class="lead">Dockside at Turtle Cove Marina. Fresh local seafood, a French chef, and the dock lights coming on at sunset.</p>
+    <p class="hero-cta"><a class="btn btn-mango" href="#tonight">Book a table for tonight</a></p>
+
+    <nav class="folders" aria-label="Sections">
+      <a class="folder f1" href="#parties"><span class="tab">Parties</span></a>
+      <a class="folder f2" href="#plates"><span class="tab">Plates</span></a>
+      <a class="folder f3" href="#kitchen"><span class="tab">Kitchen</span></a>
+      <a class="folder f4" href="#menu"><span class="tab">Menu</span></a>
+    </nav>
+
+    <!-- the front sheet: tonight at the dock -->
+    <div class="sheet" id="tonight" aria-labelledby="tonight-title">
+      <span class="tab tab-front">Tonight</span>
+      <div class="tonight">
+        <div class="tn-scene" data-scene data-ui>
+          <img class="tn-day" src="assets/turtle-cove-providenciales-beach.jpg" width="1400" height="933" alt="Palm and turquoise water at Turtle Cove by day">
+          <img class="tn-night" src="assets/mango-reef-dock-night.jpg" width="1030" height="450" alt="The Mango Reef dock at dusk, coloured lights reflected in the marina" fetchpriority="high">
+          <p class="tn-mood" data-mood>Golden hour</p>
+        </div>
+        <div class="tn-panel">
+          <h2 id="tonight-title" class="tn-title">Sunset tonight, <span data-sunset>6:03 pm</span></h2>
+          <p class="tn-count" data-count>Turtle Cove time.</p>
+          <div class="tn-row">
+            <span class="tn-label" id="day-l">Day</span>
+            <div class="seg" role="group" aria-labelledby="day-l">
+              <button type="button" data-dayopt="0" aria-pressed="true">Tonight</button>
+              <button type="button" data-dayopt="1" aria-pressed="false" data-tomorrow>Tomorrow</button>
+            </div>
+          </div>
+          <div class="tn-row tn-time">
+            <label class="tn-label" for="arrive">Arrive at <output data-time-out>6:00 pm</output></label>
+            <input id="arrive" type="range" min="660" max="1260" step="15" value="1080" data-arrive>
+            <p class="tn-hint" data-hint>Just before sunset: ask for a table on the edge of the dock.</p>
+          </div>
+          <div class="tn-row">
+            <span class="tn-label" id="party-l">Guests</span>
+            <div class="stepper" role="group" aria-labelledby="party-l">
+              <button type="button" data-party="-1" aria-label="Fewer guests">−</button>
+              <output data-party-out>2</output>
+              <button type="button" data-party="1" aria-label="More guests">+</button>
+            </div>
+          </div>
+          <p class="tn-small">Open daily, 11am to 9pm. Or call <a href="tel:+16499468200">649 946 8200</a>.</p>
+          <a class="btn" href="mailto:info@mangoreef.com" data-book>Request this table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU: one giant word, then the real 2025 menu as opening bars -->
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="menu-col">
+      <h2 id="menu-title" class="giant">Menu</h2>
+      <p class="menu-note">From the 2025 menus. Prices in US dollars. Seasonal lobster: ask for availability.</p>
+
+      <details class="bar" open>
+        <summary>Appetizers <span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li data-img="escargots"><b>The dozen of escargots</b><i>$18</i><p>Six with garlic, parsley and butter, six with garlic cream</p></li>
+          <li><b>Crispy aumonière of scallop</b><i>$16</i><p>Bay scallops, mushroom and spinach in crisp brick pastry, truffle oil</p></li>
+          <li><b>Crispy calamari ring</b><i>$15</i><p>Homemade tempura batter, seaweed, spicy sriracha</p></li>
+          <li><b>Coconut shrimp</b><i>$16</i><p>Sweet chili sauce, spicy mayo and cocktail sauce</p></li>
+          <li><b>Shrimp tempura</b><i>$16</i><p>On seaweed salad, sriracha</p></li>
+          <li><b>Vegetable risotto</b><i>$16</i><p>Green asparagus, cherry tomato, parmesan cream, truffle oil</p></li>
+          <li><b>Swiss cheese ravioli</b><i>$15</i><p>Parmesan and shiitake cream sauce</p></li>
+          <li><b>Chicken wings, ten pieces</b><i>$16</i><p>Slow oven-roasted, spicy sweet chili</p></li>
+          <li><b>Deep-fried spring rolls</b><i>$12</i><p>Vegetable or chicken</p></li>
+          <li><b>Soup of the day</b><i>$11</i></li>
+        </ul>
+      </details>
+
+      <details class="bar">
+        <summary>Salads &amp; raw tuna <span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li data-img="tuna"><b>Tuna carpaccio</b><i>$16</i><p>Olive oil, basil, capers, onion, tomato, seaweed, shaved parmesan</p></li>
+          <li><b>Fresh tuna rolls</b><i>$16</i><p>Raw tuna, seaweed, cilantro and sesame in rice paper, spicy lemon dressing</p></li>
+          <li><b>Salmon &amp; tuna sashimi</b><i>$29</i><p>Pickled ginger and wasabi</p></li>
+          <li><b>Thai tuna salad</b><i>$16</i><p>Char-grilled rare tuna, cucumber, peanut, coriander, spicy Thai dressing</p></li>
+          <li><b>Super Reef salad</b><i>$21</i><p>Scallops, shrimp, smoked bacon and smoked salmon on romaine, mango chutney</p></li>
+          <li data-img="mango"><b>Watermelon &amp; feta carpaccio</b><i>$15</i><p>Sun-dried tomato, olive, cucumber, basil and arugula</p></li>
+          <li><b>Grilled shrimp &amp; pineapple salsa</b><i>$16</i><p>On arugula with shaved parmesan</p></li>
+          <li><b>Caesar salad</b><i>$15</i><p>Add chicken $6, shrimp or fish $9</p></li>
+        </ul>
+      </details>
+
+      <details class="bar">
+        <summary>From the grill <span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li data-img="snapper"><b>Char-grilled local snapper fillet</b><i>$36</i><p>Garlic, sweet basil and lemon, garlic butter sauce</p></li>
+          <li data-img="snapper"><b>Whole red queen snapper</b><i>Market</i><p>Char-grilled, garlic butter sauce</p></li>
+          <li data-img="tuna"><b>Pan-seared peppered tuna steak</b><i>$36</i><p>Garlic butter sauce</p></li>
+          <li><b>Pan-seared Atlantic salmon</b><i>$36</i><p>Parsley mash, sautéed vegetables, fire-roasted red pepper sauce</p></li>
+          <li><b>Pan-roasted beef tenderloin, 8 oz</b><i>$36</i><p>Peppercorn sauce</p></li>
+          <li><b>Char-grilled T-bone, 16 oz</b><i>$55</i><p>Peppercorn sauce</p></li>
+          <li><b>Surf &amp; turf</b><i>$69</i><p>8 oz tenderloin and 8 oz local lobster tail (seasonal)</p></li>
+          <li><b>Char-grilled jerk chicken</b><i>$26</i><p>Spicy jerk sauce</p></li>
+          <li><b>Barbecue baby back ribs</b><i>$26</i></li>
+          <li><b>Oven-roasted herb pork medallion</b><i>$29</i><p>Mashed potato, garden vegetables, rosemary sauce</p></li>
+        </ul>
+      </details>
+
+      <details class="bar">
+        <summary>Curries, pasta &amp; paella <span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li data-img="paella"><b>Dominican paella</b><i>$39</i><p>Tuna, snapper, salmon, mussels, scallops, shrimp, chicken and chorizo with saffron rice</p></li>
+          <li><b>Spicy ikan curry snapper</b><i>$36</i><p>Indonesian curry with tomato, fried rice, cucumber raita</p></li>
+          <li><b>Spicy yellow Madras chicken</b><i>$29</i><p>Ginger, chili and coconut milk, steamed rice, cucumber yogurt</p></li>
+          <li><b>Mee goreng</b><i>$26</i><p>Angel hair with shrimp, chicken and vegetables, sweet soy, crispy shallots</p></li>
+          <li><b>Spicy Thai vegetable curry</b><i>$25</i><p>Red curry, basmati rice, cucumber yogurt</p></li>
+          <li><b>Seafood pasta</b><i>$28</i><p>Fettuccine in a vegetable tomato cream sauce</p></li>
+          <li><b>Shrimp pasta</b><i>$26</i><p>Homemade Italian tomato concassé, sweet basil</p></li>
+          <li><b>Caribbean oxtail</b><i>$29</i><p>Slow-stewed, with peas &amp; rice</p></li>
+        </ul>
+      </details>
+
+      <details class="bar">
+        <summary>Lobster, in season <span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li><b>Char-grilled lobster tail, 8 oz</b><i>$39</i><p>Sautéed vegetables, roasted garlic herb potatoes, garlic butter</p></li>
+          <li><b>Lobster pasta</b><i>$39</i><p>Garlic, mushroom, baby spinach, creamy white sauce</p></li>
+          <li><b>Lobster club roll</b><i>$21</i><p>Tomato, romaine, egg and smoked bacon on brioche</p></li>
+          <li><b>Lobster salad</b><i>$21</i><p>Peppers, onion, lime and French mayonnaise</p></li>
+          <li><b>Lobster quesadilla or wrap</b><i>$21</i><p>Tomato concassé, Swiss cheese, spinach</p></li>
+        </ul>
+      </details>
+
+      <details class="bar">
+        <summary>Lunch plates <span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li><b>Mango Reef style burger</b><i>$15</i><p>Homemade patty, grilled onion, bacon and American cheese</p></li>
+          <li><b>Blackened fish tacos</b><i>$16</i><p>Tomato, onion, cucumber, spicy sauce</p></li>
+          <li><b>Shrimp &amp; chicken fajitas</b><i>$25</i><p>Flour tortilla, salsa and sour cream</p></li>
+          <li><b>Pizza 12", three toppings</b><i>$18</i><p>Each extra topping $1</p></li>
+          <li><b>Fish &amp; chips</b><i>$18</i></li>
+          <li><b>Philly cheese steak</b><i>$16</i></li>
+          <li><b>Chicken ranch</b><i>$15</i></li>
+          <li><b>Quesadilla or wrap</b><i>$15–16</i><p>Chicken or shrimp</p></li>
+        </ul>
+      </details>
+
+      <details class="bar">
+        <summary>Desserts <span aria-hidden="true">+</span></summary>
+        <ul class="items">
+          <li data-img="brulee"><b>Vanilla crème brûlée</b><i>$10</i></li>
+          <li><b>Caramelized apple tarte fine</b><i>$12</i><p>Homemade vanilla ice cream, caramel sauce</p></li>
+          <li><b>Raspberry macaron</b><i>$12</i><p>Almond biscuit, vanilla custard, strawberry ice cream</p></li>
+          <li><b>Bambarra rum cake</b><i>$10</i><p>With rum &amp; raisin ice cream</p></li>
+          <li data-img="mango"><b>Mango cheesecake</b><i>$12</i></li>
+          <li><b>Baked fresh lime pie</b><i>$12</i><p>Strawberry coulis</p></li>
+          <li><b>Warm chocolate cake</b><i>$12</i><p>Vanilla ice cream</p></li>
+          <li><b>Flourless chocolate cake</b><i>$12</i></li>
+          <li><b>Banana split</b><i>$14</i></li>
+        </ul>
+      </details>
+
+      <details class="bar">
+        <summary>Homemade ice cream <span aria-hidden="true">+</span></summary>
+        <div class="scoops">
+          <p>Three scoops, $12. Pick yours:</p>
+          <div class="flavours" data-flavours>
+            <button type="button" aria-pressed="false">Vanilla</button>
+            <button type="button" aria-pressed="false">Rum &amp; raisin</button>
+            <button type="button" aria-pressed="false">Strawberry</button>
+            <button type="button" aria-pressed="false">Chocolate</button>
+            <button type="button" aria-pressed="false">Pistachio</button>
+            <button type="button" aria-pressed="false">Coconut</button>
+            <button type="button" aria-pressed="false">Mango sherbet</button>
+          </div>
+          <p class="cone" data-cone aria-live="polite">Choose three flavours.</p>
+        </div>
+      </details>
+    </div>
+
+    <figure class="preview" aria-hidden="true">
+      <img data-prev="escargots" src="assets/escargots-a-la-bourguignonne.jpg" width="1400" height="1050" alt="" loading="lazy">
+      <img data-prev="tuna" src="assets/tuna-steak-and-peas-massachusetts.jpg" width="1400" height="1400" alt="" loading="lazy">
+      <img data-prev="snapper" src="assets/grilled-snapper-and-tomato-with-lemon-queenstown.jpg" width="1400" height="1400" alt="" loading="lazy">
+      <img data-prev="paella" src="assets/seafood-paella-red.jpg" width="1400" height="774" alt="" loading="lazy">
+      <img data-prev="brulee" src="assets/creme-brulee-at-restaurant-in-zushi.jpg" width="1400" height="1050" alt="" loading="lazy">
+      <img data-prev="mango" src="assets/mangos-single-and-halved.jpg" width="1400" height="933" alt="" loading="lazy">
+      <img data-prev="dock" class="on" src="assets/mango-reef-dock-night.jpg" width="1030" height="450" alt="" loading="lazy">
+      <figcaption>Point at a dish. Stand-in photographs.</figcaption>
+    </figure>
+  </section>
+
+  <!-- KITCHEN: a note from the kitchen on a menu sheet -->
+  <section class="kitchen" id="kitchen" aria-labelledby="kitchen-title">
+    <div class="note">
+      <img class="note-logo" src="assets/logo.jpg" width="235" height="174" alt="" loading="lazy">
+      <h2 id="kitchen-title" class="sr-only">From the kitchen</h2>
+      <p>Mango Reef sits on the water at Turtle Cove Marina, five minutes from Grace Bay, with tables inside, outside and on a covered patio over the cove.</p>
+      <p>The menu says it plainly: <mark>fresh local flavors and seafood, with a selection of international favorites.</mark> Local snapper comes off the grill whole or filleted, lobster arrives when the season opens, and oxtail and jerk chicken sit next to them.</p>
+      <p>Chef Florent Sourmont's kitchen also cooks a dozen escargots, a caramelized apple tarte fine and a raspberry macaron, then crosses to Indonesia for ikan curry and mee goreng, and back to the islands for a Bambarra rum cake.</p>
+      <p>The ice cream is made here: vanilla, rum and raisin, strawberry, chocolate, pistachio, coconut, and a mango sherbet.</p>
+      <p class="sign">Mango Reef<span>Turtle Cove Marina, Providenciales</span></p>
+      <div class="stub">
+        <a href="mailto:info@mangoreef.com">info@mangoreef.com</a>
+        <a class="btn btn-dark" href="#tonight">Book a table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATES: photo tiles with swing-tag strips -->
+  <section class="plates" id="plates" aria-labelledby="plates-title">
+    <h2 id="plates-title" class="head">On the table</h2>
+    <ul class="tiles">
+      <li class="tile"><img src="assets/mango-reef-dock-night.jpg" width="1030" height="450" alt="The dock at dusk with coloured lights over the marina" loading="lazy"><div class="tag"><span>The dock</span><span>Turtle Cove</span><span>Lights at sunset</span></div></li>
+      <li class="tile"><img src="assets/grilled-snapper-and-tomato-with-lemon-queenstown.jpg" width="1400" height="1400" alt="Grilled snapper fillet with lemon and tomato" loading="lazy"><div class="tag"><span>Local snapper</span><span>Grill</span><span>$36</span></div></li>
+      <li class="tile"><img src="assets/seafood-paella-red.jpg" width="1400" height="774" alt="A pan of seafood paella" loading="lazy"><div class="tag"><span>Dominican paella</span><span>Saffron</span><span>$39</span></div></li>
+      <li class="tile"><img src="assets/escargots-a-la-bourguignonne.jpg" width="1400" height="1050" alt="Escargots in garlic and parsley butter" loading="lazy"><div class="tag"><span>Escargots</span><span>A dozen</span><span>$18</span></div></li>
+      <li class="tile"><img src="assets/tuna-steak-and-peas-massachusetts.jpg" width="1400" height="1400" alt="Seared tuna steak on a plate" loading="lazy"><div class="tag"><span>Peppered tuna</span><span>Pan-seared</span><span>$36</span></div></li>
+      <li class="tile"><img src="assets/creme-brulee-at-restaurant-in-zushi.jpg" width="1400" height="1050" alt="Vanilla crème brûlée in a ramekin" loading="lazy"><div class="tag"><span>Crème brûlée</span><span>Vanilla</span><span>$10</span></div></li>
+      <li class="tile"><img src="assets/mangos-single-and-halved.jpg" width="1400" height="933" alt="Ripe mangoes, one cut in half" loading="lazy"><div class="tag"><span>Mango sherbet</span><span>Homemade</span><span>3 scoops $12</span></div></li>
+      <li class="tile"><img src="assets/turtle-cove-providenciales-beach.jpg" width="1400" height="933" alt="A palm over turquoise shallows at Turtle Cove" loading="lazy"><div class="tag"><span>Turtle Cove</span><span>Steps away</span><span>Reef at the beach</span></div></li>
+    </ul>
+  </section>
+
+  <!-- PARTIES + VISIT: the card on the dock photograph -->
+  <section class="visit" id="parties" aria-label="Visit and private functions">
+    <img class="visit-bg" src="assets/mango-reef-dock-night.jpg" width="1030" height="450" alt="Mango Reef's dock lit up at night on Turtle Cove Marina" loading="lazy">
+    <div class="card">
+      <h2 class="card-title">On the dock</h2>
+      <p>Turtle Cove Marina<br>Providenciales, Turks &amp; Caicos</p>
+      <dl class="hours">
+        <div><dt>Every day</dt><dd>11:00–9:00</dd></div>
+        <div><dt>Lunch</dt><dd>from 11:00</dd></div>
+        <div><dt>Dinner</dt><dd>until 9:00</dd></div>
+      </dl>
+      <p><a href="tel:+16499468200">649 946 8200</a></p>
+      <p class="card-parties">Private dinners and special functions on the covered patio. Write with your date and group size.</p>
+      <a class="btn btn-block" href="mailto:info@mangoreef.com?subject=Private%20function%20at%20Mango%20Reef" data-party-mail>Plan a party</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="back">
+    <div class="back-msg">
+      <p class="back-sign">See you on the dock.</p>
+      <p>Come for lunch on the water, stay for the sunset, and order the crème brûlée even if you said you wouldn't.</p>
+    </div>
+    <div class="back-addr">
+      <img class="stamp" src="assets/mangos-single-and-halved.jpg" width="1400" height="933" alt="" loading="lazy">
+      <a href="mailto:info@mangoreef.com">info@mangoreef.com</a>
+      <a href="tel:+16499468200">+1 649 946 8200</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Mango+Reef+Turtle+Cove+Providenciales" target="_blank" rel="noopener">Turtle Cove Marina, Providenciales</a>
+      <a href="#menu">The menu</a>
+    </div>
+    <p class="imprint">© Mango Reef Restaurant &amp; Bar · Turtle Cove Marina, Turks &amp; Caicos</p>
+  </div>
+  <p class="credits">Mango Reef's own photograph: the dock at dusk. Stand-in photographs, via Wikimedia Commons: Crème brûlée by Syced (CC0); Tuna steak by Daderot (CC0); Seafood paella red by CNEcija12345 (CC BY-SA 4.0); Escargots à la bourguignonne by Thomon (CC BY-SA 4.0); Grilled snapper by Daderot (CC0); Mangos by Ivar Leidus (CC BY-SA 4.0); Turtle Cove Providenciales Beach by Tim Sackton (CC BY-SA 2.0). Menu from mangoreef.com, 2025.</p>
+</footer>
+
+<script src="script.js?v=1"></script>
+</body>
+</html>
