@@ -154,7 +154,7 @@ button { font: inherit; color: inherit; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 15px; }
 .foot-links a { text-underline-offset: 4px; }
 .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; margin-top: 48px; font-size: var(--step-small); color: #b9b4ae; }
-.foot-name { font-family: var(--display); font-weight: 800; font-size: 34vw; line-height: .9; letter-spacing: -0.05em; white-space: nowrap; color: var(--cobalt); transform: translateY(18%); margin-top: 12px; }
+.foot-name { font-family: var(--display); font-weight: 800; font-size: 23vw; line-height: 1; letter-spacing: -0.05em; text-transform: uppercase; white-space: nowrap; text-align: center; color: var(--cobalt); margin: 24px 0 0; padding-bottom: 3vw; }
 .credits { position: relative; z-index: 1; padding: 14px 0 0; font-size: var(--step-small); color: #b9b4ae; max-width: 70ch; }
 
 /* ---------- Wider screens ---------- */
@@ -184,7 +184,7 @@ button { font: inherit; color: inherit; }
   .foot-top { grid-template-columns: 7fr 3fr; }
   .invite { font-size: 5vw; }
   .foot-links { flex-direction: column; font-size: 16px; }
-  .foot-name { font-size: 27vw; }
+  .foot-name { font-size: 24vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {
