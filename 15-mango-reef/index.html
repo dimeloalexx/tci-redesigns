@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,400&family=Albert+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
   <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -245,6 +245,44 @@
     </ul>
   </section>
 
+  <!-- GUEST BOOK: real ratings, published quotes, and a way to leave a review -->
+  <section class="guests" id="guests" aria-labelledby="guests-title">
+    <div class="book">
+      <h2 id="guests-title" class="head">The guest book</h2>
+      <div class="scores">
+        <a class="score" href="https://www.google.com/maps/search/?api=1&amp;query=Mango+Reef+Turtle+Cove+Providenciales" target="_blank" rel="noopener">
+          <span class="score-n">4.5</span><span class="score-of">on Google<br>1,166 reviews</span>
+        </a>
+        <a class="score" href="https://www.tripadvisor.com/Restaurant_Review-g147399-d1046337-Reviews-Mango_Reef-Providenciales_Turks_and_Caicos.html" target="_blank" rel="noopener">
+          <span class="score-n">4.4</span><span class="score-of">on Tripadvisor<br>4,629 reviews</span>
+        </a>
+      </div>
+      <dl class="stars" aria-label="Tripadvisor ratings by stars">
+        <div><dt>5 stars</dt><dd><span style="--w:100%"></span>828</dd></div>
+        <div><dt>4 stars</dt><dd><span style="--w:26%"></span>216</dd></div>
+        <div><dt>3 stars</dt><dd><span style="--w:8%"></span>68</dd></div>
+        <div><dt>2 stars</dt><dd><span style="--w:3%"></span>27</dd></div>
+        <div><dt>1 star</dt><dd><span style="--w:3%"></span>27</dd></div>
+      </dl>
+      <p class="mentions-t">What guests keep mentioning</p>
+      <ul class="mentions">
+        <li>Coconut shrimp with three dipping sauces</li><li>The watermelon salad</li><li>Shrimp pasta</li><li>Raspberry macaron</li><li>Homemade ice cream</li><li>Yollanda, Trevor and Shemar's service</li><li>Sunset over the marina</li>
+      </ul>
+      <p class="src">Ratings and mentions summarised from Google and Tripadvisor reviews, via Wanderlog, October 2026.</p>
+    </div>
+    <div class="quotes">
+      <blockquote><p>“Ideal for large groups and romantic date nights. Watch the boats come in after a day out at sea.”</p><cite>Corks and Tacos, date-night guide</cite></blockquote>
+      <blockquote><p>“You can actually arrive here by boat, tying up at the Mango Reef dock for some afternoon or evening fun.”</p><cite>WIMCO, Turks &amp; Caicos best beach clubs &amp; bars</cite></blockquote>
+      <blockquote><p>“A favorite eatery for locals and visitors. The open-air restaurant overlooks the marina and is the perfect atmosphere for dinner under the stars.”</p><cite>Welcome to the Turks and Caicos Islands</cite></blockquote>
+      <div class="leave">
+        <p class="leave-t">Been to Mango Reef? Tell the next guest.</p>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Mango+Reef+Turtle+Cove+Providenciales" target="_blank" rel="noopener">Review us on Google</a>
+        <a class="btn btn-mango" href="https://www.tripadvisor.com/UserReviewEdit-g147399-d1046337-Mango_Reef-Providenciales_Turks_and_Caicos.html" target="_blank" rel="noopener">Review us on Tripadvisor</a>
+        <a class="leave-mail" href="mailto:info@mangoreef.com?subject=A%20note%20for%20the%20kitchen">Or send the kitchen a note</a>
+      </div>
+    </div>
+  </section>
+
   <!-- PARTIES + VISIT: the card on the dock photograph -->
   <section class="visit" id="parties" aria-label="Visit and private functions">
     <img class="visit-bg" src="assets/mango-reef-dock-night.jpg" width="1030" height="450" alt="Mango Reef's dock lit up at night on Turtle Cove Marina" loading="lazy">
@@ -282,6 +320,6 @@
   <p class="credits">Mango Reef's own photograph: the dock at dusk. Stand-in photographs, via Wikimedia Commons: Crème brûlée by Syced (CC0); Tuna steak by Daderot (CC0); Seafood paella red by CNEcija12345 (CC BY-SA 4.0); Escargots à la bourguignonne by Thomon (CC BY-SA 4.0); Grilled snapper by Daderot (CC0); Mangos by Ivar Leidus (CC BY-SA 4.0); Turtle Cove Providenciales Beach by Tim Sackton (CC BY-SA 2.0). Menu from mangoreef.com, 2025.</p>
 </footer>
 
-<script src="script.js?v=1"></script>
+<script src="script.js?v=2"></script>
 </body>
 </html>

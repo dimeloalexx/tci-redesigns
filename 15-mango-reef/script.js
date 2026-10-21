@@ -5,7 +5,7 @@
   const EMAIL = "info@mangoreef.com";
 
   // ---------- Reveals ----------
-  const rev = $$(".display, .lead, .folder, .sheet, .giant, .menu-note, .bar, .note > *, .head, .tile, .card, .back > *");
+  const rev = $$(".display, .lead, .folder, .sheet, .giant, .menu-note, .bar, .note > *, .head, .tile, .book, .quotes > *, .card, .back > *");
   rev.forEach(el => el.setAttribute("data-reveal", ""));
   if (!("IntersectionObserver" in window) || reduce) rev.forEach(el => el.classList.add("is-in"));
   else {
