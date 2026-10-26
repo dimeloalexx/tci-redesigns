@@ -222,6 +222,7 @@ input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius
 .score-n { font-family: var(--display); font-size: var(--step-head); line-height: .9; color: var(--mango); font-variation-settings: "opsz" 100; }
 .score-of { font-size: var(--step-small); }
 @media (hover: hover) { .score:hover { transform: translateY(-3px); background: #000; } }
+.stars-cap { margin-top: 20px; font-size: var(--step-small); font-weight: 600; }
 .stars div { display: grid; grid-template-columns: 4.5em 1fr; align-items: center; gap: 12px; padding: 4px 0; }
 .stars dt { font-size: var(--step-small); font-weight: 600; }
 .stars dd { display: flex; align-items: center; gap: 10px; font-variant-numeric: tabular-nums; font-size: var(--step-small); }

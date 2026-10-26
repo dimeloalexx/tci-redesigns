@@ -232,7 +232,8 @@ body[data-side="island"] .board-island, body[data-side="wok"] .board-wok { outli
 .score:hover { transform: translateY(-3px); }
 .score b { font: 800 clamp(3rem, 8vw, 4.8rem)/1 var(--display); color: var(--hot-2); transition: color .6s var(--ease); }
 .score span { font-size: .9rem; font-weight: 600; }
-.stars { display: grid; gap: 6px; margin-top: 22px; max-width: 420px; }
+.stars-cap { margin-top: 22px; font-size: .9rem; font-weight: 600; }
+.stars { display: grid; gap: 6px; margin-top: 8px; max-width: 420px; }
 .stars div { display: grid; grid-template-columns: 66px 1fr; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; }
 .stars dd { display: flex; align-items: center; gap: 8px; }
 .stars dd span { display: block; width: var(--w); min-width: 6px; height: 12px; border-radius: 6px; background: var(--on-hot); transform-origin: left; }
