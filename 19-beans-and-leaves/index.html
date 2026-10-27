@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beans &amp; Leaves | Coffee, tea and bubble tea in Regent Village, Grace Bay | Providenciales, Turks &amp; Caicos</title>
+  <meta name="description" content="Beans &amp; Leaves by Island Brew, Regent Village, Grace Bay: espresso, cappuccino, cold brew, matcha, bubble tea, smoothies, ube ensaymada, paninis and fresh sushi. Air-conditioned, free Wi-Fi, open every day.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Beans &amp; Leaves: good beans, good leaves">
+  <meta property="og:image" content="assets/cappuccino.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="concept-strip" role="note" data-ui>Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+
+<!-- HERO: a coffee bean and a tea leaf, the same shape cut two ways -->
+<header class="hero" id="top">
+  <div class="motif" aria-hidden="true">
+    <span class="big-bean"><img src="assets/beans-close.jpg" width="1600" height="1200" alt="" fetchpriority="high"></span>
+    <span class="big-leaf"><img src="assets/tea-field.jpg" width="1400" height="788" alt=""></span>
+  </div>
+  <nav class="top" aria-label="Beans and Leaves">
+    <a class="wordmark-sm" href="#top">Beans &amp; Leaves</a>
+    <span class="top-links"><a href="#drink">Your drink</a><a href="#menu">Menu</a><a href="#visit">Find us</a></span>
+  </nav>
+  <div class="hero-text">
+    <h1 class="title"><span>Good beans,</span> <span>good leaves.</span></h1>
+    <p class="lead">Espresso, bubble tea, smoothies and Filipino pastries in Regent Village, Grace Bay. Cold air and free Wi-Fi inside, people-watching outside, open every day.</p>
+    <a class="btn" href="#drink">Build your drink</a>
+    <p class="status" data-status><span class="dot"></span><span data-status-text>Every day from 7:30am</span></p>
+  </div>
+</header>
+
+<main>
+
+  <!-- THE LIVE THING: build a drink, your name on the cup -->
+  <section class="drink" id="drink" aria-labelledby="drink-title">
+    <div class="drink-grid">
+      <figure class="cup-stage" aria-hidden="true">
+        <svg viewBox="0 0 400 400" data-cup></svg>
+      </figure>
+      <div class="drink-panel">
+        <div class="tabs" role="tablist" aria-label="Beans or leaves">
+          <button type="button" role="tab" aria-selected="true" data-kind="beans">Beans</button>
+          <button type="button" role="tab" aria-selected="false" data-kind="leaves">Leaves</button>
+          <button type="button" role="tab" aria-selected="false" data-kind="blended">Blended</button>
+        </div>
+        <h2 id="drink-title" class="h2" data-drink-name>Cappuccino</h2>
+        <p class="drink-desc" data-drink-desc>Espresso under a thick cap of foamed milk.</p>
+        <div class="picks">
+          <div class="chips" role="group" aria-label="Drink" data-drinks></div>
+          <div class="opt-row">
+            <div class="seg" role="group" aria-label="Hot or iced">
+              <button type="button" aria-pressed="true" data-temp="hot">Hot</button>
+              <button type="button" aria-pressed="false" data-temp="iced">Iced</button>
+            </div>
+            <div class="seg" role="group" aria-label="Milk" data-milk-wrap>
+              <button type="button" aria-pressed="true" data-milk="dairy">Milk</button>
+              <button type="button" aria-pressed="false" data-milk="oat">Oat milk</button>
+            </div>
+          </div>
+          <label class="tick" data-extra-wrap><input type="checkbox" data-extra> <span data-extra-label>Extra shot of espresso</span></label>
+          <label class="name-field">
+            <span>Name for the cup</span>
+            <input type="text" maxlength="12" autocomplete="given-name" placeholder="Your name" data-cup-name>
+          </label>
+        </div>
+        <p class="order-line" data-order-line aria-live="polite">One hot cappuccino.</p>
+        <div class="cells">
+          <a class="cell cell-ink" href="#visit">Find the shop</a>
+          <a class="cell cell-tone" href="#menu">See the whole menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU: two columns, the motif as bullets -->
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <h2 id="menu-title" class="h2">The menu</h2>
+      <p class="menu-note">Breakfast and lunch run about $10 to $22. Pastries are baked fresh every day.</p>
+
+      <div class="cat">
+        <div class="cat-head"><span class="shape-photo bean-mask"><img src="assets/cappuccino.jpg" width="1400" height="1228" alt="A cappuccino with latte art and coffee beans on the foam" loading="lazy"></span><h3>Beans</h3><span class="count">8 drinks</span></div>
+        <span class="shape-photo bean-mask cat-photo"><img src="assets/cappuccino.jpg" width="1400" height="1228" alt="A cappuccino with latte art"></span>
+        <ul class="items">
+          <li class="bean-dot"><b>Espresso and ristretto</b><p>Short, strong and pulled to order.</p></li>
+          <li class="bean-dot"><b>Americano</b><p>The black coffee regulars tell newcomers to try first.</p></li>
+          <li class="bean-dot"><b>Cappuccino</b><p>Espresso under a thick cap of foamed milk.</p></li>
+          <li class="bean-dot"><b>Latte</b><p>With whole milk or oat milk.</p></li>
+          <li class="bean-dot"><b>Iced mocha</b><p>Chocolate, espresso and milk over ice. Guests add an extra shot.</p></li>
+          <li class="bean-dot"><b>Cold brew</b><p>Steeped slow, served over ice.</p></li>
+          <li class="bean-dot"><b>Frappé</b><p>Ice-cold and blended, for the tables outside.</p></li>
+          <li class="bean-dot"><b>Iced coffee</b><p>For a hot Grace Bay afternoon.</p></li>
+        </ul>
+      </div>
+
+      <div class="cat">
+        <div class="cat-head"><span class="shape-photo leaf-mask"><img src="assets/matcha.jpg" width="1400" height="788" alt="A matcha latte with a rosetta in the foam on a wooden table" loading="lazy"></span><h3>Leaves</h3><span class="count">4 drinks</span></div>
+        <span class="shape-photo leaf-mask cat-photo"><img src="assets/matcha.jpg" width="1400" height="788" alt="A matcha latte with a rosetta"></span>
+        <ul class="items">
+          <li class="leaf-dot"><b>Freshly brewed tea</b><p>Hot, or iced.</p></li>
+          <li class="leaf-dot"><b>Matcha latte</b><p>Green tea whisked into milk, hot or iced.</p></li>
+          <li class="leaf-dot"><b>Milk tea with boba</b><p>Bubble tea with chewy tapioca pearls, in several flavours.</p></li>
+          <li class="leaf-dot"><b>Smoothies</b><p>Blended fruit, made to order.</p></li>
+        </ul>
+      </div>
+
+      <div class="cat">
+        <div class="cat-head"><span class="shape-photo bean-mask"><img src="assets/ensaymada.jpg" width="1400" height="1068" alt="Two sugar-topped ensaymada buns on a plate" loading="lazy"></span><h3>From the oven</h3><span class="count">7 bakes</span></div>
+        <span class="shape-photo bean-mask cat-photo"><img src="assets/ensaymada.jpg" width="1400" height="1068" alt="Sugar-topped ensaymada buns"></span>
+        <ul class="items">
+          <li class="bean-dot"><b>Ube ensaymada</b><p>Soft brioche with buttercream and purple yam. Reviewers single it out.</p></li>
+          <li class="bean-dot"><b>Ensaymada</b><p>Brioche with butter, grated cheese and sugar, the Filipino way.</p></li>
+          <li class="bean-dot"><b>Spanish bread</b><p>A rolled sweet bun with a buttery filling.</p></li>
+          <li class="bean-dot"><b>Coffee bun</b><p>With a crisp coffee crust.</p></li>
+          <li class="bean-dot"><b>Croissants and pain au chocolat</b><p>Baked fresh each day.</p></li>
+          <li class="bean-dot"><b>Ube muffins</b><p>Made with purple yam.</p></li>
+          <li class="bean-dot"><b>Cakes and cookies</b><p>To have with your coffee, or to take away.</p></li>
+        </ul>
+      </div>
+
+      <div class="cat">
+        <div class="cat-head"><span class="shape-photo leaf-mask"><img src="assets/sushi.jpg" width="1400" height="1050" alt="Sushi rolls on a plate" loading="lazy"></span><h3>For lunch</h3><span class="count">7 plates</span></div>
+        <span class="shape-photo leaf-mask cat-photo"><img src="assets/sushi.jpg" width="1400" height="1050" alt="Sushi rolls on a plate"></span>
+        <ul class="items">
+          <li class="leaf-dot"><b>Chicken and pesto panini</b><p>Pressed hot.</p></li>
+          <li class="leaf-dot"><b>Vegetarian panini</b><p>Pressed hot, no meat.</p></li>
+          <li class="leaf-dot"><b>Egg sandwich</b><p>Fluffy eggs; a breakfast reviewers mention.</p></li>
+          <li class="leaf-dot"><b>Sandwiches to go</b><p>Tuna, chicken salad, or ham and cheese.</p></li>
+          <li class="leaf-dot"><b>Sushi rolls</b><p>Made fresh every day.</p></li>
+          <li class="leaf-dot"><b>Couscous</b><p>Ready to take away.</p></li>
+          <li class="leaf-dot"><b>Vegetable salad</b><p>Fresh, ready to take away.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ROOM -->
+  <section class="room" aria-labelledby="room-title">
+    <div class="room-grid">
+      <span class="shape-photo leaf-mask room-photo shutter"><img src="assets/cafe-table.jpg" width="1400" height="788" alt="A cappuccino and a slice of cake on a warm wooden table"></span>
+      <div class="room-text">
+        <h2 id="room-title" class="h2">Stay a while</h2>
+        <p>Dark walls, warm wood and cold air inside, with free Wi-Fi for getting some work done. Outside, tables look over Grace Bay Road.</p>
+        <p>It is a short walk or an easy bike ride from most Grace Bay hotels and resorts.</p>
+      </div>
+      <span class="shape-photo bean-mask room-photo-2 shutter"><img src="assets/boba.jpg" width="1400" height="1867" alt="A tall glass of milk tea with tapioca pearls"></span>
+    </div>
+  </section>
+
+  <!-- PROOF: tiles -->
+  <section class="proof" id="reviews" aria-labelledby="proof-title">
+    <div class="wrap tiles">
+      <div class="tile tile-head"><h2 id="proof-title" class="tile-title">What people say</h2><p>Google, 309 reviews</p><b class="big-score">4.6</b></div>
+      <blockquote class="tile tile-q"><p>“My favorite coffee shop in Providenciales, Turks and Caicos!”</p><cite>Elen Pradera, The best restaurants in Providenciales</cite></blockquote>
+      <blockquote class="tile tile-q"><p>“Beans and Leaves’ coffee is on point (they also have oat milk).”</p><cite>Elen Pradera</cite></blockquote>
+      <blockquote class="tile tile-q tile-wide"><p>“With free Wi-Fi, this place is also great for getting some quick work done as well as people-watching.”</p><cite>Fodor's Travel, Restaurants in Grace Bay</cite></blockquote>
+      <div class="tile tile-stars">
+        <p class="tile-sub">Google reviews, by stars</p>
+        <dl class="stars" aria-label="Google ratings by stars">
+          <div><dt>5 stars</dt><dd><span style="--w:100%"></span>242</dd></div>
+          <div><dt>4 stars</dt><dd><span style="--w:17%"></span>42</dd></div>
+          <div><dt>3 stars</dt><dd><span style="--w:3%"></span>7</dd></div>
+          <div><dt>2 stars</dt><dd><span style="--w:3%"></span>8</dd></div>
+          <div><dt>1 star</dt><dd><span style="--w:4%"></span>10</dd></div>
+        </dl>
+      </div>
+      <div class="tile tile-mentions">
+        <p class="tile-sub">What guests keep mentioning</p>
+        <p>The black americano, perfect cappuccinos, iced mochas with an extra shot, cold brew, the ube ensaymada, coffee bread, Spanish bread and fluffy egg sandwiches.</p>
+      </div>
+      <div class="tile tile-leave">
+        <p class="tile-sub">Had a coffee here?</p>
+        <div class="leave-btns">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Beans+%26+Leaves+Regent+Village+Providenciales" target="_blank" rel="noopener">Review on Google</a>
+          <a class="btn btn-tone" href="https://www.tripadvisor.com/Search?q=Beans+and+Leaves+Providenciales" target="_blank" rel="noopener">Review on Tripadvisor</a>
+        </div>
+      </div>
+    </div>
+    <p class="src wrap">Rating and mentions from Google reviews via Wanderlog, October 2026. Quotes from Elen Pradera and Fodor's as published on Wanderlog.</p>
+  </section>
+
+  <!-- VISIT: the coupon -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="coupon">
+        <div class="coupon-left">
+          <h2 id="visit-title" class="coupon-title">Find us in Regent Village</h2>
+          <p>Grace Bay Road, in the middle of Grace Bay, Providenciales.</p>
+          <p class="status status-coupon" data-status><span class="dot"></span><span data-status-text>Every day from 7:30am</span></p>
+        </div>
+        <div class="coupon-right">
+          <dl class="hours">
+            <div><dt>Monday to Saturday</dt><dd>7:30am to 6pm</dd></div>
+            <div><dt>Sunday</dt><dd>7:30am to 5pm</dd></div>
+          </dl>
+          <p class="c-links"><a href="tel:+16492322326">649 232 2326</a><a href="tel:+16499463583">649 946 3583</a><a href="mailto:beansandleavestci@gmail.com">beansandleavestci@gmail.com</a></p>
+          <a class="bar" href="https://www.google.com/maps/search/?api=1&amp;query=Beans+%26+Leaves+Regent+Village+Providenciales" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <figure class="map">
+        <img src="assets/map.jpg" width="1536" height="1024" alt="Street map of Grace Bay with Beans and Leaves marked in Regent Village on Grace Bay Road, the beach to the north" loading="lazy">
+        <span class="pin" style="left:52.56%;top:73.87%"><b>Beans &amp; Leaves</b></span>
+        <figcaption>Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="mark" aria-hidden="true">
+    <span class="mk-bean"></span>
+    <p class="mk-word" data-fit><span data-fit-line>Beans &amp;</span><span data-fit-line>Leaves</span></p>
+    <span class="mk-leaf"></span>
+  </div>
+  <div class="foot-cols">
+    <div><p class="fc-h">Visit</p><p>Regent Village<br>Grace Bay Road<br>Providenciales</p></div>
+    <div><p class="fc-h">Hours</p><p>Mon to Sat 7:30am to 6pm<br>Sunday 7:30am to 5pm</p></div>
+    <div><p class="fc-h">Call or write</p><p><a href="tel:+16492322326">649 232 2326</a><br><a href="mailto:beansandleavestci@gmail.com">beansandleavestci@gmail.com</a></p></div>
+    <div><p class="fc-h">On this page</p><p><a href="#drink">Your drink</a><br><a href="#menu">Menu</a><br><a href="#visit">Find us</a></p></div>
+  </div>
+  <div class="foot-last">
+    <p>Beans &amp; Leaves by Island Brew, Providenciales</p>
+    <a class="btn btn-sm" href="#top">Back to top</a>
+  </div>
+  <p class="credits">Stand-in pictures via Wikimedia Commons until the shop's own go up: “Latte Art” by Lirazelf (CC BY-SA 4.0); “Matcha tea latte with rosetta latte art” by Irvan Ary Maulana (CC BY-SA 4.0); “Filipino ensaymada” by Obsidian Soul (CC0); “Tea leaves in Bandung plantation” by Trifosa (CC BY-SA 4.0); “Roasted coffee beans” by MarkSweep (public domain); “Cappuccino and cookie” by TricksterWildcat (CC BY-SA 4.0); “Pearl Milk Tea in Chun Shui Tang” by Battlesnake1 (CC0); “Sushi Rolls, plated” by Alpha from Melbourne (CC BY-SA 2.0). Map data © OpenStreetMap contributors (ODbL).</p>
+</footer>
+
+<script src="script.js?v=1"></script>
+</body>
+</html>
