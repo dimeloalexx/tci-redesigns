@@ -117,7 +117,7 @@
       $$("[data-drips] path").forEach((d, i) => (d.style.transform = `scaleY(${Math.min(1, k * (1.2 + i * 0.25)).toFixed(3)})`));
       $("[data-puddle]").style.transform = `scale(${(what === "cup" ? k * 0.45 : k).toFixed(3)})`;
     }
-    $("[data-pupil]").style.transform = `translate(${(-2 - k * 3).toFixed(1)}px, ${(k * 4).toFixed(1)}px)`;
+    $("[data-pupil]").style.transform = `translate(${(-0.6 - k * 1.2).toFixed(2)}px, ${(k * 1.6).toFixed(2)}px)`;
     $("[data-brow]").style.transform = `rotate(${(k * 22).toFixed(1)}deg)`;
   }
 

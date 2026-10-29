@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:wdth,wght@75..150,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
   <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -23,7 +23,7 @@
 <header class="hero" id="top">
   <nav class="top" aria-label="Main">
     <a class="wordmark" href="#top">
-      <svg class="mark-bird" viewBox="0 0 40 40" aria-hidden="true"><use href="#bird"/></svg>
+      <svg class="mark-bird" viewBox="14 20 92 92" aria-hidden="true"><use href="#parrot" width="160" height="210"/></svg>
       Parrotice
     </a>
     <p class="open-chip" data-open>Open every day, 11 to 5</p>
@@ -66,11 +66,14 @@
 <!-- FLAVOURS: the eight names as one sentence, one lit at a time -->
 <section class="flavours" id="flavours" aria-label="Flavours">
   <div class="flav-scoop" aria-hidden="true">
-    <svg viewBox="0 0 220 300">
-      <path class="flav-ball" d="M28 128c-14-6-18-26-6-38 0-34 30-60 66-60 22-16 56-14 74 6 34 6 48 44 30 70 10 14 2 30-14 30-12 12-30 10-40 2-12 10-30 10-42 0-14 10-34 8-44-2-12 6-24 2-24-8z"/>
-      <path class="flav-shine" d="M70 64c10-12 26-18 40-16" />
-      <path class="cone" d="M30 138h160L112 296h-4z"/>
-      <path class="cone-grid" d="M58 150l70 92M92 150l56 72M126 150l40 50M162 150l-70 92M128 150l-56 72M94 150l-40 50"/>
+    <svg viewBox="0 0 200 300">
+      <path class="cone" d="M40 118h120L102 292h-4z"/>
+      <g clip-path="url(#cone-clip)" class="cone-grid">
+        <path d="M20 100l140 196M48 100l140 196M76 100l140 196M104 100l140 196M-8 100l140 196M-36 100l140 196"/>
+        <path d="M180 100L40 296M152 100L12 296M124 100L-16 296M96 100L-44 296M208 100L68 296M236 100L96 296"/>
+      </g>
+      <path class="flav-ball" d="M28 116C28 62 60 26 100 26s72 36 72 90a14 14 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0z"/>
+      <path class="flav-shine" d="M56 70c8-16 22-26 38-28"/>
     </svg>
   </div>
   <div class="flav-copy">
@@ -121,33 +124,42 @@
 
   <div class="melt-stage">
     <svg class="melt-art" viewBox="0 0 360 360" role="img" aria-labelledby="melt-verdict">
-      <ellipse class="puddle" cx="160" cy="336" rx="96" ry="14" data-puddle/>
-      <g data-cone-art>
-        <g class="scoop-wrap" data-scoop>
-          <path class="scoop" d="M96 150c-14-4-20-22-8-34 0-30 26-52 58-52 20-14 50-12 66 6 30 6 42 38 26 60 8 12 0 26-12 26-10 10-26 8-36 2-10 8-26 8-36 0-12 8-30 6-38-2-10 4-20 2-20-6z"/>
-          <path class="scoop-shine" d="M128 98c8-10 22-16 34-14"/>
-        </g>
+      <g transform="translate(30 36)">
+        <ellipse class="puddle" cx="100" cy="300" rx="84" ry="11" data-puddle/>
         <g data-cone>
-          <path class="cone" d="M92 158h136l-66 170h-4z"/>
-          <path class="cone-grid" d="M116 170l58 76M144 170l46 58M172 170l32 40M206 170l-58 76M178 170l-46 58M150 170l-32 40"/>
+          <path class="cone" d="M40 118h120L102 292h-4z"/>
+          <g clip-path="url(#cone-clip)" class="cone-grid">
+        <path d="M20 100l140 196M48 100l140 196M76 100l140 196M104 100l140 196M-8 100l140 196M-36 100l140 196"/>
+        <path d="M180 100L40 296M152 100L12 296M124 100L-16 296M96 100L-44 296M208 100L68 296M236 100L96 296"/>
+      </g>
         </g>
-        <path class="cup is-off" d="M92 158h136l-16 92h-104z" data-cup/>
-        <g class="drips" data-drips>
-          <path d="M104 156h14v40a7 7 0 0 1-14 0z"/>
-          <path d="M150 158h12v62a6 6 0 0 1-12 0z"/>
-          <path d="M196 156h14v30a7 7 0 0 1-14 0z"/>
+        <g class="is-off" data-cup>
+          <path class="cup" d="M38 122h124l-16 128H54z"/>
+          <path class="cup-rim" d="M32 112h136v18H32z"/>
+          <path class="cup-stripe" d="M47 170h106l-3 22H50z"/>
         </g>
         <g class="is-off" data-pint>
-          <path class="tub" d="M98 160h124l-12 160h-100z"/>
-          <path class="tub-lid" d="M88 146h144v20h-144z"/>
-          <path class="tub-label" d="M118 214h84v52h-84z"/>
+          <path class="tub" d="M44 126h112l-10 164H54z"/>
+          <path class="tub-lid" d="M34 104h132v26H34z"/>
+          <path class="tub-label" d="M54 176h92v62H54z"/>
+          <text class="tub-text" x="100" y="212" text-anchor="middle" textLength="76" lengthAdjust="spacingAndGlyphs">PARROTICE</text>
+        </g>
+        <g class="scoop-wrap" data-scoop>
+          <path class="scoop" d="M28 116C28 62 60 26 100 26s72 36 72 90a14 14 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0z"/>
+          <path class="scoop-shine" d="M56 70c8-16 22-26 38-28"/>
+        </g>
+        <g class="drips" data-drips>
+          <path d="M50 124h12v44a6 6 0 0 1-12 0z"/>
+          <path d="M94 126h12v70a6 6 0 0 1-12 0z"/>
+          <path d="M138 124h12v34a6 6 0 0 1-12 0z"/>
         </g>
       </g>
+      <use href="#parrot" x="232" y="170" width="120" height="158"/>
       <g class="bird" data-bird>
-        <use href="#bird-big" x="236" y="168" width="120" height="150"/>
-        <circle class="bird-eye" cx="284" cy="214" r="9"/>
-        <circle class="bird-pupil" cx="281" cy="215" r="4.5" data-pupil/>
-        <path class="bird-brow" d="M272 198l24 2" data-brow/>
+        <circle cx="275.5" cy="210.6" r="6.4" fill="#fff"/>
+        <circle cx="274.8" cy="210.6" r="4" fill="#e3711b"/>
+        <circle class="bird-pupil" cx="274.4" cy="210.6" r="2.1" data-pupil/>
+        <path class="bird-brow" d="M267 201.5l16 2" data-brow/>
       </g>
     </svg>
     <div class="trip" aria-hidden="true">
@@ -225,50 +237,38 @@
   <div class="made-pin"><h2 id="made-h"><span>Built by</span> <span>friends</span></h2><p>The shop as the people who made it in 2019, from the story in Times of the Islands.</p></div>
   <div class="made-list">
     <article class="maker">
-      <div class="maker-art art-red" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><path class="o-yellow" d="M22 28h72v64h-72z"/><path class="o-blue" d="M106 28h72v64h-72z"/><path class="o-green" d="M22 104h156v40h-156z"/><path class="o-ink" d="M120 148l12-6 30 52-12 6z"/><path class="o-white" d="M104 132l22-12 8 16-22 12z"/><path class="o-yellow" d="M94 118l16-8 6 12-18 8z"/></svg>
-      </div>
+      <div class="maker-art art-yellow" aria-hidden="true"><p class="maker-word" data-fit-word>The idea</p></div>
       <h3>Patti DesLauriers</h3>
       <p class="role">Owner</p>
       <p>Cleared the land in 2018, tested recipe after recipe on friends and neighbours, and painted the shop herself in colours you can see from the road.</p>
       <blockquote><p>“I always thought this island needed an ice cream shop.”</p><cite>Patti DesLauriers, Times of the Islands, 2019</cite></blockquote>
     </article>
     <article class="maker">
-      <div class="maker-art art-blue" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><circle class="o-white" cx="82" cy="78" r="44"/><path class="o-yellow" d="M118 66a38 38 0 0 1 54 6l-28 24z"/><path class="o-ink" d="M142 94l12-8 34 104-14 6z"/><path class="o-red" d="M30 128h104l-10 64h-84z"/></svg>
-      </div>
+      <div class="maker-art art-blue" aria-hidden="true"><p class="maker-word" data-fit-word>Recipes</p></div>
       <h3>Sherry Williams</h3>
       <p class="role">Manager when the shop opened</p>
       <p>Made the ice cream and helped Patti get the recipes right, down to the banana made with fruit grown on the island.</p>
     </article>
     <article class="maker">
-      <div class="maker-art art-yellow" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><path class="o-red" d="M12 88l88-60 88 60z"/><path class="o-blue" d="M32 88h136v100h-136z"/><path class="o-yellow" d="M86 128h30v60h-30z"/><path class="o-white" d="M46 106h28v26h-28zM128 106h28v26h-28z"/></svg>
-      </div>
+      <div class="maker-art art-ink" aria-hidden="true"><p class="maker-word" data-fit-word>Building</p></div>
       <h3>Charlton Gardiner</h3>
       <p class="role">Builder, Major Hill</p>
       <p>Put up the building itself, the little shop that now sits among the palms on King's Highway.</p>
     </article>
     <article class="maker">
-      <div class="maker-art art-green" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><path class="o-yellow" d="M16 74h168v24h-168z"/><path class="o-yellow" d="M30 98h18v92h-18zM152 98h18v92h-18z"/><path class="o-red" d="M58 138h84v16h-84z"/><path class="o-red" d="M66 154h12v36h-12zM122 154h12v36h-12z"/></svg>
-      </div>
+      <div class="maker-art art-green" aria-hidden="true"><p class="maker-word" data-fit-word>Tables</p></div>
       <h3>Howie Bartels</h3>
       <p class="role">Carpenter</p>
       <p>Added the porch, finished the inside and made the tables and outdoor seats where everyone eats.</p>
     </article>
     <article class="maker">
-      <div class="maker-art art-yellow" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><use href="#bird-big" x="44" y="10" width="112" height="140"/><circle class="o-white" cx="88" cy="54" r="8"/><circle cx="85" cy="55" r="4" fill="#111"/><path class="o-yellow" d="M50 156h100v34h-100z"/></svg>
-      </div>
+      <div class="maker-art art-white" aria-hidden="true"><svg viewBox="0 0 160 210"><use href="#parrot" width="160" height="210"/></svg></div>
       <h3>Jim Frey</h3>
       <p class="role">Wood carver</p>
       <p>Carved Iceman, the shop's parrot, out of casuarina wood.</p>
     </article>
     <article class="maker">
-      <div class="maker-art art-red" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><path class="o-blue" d="M24 16h152v128h-152z"/><circle class="o-red" cx="100" cy="70" r="30"/><path class="o-yellow" d="M64 144h14v48h-14zM122 144h14v48h-14z"/></svg>
-      </div>
+      <div class="maker-art art-blue" aria-hidden="true"><p class="maker-word" data-fit-word>Photo boards</p></div>
       <h3>Rita Shaw</h3>
       <p class="role">Artist, Middle Caicos</p>
       <p>Made the photo boards that visitors stand behind for their pictures.</p>
@@ -279,14 +279,13 @@
 <!-- GUESTS: the rating as stacked scoops -->
 <section class="guests" id="guests" aria-labelledby="guests-h">
   <div class="tower" aria-hidden="true">
-    <svg viewBox="0 0 200 520">
-      <path class="t-cone" d="M46 384h108l-52 132h-4z"/>
-      <circle class="t-scoop" cx="100" cy="344" r="54"/>
-      <circle class="t-scoop" cx="100" cy="266" r="50"/>
-      <circle class="t-scoop" cx="100" cy="194" r="46"/>
-      <circle class="t-scoop" cx="100" cy="128" r="42"/>
-      <circle class="t-empty" cx="100" cy="70" r="38"/>
-      <circle class="t-scoop t-part" cx="100" cy="70" r="38"/>
+    <svg viewBox="0 0 520 156">
+      <use href="#mini-cone" x="0" width="100" height="150" style="color:#f4ead2"/>
+      <use href="#mini-cone" x="105" width="100" height="150" style="color:#f28aa0"/>
+      <use href="#mini-cone" x="210" width="100" height="150" style="color:#7a4328"/>
+      <use href="#mini-cone" x="315" width="100" height="150" style="color:#bff0d8"/>
+      <use href="#mini-cone" x="420" width="100" height="150" style="color:#074438"/>
+      <svg x="420" width="80" height="150" viewBox="0 0 160 300" preserveAspectRatio="xMinYMin meet" overflow="hidden"><use href="#mini-cone" width="200" height="300" style="color:#ffe927"/></svg>
     </svg>
   </div>
   <div class="guests-copy">
@@ -379,22 +378,42 @@
   </div>
 </footer>
 
-<!-- Drawn parrot, used in the wordmark, the melt meter and the carver's card -->
+<!-- Drawn parrot (a turquoise-fronted amazon) and the small cone used for the rating -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="bird" viewBox="0 0 40 40">
-    <path fill="#0c7866" d="M20 4c8 0 14 6 14 14v8c0 7-5 12-12 12h-6l-6-6V18c0-8 4-14 10-14z"/>
-    <path fill="#d71e1e" d="M20 4c6 0 10 3 12 8H14c1-5 3-8 6-8z"/>
-    <path fill="#ffe927" d="M8 16c3-2 7-2 8 2l-4 6c-3 0-5-4-4-8z"/>
-    <circle fill="#fff" cx="22" cy="15" r="3.4"/><circle fill="#111" cx="21.4" cy="15" r="1.7"/>
+  <defs>
+    <clipPath id="cone-clip"><path d="M40 118h120L102 292h-4z"/></clipPath>
+    <clipPath id="head-clip"><circle cx="66" cy="58" r="31"/></clipPath>
+    <clipPath id="wing-clip"><path d="M86 82c22-4 40 20 40 54 0 22-8 40-20 50-12-6-26-30-28-58-1-20 2-40 8-46z"/></clipPath>
+  </defs>
+  <symbol id="parrot" viewBox="0 0 160 210">
+    <path d="M100 160l30 46h-14l-26-40z" fill="#1e4bd7"/>
+    <path d="M108 158l32 40-10 6-28-40z" fill="#0b8a43"/>
+    <path d="M42 70c-4 46 12 92 50 108 22 9 40-4 38-30-2-38-22-74-52-86z" fill="#10a34f"/>
+    <path d="M48 66c-10 0-16 6-16 13 0 4 3 6 7 6 6 0 10-6 12-12z" fill="#4a4a55"/>
+    <path d="M50 44c-20-4-34 8-34 26 0 8 3 14 8 18 0-12 8-20 26-22z" fill="#33333d"/>
+    <circle cx="66" cy="58" r="31" fill="#10a34f"/>
+    <g clip-path="url(#head-clip)">
+      <path d="M30 22h50c-2 14-14 20-30 20-10 0-18 4-22 8z" fill="#3fc8c0"/>
+      <ellipse cx="56" cy="66" rx="20" ry="17" fill="#ffd21f"/>
+    </g>
+    <path d="M86 82c22-4 40 20 40 54 0 22-8 40-20 50-12-6-26-30-28-58-1-20 2-40 8-46z" fill="#0b8a43"/>
+    <g clip-path="url(#wing-clip)">
+      <path d="M70 150h70v50H70z" fill="#1e4bd7"/>
+      <ellipse cx="92" cy="96" rx="6" ry="9" fill="#d71e1e"/>
+    </g>
+    <circle cx="58" cy="54" r="8" fill="#fff"/>
+    <circle cx="57" cy="54" r="5" fill="#e3711b"/>
+    <circle cx="56.5" cy="54" r="2.6" fill="#111"/>
+    <circle cx="55" cy="52.4" r="1.1" fill="#fff"/>
+    <rect x="20" y="176" width="140" height="12" rx="6" fill="#7a4a26"/>
+    <path d="M74 170c-4 4-6 10-4 14h8c0-4 2-8 4-10zM92 172c-4 4-5 9-3 12h8c0-4 1-7 3-9z" fill="#8c8c96"/>
   </symbol>
-  <symbol id="bird-big" viewBox="0 0 128 160">
-    <path fill="#0c7866" d="M60 8c30 0 52 22 52 52v44c0 26-20 48-46 48H44l-22-22V58C22 28 36 8 60 8z"/>
-    <path fill="#d71e1e" d="M60 8c22 0 38 12 46 30H40c4-18 10-30 20-30z"/>
-    <path style="fill: var(--bird-wing, #1e4bd7)" d="M96 76c12 6 16 22 12 40l-10 34-14-8 6-30c2-14 0-26 6-36z"/>
-    <path fill="#ffe927" d="M8 50c12-8 28-8 32 6L28 80C16 82 4 66 8 50z"/>
+  <symbol id="mini-cone" viewBox="0 0 200 300">
+    <path d="M40 118h120L102 292h-4z" fill="#e3a64c"/>
+    <path d="M28 116C28 62 60 26 100 26s72 36 72 90a14 14 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0a14.4 14.4 0 0 1-28.8 0z" fill="currentColor"/>
   </symbol>
 </svg>
 
-<script src="script.js?v=1"></script>
+<script src="script.js?v=2"></script>
 </body>
 </html>
