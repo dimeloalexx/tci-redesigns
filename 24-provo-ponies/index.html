@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Provo Ponies | Horseback rides into the sea at Long Bay | Providenciales</title>
+  <meta name="description" content="Ride rescued horses down to Long Bay Beach and into the shallow sea, Providenciales, Turks and Caicos. Group rides $199, private rides from $299. Plan your ride by the tide.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Provo Ponies: ride into the sea at Long Bay">
+  <meta property="og:description" content="Rescued horses, the shallow water of Long Bay and a canter at low tide. Monday to Friday, 9:30 am and 3 pm.">
+  <meta property="og:image" content="assets/sea.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<a class="skip" href="#tide">Skip to the tide planner</a>
+<div class="concept-strip" role="note" data-ui>Unofficial concept · not the official website · <a href="../">All concepts</a></div>
+
+<!-- HERO: the sea, then the name standing in it. The water on the name is Long Bay's tide right now. -->
+<header class="hero" data-hero>
+  <div class="hero-photo">
+    <img src="assets/sea.jpg" width="1600" height="1200" alt="Shallow turquoise water off Providenciales under white clouds (sample photo)" fetchpriority="high">
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="#tide">Tides</a>
+    <a href="#rides" class="nav-wide">Rides</a>
+    <a href="#herd" class="nav-wide">Horses</a>
+    <a href="#book" class="nav-book">Book</a>
+  </nav>
+  <div class="hero-band">
+    <div class="hero-row">
+      <div class="hero-say">
+        <p class="hero-line">Ride rescued horses down to Long Bay and into the shallow sea. Monday to Friday, 9:30 am and 3 pm.</p>
+        <p class="hero-tide" data-hero-tide>The water on our name follows the tide at Long Bay.</p>
+      </div>
+      <a class="btn" href="#tide">Plan your ride</a>
+    </div>
+    <h1 class="mark" data-mark>
+      <span class="mark-dry"><span data-fit>Provo Ponies</span></span>
+      <span class="mark-wet" aria-hidden="true" data-wet>
+        <svg class="wave" viewBox="0 0 1200 24" preserveAspectRatio="none" focusable="false"><path d="M0 12 Q 50 0 100 12 T 200 12 T 300 12 T 400 12 T 500 12 T 600 12 T 700 12 T 800 12 T 900 12 T 1000 12 T 1100 12 T 1200 12 V24 H0 Z"/></svg>
+        <span class="mark-under"><span data-fit>Provo Ponies</span></span>
+      </span>
+    </h1>
+  </div>
+</header>
+
+<main>
+
+<!-- TIDE: pick a day, see which ride meets low water, then ask for it -->
+<section class="tide" id="tide" aria-labelledby="tide-h">
+  <div class="tide-head">
+    <h2 id="tide-h">When can you canter?</h2>
+    <p class="tide-lead">We only canter at low tide, when the sand is firm. Pick a day and see which ride meets the low water at Long Bay.</p>
+  </div>
+
+  <fieldset class="days">
+    <legend>Day</legend>
+    <div class="day-strip" data-days>
+      <p class="day-fallback">The tide planner needs a connection. You can still ask for any weekday below.</p>
+    </div>
+  </fieldset>
+
+  <figure class="chart" data-chart>
+    <svg viewBox="0 0 720 260" role="img" aria-labelledby="chart-t" data-chart-svg>
+      <title id="chart-t" data-chart-title>Tide at Long Bay</title>
+    </svg>
+    <figcaption class="small" data-chart-cap>Sea level at Long Bay from 6 am to 8 pm, with the two rides on the beach.</figcaption>
+  </figure>
+
+  <p class="verdict" aria-live="polite" data-verdict>Pick a day to see the tide.</p>
+  <p class="small canter-note">Cantering is for experienced riders who show control and balance. The guides judge the footing on the beach on the day.</p>
+
+  <!-- The request: everything the stable needs to match each rider to the right horse -->
+  <form class="ask" id="book" data-ask novalidate aria-labelledby="ask-h">
+    <h3 id="ask-h">Ask for this ride</h3>
+    <p class="ask-lead">Nothing is charged in advance. The stable answers by email or WhatsApp to confirm.</p>
+
+    <fieldset class="choice">
+      <legend>Ride</legend>
+      <label><input type="radio" name="ride" value="Group ride ($199 per person)" checked><span>Group ride <b>$199</b></span></label>
+      <label><input type="radio" name="ride" value="Private ride, 60 min ($299 per person)"><span>Private 60 min <b>$299</b></span></label>
+      <label><input type="radio" name="ride" value="Private ride, 90 min ($345 per person)"><span>Private 90 min <b>$345</b></span></label>
+    </fieldset>
+
+    <fieldset class="choice">
+      <legend>Time</legend>
+      <label><input type="radio" name="time" value="morning" checked><span data-time-label="morning">Morning, 9:30 am</span></label>
+      <label><input type="radio" name="time" value="afternoon"><span data-time-label="afternoon">Afternoon, 3 pm</span></label>
+    </fieldset>
+
+    <fieldset class="riders">
+      <legend>Riders</legend>
+      <p class="small">Exact weights, please: each horse has its own limit, and the heaviest rider we can take is 215 lb.</p>
+      <ol class="rider-list" data-riders>
+        <li class="rider" data-rider>
+          <label><span>Weight (lb)</span><input type="number" name="weight" inputmode="numeric" min="40" max="400" required></label>
+          <label><span>Level</span>
+            <select name="level">
+              <option>Beginner</option>
+              <option>Novice</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </label>
+          <label class="age"><span>Age</span><input type="number" name="age" inputmode="numeric" min="7" max="99"></label>
+          <p class="rider-msg" data-rider-msg></p>
+        </li>
+      </ol>
+      <div class="rider-tools">
+        <button type="button" class="btn-line" data-add-rider>Add a rider</button>
+        <button type="button" class="btn-line" data-drop-rider hidden>Remove the last rider</button>
+      </div>
+      <details class="levels">
+        <summary>How do I rate my level?</summary>
+        <dl>
+          <dt>Beginner</dt><dd>Has ridden fewer than 10 times.</dd>
+          <dt>Novice</dt><dd>10 to 50 rides. Balanced at the trot, maybe learning to canter.</dd>
+          <dt>Intermediate</dt><dd>More than 50 rides. Balanced at trot and canter, can sit a little buck.</dd>
+          <dt>Advanced</dt><dd>Hundreds of rides. Balanced at all paces on any horse, English or Western.</dd>
+        </dl>
+      </details>
+    </fieldset>
+
+    <fieldset class="choice">
+      <legend>Getting there</legend>
+      <label><input type="radio" name="pickup" value="We'll drive to the stable" checked><span>We'll drive</span></label>
+      <label><input type="radio" name="pickup" value="Please pick us up ($20 per person round trip)"><span>Pick us up <b>$20 pp</b></span></label>
+    </fieldset>
+
+    <label class="field"><span>Your name</span><input type="text" name="name" autocomplete="name"></label>
+    <label class="field"><span>Where you're staying</span><input type="text" name="stay" placeholder="Hotel or villa, for pickup"></label>
+
+    <p class="ask-sum" data-ask-sum aria-live="polite"></p>
+    <div class="cells">
+      <a class="cell cell-ink" href="mailto:provoponiestci@gmail.com" data-mail>Email the request</a>
+      <a class="cell cell-tone" href="https://wa.me/16492416350" target="_blank" rel="noopener" data-wa>Send on WhatsApp</a>
+    </div>
+  </form>
+</section>
+
+<!-- RIDES: one square photograph, three rides as tabs, two actions -->
+<section class="rides" id="rides" aria-labelledby="rides-h">
+  <div class="rides-photo">
+    <img src="assets/saddle.jpg" width="1600" height="1200" alt="A horse's chestnut mane and the sand ahead, seen from the saddle (sample photo)" loading="lazy">
+  </div>
+  <div class="rides-text">
+    <h2 id="rides-h" class="visually-hidden">Rides and prices</h2>
+    <div class="tabs" role="tablist" aria-label="Rides">
+      <button type="button" role="tab" id="tab-group" aria-controls="panel-group" aria-selected="true">Group</button>
+      <button type="button" role="tab" id="tab-private" aria-controls="panel-private" aria-selected="false" tabindex="-1">Private</button>
+      <button type="button" role="tab" id="tab-special" aria-controls="panel-special" aria-selected="false" tabindex="-1">Special</button>
+    </div>
+    <div class="panels">
+      <div role="tabpanel" id="panel-group" aria-labelledby="tab-group" class="panel">
+        <p class="price">$199</p>
+        <p class="price-note">per person, tax included</p>
+        <h3>The group ride</h3>
+        <p>About 75 minutes on horseback with 8 to 10 riders: down the road, through a jungly path and into the shallow water of Long Bay. Right for beginners and novices, and for anyone who just wants to ride into the sea.</p>
+      </div>
+      <div role="tabpanel" id="panel-private" aria-labelledby="tab-private" class="panel" hidden>
+        <p class="price">$299</p>
+        <p class="price-note">per person for 60 minutes, $345 for 90</p>
+        <h3>A private ride</h3>
+        <p>Your own guide, out before the group, with the same time on the beach and in the water. Good for couples and honeymooners, and for confident riders who want to trot and canter. Minimum two riders.</p>
+      </div>
+      <div role="tabpanel" id="panel-special" aria-labelledby="tab-special" class="panel" hidden>
+        <p class="price">Ask</p>
+        <p class="price-note">priced for each idea</p>
+        <h3>Something special</h3>
+        <p>A proposal on the beach at Long Bay, a photoshoot on horseback, a horse down the aisle on your wedding day. Write with the idea and the team will do their best to make it happen.</p>
+      </div>
+    </div>
+    <p class="small rides-small">Prices may change. Ages 7 and up; children under 12 ride with an adult. A lead or an extra guide for young children is $100.</p>
+    <div class="cells">
+      <a class="cell cell-ink" href="#tide">Plan it by the tide</a>
+      <a class="cell cell-tone" href="mailto:provoponiestci@gmail.com?subject=A%20ride%20at%20Long%20Bay">Ask by email</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE RIDE: five stages, deep sea to pale shallows, one open at a time -->
+<section class="ride" id="ride" aria-labelledby="ride-h">
+  <div class="ride-intro">
+    <h2 id="ride-h">The ride, start to finish</h2>
+    <p>Allow two to two and a half hours for the whole thing. Bring sunscreen, water and your phone: the guides will take the pictures, and they lend waterproof cases.</p>
+  </div>
+  <div class="stages" data-stages>
+    <section class="stage is-open" style="--tone:var(--t1);--on:var(--on-dark)" data-stage>
+      <h3><button type="button" aria-expanded="true" aria-controls="st-1" data-stage-btn>At the barn</button></h3>
+      <div class="stage-body" id="st-1">
+        <p>Shoes and socks to borrow if yours won't do, and helmets, which are required under 18. A safety talk, then a quick lesson on your horse while the tack is adjusted.</p>
+        <img src="assets/white-horse.jpg" width="1600" height="1067" alt="A rider on a white horse at the edge of the sea (sample photo)" loading="lazy">
+      </div>
+    </section>
+    <section class="stage" style="--tone:var(--t2);--on:var(--on-dark)" data-stage>
+      <h3><button type="button" aria-expanded="false" aria-controls="st-2" data-stage-btn>The road</button></h3>
+      <div class="stage-body" id="st-2" hidden>
+        <p>Down the quiet roads of Long Bay Hills and through a jungly path to the beach. Beginners usually get to trot here. Nobody rides nose to tail.</p>
+        <img src="assets/waves.jpg" width="1600" height="1200" alt="Small waves running up a white beach on Providenciales (sample photo)" loading="lazy">
+      </div>
+    </section>
+    <section class="stage" style="--tone:var(--t3);--on:var(--on-dark)" data-stage>
+      <h3><button type="button" aria-expanded="false" aria-controls="st-3" data-stage-btn>Long Bay</button></h3>
+      <div class="stage-body" id="st-3" hidden>
+        <p>The long, quiet white beach on the south side of Provo, with calm, shallow water. At low tide the sand is firm, and riders who are ready can canter.</p>
+        <img src="assets/sand.jpg" width="1600" height="1200" alt="White sand beach and turquoise sea on Providenciales (sample photo)" loading="lazy">
+      </div>
+    </section>
+    <section class="stage" style="--tone:var(--t4);--on:var(--ink)" data-stage>
+      <h3><button type="button" aria-expanded="false" aria-controls="st-4" data-stage-btn>Into the sea</button></h3>
+      <div class="stage-body" id="st-4" hidden>
+        <p>Our horses love the water. Long Bay is never more than about five feet deep; most horses keep their feet down, and experienced riders can look for a deeper spot to swim.</p>
+        <img src="assets/riders-sea.jpg" width="1600" height="1200" alt="Two riders walking their horses through the shallow sea (sample photo)" loading="lazy">
+      </div>
+    </section>
+    <section class="stage" style="--tone:var(--t5);--on:var(--ink)" data-stage>
+      <h3><button type="button" aria-expanded="false" aria-controls="st-5" data-stage-btn>Back at the barn</button></h3>
+      <div class="stage-body" id="st-5" hidden>
+        <p>A treat and a cuddle for your horse, and maybe a Provo Ponies T-shirt or hat before you head back to your hotel or villa.</p>
+        <img src="assets/sunset.jpg" width="1200" height="1600" alt="The sun going down over the sea at a Providenciales beach (sample photo)" loading="lazy">
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- THE HERD: one giant word, a bar for each horse -->
+<section class="herd" id="herd" aria-labelledby="herd-h">
+  <div class="herd-col">
+    <h2 id="herd-h" class="giant"><span data-fit>Herd</span></h2>
+    <p class="herd-lead">28 horses and ponies, most of them rescued. Most came from Grand Turk; others from South Caicos, the Dominican Republic and the USA.</p>
+    <div class="bars">
+      <details class="bar" open>
+        <summary><span>Turtle</span><span class="bar-fact">18 hands</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Belgian Draft, born 2003</p>
+          <p>Abandoned on Grand Turk for two years and about 600 pounds underweight when he came to Provo Ponies in September 2010. The former carriage horse turned out to be a complete gentleman under saddle, and he loves the ocean.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Max</span><span class="bar-fact">born 2006</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Quarter Horse, Arab and Belgian, they think</p>
+          <p>He came in fearful and untrusting, and is now calm, easy-going and a little lazy. He loves taking riders out for swims in the deepest water he can find.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Patches</span><span class="bar-fact">13.1 hands</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Grand Turk Pony</p>
+          <p>Rescued from the Grand Turk horse pound as a two-year-old in 2005, and with Provo Ponies since October 2012. One of the hardest-working ponies, and a favourite with the students.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Jammin</span><span class="bar-fact">under 13 hands</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Grand Turk Pony</p>
+          <p>Small, so he's ideal for small adults and children. His favourite thing is to swim alongside the draft horses. Keep him out of the bushes: this pony loves to snack.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Roxy</span><span class="bar-fact">from Grand Turk</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Mare, arrived in 2021</p>
+          <p>She came over pregnant, and in November 2021 she had a little colt called Calypso. Now she takes riders of every level to the beach.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Mango</span><span class="bar-fact">14.1 hands</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Mare, born 2001</p>
+          <p>Ruby's daughter and now the herd's alpha mare. Confident and hard to spook, she loves to run and really enjoys the water.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Squeak</span><span class="bar-fact">13.2 hands</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Mare from South Caicos, born 2006</p>
+          <p>Perky and sassy. She swapped trail rides for lessons; her legs move a mile a minute while she hardly goes anywhere, which makes her look very fancy.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Spirit</span><span class="bar-fact">13.2 hands</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">Grand Turk Pony, born around 2000</p>
+          <p>Built like a tank. One day he let the team know he'd rather be a guide horse than a guest horse, so now he is one.</p>
+        </div>
+      </details>
+      <details class="bar">
+        <summary><span>Lil' Joe</span><span class="bar-fact">12.2 hands</span></summary>
+        <div class="bar-body">
+          <p class="bar-kind">From South Caicos</p>
+          <p>A force of nature, and a lesson horse. Watch out for what he watches out for: trucks, plastic bags, kites and invisible horse-eating monsters.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+  <figure class="herd-photo">
+    <img src="assets/draft.jpg" width="1600" height="978" alt="A chestnut Belgian draft horse with a blond mane (sample photo)" loading="lazy">
+    <figcaption class="small">Turtle is a Belgian Draft like this one, and stands 18 hands. Sample photo.</figcaption>
+  </figure>
+</section>
+
+<!-- STORY: side facts and one wide paragraph, then the people and the lessons -->
+<section class="story" id="story" aria-labelledby="story-h">
+  <h2 id="story-h" class="visually-hidden">How it began</h2>
+  <div class="story-row">
+    <dl class="facts">
+      <div><dt>Since</dt><dd>2001</dd></div>
+      <div><dt>Stable</dt><dd>32 Dolphin Lane, Long Bay Hills</dd></div>
+      <div><dt>Herd</dt><dd>28 horses and ponies</dd></div>
+    </dl>
+    <p class="story-p">Provo Ponies began as a rescue, not a business. Camille Slattery and a few friends bought seven Paso Finos that had been shipped to Provo from the Dominican Republic and left hungry, thirsty and without shade. Once they were healthy they were far too young to retire, so they went to work, and the rides began. On an island with no grass, every bale of hay is imported, and the team trims every hoof themselves: there is no farrier and no horse vet in the country.</p>
+  </div>
+  <div class="story-row">
+    <p class="story-word">Team</p>
+    <div class="records">
+      <ul>
+        <li><span>Camille Slattery, owner</span><span>since 2001</span></li>
+        <li><span>Caroline Lundgren, manager</span><span>on Provo since 2012</span></li>
+        <li><span>Andrea, guide and teacher</span><span>joined 2025</span></li>
+        <li><span>Deron, guide</span><span>born on the island</span></li>
+      </ul>
+      <ul>
+        <li><span>Lessons for local children</span><span>Saturdays</span></li>
+        <li><span>Mounted games and bareback days</span><span>through the year</span></li>
+        <li><span>Natural horsemanship clinics</span><span>now and then</span></li>
+        <li><span>The students' horse show</span><span>every year</span></li>
+      </ul>
+    </div>
+  </div>
+  <figure class="story-photo">
+    <img src="assets/pasofino.jpg" width="1536" height="1600" alt="A chestnut Paso Fino horse standing on grass (sample photo)" loading="lazy">
+    <figcaption class="small">A Paso Fino, the breed of the first seven rescues. Sample photo.</figcaption>
+  </figure>
+</section>
+
+<!-- REVIEWS: one line spread edge to edge, then the score and two more -->
+<section class="reviews" id="reviews" aria-labelledby="reviews-h">
+  <h2 id="reviews-h" class="visually-hidden">What riders say</h2>
+  <blockquote class="spread">
+    <p><span class="line"><span>“Riding</span><span>in the</span><span>ocean</span></span><span class="line"><span>was a</span><span>wonderful</span><span>experience!”</span></span></p>
+    <footer class="spread-by"><span>Tripadvisor review</span><span>“An awesome excursion”</span><span>May 2025</span></footer>
+  </blockquote>
+  <div class="score">
+    <p class="score-num">4.9</p>
+    <p class="score-say">out of 5, from 2,142 reviews, as listed by VisitTCI. On Tripadvisor too, riders keep writing about the horses and the water.</p>
+  </div>
+  <div class="quotes">
+    <blockquote>
+      <p>“Exceptional service from the horse guides. Horses were well kept and beautiful. Such an amazing experience to be able to walk into the ocean with such beautiful animals. Highlight of my trip.”</p>
+      <footer>“A dream come true”, Tripadvisor, March 2025</footer>
+    </blockquote>
+    <blockquote>
+      <p>“Everything was perfect. From the health and care of the ponies, to the friendliness of the staff …”</p>
+      <footer>“A magical morning with Provo Ponies”, Tripadvisor, April 2025</footer>
+    </blockquote>
+  </div>
+  <div class="leave">
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Provo+Ponies+Dolphin+Lane+Providenciales" target="_blank" rel="noopener">Review us on Google</a>
+    <a class="btn btn-tone" href="https://www.tripadvisor.com/Attraction_Review-g147399-d1024318-Reviews-Provo_Ponies-Providenciales_Turks_and_Caicos.html" target="_blank" rel="noopener">Review us on Tripadvisor</a>
+  </div>
+  <p class="small source">Score as listed by VisitTCI, October 2026. Quotes are Tripadvisor reviews as shown on provoponies.com.</p>
+</section>
+
+<!-- FAQ: a wide heading and six indented questions -->
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">Before you ride</h2>
+  <div class="qs">
+    <details>
+      <summary>Do I need to book ahead?</summary>
+      <p>Yes. From December to May the rides are sometimes booked two to three months ahead, so write as soon as you know your dates.</p>
+    </details>
+    <details>
+      <summary>I've never ridden. Will I be OK?</summary>
+      <p>Absolutely. The horses are calm and well trained, and the guides take first-time riders all the time. Beginners walk, trot a little on the way down and ride into the water like everyone else.</p>
+    </details>
+    <details>
+      <summary>What should I wear?</summary>
+      <p>Long, light pants and closed shoes are best; sandals with straps, sneakers, reef runners and dive booties are fine. You will get wet. No bare feet and no flip-flops, but shoes and socks can be borrowed.</p>
+    </details>
+    <details>
+      <summary>Who can ride?</summary>
+      <p>Anyone aged 7 and up, up to 215 lb. Children under 12 ride with an adult, and helmets are required under 18. There's no double riding, and nobody rides pregnant or under the influence.</p>
+    </details>
+    <details>
+      <summary>What should I bring?</summary>
+      <p>A card or cash (nothing is charged in advance), sunscreen, water, your phone or camera, any medication you need, and a tip for your guide: 20% is standard for excursions.</p>
+    </details>
+    <details>
+      <summary>What if I need to cancel?</summary>
+      <p>Cancelling the day before costs 50% of the ride. On the day, or if you don't show up, it's the full price.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACT: the address you write to, as big as the page allows, on the sea's colour -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h" class="contact-say">Write with your dates, the ride you'd like, and each rider's weight and level.</h2>
+  <a class="email" href="mailto:provoponiestci@gmail.com"><span class="email-a">provoponiestci@</span><span class="email-b">gmail.com</span></a>
+  <div class="contact-foot">
+    <p><a href="tel:+16492416350">+1 649 241 6350</a><br>32 Dolphin Lane, Long Bay Hills, Providenciales</p>
+    <p class="social"><a href="https://www.facebook.com/provo.ponies/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/provoponies/" target="_blank" rel="noopener">Instagram</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Provo+Ponies+Dolphin+Lane+Providenciales" target="_blank" rel="noopener">Directions</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-cols">
+    <div>
+      <p>The stable</p>
+      <p>32 Dolphin Lane, Long Bay Hills. From Leeward Highway, turn right onto Long Bay Hills Highway, second left onto Lignum Vitae Drive, left onto Dolphin Lane: first driveway on the left.</p>
+    </div>
+    <div>
+      <p>Rides</p>
+      <p>Monday to Friday, 9:30 am and 3 pm (3:30 pm in summer). Saturdays are for the local children's lessons; private rides by special request. Sundays the horses rest.</p>
+    </div>
+    <div>
+      <p>Contact</p>
+      <p><a href="tel:+16492416350">+1 649 241 6350</a><br><a href="mailto:provoponiestci@gmail.com">provoponiestci@gmail.com</a><br>Pickup from Grace Bay, Leeward and Turtle Cove</p>
+    </div>
+    <div>
+      <p>On this page</p>
+      <p><a href="#tide">Tides</a><br><a href="#rides">Rides</a><br><a href="#herd">The herd</a><br><a href="#faq">Before you ride</a></p>
+    </div>
+  </div>
+  <p class="foot-mark" aria-hidden="true"><span data-fit>Provo Ponies</span></p>
+  <p class="credits">Photographs are openly licensed samples, not Provo Ponies' own: “Turquoise sea and cumulus clouds”, “White sand beach and turquoise sea” and “Sunset on the beach”, Providenciales, by Caicos Rentals (CC BY 4.0); “Providenciales beach 01” by Chrissymad (CC BY-SA 4.0); “A fantastic day horseback riding north of Port Douglas on Wonga Beach” by cogdogblog (CC0); “Horse riding on Sandown beach” by Garry Knight (CC BY-SA 2.0); “Horse riding at sea shore” by Sethi kc (CC BY-SA 4.0); “Huizingen Belgian draft horse” by Jacquesverlaeken (CC BY-SA 4.0); “Puerto rican Paso Fino horse, chestnut” by Arsdelicata (CC BY-SA 3.0). All via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>. Tide data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0), a model forecast, not an official tide table. Rides, prices and horses from provoponies.com.</p>
+  <p class="foot-line">Provo Ponies, Long Bay Hills, Providenciales. © 2026 Turks and Caicos Islands</p>
+</footer>
+
+<script src="script.js?v=1"></script>
+</body>
+</html>
