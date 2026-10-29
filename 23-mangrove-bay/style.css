@@ -1,0 +1,359 @@
+/* Mangrove Bay: the split stage. One photograph stays put on the left; the column reads on the right. */
+
+:root {
+  /* Ground, ink and one tone step each, taken from the place: mangrove leaf, Caicos Banks sand, creek water */
+  --deep: #0c2a20;
+  --deep-2: #163a2d;
+  --sand: #e9e1cc;
+  --sand-2: #dcd2b8;
+  --flats: #c3e2d7;
+  --ink: #0d3a2b;
+  --muted: #3c5c4e;
+  --on-deep: #e9e1cc;
+  --on-deep-muted: #b8c6b6;
+
+  --step-small: 0.875rem;
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.4rem + 1.5vw, 2.75rem);
+
+  --gutter: clamp(20px, 4.5vw, 72px);
+  --inset: 20px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+h2, h3, .hero-line, .plate, .visit-say { text-wrap: balance; }
+p, li, blockquote { text-wrap: pretty; }
+.board-line, .hours, .hero-status, .score { font-variant-numeric: tabular-nums; }
+body {
+  margin: 0;
+  background: var(--deep);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: var(--step-body);
+  line-height: 1.5;
+  position: relative;
+}
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, ul, blockquote, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+::selection { background: var(--ink); color: var(--sand); }
+.skip {
+  position: absolute; z-index: 1001; left: 16px; top: -60px;
+  padding: 12px 18px; background: var(--sand); color: var(--deep); font-weight: 600;
+  transition: top .15s var(--ease);
+}
+.skip:focus { top: 36px; }
+
+h2 {
+  font-size: var(--step-head);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.small { font-size: var(--step-small); color: var(--muted); }
+
+/* ---------- Buttons: square, one fill ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 0 28px;
+  background: var(--ink); color: var(--sand);
+  font-weight: 600; text-decoration: none;
+  transition: background-color .2s var(--ease), color .2s var(--ease), transform .12s var(--ease);
+}
+.btn:hover { background: var(--deep); }
+.btn:active, .cell:active, .side-grid button:active { transform: scale(.97); }
+.btn-light { background: var(--sand); color: var(--deep); }
+.btn-light:hover { background: var(--flats); }
+.btn-tone { background: var(--sand-2); color: var(--ink); }
+.btn-tone:hover { background: var(--flats); }
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: absolute; z-index: 20;
+  top: calc(28px + 24px); right: 32px;
+  display: flex; gap: 26px;
+  font-size: 15px; color: var(--on-deep);
+}
+.nav a { text-decoration: none; padding: 12px 0; transition: color .2s var(--ease); }
+.nav a:hover { color: var(--flats); }
+.nav-call { font-weight: 600; text-decoration: underline !important; text-underline-offset: 5px; text-decoration-thickness: 2px; }
+
+/* ---------- The split ---------- */
+.split { display: grid; grid-template-columns: 47vw minmax(0, 1fr); }
+
+.stage {
+  position: sticky; top: 0;
+  height: 100svh;
+  clip-path: inset(var(--inset) 0 var(--inset) var(--inset));
+  overflow: hidden;
+  background: var(--deep-2);
+}
+.shot {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .8s var(--ease);
+}
+.shot.is-on { opacity: 1; animation: drift 26s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1); } to { transform: scale(1.06) translateX(-1%); } }
+/* A neutral scrim under the name where it crosses the picture, only while the hero is in view */
+.stage::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0) 34%); /* taste-skill-ignore: neutral scrim under the name */
+  opacity: 0; transition: opacity .6s var(--ease);
+  pointer-events: none;
+}
+.stage.is-hero::after { opacity: 1; }
+
+.col { min-width: 0; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: calc(100svh - 28px);
+  display: grid; grid-template-rows: 1fr auto; grid-template-columns: minmax(0, 1fr);
+  background: var(--deep); color: var(--on-deep);
+}
+.hero-copy {
+  align-self: start;
+  padding: 38svh var(--gutter) 40px;
+  max-width: calc(26ch + 2 * var(--gutter));
+  max-width: 560px;
+}
+.hero-line { font-size: var(--step-lead); line-height: 1.3; max-width: 26ch; }
+.hero-status { margin: 18px 0 28px; color: var(--on-deep-muted); }
+.hero-status.is-open { color: var(--flats); }
+.mark {
+  position: relative; z-index: 3;
+  margin-left: calc(-1 * clamp(48px, 6vw, 110px));
+  padding: 0 32px 40px 0;
+  font-size: clamp(64px, 9vw, 200px);
+  font-weight: 400; font-stretch: 112%;
+  letter-spacing: -0.04em; line-height: .86;
+  text-transform: lowercase;
+  white-space: nowrap;
+  color: var(--on-deep);
+  transform-origin: 0 100%;
+}
+.mark span { display: inline-block; }
+
+/* ---------- Today: the live board ---------- */
+.today {
+  background: var(--flats);
+  padding: clamp(96px, 12vw, 160px) var(--gutter);
+}
+.board { margin: 40px 0 56px; display: grid; gap: 18px; max-width: 30ch; }
+.board-line { font-size: var(--step-lead); line-height: 1.3; }
+.hours { border-collapse: collapse; }
+.hours caption { text-align: left; font-size: var(--step-small); color: var(--muted); padding-bottom: 8px; }
+.hours th, .hours td { text-align: left; padding: 6px 0; font-weight: 400; }
+.hours th { padding-right: 32px; }
+.hours tr.is-today { font-weight: 600; }
+
+/* ---------- Snapper: pick the way, pick two sides ---------- */
+.snapper {
+  background: var(--sand);
+  padding: clamp(96px, 12vw, 160px) var(--gutter);
+}
+.snap-lead { margin: 20px 0 40px; max-width: 40ch; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend { padding: 0; margin-bottom: 12px; font-size: var(--step-small); color: var(--muted); }
+.ways { display: flex; flex-wrap: wrap; gap: 4px 26px; margin-bottom: 20px; }
+.ways label { position: relative; cursor: pointer; }
+.ways input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.ways span {
+  display: inline-block; padding: 8px 0;
+  font-size: var(--step-lead); color: var(--muted);
+  text-decoration: underline transparent; text-decoration-thickness: 3px; text-underline-offset: 8px;
+  transition: color .2s var(--ease), text-decoration-color .2s var(--ease);
+}
+.ways label:hover span { color: var(--ink); }
+.ways input:checked + span { color: var(--ink); font-weight: 600; text-decoration-color: var(--ink); }
+.ways input:focus-visible + span { outline: 3px solid var(--ink); outline-offset: 4px; }
+.snap-photo { display: none; }
+.way-note { max-width: 34ch; min-height: 3em; margin-bottom: 44px; }
+
+.side-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; max-width: 520px; }
+.side-grid button {
+  min-height: 52px; padding: 0 16px;
+  border: 0; text-align: left; cursor: pointer;
+  background: var(--sand-2); color: var(--ink);
+  transition: background-color .2s var(--ease), color .2s var(--ease), transform .12s var(--ease);
+}
+.side-grid button:hover { background: var(--flats); }
+.side-grid button[aria-pressed="true"] { background: var(--ink); color: var(--sand); font-weight: 600; }
+.sides .small { margin-top: 14px; max-width: 46ch; }
+
+.plate { margin: 48px 0 24px; font-size: var(--step-lead); line-height: 1.3; max-width: 28ch; }
+.cells { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; max-width: 520px; }
+.cell {
+  display: flex; align-items: center; padding: 0 20px;
+  min-height: 72px; font-weight: 600; text-decoration: none;
+  transition: background-color .2s var(--ease), transform .12s var(--ease);
+}
+.cell-ink { background: var(--ink); color: var(--sand); }
+.cell-ink:hover { background: var(--deep); }
+.cell-tone { background: var(--sand-2); color: var(--ink); }
+.cell-tone:hover { background: var(--flats); }
+
+/* ---------- Menu: two-ended rows ---------- */
+.menu {
+  background: var(--sand-2);
+  padding: clamp(96px, 12vw, 160px) var(--gutter);
+}
+.menu-lead { margin: 20px 0 8px; max-width: 42ch; }
+.group { max-width: 520px; margin-top: 48px; }
+.group h3 { font-size: var(--step-body); font-weight: 600; color: var(--muted); margin-bottom: 10px; }
+.group li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
+  min-height: 38px; padding: 6px 0;
+}
+.group li span:first-child { color: var(--ink); }
+.group li span + span { font-size: var(--step-small); color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.group .small { margin-top: 12px; }
+.menu-photos { display: none; }
+
+/* ---------- The creek: a guest check and its tear-off stub ---------- */
+.creek {
+  background: var(--deep);
+  padding: clamp(96px, 12vw, 160px) var(--gutter);
+}
+.check {
+  max-width: 640px;
+  background: var(--sand); color: var(--ink);
+  padding: 56px 56px 72px;
+  /* The scalloped tear edge is a mask, not a visible fill */
+  -webkit-mask: linear-gradient(#000 0 0) top / 100% calc(100% - 12px) no-repeat, /* taste-skill-ignore */
+                radial-gradient(circle at 50% 100%, transparent 6px, #000 6.5px) bottom / 22px 12px repeat-x; /* taste-skill-ignore */
+          mask: linear-gradient(#000 0 0) top / 100% calc(100% - 12px) no-repeat, /* taste-skill-ignore */
+                radial-gradient(circle at 50% 100%, transparent 6px, #000 6.5px) bottom / 22px 12px repeat-x; /* taste-skill-ignore */
+}
+.check h2 { margin-bottom: 28px; }
+.check p { line-height: 1.55; max-width: 46ch; }
+.check p + p { margin-top: 1.1em; }
+.check-foot { display: none; margin-top: 36px; }
+.creek-photo { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.stub {
+  max-width: 640px; margin-top: 8px;
+  background: var(--sand); color: var(--ink);
+  min-height: 72px; padding: 16px 56px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px;
+}
+.stub a { font-size: var(--step-lead); font-weight: 600; text-decoration: none; }
+.stub a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+/* ---------- Reviews: full width ---------- */
+.reviews {
+  background: var(--sand);
+  padding: clamp(112px, 12vw, 180px) 32px;
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px;
+}
+.reviews h2 { grid-column: 1 / 4; }
+.review-cols { grid-column: 5 / 13; }
+.scores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.scores p { max-width: 22ch; }
+.score { display: block; font-size: var(--step-head); line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px; }
+.quotes { margin-top: 72px; columns: 2; column-gap: 40px; }
+.quotes blockquote { break-inside: avoid; margin-bottom: 36px; }
+.quotes p { font-size: var(--step-lead); line-height: 1.3; }
+.quotes footer { margin-top: 10px; color: var(--muted); }
+.leave { grid-column: 5 / 13; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.source { grid-column: 5 / 13; margin-top: 20px; }
+
+/* ---------- Visit ---------- */
+.visit {
+  background: var(--deep); color: var(--on-deep);
+  padding: clamp(112px, 12vw, 180px) 32px clamp(80px, 9vw, 120px);
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px;
+  align-items: start;
+}
+.visit-say { grid-column: 1 / 6; font-size: var(--step-lead); line-height: 1.3; max-width: 22ch; }
+.visit-photo { grid-column: 6 / 9; width: 100%; max-width: 340px; aspect-ratio: 3 / 4; object-fit: cover; }
+.visit-ways { grid-column: 10 / 13; display: grid; justify-items: start; gap: 10px; }
+.visit-ways h2 { font-size: var(--step-body); font-weight: 600; margin-bottom: 10px; letter-spacing: 0; }
+.visit-ways a { text-underline-offset: 5px; padding: 4px 0; transition: color .2s var(--ease); }
+.visit-ways a:hover { color: var(--flats); }
+.visit-ways .small { color: var(--on-deep-muted); margin-top: 10px; }
+
+/* ---------- Footer: credits and one quiet line ---------- */
+.foot {
+  background: var(--deep); color: var(--on-deep-muted);
+  padding: 8svh 32px 30px;
+  font-size: var(--step-small);
+}
+.credits { max-width: 72ch; margin-bottom: 48px; font-size: var(--step-body); color: var(--on-deep); }
+.credits a { color: var(--on-deep); }
+.foot-line { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: baseline; }
+.foot-line nav { display: flex; gap: 24px; }
+.foot-line nav a { color: var(--on-deep); text-decoration: none; }
+.foot-line nav a:hover { text-decoration: underline; }
+.foot-line p:last-child { text-align: right; }
+
+/* ---------- Entrances (only when the script runs and motion is welcome) ---------- */
+.js .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease) var(--d, 0ms), transform .7s var(--ease) var(--d, 0ms); }
+.js .rv.in { opacity: 1; transform: none; }
+
+/* ---------- Phone and small tablet ---------- */
+@media (max-width: 899px) {
+  :root { --inset: 12px; }
+  .split { display: block; }
+  .stage { position: relative; height: 58svh; }
+  .stage::before {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, 0) 30%); /* taste-skill-ignore: neutral scrim under the nav */
+    pointer-events: none;
+  }
+  .nav { top: calc(28px + 18px); left: 28px; right: 28px; justify-content: space-between; font-size: 17px; }
+  .nav-wide { display: none; }
+  .hero { min-height: 0; display: flex; flex-direction: column; }
+  .mark { order: -1; margin: -3.4vw 0 0; padding: 0 16px; }
+  .hero-copy { padding: 22px 20px 64px; max-width: none; }
+  .hero-line { font-size: 1.0625rem; }
+  .hero-status { margin: 12px 0 22px; }
+
+  .ways { gap: 4px 20px; }
+  .ways span { font-size: 1.125rem; }
+  .snap-photo { display: block; margin: 0 0 18px; }
+  .snap-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .side-grid, .cells { max-width: none; }
+  .cell { min-height: 60px; }
+  .cells { grid-template-columns: 1fr; }
+
+  .menu-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 40px; }
+  .menu-photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .group li { min-height: 44px; }
+
+  .check { padding: 40px 24px 60px; }
+  .check-foot { display: block; }
+  .stub { padding: 16px 24px; }
+
+  .reviews, .visit { display: block; padding-left: 20px; padding-right: 20px; }
+  .scores { grid-template-columns: 1fr; gap: 20px; margin-top: 36px; }
+  .quotes { columns: 1; margin-top: 48px; }
+  .visit-photo { width: 96px; margin: 40px 0 0; float: left; margin-right: 18px; }
+  .visit-ways { padding-top: 40px; }
+  .visit-ways .small { clear: both; }
+  .foot { padding: 14svh 20px 24px; }
+  .foot-line { grid-template-columns: 1fr; gap: 8px; }
+  .foot-line nav { flex-wrap: wrap; gap: 8px 18px; }
+  .foot-line p:last-child { text-align: left; }
+}
+
+@media (min-width: 900px) and (max-width: 1180px) {
+  .reviews h2 { grid-column: 1 / 13; margin-bottom: 40px; }
+  .review-cols, .leave, .source { grid-column: 1 / 13; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .shot.is-on { animation: none; }
+  .shot { transition: none; }
+  .js .rv { opacity: 1; transform: none; transition: none; }
+}
