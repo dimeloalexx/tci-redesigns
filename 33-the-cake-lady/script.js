@@ -147,6 +147,7 @@ function read() {
     message: tidy(d.get("message")),
     delivery: d.get("handover") === "delivery",
     pickup: tidy(d.get("pickup")),
+    details: tidy(d.get("details")),
   };
 }
 
@@ -167,7 +168,7 @@ function timing(date) {
 
 // Every price is a starting price, as Adele asked: "from", never a fixed total.
 function price(s) {
-  if (s.occasion === "Wedding") return "Wedding cakes start from $500, depending on the design, and delivery is included.";
+  if (s.occasion === "Wedding") return "Wedding cakes start from $500, depending on the design.";
   if (s.occasion === "Christmas") return "Christmas sugar cookies come by the dozen, from $40, and cakes start from $160.";
   let text = `${s.occasion === "Birthday" ? "Birthday and party cakes" : "Cakes"} start from $160. Sculpted, tiered and very detailed cakes cost more.`;
   if (s.guests >= 60) text += " For a big crowd, ask about tiers, or add cupcakes from $40 a dozen.";
@@ -194,6 +195,7 @@ function brief(s) {
     `Message on the cake: ${s.message ? `"${s.message}"` : "none"}`,
     s.delivery ? "I'd like it delivered." : "I'll pick it up in Discovery Bay.",
     ...(s.delivery ? [] : [`Preferred pickup day and time: ${s.pickup || "to agree with you"}`]),
+    ...(s.details ? ["", `More about the cake: ${s.details}`] : []),
     "",
     "Is that date free? I can send you pictures of cakes I like.",
   ];
@@ -212,7 +214,7 @@ function update() {
   tagOut("t-colour").textContent = scheme.name;
   tagOut("t-guests").textContent = `${s.guests || "?"} guests`;
   tagOut("t-date").textContent = s.date ? shortDate(s.date) : "Date to choose";
-  tagOut("t-hand").textContent = s.delivery ? (s.occasion === "Wedding" ? "Delivery, free" : "Delivery") : (s.pickup ? `Pickup, ${s.pickup}` : "Pickup, Discovery Bay");
+  tagOut("t-hand").textContent = s.delivery ? "Delivery" : (s.pickup ? `Pickup, ${s.pickup}` : "Pickup, Discovery Bay");
   if (pickupWhen) pickupWhen.hidden = s.delivery;
   timeCheck.textContent = timing(s.date);
   priceNote.textContent = price(s);

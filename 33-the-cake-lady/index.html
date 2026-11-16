@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Satisfy&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Bakery","name":"The Cake Lady","founder":"Adele van Schoor","telephone":"+1-649-231-1898","email":"adelevanschoor@live.com","address":{"@type":"PostalAddress","addressLocality":"Discovery Bay, Providenciales","addressCountry":"TC"},"priceRange":"From $40","sameAs":["https://www.facebook.com/thecakeladytci/","https://www.instagram.com/thecakeladytci/"]}
@@ -162,7 +162,7 @@
         <div class="cc-panel cc-wed" data-reveal>
           <figure class="cc-photo"><img src="assets/wed-donuts-roses.jpg" width="720" height="738" loading="lazy" alt="Three-tier naked wedding cake with sugared doughnuts and orange and pink roses, with candles and flowers behind"></figure>
           <div class="cc-copy">
-            <p>Wedding cakes start from $500, depending on the design, and delivery is included. Tell Adele your date, your colours and how many guests, and she will plan it with you.</p>
+            <p>Wedding cakes start from $500, depending on the design. Tell Adele your date, your colours and how many guests, and she will plan it with you.</p>
             <a class="btn btn-ink" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20to%20talk%20about%20a%20wedding%20cake." target="_blank" rel="noopener">Ask about your wedding cake</a>
           </div>
         </div>
@@ -190,7 +190,7 @@
         <div class="cc-panel cc-xmas" data-reveal>
           <div class="cc-copy">
             <blockquote class="xmas-quote">
-              <p>A little Christmas magic, made by hand and baked with love. Alicia joins me in the kitchen each Christmas to create our beautiful, handcrafted sugar cookies — each one a little work of art.</p>
+              <p>A little Christmas magic, made by hand and baked with love. My daughter, Alicia, joins me in the kitchen each Christmas to create our beautiful, handcrafted sugar cookies — each one a little work of art.</p>
               <footer>Adele</footer>
             </blockquote>
             <a class="btn btn-ink" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20to%20order%20your%20Christmas%20sugar%20cookies." target="_blank" rel="noopener">Order Christmas cookies</a>
@@ -253,7 +253,7 @@
       <div class="step st-3">
         <figure class="step-tile f-yellow"><img src="assets/blue-ruffle-rose.jpg" width="485" height="640" loading="lazy" alt="Tall powder blue ruffle cake"></figure>
         <h3>Yours</h3>
-        <p>Collect it in Discovery Bay at the day and time you agreed, or have it delivered for an extra charge. Wedding cakes are delivered free.</p>
+        <p>Collect it in Discovery Bay at the day and time you agreed, or have it delivered for an extra charge.</p>
       </div>
     </div>
   </section>
@@ -358,6 +358,11 @@
           </div>
         </fieldset>
 
+        <div class="field">
+          <label for="p-details">Tell Adele more about your cake</label>
+          <textarea id="p-details" name="details" rows="4" maxlength="600" placeholder="Your theme, colours, decorations, a name or a number, or anything else you have in mind"></textarea>
+        </div>
+
         <a class="btn btn-ink send send-end" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20to%20order%20a%20cake." target="_blank" rel="noopener">Send to Adele on WhatsApp</a>
       </form>
     </div>
@@ -392,13 +397,26 @@
           <li><span class="dot" style="--c:#a9c9de"></span><div><p class="name">Macarons</p><p>The ones you see on her cakes, by the dozen.</p></div></li>
         </ul>
       </div>
-      <div class="menu-cat dozen-box" data-reveal>
-        <div class="cat-head"><h3>By The Dozen</h3><span>from $40 a dozen</span></div>
+    </div>
+  </section>
+
+  <!-- By The Dozen in its own block, as Adele asked -->
+  <section class="dozen" id="dozen" aria-labelledby="dozen-title">
+    <div class="wrap dozen-grid">
+      <div class="dozen-text" data-reveal>
+        <h2 id="dozen-title">By The Dozen</h2>
+        <p class="dozen-lead">Cupcakes, brownies and cookies for parties, offices, christenings and boat days, from $40 a dozen.</p>
         <ul class="items">
-          <li><span class="dot" style="--c:#f9c49e"></span><div><p class="name">Cupcakes</p><p>Decorated to match the cake, or on their own.</p></div></li>
-          <li><span class="dot" style="--c:#3b1f14"></span><div><p class="name">Brownies</p><p>For school parties, offices and boat days.</p></div></li>
-          <li><span class="dot" style="--c:#d9b382"></span><div><p class="name">Cookies</p><p>Iced with names, numbers or your theme, and sugar cookies at Christmas.</p></div></li>
+          <li><span class="dot" style="--c:#f9c49e"></span><div><p class="name">Cupcakes <span class="from">from $40</span></p><p>Decorated to match the cake, or on their own. The price depends on the design.</p></div></li>
+          <li><span class="dot" style="--c:#3b1f14"></span><div><p class="name">Brownies <span class="from">from $40</span></p><p>For school parties, offices and boat days. The price depends on the ingredients.</p></div></li>
+          <li><span class="dot" style="--c:#d9b382"></span><div><p class="name">Cookies <span class="from">from $40</span></p><p>Iced with names, numbers or your theme, and sugar cookies at Christmas. The price depends on the icing.</p></div></li>
         </ul>
+        <a class="btn btn-ink" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20to%20order%20by%20the%20dozen." target="_blank" rel="noopener">Order by the dozen</a>
+      </div>
+      <div class="dozen-photos" data-reveal>
+        <figure><img src="assets/xmas-poinsettia-cupcakes.jpg" width="472" height="590" loading="lazy" alt="Cupcakes piped as poinsettias, wreaths, Santa hats and little trees"></figure>
+        <figure><img src="assets/ch-cookies-white-gold.jpg" width="443" height="590" loading="lazy" alt="Iced sugar cookies in white and gold: crosses, little onesies, doves and initials"></figure>
+        <figure><img src="assets/christening-cupcakes.jpg" width="443" height="590" loading="lazy" alt="Cupcakes topped with blue fondant crosses and initials"></figure>
       </div>
     </div>
   </section>
@@ -416,23 +434,14 @@
           <div class="price-row"><span>Birthday and party cakes</span><span>from $160</span></div>
           <p>Sculpted, tiered and very detailed cakes cost more.</p>
           <div class="price-row"><span>Wedding cakes</span><span>from $500</span></div>
-          <p>Depending on the design. Delivery included.</p>
-        </div>
-        <div class="price-group dozen-box">
-          <h3>By The Dozen</h3>
-          <div class="price-row"><span>Cupcakes</span><span>from $40</span></div>
           <p>Depending on the design.</p>
-          <div class="price-row"><span>Brownies</span><span>from $40</span></div>
-          <p>Depending on the ingredients.</p>
-          <div class="price-row"><span>Cookies</span><span>from $40</span></div>
-          <p>Depending on the icing.</p>
         </div>
         <div class="price-group">
           <h3>Getting it there</h3>
           <div class="price-row"><span>Pickup in Discovery Bay</span><span>free</span></div>
           <p>Please specify your preferred pickup day and time. Kindly note that any early morning pickups must be arranged and placed the day before.</p>
           <div class="price-row"><span>Delivery</span><span>extra</span></div>
-          <p>Free for wedding cakes.</p>
+          <p>All deliveries are charged.</p>
         </div>
         <p class="price-terms">All prices quoted are starting prices (“from”) and may vary depending on the design, size, detail and customization required. They are not fixed or final totals.</p>
       </div>
@@ -509,7 +518,7 @@
         </details>
         <details class="qcard c-yellow" name="faq">
           <summary><span class="tab">Delivery</span><span class="q">Can you deliver it?</span></summary>
-          <p>Yes, for an extra charge. Wedding cakes are delivered at no extra cost.</p>
+          <p>Yes. All deliveries are charged, and Adele confirms the cost when you order.</p>
         </details>
         <details class="qcard c-aqua" name="faq">
           <summary><span class="tab">Diet</span><span class="q">Do you make gluten-free, vegan or nut-free cakes?</span></summary>
@@ -552,9 +561,14 @@
         <label class="cell"><span class="sr-only">Date of your event</span><input type="text" name="when" placeholder="Date of your event" autocomplete="off"></label>
         <button class="cell cell-send" type="submit">Send on WhatsApp</button>
       </form>
+      <div class="reach" aria-label="Other ways to reach Adele">
+        <a class="reach-item" href="https://wa.me/16492311898" target="_blank" rel="noopener"><span>WhatsApp</span><b>649 231 1898</b></a>
+        <a class="reach-item" href="tel:+16492311898"><span>Call</span><b>649 231 1898</b></a>
+        <a class="reach-item" href="mailto:adelevanschoor@live.com"><span>Email</span><b>adelevanschoor@live.com</b></a>
+      </div>
       <div class="bar-small">
         <p>Opens WhatsApp with your message to +1 649 231 1898.</p>
-        <p>Rather talk? <a href="tel:+16492311898">Call 649 231 1898</a> or email <a href="mailto:adelevanschoor@live.com">adelevanschoor@live.com</a>. Or follow her cakes on <a href="https://www.instagram.com/thecakeladytci/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/thecakeladytci/" target="_blank" rel="noopener">Facebook</a>.</p>
+        <p>Follow her cakes on <a href="https://www.instagram.com/thecakeladytci/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/thecakeladytci/" target="_blank" rel="noopener">Facebook</a>.</p>
       </div>
     </div>
   </section>
@@ -582,6 +596,7 @@
       <div class="foot-contact">
         <p>Discovery Bay, Providenciales<br>Turks and Caicos Islands</p>
         <p>Pickup by arrangement, at the day and time you agree with Adele.</p>
+        <p>Planning a boat trip? <a href="https://www.instagram.com/big5adventurestci/" target="_blank" rel="noopener">Big 5 Adventures</a>, from Adele's family.</p>
       </div>
     </div>
     <div class="foot-last">
@@ -591,6 +606,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
