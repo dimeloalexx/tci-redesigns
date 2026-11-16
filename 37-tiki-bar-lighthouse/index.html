@@ -11,14 +11,14 @@
 <meta property="og:description" content="Frozen drinks at the far end of Grand Turk, by the 1852 lighthouse. Open 8 am to 3 pm.">
 <meta property="og:image" content="https://dimeloalexx.github.io/tci-redesigns/37-tiki-bar-lighthouse/img/tower.jpg">
 <meta name="theme-color" content="#0b2766">
-<script>(function(d){var c='js';if(!/[?&]still/.test(location.search)&&!matchMedia('(prefers-reduced-motion: reduce)').matches)c+=' anim';d.className=c;setTimeout(function(){if(!window.gsap)d.className='js'},3000)})(document.documentElement)</script>
+<script>(function(d){var c='js';if(!/[?&]still/.test(location.search)&&!matchMedia('(prefers-reduced-motion: reduce)').matches)c+=' anim';d.className=c;setTimeout(function(){if(!window.__tiki)d.className='js'},2500)})(document.documentElement)</script>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=bonny@700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BarOrPub","name":"Tiki Bar - Lighthouse Grand Turk","telephone":"+1-649-232-3339","servesCuisine":"Frozen drinks","address":{"@type":"PostalAddress","streetAddress":"Lighthouse Road","addressLocality":"Cockburn Town","addressRegion":"Grand Turk","postalCode":"TKCA 1ZZ","addressCountry":"TC"},"geo":{"@type":"GeoCoordinates","latitude":21.5114652,"longitude":-71.1336834}}</script>
 </head>
 <body>
@@ -53,7 +53,7 @@
     <div class="hero-beam">
       <div class="beam-light" aria-hidden="true"></div>
       <figure class="beam-photo">
-        <img src="img/tower.jpg" width="1200" height="1600" alt="The white cast-iron Grand Turk Lighthouse against a deep blue sky" fetchpriority="high">
+        <img src="img/tower.jpg" srcset="img/tower-800.jpg 800w, img/tower.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="1600" alt="The white cast-iron Grand Turk Lighthouse against a deep blue sky" fetchpriority="high">
       </figure>
     </div>
   </section>
@@ -64,7 +64,7 @@
         <h2 class="head" id="h-drinks">Pick your color</h2>
         <p>Four frozen drinks blended from the bottles on our bar, plus cold cans and local beer straight from the ice.</p>
       </div>
-      <figure class="drinks-photo"><img src="img/bar.jpg" width="1200" height="1480" alt="On the bar: Finest Call piña colada, blue curaçao, banana and grenadine bottles, with cans of Dr Pepper, Mountain Dew, Coca-Cola, Pepsi and Turk's Head in front" loading="lazy"></figure>
+      <figure class="drinks-photo"><img src="img/bar.jpg" srcset="img/bar-800.jpg 800w, img/bar.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="1480" alt="On the bar: Finest Call piña colada, blue curaçao, banana and grenadine bottles, with cans of Dr Pepper, Mountain Dew, Coca-Cola, Pepsi and Turk's Head in front" loading="lazy"></figure>
     </div>
 
     <div class="cat">
@@ -100,10 +100,10 @@
     <div class="stage" id="stage" tabindex="0" role="slider" aria-label="Lighthouse beam" aria-valuemin="1" aria-valuemax="5" aria-valuenow="3" aria-valuetext="The bar">
       <div class="stage-light" aria-hidden="true"></div>
       <div class="stage-photos">
-        <img data-stop="0" data-pos="50% 18%" src="img/tower.jpg" width="1200" height="1600" alt="The 1852 lighthouse tower and its white stairs" loading="lazy">
-        <img data-stop="1" data-pos="62% 40%" src="img/pavilion.jpg" width="1600" height="1200" alt="Picnic tables under a green-roofed pavilion beside the lighthouse" loading="lazy">
-        <img data-stop="2" data-pos="55% 45%" src="img/bar.jpg" width="1200" height="1480" alt="The bar's piña colada, blue curaçao, banana and grenadine bottles with cold cans in front" loading="lazy">
-        <img data-stop="3" data-pos="45% 45%" src="img/kitchen.jpg" width="1200" height="900" alt="The keeper's old Bermuda kitchen, a small white stone building with a chimney" loading="lazy">
+        <img data-stop="0" data-pos="50% 18%" src="img/tower.jpg" srcset="img/tower-800.jpg 800w, img/tower.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="1600" alt="The 1852 lighthouse tower and its white stairs" loading="lazy">
+        <img data-stop="1" data-pos="62% 40%" src="img/pavilion.jpg" srcset="img/pavilion-800.jpg 800w, img/pavilion.jpg 1600w" sizes="(max-width: 760px) 260px, 100vw" width="1600" height="1200" alt="Picnic tables under a green-roofed pavilion beside the lighthouse" loading="lazy">
+        <img data-stop="2" data-pos="55% 45%" src="img/bar.jpg" srcset="img/bar-800.jpg 800w, img/bar.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="1480" alt="The bar's piña colada, blue curaçao, banana and grenadine bottles with cold cans in front" loading="lazy">
+        <img data-stop="3" data-pos="45% 45%" src="img/kitchen.jpg" srcset="img/kitchen-800.jpg 800w, img/kitchen.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="900" alt="The keeper's old Bermuda kitchen, a small white stone building with a chimney" loading="lazy">
         <img data-stop="4" data-pos="22% 42%" src="img/ships-beam.jpg" width="760" height="874" alt="Two cruise ships at the Grand Turk Cruise Center pier over turquoise water" loading="lazy">
       </div>
       <svg class="stage-tower" viewBox="500 0 200 380" aria-hidden="true" focusable="false">
@@ -128,11 +128,11 @@
     </div>
     <p class="stop-caption" id="stop-caption" aria-live="polite"><strong>The bar.</strong> Piña colada, blue curaçao, banana and grenadine, lined up and ready.</p>
     <ul class="stops-static">
-      <li><img src="img/tower.jpg" width="1200" height="1600" alt="The 1852 lighthouse tower" loading="lazy"><p><strong>The tower.</strong> Sixty feet of cast iron, made in England and standing here since 1852.</p></li>
-      <li><img src="img/pavilion.jpg" width="1600" height="1200" alt="Picnic tables under the pavilion" loading="lazy"><p><strong>The pavilion.</strong> Picnic tables in the shade beside the tower.</p></li>
-      <li><img src="img/bar.jpg" width="1200" height="1480" alt="The bar's bottles and cans" loading="lazy"><p><strong>The bar.</strong> Piña colada, blue curaçao, banana and grenadine, lined up and ready.</p></li>
-      <li><img src="img/kitchen.jpg" width="1200" height="900" alt="The old Bermuda kitchen" loading="lazy"><p><strong>The old kitchen.</strong> The keeper's Bermuda kitchen, still standing in the park.</p></li>
-      <li><img src="img/ships.jpg" width="1600" height="934" alt="Cruise ships at the pier" loading="lazy"><p><strong>Your ship.</strong> Docked at the Cruise Center, about 20 minutes south by taxi.</p></li>
+      <li><img src="img/tower.jpg" srcset="img/tower-800.jpg 800w, img/tower.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="1600" alt="The 1852 lighthouse tower" loading="lazy"><p><strong>The tower.</strong> Sixty feet of cast iron, made in England and standing here since 1852.</p></li>
+      <li><img src="img/pavilion.jpg" srcset="img/pavilion-800.jpg 800w, img/pavilion.jpg 1600w" sizes="(max-width: 760px) 260px, 100vw" width="1600" height="1200" alt="Picnic tables under the pavilion" loading="lazy"><p><strong>The pavilion.</strong> Picnic tables in the shade beside the tower.</p></li>
+      <li><img src="img/bar.jpg" srcset="img/bar-800.jpg 800w, img/bar.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="1480" alt="The bar's bottles and cans" loading="lazy"><p><strong>The bar.</strong> Piña colada, blue curaçao, banana and grenadine, lined up and ready.</p></li>
+      <li><img src="img/kitchen.jpg" srcset="img/kitchen-800.jpg 800w, img/kitchen.jpg 1200w" sizes="(max-width: 760px) 260px, 100vw" width="1200" height="900" alt="The old Bermuda kitchen" loading="lazy"><p><strong>The old kitchen.</strong> The keeper's Bermuda kitchen, still standing in the park.</p></li>
+      <li><img src="img/ships.jpg" srcset="img/ships-800.jpg 800w, img/ships.jpg 1600w" sizes="(max-width: 760px) 260px, 100vw" width="1600" height="934" alt="Cruise ships at the pier" loading="lazy"><p><strong>Your ship.</strong> Docked at the Cruise Center, about 20 minutes south by taxi.</p></li>
     </ul>
   </section>
 
@@ -148,7 +148,7 @@
     <div class="panel">
       <div class="panel-left">
         <h2 class="head" id="h-story">Guiding ships since 1852</h2>
-        <figure class="lens"><img src="img/lens.jpg" width="1100" height="1382" alt="A tall beehive of glass prisms: a Chance Brothers Fresnel lighthouse lens" loading="lazy"></figure>
+        <figure class="lens"><img src="img/lens.jpg" srcset="img/lens-800.jpg 800w, img/lens.jpg 1100w" sizes="(max-width: 760px) 260px, 100vw" width="1100" height="1382" alt="A tall beehive of glass prisms: a Chance Brothers Fresnel lighthouse lens" loading="lazy"></figure>
       </div>
       <div class="panel-right">
         <div class="block">
@@ -175,7 +175,7 @@
         <h3 class="acc-h"><button type="button" id="acc-b0" aria-expanded="true" aria-controls="acc-0">Taxi</button></h3>
         <div class="acc-body" id="acc-0" role="region" aria-labelledby="acc-b0">
           <p>The fare from the Cruise Center to the lighthouse is fixed by the government at $9 per person, one way, and the ride takes about 20 minutes. Fixed fares only apply leaving the Cruise Center, so agree the price back with your driver.</p>
-          <img src="img/ships.jpg" width="1600" height="934" alt="Cruise ships at the Grand Turk Cruise Center pier" loading="lazy">
+          <img src="img/ships.jpg" srcset="img/ships-800.jpg 800w, img/ships.jpg 1600w" sizes="(max-width: 760px) 260px, 100vw" width="1600" height="934" alt="Cruise ships at the Grand Turk Cruise Center pier" loading="lazy">
         </div>
       </div>
       <div class="acc-panel">
@@ -193,7 +193,7 @@
         <h3 class="acc-h"><button type="button" id="acc-b2" aria-expanded="false" aria-controls="acc-2">Tour or ATV</button></h3>
         <div class="acc-body" id="acc-2" role="region" aria-labelledby="acc-b2">
           <p>Island tours and ATV trips usually stop at the lighthouse. Ask your guide for a few minutes at the bar for a frozen one before you move on.</p>
-          <img src="img/sign.jpg" width="1000" height="1333" alt="The Historic Lighthouse Grand Turk sign, established 1852, with the tower behind it" loading="lazy">
+          <img src="img/sign.jpg" srcset="img/sign-800.jpg 800w, img/sign.jpg 1000w" sizes="(max-width: 760px) 260px, 100vw" width="1000" height="1333" alt="The Historic Lighthouse Grand Turk sign, established 1852, with the tower behind it" loading="lazy">
         </div>
       </div>
       <div class="acc-panel">
@@ -228,7 +228,7 @@
   </section>
 
   <section class="visit" id="visit" aria-labelledby="h-visit">
-    <img class="visit-photo" src="img/pavilion.jpg" width="1600" height="1200" alt="The Grand Turk Lighthouse beside its green-roofed pavilion and picnic tables" loading="lazy">
+    <img class="visit-photo" src="img/pavilion.jpg" srcset="img/pavilion-800.jpg 800w, img/pavilion.jpg 1600w" sizes="(max-width: 760px) 260px, 100vw" width="1600" height="1200" alt="The Grand Turk Lighthouse beside its green-roofed pavilion and picnic tables" loading="lazy">
     <div class="card">
       <h2 id="h-visit">Find the bar</h2>
       <p class="addr">Lighthouse Road<br>North end of Grand Turk, Turks and Caicos</p>
@@ -285,6 +285,6 @@
 <script src="vendor/gsap.min.js" defer></script>
 <script src="vendor/ScrollTrigger.min.js" defer></script>
 <script src="vendor/SplitText.min.js" defer></script>
-<script src="script.js?v=1" defer></script>
+<script src="script.js?v=2" defer></script>
 </body>
 </html>

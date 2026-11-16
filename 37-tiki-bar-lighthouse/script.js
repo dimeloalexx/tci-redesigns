@@ -5,17 +5,19 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const root = document.documentElement;
+  window.__tiki = 1;
   const STILL = /[?&]still\b/.test(location.search);
   const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const G = window.gsap;
   const HAS_GSAP = !!(G && window.ScrollTrigger && window.SplitText);
-  const MOTION = HAS_GSAP && !STILL && !REDUCED;
+  // The head script drops .anim if this file is late on a slow connection; then the page stays still.
+  const MOTION = HAS_GSAP && !STILL && !REDUCED && root.classList.contains('anim');
   if (!MOTION) root.classList.remove('anim');
   if (HAS_GSAP) G.registerPlugin(window.ScrollTrigger, window.SplitText);
-  // Split headlines only once the faces have arrived, so the lines are measured in Fraunces.
+  // Split headlines only once the faces have arrived, so the lines are measured in Bonny.
   const fontsReady = Promise.race([
     document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(),
-    new Promise(r => setTimeout(r, 2500)),
+    new Promise(r => setTimeout(r, 1500)),
   ]);
 
   /* ------------------------------------------------------------------ */
@@ -360,12 +362,14 @@
     new IntersectionObserver(([en]) => { footIn = en.isIntersecting; sync(); }, { threshold: 0 }).observe(foot);
   }
 
-  accordion();
-  beamExplorer();
-  dock();
+  // One part failing (an old phone missing an API) must never leave the page hidden or the rest dead.
+  const safe = (fn) => { try { fn(); } catch (e) { root.classList.remove('anim'); if (window.console) console.error(e); } };
+  safe(accordion);
+  safe(beamExplorer);
+  safe(dock);
   if (MOTION) {
-    heroIntro();
-    entrances();
-    band();
+    safe(heroIntro);
+    safe(entrances);
+    safe(band);
   }
 })();

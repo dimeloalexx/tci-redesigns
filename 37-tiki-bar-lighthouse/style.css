@@ -88,7 +88,7 @@ p, li, blockquote, dd { text-wrap: pretty; }
 
 /* Hero: the light comes on and finds the tower */
 .hero {
-  position: relative; min-height: 100svh; display: flex; align-items: center;
+  position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center;
   padding: calc(var(--nav-h) + 40px) var(--m) 64px; overflow: hidden;
 }
 .hero-text { position: relative; z-index: 2; width: min(47%, 720px); }
@@ -169,7 +169,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
 .stops-static img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 14px; }
 
 /* The band: the light reaching out to sea */
-.band { position: relative; min-height: 78svh; display: flex; align-items: center; overflow: hidden; background: var(--accent); color: var(--accent-ink); }
+.band { position: relative; min-height: 78vh; min-height: 78svh; display: flex; align-items: center; overflow: hidden; background: var(--accent); color: var(--accent-ink); }
 .band-ground { position: absolute; inset: 0; background: var(--bg); clip-path: polygon(0 0, 100% 0, 100% 0%, 0 38.46%, 0 61.54%, 100% 100%, 100% 100%, 0 100%); }
 .band-text { position: relative; margin-left: auto; width: min(58%, 860px); padding: 64px var(--m); }
 .band .head { font-size: var(--t-display); line-height: 1.04; }
@@ -178,7 +178,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
 
 /* The story: inset panel, the lens in the beam's shape */
 .story { padding: var(--sec) 20px; }
-.panel { position: relative; background: var(--surface); min-height: 108svh; overflow: hidden; display: grid; grid-template-columns: 63% 37%; }
+.panel { position: relative; background: var(--surface); min-height: 108vh; min-height: 108svh; overflow: hidden; display: grid; grid-template-columns: 63% 37%; }
 .panel-left { padding: 56px; }
 .panel-left .head { max-width: 12ch; font-size: var(--t-display); line-height: 1.04; }
 .lens { position: absolute; left: 56px; bottom: 0; width: 40vw; max-width: 640px; aspect-ratio: 1100 / 1382; transform: translateY(20%); }
@@ -242,7 +242,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
 .tile-link span { margin-top: auto; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
 /* Visit card on a photograph */
-.visit { position: relative; min-height: 100svh; overflow: hidden; }
+.visit { position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden; }
 .visit-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 55%; }
 .card {
   position: absolute; top: 60px; right: 60px; width: 380px; background: var(--ink); color: var(--accent-ink);
@@ -260,7 +260,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
 
 /* Footer: the light, built from blocks */
 .foot { background: var(--deep); padding: clamp(80px, 10vw, 140px) var(--m) 40px; }
-.mark { display: block; width: 100%; height: 34svh; max-height: 380px; min-height: 180px; overflow: visible; }
+.mark { display: block; width: 100%; height: 34vh; height: 34svh; max-height: 380px; min-height: 180px; overflow: visible; }
 .m-beam { fill: var(--accent); }
 .m-tower { fill: var(--ink); }
 .m-lamp { fill: var(--accent); }
@@ -305,7 +305,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
   .lead { margin-top: 18px; }
   .actions { margin-top: 26px; }
   .facts { margin-top: 24px; gap: 6px 20px; }
-  .hero-beam { position: relative; inset: auto; flex: 1 0 auto; height: 50svh; min-height: 320px; margin: 28px calc(-1 * var(--m)) 0; }
+  .hero-beam { position: relative; inset: auto; flex: 1 0 auto; height: 50vh; height: 50svh; min-height: 320px; margin: 28px calc(-1 * var(--m)) 0; }
   .beam-light { clip-path: polygon(50% 104%, 1.15% 24.33%, 3.73% 21.49%, 6.41% 18.81%, 9.17% 16.29%, 12% 13.93%, 14.91% 11.75%, 17.88% 9.74%, 20.92% 7.92%, 24.01% 6.27%, 27.15% 4.81%, 30.33% 3.54%, 33.55% 2.47%, 36.8% 1.58%, 40.08% 0.89%, 43.38% 0.4%, 46.68% 0.1%, 50% 0%, 53.32% 0.1%, 56.62% 0.4%, 59.92% 0.89%, 63.2% 1.58%, 66.45% 2.47%, 69.67% 3.54%, 72.85% 4.81%, 75.99% 6.27%, 79.08% 7.92%, 82.12% 9.74%, 85.09% 11.75%, 88% 13.93%, 90.83% 16.29%, 93.59% 18.81%, 96.27% 21.49%, 98.85% 24.33%); }
   .beam-photo { clip-path: polygon(50% 112%, 13.09% 24.12%, 15.15% 21.98%, 17.25% 19.97%, 19.4% 18.08%, 21.59% 16.33%, 23.81% 14.7%, 26.08% 13.21%, 28.38% 11.85%, 30.7% 10.63%, 33.06% 9.55%, 35.43% 8.61%, 37.83% 7.82%, 40.24% 7.16%, 42.67% 6.66%, 45.11% 6.29%, 47.55% 6.07%, 50% 6%, 52.45% 6.07%, 54.89% 6.29%, 57.33% 6.66%, 59.76% 7.16%, 62.17% 7.82%, 64.57% 8.61%, 66.94% 9.55%, 69.3% 10.63%, 71.62% 11.85%, 73.92% 13.21%, 76.19% 14.7%, 78.41% 16.33%, 80.6% 18.08%, 82.75% 19.97%, 84.85% 21.98%, 86.91% 24.12%); }
   .beam-photo img { object-position: 50% 12%; transform-origin: 50% 80%; }
@@ -327,7 +327,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
   .links { display: none; }
   .btn-nav { margin-left: auto; }
   .wm span:first-child { font-size: 22px; }
-  .hero-beam { height: 46svh; min-height: 300px; }
+  .hero-beam { height: 46vh; height: 46svh; min-height: 300px; }
 
   .drinks-intro .head, .light-head .head, .panel-left .head, .band .head { line-height: 1.06; }
   .light-head, .ship-intro { grid-template-columns: 1fr; gap: 20px; }
@@ -345,7 +345,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
   .stops button { padding: 12px 14px; font-size: 15px; }
   .stop-caption { text-align: left; margin-left: 0; font-size: var(--t-body); }
 
-  .band { min-height: 72svh; }
+  .band { min-height: 72vh; min-height: 72svh; }
   .band-ground { clip-path: polygon(0 0, 100% 0, 100% 0%, 0 16.67%, 0 83.33%, 100% 100%, 100% 100%, 0 100%); }
   .band-text { width: 100%; padding: 56px var(--m); }
 
@@ -375,7 +375,7 @@ html:not(.js) .stops-static { display: grid; grid-template-columns: repeat(auto-
   .tile-head { grid-column: 1 / -1; min-height: 0; }
 
   .visit { min-height: 0; display: flex; flex-direction: column; }
-  .visit-photo { position: relative; height: 70svh; }
+  .visit-photo { position: relative; height: 70vh; height: 70svh; }
   .card { position: relative; top: auto; right: auto; width: auto; margin: -80px 16px 0; }
 
   .foot-grid { grid-template-columns: 1fr; }
