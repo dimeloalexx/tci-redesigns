@@ -361,10 +361,25 @@ if (topbar) {
 const walker = document.querySelector("[data-walker]");
 const rootEl = document.documentElement;
 let walkTick = false, walkIdle = 0, lastY = scrollY;
+const wordmarkEl = document.querySelector(".wordmark");
+const navEl = document.querySelector(".site-nav");
+const phoneBar = matchMedia("(max-width: 860px)");
+// On a phone the cupcake has its own lane under the bar; on a wide screen it walks the empty stretch between the name and the menu.
+function lane() {
+  const w = walker.offsetWidth;
+  if (phoneBar.matches || !wordmarkEl || !navEl) return [0, rootEl.clientWidth - w];
+  const a = wordmarkEl.getBoundingClientRect().right + 24;
+  const b = navEl.getBoundingClientRect().left - w - 24;
+  return b - a > 60 ? [a, b] : [0, rootEl.clientWidth - w];
+}
 function walk() {
   walkTick = false;
   const max = Math.max(1, rootEl.scrollHeight - innerHeight);
-  rootEl.style.setProperty("--walk", Math.min(1, Math.max(0, scrollY / max)).toFixed(4));
+  const p = Math.min(1, Math.max(0, scrollY / max));
+  if (walker) {
+    const [a, b] = lane();
+    walker.style.setProperty("--walk-x", `${Math.round(a + p * (b - a))}px`);
+  }
   if (walker && !reduced && scrollY !== lastY) {
     walker.classList.toggle("back", scrollY < lastY);
     walker.classList.add("walking");

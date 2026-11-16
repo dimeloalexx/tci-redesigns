@@ -149,7 +149,7 @@ a { color: inherit; }
 }
 .walker {
   position: absolute; left: 0; bottom: 4px; width: 30px; height: 38px;
-  transform: translateX(calc(var(--walk, 0) * (100vw - 46px)));
+  transform: translateX(var(--walk-x, 0px));
   transition: transform .14s linear;
 }
 .walker svg { display: block; width: 100%; height: 100%; overflow: visible; transition: transform .2s var(--ease); }
@@ -528,7 +528,11 @@ input::placeholder { color: var(--muted); opacity: 1; }
 
 /* ---------- Phone ---------- */
 @media (max-width: 860px) {
-  :root { --bar-h: 58px; --step-small: 13px; --step-body: 17px; --step-lead: 20px; --step-head: 42px; --step-sub: 36px; }
+  :root { --bar-h: 80px; --step-small: 13px; --step-body: 17px; --step-lead: 20px; --step-head: 42px; --step-sub: 36px; }
+  /* On a phone the cupcake gets its own lane under the name and the Menu button, so it never covers them. */
+  .topbar { padding-bottom: 26px; }
+  .topbar-in { height: 54px; padding-bottom: 0; }
+  .walker { width: 21px; height: 26px; }
   .wordmark { font-size: 27px; }
   .menu-btn { display: inline-flex; }
   .site-nav {
