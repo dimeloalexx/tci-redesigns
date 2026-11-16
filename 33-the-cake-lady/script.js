@@ -13,7 +13,7 @@ const SVG = "http://www.w3.org/2000/svg";
 /* ---------- The drawn cake ---------- */
 
 const SCHEMES = {
-  white: { name: "White", top: "#fbf7ef", side: "#ece3d1", bead: "#fffdf7", pipe: "#b0233a" },
+  white: { name: "White", top: "#fbf7ef", side: "#ece3d1", bead: "#fffdf7", pipe: "#0e6e73" },
   blue: { name: "Shades of blue", top: "#d3e4ef", side: "#a9c8dc", bead: "#e9f2f8", pipe: "#1f3a6b" },
   blush: { name: "Blush", top: "#f7dcdf", side: "#efc2c8", bead: "#fcecee", pipe: "#a3213a" },
   pistachio: { name: "Pistachio", top: "#e2eab9", side: "#c7d68f", bead: "#f0f4d8", pipe: "#b23d5c" },
@@ -57,7 +57,7 @@ function drawCake() {
   const writing = el("g", { "clip-path": "url(#pipe-clip)" }, cake);
   const plane = el("g", { transform: `translate(${CX} ${TOP + 4}) scale(1 .62)` }, writing);
   msgText = el("text", {
-    "text-anchor": "middle", "dominant-baseline": "middle", "font-family": "Allura, cursive", "font-size": 58,
+    "text-anchor": "middle", "dominant-baseline": "middle", "font-family": "Satisfy, cursive", "font-size": 58,
     class: "ck-fill", style: "fill: var(--ck-pipe); stroke: var(--ck-pipe)", "stroke-width": 1.1, "stroke-linejoin": "round",
   }, plane);
   beads(cake, TOP, 8, 0, Math.PI, 26);
@@ -123,6 +123,7 @@ const guestsInput = document.getElementById("p-guests");
 const msgInput = document.getElementById("p-msg");
 const timeCheck = document.getElementById("time-check");
 const priceNote = document.getElementById("price-note");
+const pickupWhen = document.getElementById("pickup-when");
 const sends = [...document.querySelectorAll(".send")];
 const tagOut = id => document.getElementById(id);
 
@@ -141,9 +142,11 @@ function read() {
     flavour: d.get("flavour") || "Vanilla",
     gf: d.get("gf") === "on",
     vegan: d.get("vegan") === "on",
+    nut: d.get("nut") === "on",
     colour: d.get("colour") || "white",
     message: tidy(d.get("message")),
     delivery: d.get("handover") === "delivery",
+    pickup: tidy(d.get("pickup")),
   };
 }
 
@@ -162,16 +165,20 @@ function timing(date) {
   return `${days} days to go: plenty of time, even for a very detailed cake. Order by ${by(21)} for a detailed design, or by ${by(14)} for a simpler one.`;
 }
 
+// Every price is a starting price, as Adele asked: "from", never a fixed total.
 function price(s) {
-  if (s.occasion === "Wedding") return "Wedding cakes are usually $500–600, depending on the design, and delivery is included.";
-  let text = "Birthday and party cakes start around $160, and the largest, most detailed ones are up to about $400.";
-  if (s.guests >= 60) text += " For a big crowd, ask about tiers, or add cupcakes at $40–60 a dozen.";
+  if (s.occasion === "Wedding") return "Wedding cakes start from $500, depending on the design, and delivery is included.";
+  if (s.occasion === "Christmas") return "Christmas sugar cookies come by the dozen, from $40, and cakes start from $160.";
+  let text = `${s.occasion === "Birthday" ? "Birthday and party cakes" : "Cakes"} start from $160. Sculpted, tiered and very detailed cakes cost more.`;
+  if (s.guests >= 60) text += " For a big crowd, ask about tiers, or add cupcakes from $40 a dozen.";
   return text;
 }
 
 function flavourLine(s) {
-  const extras = [s.gf && "gluten-free", s.vegan && "vegan"].filter(Boolean);
-  return extras.length ? `${s.flavour}, ${extras.join(" and ")}` : s.flavour;
+  const extras = [s.gf && "gluten-free", s.vegan && "vegan", s.nut && "nut-free"].filter(Boolean);
+  if (!extras.length) return s.flavour;
+  const last = extras.pop();
+  return `${s.flavour}, ${extras.length ? `${extras.join(", ")} and ${last}` : last}`;
 }
 
 function brief(s) {
@@ -186,6 +193,7 @@ function brief(s) {
     `Icing: ${scheme.name.toLowerCase()}`,
     `Message on the cake: ${s.message ? `"${s.message}"` : "none"}`,
     s.delivery ? "I'd like it delivered." : "I'll pick it up in Discovery Bay.",
+    ...(s.delivery ? [] : [`Preferred pickup day and time: ${s.pickup || "to agree with you"}`]),
     "",
     "Is that date free? I can send you pictures of cakes I like.",
   ];
@@ -204,7 +212,8 @@ function update() {
   tagOut("t-colour").textContent = scheme.name;
   tagOut("t-guests").textContent = `${s.guests || "?"} guests`;
   tagOut("t-date").textContent = s.date ? shortDate(s.date) : "Date to choose";
-  tagOut("t-hand").textContent = s.delivery ? (s.occasion === "Wedding" ? "Delivery, free" : "Delivery") : "Pickup, Discovery Bay";
+  tagOut("t-hand").textContent = s.delivery ? (s.occasion === "Wedding" ? "Delivery, free" : "Delivery") : (s.pickup ? `Pickup, ${s.pickup}` : "Pickup, Discovery Bay");
+  if (pickupWhen) pickupWhen.hidden = s.delivery;
   timeCheck.textContent = timing(s.date);
   priceNote.textContent = price(s);
   const href = waLink(brief(s));
@@ -243,7 +252,7 @@ if (form && cake) {
     io.observe(cake);
   };
   if (document.fonts) {
-    document.fonts.load("58px Allura").then(() => { update(); firstPipe(); }, firstPipe);
+    document.fonts.load("58px Satisfy").then(() => { update(); firstPipe(); }, firstPipe);
     document.fonts.addEventListener("loadingdone", () => writeMessage(read().message));
   } else {
     firstPipe();
@@ -283,7 +292,7 @@ if (track && !reduced) {
 
 const blocksG = document.getElementById("blocks");
 const blocksSvg = blocksG && blocksG.ownerSVGElement;
-const BLOCK_COLOURS = ["#c8243c", "#e0a912", "#a9c9de", "#f1c5cb", "#c9d78f", "#f8f3ea"];
+const BLOCK_COLOURS = ["#36c2ba", "#f8d35e", "#f9c49e", "#bccfad", "#f3913f", "#fffcf6"];
 const HEIGHTS = [1, .74, .9, .64, .96, .7, .86, .66, 1, .8, .62, .92, .76];
 let blocksNarrow = null;
 
@@ -308,7 +317,7 @@ function buildBlocks() {
       const h = rowH * HEIGHTS[k % HEIGHTS.length];
       const colour = BLOCK_COLOURS[k % BLOCK_COLOURS.length];
       el("rect", { x: x.toFixed(1), y: (bottom - h).toFixed(1), width: bw.toFixed(1), height: h.toFixed(1), fill: colour }, blocksG);
-      const t = el("text", { x: (x + bw / 2).toFixed(1), y: (bottom - bw * 0.3).toFixed(1), "text-anchor": "middle", "font-size": (bw * 1.02).toFixed(1), fill: "#8e1f2c" }, blocksG);
+      const t = el("text", { x: (x + bw / 2).toFixed(1), y: (bottom - bw * 0.3).toFixed(1), "text-anchor": "middle", "font-size": (bw * 1.02).toFixed(1), fill: "#0e6e73" }, blocksG);
       t.textContent = ch;
       x += bw + gap;
       k++;
@@ -318,6 +327,55 @@ function buildBlocks() {
 }
 buildBlocks();
 addEventListener("resize", buildBlocks);
+
+/* ---------- The bar: the Cakes menu, the phone menu, and the cupcake that walks with the page ---------- */
+
+const topbar = document.querySelector(".topbar");
+const menuBtn = document.querySelector(".menu-btn");
+const subBtn = document.querySelector(".sub-btn");
+const subItem = subBtn && subBtn.closest(".has-sub");
+const setSub = open => {
+  if (!subBtn) return;
+  subBtn.setAttribute("aria-expanded", String(open));
+  subItem.classList.toggle("open", open);
+};
+const setMenu = open => {
+  if (!menuBtn) return;
+  menuBtn.setAttribute("aria-expanded", String(open));
+  topbar.classList.toggle("menu-open", open);
+};
+if (topbar) {
+  if (subBtn) subBtn.addEventListener("click", () => setSub(subBtn.getAttribute("aria-expanded") !== "true"));
+  if (menuBtn) menuBtn.addEventListener("click", () => setMenu(menuBtn.getAttribute("aria-expanded") !== "true"));
+  topbar.querySelectorAll(".site-nav a").forEach(a => a.addEventListener("click", () => { setSub(false); setMenu(false); }));
+  document.addEventListener("click", e => { if (!topbar.contains(e.target)) { setSub(false); setMenu(false); } });
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    const wasOpen = subItem && subItem.classList.contains("open");
+    setSub(false); setMenu(false);
+    if (wasOpen && subBtn) subBtn.focus();
+  });
+}
+
+// Like the jeep on Turks Jeeps: the cupcake walks from left to right as the page goes down, and turns round going up.
+const walker = document.querySelector("[data-walker]");
+const rootEl = document.documentElement;
+let walkTick = false, walkIdle = 0, lastY = scrollY;
+function walk() {
+  walkTick = false;
+  const max = Math.max(1, rootEl.scrollHeight - innerHeight);
+  rootEl.style.setProperty("--walk", Math.min(1, Math.max(0, scrollY / max)).toFixed(4));
+  if (walker && !reduced && scrollY !== lastY) {
+    walker.classList.toggle("back", scrollY < lastY);
+    walker.classList.add("walking");
+    clearTimeout(walkIdle);
+    walkIdle = setTimeout(() => walker.classList.remove("walking"), 220);
+  }
+  lastY = scrollY;
+}
+addEventListener("scroll", () => { if (!walkTick) { walkTick = true; requestAnimationFrame(walk); } }, { passive: true });
+addEventListener("resize", walk);
+walk();
 
 /* ---------- Each section's parts come in one after another the first time they are seen ---------- */
 

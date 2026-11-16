@@ -4,74 +4,235 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Cake Lady | Custom cakes in Providenciales, Turks and Caicos</title>
-  <meta name="description" content="Custom birthday, christening and wedding cakes, baked to order by Adele van Schoor in Discovery Bay, Providenciales. Plan your cake and send it to Adele on WhatsApp.">
+  <meta name="description" content="Custom birthday, christening, wedding, graduation and Christmas cakes, baked to order by Adele van Schoor in Discovery Bay, Providenciales. Plan your cake and send it to Adele on WhatsApp.">
   <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="The Cake Lady">
-  <meta property="og:description" content="Custom cakes, made once. Baked to order by Adele in Discovery Bay, Providenciales.">
+  <meta property="og:description" content="You dream it; We make it. Custom cakes baked to order by Adele in Discovery Bay, Providenciales.">
   <meta property="og:image" content="assets/navy-gold-agate.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Allura&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
   <style>.concept-strip{position:absolute;top:0;left:0;right:0;z-index:1000;height:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;background:#111;color:#f5f5f5;font:500 11.5px/1 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.concept-strip a{color:#ffd54a;text-decoration:none}body{padding-top:28px}</style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Bakery","name":"The Cake Lady","founder":"Adele van Schoor","telephone":"+1-649-231-1898","address":{"@type":"PostalAddress","addressLocality":"Discovery Bay, Providenciales","addressCountry":"TC"},"priceRange":"$40–$600","sameAs":["https://www.facebook.com/thecakeladytci/","https://www.instagram.com/thecakeladytci/"]}
+  {"@context":"https://schema.org","@type":"Bakery","name":"The Cake Lady","founder":"Adele van Schoor","telephone":"+1-649-231-1898","address":{"@type":"PostalAddress","addressLocality":"Discovery Bay, Providenciales","addressCountry":"TC"},"priceRange":"From $40","sameAs":["https://www.facebook.com/thecakeladytci/","https://www.instagram.com/thecakeladytci/"]}
   </script>
 </head>
 <body>
 <div class="concept-strip" role="note" data-ui>Unofficial concept · not the official website · <a href="../">All concepts</a></div>
 
+<!-- The bar: the Cakes menu, and a cupcake that walks along the sprinkles as the page scrolls -->
+<header class="topbar" data-ui>
+  <div class="topbar-in">
+    <a class="wordmark" href="#top">The Cake Lady</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="burger" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <div class="has-sub">
+        <button class="nav-link sub-btn" type="button" aria-expanded="false" aria-controls="cakes-sub">Cakes<svg class="chev" viewBox="0 0 12 8" aria-hidden="true"><path d="M1.5 1.5 6 6l4.5-4.5"/></svg></button>
+        <ul class="sub" id="cakes-sub">
+          <li><a href="#birthday"><span class="dd" style="--c: var(--yellow)"></span>Birthday</a></li>
+          <li><a href="#christening"><span class="dd" style="--c: var(--aqua)"></span>Christening</a></li>
+          <li><a href="#weddings"><span class="dd" style="--c: var(--apricot)"></span>Weddings</a></li>
+          <li><a href="#christmas"><span class="dd" style="--c: var(--sage)"></span>Christmas</a></li>
+          <li><a href="#graduation"><span class="dd" style="--c: var(--orange)"></span>Graduation</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="#prices">Prices</a>
+      <a class="nav-link" href="#questions">Questions</a>
+      <a class="btn btn-ink btn-small nav-cta" href="#plan">Plan your cake</a>
+    </nav>
+  </div>
+  <div class="trail" aria-hidden="true">
+    <span class="walker" data-walker>
+      <svg viewBox="0 0 40 50">
+        <g class="leg leg-a"><path d="M16 38v8.5"/><ellipse cx="14.6" cy="47.4" rx="3.6" ry="2"/></g>
+        <g class="leg leg-b"><path d="M24 38v8.5"/><ellipse cx="25.4" cy="47.4" rx="3.6" ry="2"/></g>
+        <g class="bod">
+          <path class="cup" d="M8 25h24l-3.2 15H11.2z"/>
+          <path class="stripes" d="M14 25.6l1.3 13.8M20 25.6v13.8M26 25.6l-1.3 13.8"/>
+          <rect class="frost" x="6.5" y="21" width="27" height="6.5" rx="3.2"/>
+          <circle class="frost" cx="12" cy="22" r="5.6"/>
+          <circle class="frost" cx="28" cy="22" r="5.6"/>
+          <circle class="frost" cx="20" cy="18.6" r="7.6"/>
+          <circle class="frost" cx="20" cy="12.6" r="4.8"/>
+          <rect class="sp1" x="12.4" y="18.4" width="3.4" height="1.4" rx=".7" transform="rotate(-28 14.1 19.1)"/>
+          <rect class="sp2" x="23.4" y="16.4" width="3.4" height="1.4" rx=".7" transform="rotate(32 25.1 17.1)"/>
+          <rect class="sp3" x="18" y="22.4" width="3.4" height="1.4" rx=".7" transform="rotate(10 19.7 23.1)"/>
+          <circle class="cherry" cx="21" cy="7.6" r="3.6"/>
+          <path class="stem" d="M21.6 4.4c.3-1.9 1.5-3.2 3.3-3.8"/>
+          <circle class="eye" cx="16.4" cy="30.6" r="1.25"/>
+          <circle class="eye" cx="23.6" cy="30.6" r="1.25"/>
+          <path class="smile" d="M17.6 33.6c1.4 1.3 3.4 1.3 4.8 0"/>
+        </g>
+      </svg>
+    </span>
+  </div>
+</header>
+
 <main id="top">
 
-  <!-- Hero: the statement on raspberry, seven of her cakes on cherry -->
+  <!-- Hero: the promise on turquoise, seven of her cakes on deep sea -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-text">
-      <a class="wordmark" href="#top">The Cake Lady</a>
-      <h1 id="hero-title">Custom cakes, made once.</h1>
+      <h1 id="hero-title">You dream it;<br> We make it</h1>
       <div class="hero-foot" data-reveal>
-        <p>Adele rarely bakes the same cake twice. Birthdays, christenings and weddings, each one designed for its day and baked to order in Discovery Bay, Providenciales.</p>
-        <a class="btn btn-paper" href="#plan">Plan your cake</a>
+        <p>Adele rarely bakes the same cake twice. Birthdays, christenings, weddings, graduations and Christmas treats, each one designed for its day and baked to order in Discovery Bay, Providenciales.</p>
+        <a class="btn btn-ink" href="#plan">Plan your cake</a>
       </div>
     </div>
+    <p class="badge"><span class="b1">Two decades</span><span class="b2">on the island</span></p>
     <div class="hero-side">
-      <nav class="hero-links" aria-label="Sections">
-        <a href="#cakes">Cakes</a>
-        <a href="#prices">Prices</a>
-        <a href="#questions">Questions</a>
-      </nav>
       <div class="mosaic">
-        <figure class="tile tile-big f-gold shutter"><img src="assets/pistachio-cake-board.jpg" width="720" height="720" alt="A pistachio cake board piped with frills, tied with pale pink bows and dotted with pressed flowers, with a gold Happy Birthday topper"></figure>
-        <figure class="tile f-blush m2"><img src="assets/christening-blue.jpg" width="480" height="640" alt="A christening cake washed in shades of blue with a gold cross and a cluster of macarons and gold pearls"></figure>
-        <figure class="tile f-blue m3"><img src="assets/braided-buttercream.jpg" width="585" height="640" alt="A white cake covered in braided buttercream with gold spiral candles"></figure>
-        <figure class="tile f-bone m4"><img src="assets/sea-turtle.jpg" width="720" height="960" alt="A sculpted sea turtle cake resting on edible sand for a 40th birthday"></figure>
-        <figure class="tile f-pistachio m5"><img src="assets/he-or-she.jpg" width="485" height="640" alt="A heart-shaped gender reveal cake piped in cream with pink and blue bows"></figure>
-        <figure class="tile f-blue m6"><img src="assets/blue-ruffle-rose.jpg" width="485" height="640" alt="A tall powder blue cake of ruffles topped with a large blue sugar rose and lavender"></figure>
-        <figure class="tile f-blush m7"><img src="assets/piped-blooms.jpg" width="485" height="640" alt="A white cake decorated with piped red and yellow flowers and a name in script"></figure>
+        <figure class="tile tile-big f-yellow shutter"><img src="assets/pistachio-cake-board.jpg" width="720" height="720" alt="A pistachio cake board piped with frills, tied with pale pink bows and dotted with pressed flowers, with a gold Happy Birthday topper"></figure>
+        <figure class="tile f-apricot m2"><img src="assets/christening-blue.jpg" width="480" height="640" alt="A christening cake washed in shades of blue with a gold cross and a cluster of macarons and gold pearls"></figure>
+        <figure class="tile f-aqua m3"><img src="assets/braided-buttercream.jpg" width="585" height="640" alt="A white cake covered in braided buttercream with gold spiral candles"></figure>
+        <figure class="tile f-cream m4"><img src="assets/sea-turtle.jpg" width="720" height="960" alt="A sculpted sea turtle cake resting on edible sand for a 40th birthday"></figure>
+        <figure class="tile f-sage m5"><img src="assets/he-or-she.jpg" width="485" height="640" alt="A heart-shaped gender reveal cake piped in cream with pink and blue bows"></figure>
+        <figure class="tile f-orange m6"><img src="assets/blue-ruffle-rose.jpg" width="485" height="640" alt="A tall powder blue cake of ruffles topped with a large blue sugar rose and lavender"></figure>
+        <figure class="tile f-apricot m7"><img src="assets/piped-blooms.jpg" width="485" height="640" alt="A white cake decorated with piped red and yellow flowers and a name in script"></figure>
       </div>
     </div>
   </section>
 
-  <!-- The catalogue: every cake with its swing tag -->
+  <!-- The catalogue, by occasion: every cake with its swing tag -->
   <section class="gallery" id="cakes" aria-labelledby="cakes-title">
     <div class="wrap">
       <div class="gallery-head" data-reveal>
         <h2 id="cakes-title">Every cake, a one-off</h2>
         <p>A few from the last weeks. Her Instagram holds more than 3,500 posts, and you will struggle to find two cakes alike.</p>
       </div>
-      <div class="tags" data-reveal>
-        <figure class="tag s-cherry"><img src="assets/christening-blue.jpg" width="480" height="640" loading="lazy" alt="Christening cake in shades of blue with a gold cross"><figcaption><span class="r1"><span>Christening</span><span>Blue wash</span><span>Gold cross</span><span>Pearls</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-gold"><img src="assets/blue-ruffle-rose.jpg" width="485" height="640" loading="lazy" alt="Powder blue ruffle cake with a sugar rose on top"><figcaption><span class="r1"><span>Ruffles</span><span>Powder blue</span><span>Sugar rose</span><span>Lavender</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-navy"><img src="assets/braided-buttercream.jpg" width="585" height="640" loading="lazy" alt="White braided buttercream cake with gold candles and a name plaque"><figcaption><span class="r1"><span>Birthday</span><span>Braided</span><span>Gold candles</span><span>Plaque</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-blush"><img src="assets/strawberries.jpg" width="485" height="640" loading="lazy" alt="White cake crowned with fresh strawberries on a gold stand"><figcaption><span class="r1"><span>Birthday</span><span>Strawberries</span><span>Combed</span><span>Gold stand</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-blue"><img src="assets/treasure-chest.jpg" width="480" height="640" loading="lazy" alt="Sculpted treasure chest cake with a cigar, in a dark lounge"><figcaption><span class="r1"><span>Birthday</span><span>Sculpted</span><span>Treasure chest</span><span>Cigar</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-cherry"><img src="assets/he-or-she.jpg" width="485" height="640" loading="lazy" alt="Heart-shaped gender reveal cake asking He or she"><figcaption><span class="r1"><span>Gender reveal</span><span>Heart</span><span>Pink, blue</span><span>Bows</span></span><span class="r2"><span>Instagram, Oct 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-gold"><img src="assets/sea-turtle.jpg" width="720" height="960" loading="lazy" alt="Sea turtle cake on edible sand"><figcaption><span class="r1"><span>40th birthday</span><span>Sculpted</span><span>Sea turtle</span><span>Sand</span></span><span class="r2"><span>Facebook</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-navy"><img src="assets/pink-hearts.jpg" width="480" height="640" loading="lazy" alt="Two-tier blush cake covered in pink hearts with wavy candles"><figcaption><span class="r1"><span>Two tiers</span><span>Blush</span><span>Hearts</span><span>Candles</span></span><span class="r2"><span>Instagram, Oct 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-blush"><img src="assets/piped-blooms.jpg" width="485" height="640" loading="lazy" alt="White cake with piped red and yellow flowers"><figcaption><span class="r1"><span>Birthday</span><span>Piped blooms</span><span>Red, yellow</span><span>Script</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-blue"><img src="assets/navy-gold-agate.jpg" width="1920" height="1280" loading="lazy" alt="Navy and gold birthday cake with an agate sail and gold spheres"><figcaption><span class="r1"><span>Birthday</span><span>Navy, gold</span><span>Agate sail</span><span>Spheres</span></span><span class="r2"><span>VisitTCI</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-cherry"><img src="assets/christening-cupcakes.jpg" width="443" height="590" loading="lazy" alt="Christening cupcakes topped with blue fondant crosses and initials"><figcaption><span class="r1"><span>Christening</span><span>Cupcakes</span><span>Crosses</span><span>Initials</span></span><span class="r2"><span>Facebook</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
-        <figure class="tag s-gold"><img src="assets/blush-dried-flowers.jpg" width="1920" height="1280" loading="lazy" alt="Blush birthday cake with dried flowers and a palm spear"><figcaption><span class="r1"><span>Birthday</span><span>Blush</span><span>Dried flowers</span><span>Palm</span></span><span class="r2"><span>VisitTCI</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+      <nav class="cat-jump" aria-label="Cakes by occasion">
+        <a href="#birthday" style="--c: var(--yellow)">Birthday</a>
+        <a href="#christening" style="--c: var(--aqua)">Christening</a>
+        <a href="#weddings" style="--c: var(--apricot)">Weddings</a>
+        <a href="#christmas" style="--c: var(--sage)">Christmas</a>
+        <a href="#graduation" style="--c: var(--orange)">Graduation</a>
+      </nav>
+
+      <div class="cake-cat" id="birthday">
+        <div class="cc-head" data-reveal>
+          <h3>Birthday</h3>
+          <p>First birthdays to fortieths: sculpted, piped, braided or crowned with fruit, and the parties around them, like gender reveals.</p>
+        </div>
+        <div class="tags" data-reveal>
+          <figure class="tag s-yellow"><img src="assets/superhero-tiers.jpg" width="720" height="960" loading="lazy" alt="Three-tier superhero cake for a 6th birthday, held up by two giant green fists, with a glowing glove, a hammer and a silver 6 on top"><figcaption><span class="r1"><span>6th birthday</span><span>Heroes</span><span>Light-up</span><span>3 tiers</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/braided-buttercream.jpg" width="585" height="640" loading="lazy" alt="White braided buttercream cake with gold candles and a name plaque"><figcaption><span class="r1"><span>Birthday</span><span>Braided</span><span>Gold candles</span><span>Plaque</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/strawberries.jpg" width="485" height="640" loading="lazy" alt="White cake crowned with fresh strawberries on a gold stand"><figcaption><span class="r1"><span>Birthday</span><span>Strawberries</span><span>Combed</span><span>Gold stand</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/superhero-board.jpg" width="443" height="590" loading="lazy" alt="Sculpted birthday cake split into superhero panels, with stars and the birthday child's name on a stone-effect board"><figcaption><span class="r1"><span>Birthday</span><span>Heroes</span><span>Sculpted</span><span>Stars</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/treasure-chest.jpg" width="480" height="640" loading="lazy" alt="Sculpted treasure chest cake with a cigar, in a dark lounge"><figcaption><span class="r1"><span>Birthday</span><span>Sculpted</span><span>Treasure chest</span><span>Cigar</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/gold-hookah.jpg" width="366" height="590" loading="lazy" style="object-position: 50% 18%" alt="White birthday cake with black piping, topped with a sculpted gold and black hookah"><figcaption><span class="r1"><span>Birthday</span><span>Sculpted</span><span>Hookah</span><span>Gold</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sage"><img src="assets/sea-turtle.jpg" width="720" height="960" loading="lazy" alt="Sea turtle cake on edible sand"><figcaption><span class="r1"><span>40th birthday</span><span>Sculpted</span><span>Sea turtle</span><span>Sand</span></span><span class="r2"><span>Facebook</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/piped-blooms.jpg" width="485" height="640" loading="lazy" alt="White cake with piped red and yellow flowers"><figcaption><span class="r1"><span>Birthday</span><span>Piped blooms</span><span>Red, yellow</span><span>Script</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/navy-gold-agate-800.jpg" width="1920" height="1280" loading="lazy" srcset="assets/navy-gold-agate-800.jpg 800w, assets/navy-gold-agate.jpg 1920w" sizes="(max-width: 860px) 50vw, 25vw" alt="Navy and gold birthday cake with an agate sail and gold spheres"><figcaption><span class="r1"><span>Birthday</span><span>Navy, gold</span><span>Agate sail</span><span>Spheres</span></span><span class="r2"><span>VisitTCI</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/blush-dried-flowers-800.jpg" width="1920" height="1280" loading="lazy" srcset="assets/blush-dried-flowers-800.jpg 800w, assets/blush-dried-flowers.jpg 1920w" sizes="(max-width: 860px) 50vw, 25vw" alt="Blush birthday cake with dried flowers and a palm spear"><figcaption><span class="r1"><span>Birthday</span><span>Blush</span><span>Dried flowers</span><span>Palm</span></span><span class="r2"><span>VisitTCI</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/pink-hearts.jpg" width="480" height="640" loading="lazy" alt="Two-tier blush cake covered in pink hearts with wavy candles"><figcaption><span class="r1"><span>Two tiers</span><span>Blush</span><span>Hearts</span><span>Candles</span></span><span class="r2"><span>Instagram, Oct 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/he-or-she.jpg" width="485" height="640" loading="lazy" alt="Heart-shaped gender reveal cake asking He or she"><figcaption><span class="r1"><span>Gender reveal</span><span>Heart</span><span>Pink, blue</span><span>Bows</span></span><span class="r2"><span>Instagram, Oct 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+        </div>
       </div>
+
+      <div class="cake-cat" id="christening">
+        <div class="cc-head" data-reveal>
+          <h3>Christening</h3>
+          <p>Soft blues and blush pinks, gold crosses, sugar flowers and cookies to match.</p>
+        </div>
+        <div class="tags" data-reveal>
+          <figure class="tag s-yellow"><img src="assets/christening-blue.jpg" width="480" height="640" loading="lazy" alt="Christening cake in shades of blue with a gold cross and a cluster of macarons and gold pearls"><figcaption><span class="r1"><span>Christening</span><span>Blue wash</span><span>Gold cross</span><span>Pearls</span></span><span class="r2"><span>Instagram, Nov 2026</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/ch-blue-dried-flowers.jpg" width="443" height="590" loading="lazy" alt="Christening cake in shades of blue with a gold cross, a sugar Bible on top and dried flowers and palm"><figcaption><span class="r1"><span>Christening</span><span>Blue</span><span>Dried palm</span><span>Bible</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/ch-purple-butterflies.jpg" width="443" height="590" loading="lazy" alt="White christening cake with a white cross, purple flowers and pink butterflies under a mirrored topper"><figcaption><span class="r1"><span>Christening</span><span>Butterflies</span><span>Purple</span><span>Cross</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/ch-blue-gold-cross.jpg" width="526" height="586" loading="lazy" alt="Blue and white christening cake with an ornate gold cross, blue macarons and gold and teal spheres"><figcaption><span class="r1"><span>Christening</span><span>Blue</span><span>Gold cross</span><span>Macarons</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/ch-christening-gown.jpg" width="442" height="590" loading="lazy" alt="Cake shaped like a christening gown with white ruffles, a pink bow and tiny sugar baby shoes"><figcaption><span class="r1"><span>Christening</span><span>Gown</span><span>Bow</span><span>Baby shoes</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/ch-pink-roses.jpg" width="472" height="590" loading="lazy" alt="Pink christening cake with roses, a wooden cross, butterflies and gold lettering"><figcaption><span class="r1"><span>Christening</span><span>Pink</span><span>Roses</span><span>Butterflies</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sage"><img src="assets/ch-sugar-flower-cross.jpg" width="472" height="590" loading="lazy" alt="Ivory cake with a large white sugar flower, gold spheres and an ornate gold cross"><figcaption><span class="r1"><span>Christening</span><span>Ivory</span><span>Sugar flower</span><span>Gold cross</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/ch-communion.jpg" width="350" height="583" loading="lazy" alt="White communion cake topped with a chalice, a host with a cross and a dove, with a draped cloth"><figcaption><span class="r1"><span>Communion</span><span>Chalice</span><span>Dove</span><span>Drape</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/ch-pink-cross-tiers.jpg" width="370" height="588" loading="lazy" alt="Two-tier white christening cake with a pink cross, quilted sides, a pink rose and a bow, on a wooden crate"><figcaption><span class="r1"><span>Christening</span><span>Two tiers</span><span>Pink cross</span><span>Quilted</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/ch-cookies-white-gold.jpg" width="443" height="590" loading="lazy" alt="Christening sugar cookies in white and gold: crosses, little onesies, doves and initials"><figcaption><span class="r1"><span>Christening</span><span>Cookies</span><span>White, gold</span><span>Doves</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/christening-cupcakes.jpg" width="443" height="590" loading="lazy" alt="Christening cupcakes topped with blue fondant crosses and initials"><figcaption><span class="r1"><span>Christening</span><span>Cupcakes</span><span>Crosses</span><span>Initials</span></span><span class="r2"><span>Facebook</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <div class="ask-card card-yellow">
+            <p>Planning a christening? Send Adele the date, your colours and the baby's name, and she will design it with you.</p>
+            <a class="btn btn-ink" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20a%20christening%20cake." target="_blank" rel="noopener">Ask Adele</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cake-cat" id="weddings">
+        <div class="cc-head" data-reveal>
+          <h3>Weddings</h3>
+          <p>Tiered and designed with you, from garden parties to villas by the sea.</p>
+        </div>
+        <div class="cc-panel cc-wed" data-reveal>
+          <figure class="cc-photo"><img src="assets/wed-donuts-roses.jpg" width="720" height="738" loading="lazy" alt="Three-tier naked wedding cake with sugared doughnuts and orange and pink roses, with candles and flowers behind"></figure>
+          <div class="cc-copy">
+            <p>Wedding cakes start from $500, depending on the design, and delivery is included. Tell Adele your date, your colours and how many guests, and she will plan it with you.</p>
+            <a class="btn btn-ink" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20to%20talk%20about%20a%20wedding%20cake." target="_blank" rel="noopener">Ask about your wedding cake</a>
+          </div>
+        </div>
+        <div class="tags tags-after" data-reveal>
+          <figure class="tag s-yellow"><img src="assets/wed-toolbox-cupcakes.jpg" width="590" height="443" loading="lazy" alt="A red toolbox with its drawers full of cupcakes, on a table decorated with palm leaves and flowers"><figcaption><span class="r1"><span>Wedding</span><span>Cupcakes</span><span>Red toolbox</span><span>Palms</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/wed-naked-berries.jpg" width="720" height="960" loading="lazy" alt="Two-tier naked wedding cake with orange roses and fresh berries dusted with sugar"><figcaption><span class="r1"><span>Wedding</span><span>Naked</span><span>Berries</span><span>Roses</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/wed-ivory-lace.jpg" width="720" height="955" loading="lazy" alt="Four-tier ivory wedding cake covered in lace and sugar flowers, with the couple's monogram, beside gold-trimmed chairs"><figcaption><span class="r1"><span>Wedding</span><span>Four tiers</span><span>Lace</span><span>Monogram</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/wed-blue-flowers-sea.jpg" width="445" height="590" loading="lazy" alt="Three-tier white wedding cake with blue flowers on a blue table, with the sea behind the window"><figcaption><span class="r1"><span>Wedding</span><span>Three tiers</span><span>Blue flowers</span><span>Sea view</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/wed-protea-ferns.jpg" width="720" height="788" loading="lazy" alt="Three-tier naked wedding cake with a protea, ferns and baby's breath on a wood slice, with candles and fairy lights"><figcaption><span class="r1"><span>Wedding</span><span>Naked</span><span>Protea</span><span>Ferns</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/wed-waves-ferns.jpg" width="443" height="590" loading="lazy" alt="Three-tier white wedding cake with piped waves, white roses and ferns, in a villa by the sea"><figcaption><span class="r1"><span>Wedding</span><span>Waves</span><span>White roses</span><span>Ferns</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sage"><img src="assets/wed-nautical.jpg" width="339" height="590" loading="lazy" alt="Three-tier nautical wedding cake with sugar rope, navy stripes, a silver anchor and a Mr and Mrs topper"><figcaption><span class="r1"><span>Wedding</span><span>Nautical</span><span>Anchor</span><span>Rope</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/wed-navy-roses.jpg" width="720" height="960" loading="lazy" alt="Three-tier textured buttercream wedding cake with navy, green and white roses and trailing greenery"><figcaption><span class="r1"><span>Wedding</span><span>Three tiers</span><span>Navy roses</span><span>Greenery</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/wed-beach-photographers.jpg" width="348" height="590" loading="lazy" alt="Two-tier beach wedding cake with sugar shells and a starfish, and a bride and groom photographing each other on top"><figcaption><span class="r1"><span>Wedding</span><span>Beach</span><span>Shells</span><span>Cameras</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/wed-wood-slice.jpg" width="526" height="707" loading="lazy" alt="Three-tier naked wedding cake with white roses on a wood slice, in a tropical garden"><figcaption><span class="r1"><span>Wedding</span><span>Naked</span><span>White roses</span><span>Wood slice</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/wed-gold-hoop.jpg" width="526" height="817" loading="lazy" alt="Three-tier blush and black wedding cake inside a gold hoop with pink and white roses"><figcaption><span class="r1"><span>Wedding</span><span>Blush, black</span><span>Gold hoop</span><span>Roses</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/wed-roses-cupcakes.jpg" width="590" height="590" loading="lazy" alt="Small white wedding cake topped with white roses and greenery, surrounded by cupcakes in lace wrappers"><figcaption><span class="r1"><span>Wedding</span><span>White roses</span><span>Cupcakes</span><span>Lace cups</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="cake-cat" id="christmas">
+        <div class="cc-head" data-reveal>
+          <h3>Christmas</h3>
+          <p>Handcrafted sugar cookies, cupcakes and cakes for the season, island style.</p>
+        </div>
+        <div class="cc-panel cc-xmas" data-reveal>
+          <div class="cc-copy">
+            <blockquote class="xmas-quote">
+              <p>A little Christmas magic, made by hand and baked with love. Alicia joins me in the kitchen each Christmas to create our beautiful, handcrafted sugar cookies — each one a little work of art.</p>
+              <footer>Adele</footer>
+            </blockquote>
+            <a class="btn btn-ink" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20to%20order%20your%20Christmas%20sugar%20cookies." target="_blank" rel="noopener">Order Christmas cookies</a>
+          </div>
+          <figure class="cc-photo"><img src="assets/xmas-beach-snowman.jpg" width="720" height="788" loading="lazy" alt="Iced Christmas sugar cookie of a snowman made of sand, in a turquoise bucket hat and with shells for buttons, with Santa cookies behind"></figure>
+        </div>
+        <div class="tags tags-after" data-reveal>
+          <figure class="tag s-yellow"><img src="assets/xmas-sugar-cookies.jpg" width="473" height="590" loading="lazy" alt="Iced Christmas sugar cookies: mugs of cocoa, trees, stockings, ornaments and stars wearing Santa hats"><figcaption><span class="r1"><span>Christmas</span><span>Cookies</span><span>Iced</span><span>Santa hats</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/xmas-stocking.jpg" width="690" height="960" loading="lazy" alt="Red quilted Christmas stocking cake spilling candy, with a gingerbread cookie and a snowman"><figcaption><span class="r1"><span>Christmas</span><span>Stocking</span><span>Candy</span><span>Cookies</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/xmas-paint-cookies.jpg" width="512" height="640" loading="lazy" alt="A tray of white paint-your-own Christmas cookies outlined with Santa, elves, reindeer and gingerbread men"><figcaption><span class="r1"><span>Christmas</span><span>Cookies</span><span>Paint your own</span><span>Santa</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/xmas-winter-icicles.jpg" width="636" height="829" loading="lazy" alt="Two-tier turquoise and white winter cake with icicles, trees and snowflakes, between two glitter reindeer"><figcaption><span class="r1"><span>Christmas</span><span>Two tiers</span><span>Icicles</span><span>Snowflakes</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/xmas-poinsettia-cupcakes.jpg" width="472" height="590" loading="lazy" alt="Christmas cupcakes piped as poinsettias, wreaths, Santa hats and little trees"><figcaption><span class="r1"><span>Christmas</span><span>Cupcakes</span><span>Poinsettias</span><span>Trees</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/xmas-gold-snowflakes.jpg" width="541" height="590" loading="lazy" alt="Ivory cake scattered with white and gold snowflakes and gold pearls"><figcaption><span class="r1"><span>Christmas</span><span>Ivory</span><span>Gold</span><span>Snowflakes</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sage"><img src="assets/xmas-macarons.jpg" width="472" height="590" loading="lazy" alt="Christmas macarons shaped like reindeer and decorated trees"><figcaption><span class="r1"><span>Christmas</span><span>Macarons</span><span>Reindeer</span><span>Trees</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/xmas-cookie-platter.jpg" width="720" height="778" loading="lazy" alt="A round platter of tree-shaped Christmas treats piped in grey and white, with snowman macarons and candy canes"><figcaption><span class="r1"><span>Christmas</span><span>Platter</span><span>Snowmen</span><span>Candy canes</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/xmas-red-green.jpg" width="590" height="590" loading="lazy" alt="White Christmas cake crowned with red and green piping and decorated with little piped trees"><figcaption><span class="r1"><span>Christmas</span><span>Red, green</span><span>Piped</span><span>Trees</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/xmas-holly-wreath.jpg" width="509" height="540" loading="lazy" alt="White Christmas cake with a wreath of sugar holly leaves and red berries and Merry Christmas lettering"><figcaption><span class="r1"><span>Christmas</span><span>Holly</span><span>Berries</span><span>Lettering</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/xmas-tree-tart.jpg" width="443" height="590" loading="lazy" alt="Christmas tree-shaped cream tart with blue macarons, meringues, blueberries and sugar snowflakes"><figcaption><span class="r1"><span>Christmas</span><span>Tree</span><span>Macarons</span><span>Blueberries</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/xmas-happy-holidays.jpg" width="541" height="590" loading="lazy" alt="Ivory cake with blue sugar peonies and gold leaf and a Happy Holidays plaque"><figcaption><span class="r1"><span>Christmas</span><span>Holidays</span><span>Peonies</span><span>Gold leaf</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="cake-cat" id="graduation">
+        <div class="cc-head" data-reveal>
+          <h3>Graduation</h3>
+          <p>From the first day of school to the class of 2025: caps, diplomas and the school colours.</p>
+        </div>
+        <div class="tags" data-reveal>
+          <figure class="tag s-yellow"><img src="assets/grad-black-gold.jpg" width="720" height="720" loading="lazy" alt="Black and white graduation cake with gold leaf, a black cap and a diploma, for the class of 2025"><figcaption><span class="r1"><span>Graduation</span><span>Class of 2025</span><span>Black</span><span>Gold leaf</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sea"><img src="assets/grad-owl.jpg" width="350" height="590" loading="lazy" alt="Owl cake wearing a graduation cap and glasses, holding a diploma"><figcaption><span class="r1"><span>Graduation</span><span>Owl</span><span>Cap</span><span>Diploma</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-apricot"><img src="assets/grad-yellow-teal.jpg" width="411" height="590" loading="lazy" alt="Yellow graduation cake with a teal drip, yellow roses, a black cap and a diploma"><figcaption><span class="r1"><span>Graduation</span><span>Yellow, teal</span><span>Drip</span><span>Roses</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-orange"><img src="assets/grad-pink-gold.jpg" width="584" height="590" loading="lazy" alt="Pink graduation cake with a gold drip, a pink cap, sugar flowers and butterflies"><figcaption><span class="r1"><span>Graduation</span><span>Pink</span><span>Gold drip</span><span>Sugar flowers</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-aqua"><img src="assets/grad-letter-cookies.jpg" width="511" height="590" loading="lazy" alt="Graduation cookies shaped as letters, each with a navy cap, red flowers and leaves"><figcaption><span class="r1"><span>Graduation</span><span>Cookies</span><span>Letters</span><span>Caps</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-yellow"><img src="assets/grad-valedictorian.jpg" width="477" height="590" loading="lazy" alt="Navy book-shaped graduation cake for a valedictorian, with a cap and a class of 2020 face mask"><figcaption><span class="r1"><span>Graduation</span><span>Book</span><span>Valedictorian</span><span>2020</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <figure class="tag s-sage"><img src="assets/grad-first-grade.jpg" width="403" height="584" loading="lazy" alt="White cake with a chalkboard reading Ready for 1st Grade, a black cap and a diploma"><figcaption><span class="r1"><span>School</span><span>First grade</span><span>Chalkboard</span><span>Cap</span></span><span class="r2"><span>From Adele</span><span>Discovery Bay</span></span><span class="r3">Baked by Adele</span></figcaption></figure>
+          <div class="ask-card card-yellow">
+            <p>Graduating this year? Tell Adele the school colours and the name, and she will make the cake, the cookies or both.</p>
+            <a class="btn btn-ink" href="https://wa.me/16492311898?text=Hi%20Adele%21%20I%27d%20like%20a%20graduation%20cake." target="_blank" rel="noopener">Ask Adele</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -80,19 +241,19 @@
     <div class="wrap steps-grid" data-reveal>
       <h2 id="steps-title">From a message to your cake</h2>
       <div class="step st-1">
-        <figure class="step-tile f-blush"><img src="assets/christening-cupcakes.jpg" width="443" height="590" loading="lazy" alt="Christening cupcakes with blue crosses"></figure>
+        <figure class="step-tile f-apricot"><img src="assets/christening-cupcakes.jpg" width="443" height="590" loading="lazy" alt="Christening cupcakes with blue crosses"></figure>
         <h3>Ask</h3>
         <p>Send Adele the date, the number of guests and a picture or two of what you love, on WhatsApp or by phone.</p>
       </div>
       <div class="step st-2">
-        <figure class="step-tile f-blue"><img src="assets/braided-buttercream.jpg" width="585" height="640" loading="lazy" alt="White braided buttercream cake"></figure>
+        <figure class="step-tile f-aqua"><img src="assets/braided-buttercream.jpg" width="585" height="640" loading="lazy" alt="White braided buttercream cake"></figure>
         <h3>Baked</h3>
         <p>She designs it and bakes it in-house, to order. Give her one to two weeks, and up to three for very detailed cakes.</p>
       </div>
       <div class="step st-3">
-        <figure class="step-tile f-gold"><img src="assets/blue-ruffle-rose.jpg" width="485" height="640" loading="lazy" alt="Tall powder blue ruffle cake"></figure>
+        <figure class="step-tile f-yellow"><img src="assets/blue-ruffle-rose.jpg" width="485" height="640" loading="lazy" alt="Tall powder blue ruffle cake"></figure>
         <h3>Yours</h3>
-        <p>Collect it in Discovery Bay, or have it delivered for an extra charge. Wedding cakes are delivered free.</p>
+        <p>Collect it in Discovery Bay at the day and time you agreed, or have it delivered for an extra charge. Wedding cakes are delivered free.</p>
       </div>
     </div>
   </section>
@@ -141,11 +302,13 @@
             <label class="chip"><input type="radio" name="occasion" value="Birthday" checked><span>Birthday</span></label>
             <label class="chip"><input type="radio" name="occasion" value="Christening"><span>Christening</span></label>
             <label class="chip"><input type="radio" name="occasion" value="Wedding"><span>Wedding</span></label>
+            <label class="chip"><input type="radio" name="occasion" value="Christmas"><span>Christmas</span></label>
+            <label class="chip"><input type="radio" name="occasion" value="Graduation"><span>Graduation</span></label>
             <label class="chip"><input type="radio" name="occasion" value="Anniversary"><span>Anniversary</span></label>
             <label class="chip"><input type="radio" name="occasion" value="Gender reveal"><span>Gender reveal</span></label>
             <label class="chip"><input type="radio" name="occasion" value="Something else"><span>Something else</span></label>
           </div>
-          <p class="note-line" id="price-note">Birthday and party cakes start around $160, and the largest, most detailed ones are up to about $400.</p>
+          <p class="note-line" id="price-note">Birthday and party cakes start from $160.</p>
         </fieldset>
 
         <div class="field-row">
@@ -178,6 +341,7 @@
           <div class="checks">
             <label class="check"><input type="checkbox" name="gf"><span>Gluten-free</span></label>
             <label class="check"><input type="checkbox" name="vegan"><span>Vegan</span></label>
+            <label class="check"><input type="checkbox" name="nut"><span>Nut-free</span></label>
           </div>
         </fieldset>
 
@@ -186,6 +350,11 @@
           <div class="chips">
             <label class="chip"><input type="radio" name="handover" value="pickup" checked><span>Pick up in Discovery Bay</span></label>
             <label class="chip"><input type="radio" name="handover" value="delivery"><span>Deliver it</span></label>
+          </div>
+          <div class="pickup-when" id="pickup-when">
+            <label for="p-pickup">Preferred pickup day and time</label>
+            <input type="text" id="p-pickup" name="pickup" placeholder="For example, Saturday at 2 pm" maxlength="60" autocomplete="off">
+            <p class="note-line">Please specify your preferred pickup day and time. Kindly note that any early morning pickups must be arranged and placed the day before.</p>
           </div>
         </fieldset>
 
@@ -208,7 +377,7 @@
           <li><span class="dot" style="--c:#fbf7ee"></span><div><p class="name">Coconut</p><p>Coconut through and through.</p></div></li>
           <li><span class="dot" style="--c:#b8742c"></span><div><p class="name">Rum</p><p>For the grown-ups' table.</p><p class="note">Contains alcohol</p></div></li>
           <li><span class="dot" style="--c:#c9a37b"></span><div><p class="name">Baileys Irish Cream</p><p>Also for the grown-ups.</p><p class="note">Contains alcohol</p></div></li>
-          <li><span class="dot" style="--c:#c9d78f"></span><div><p class="name">Gluten-free or vegan</p><p>Either one on request. Say so when you order.</p></div></li>
+          <li><span class="dot" style="--c:#bccfad"></span><div><p class="name">Gluten-free, vegan or nut-free</p><p>Any of them on request. Say so when you order.</p></div></li>
         </ul>
       </div>
       <div class="menu-cat" data-reveal>
@@ -223,12 +392,12 @@
           <li><span class="dot" style="--c:#a9c9de"></span><div><p class="name">Macarons</p><p>The ones you see on her cakes, by the dozen.</p></div></li>
         </ul>
       </div>
-      <div class="menu-cat" data-reveal>
-        <div class="cat-head"><h3>By the dozen</h3><span>$40–60</span></div>
+      <div class="menu-cat dozen-box" data-reveal>
+        <div class="cat-head"><h3>By The Dozen</h3><span>from $40 a dozen</span></div>
         <ul class="items">
-          <li><span class="dot" style="--c:#efc2c8"></span><div><p class="name">Cupcakes</p><p>Decorated to match the cake, or on their own.</p></div></li>
+          <li><span class="dot" style="--c:#f9c49e"></span><div><p class="name">Cupcakes</p><p>Decorated to match the cake, or on their own.</p></div></li>
           <li><span class="dot" style="--c:#3b1f14"></span><div><p class="name">Brownies</p><p>For school parties, offices and boat days.</p></div></li>
-          <li><span class="dot" style="--c:#d9b382"></span><div><p class="name">Cookies</p><p>Iced with names, numbers or your theme.</p></div></li>
+          <li><span class="dot" style="--c:#d9b382"></span><div><p class="name">Cookies</p><p>Iced with names, numbers or your theme, and sugar cookies at Christmas.</p></div></li>
         </ul>
       </div>
     </div>
@@ -239,44 +408,42 @@
     <div class="wrap prices-grid">
       <div class="prices-side" data-reveal>
         <h2 id="prices-title">What cakes cost</h2>
-        <figure class="prices-photo f-bone"><img src="assets/strawberries.jpg" width="485" height="640" loading="lazy" alt="White cake with fresh strawberries on a gold stand"></figure>
+        <figure class="prices-photo f-cream"><img src="assets/strawberries.jpg" width="485" height="640" loading="lazy" alt="White cake with fresh strawberries on a gold stand"></figure>
       </div>
       <div class="price-cols" data-reveal>
         <div class="price-group">
           <h3>Cakes</h3>
           <div class="price-row"><span>Birthday and party cakes</span><span>from $160</span></div>
-          <p>Most simple birthday cakes start here.</p>
-          <div class="price-row"><span>Big, detailed cakes</span><span>up to $400</span></div>
-          <p>Sculpted, tiered or full of handmade detail.</p>
-          <div class="price-row"><span>Wedding cakes</span><span>$500–600</span></div>
+          <p>Sculpted, tiered and very detailed cakes cost more.</p>
+          <div class="price-row"><span>Wedding cakes</span><span>from $500</span></div>
           <p>Depending on the design. Delivery included.</p>
         </div>
-        <div class="price-group">
-          <h3>By the dozen</h3>
-          <div class="price-row"><span>Cupcakes</span><span>$40–60</span></div>
+        <div class="price-group dozen-box">
+          <h3>By The Dozen</h3>
+          <div class="price-row"><span>Cupcakes</span><span>from $40</span></div>
           <p>Depending on the design.</p>
-          <div class="price-row"><span>Brownies</span><span>$40–60</span></div>
+          <div class="price-row"><span>Brownies</span><span>from $40</span></div>
           <p>Depending on the ingredients.</p>
-          <div class="price-row"><span>Cookies</span><span>$40–60</span></div>
+          <div class="price-row"><span>Cookies</span><span>from $40</span></div>
           <p>Depending on the icing.</p>
         </div>
         <div class="price-group">
           <h3>Getting it there</h3>
           <div class="price-row"><span>Pickup in Discovery Bay</span><span>free</span></div>
-          <p>Message Adele for directions when you set off.</p>
+          <p>Please specify your preferred pickup day and time. Kindly note that any early morning pickups must be arranged and placed the day before.</p>
           <div class="price-row"><span>Delivery</span><span>extra</span></div>
           <p>Free for wedding cakes.</p>
         </div>
-        <p class="price-small">Guide prices. Every cake is different, so Adele confirms the price when you order.</p>
+        <p class="price-terms">All prices quoted are starting prices (“from”) and may vary depending on the design, size, detail and customization required. They are not fixed or final totals.</p>
       </div>
     </div>
   </section>
 
   <!-- Two of her cakes, two fields -->
   <section class="showcase" aria-labelledby="show-title">
-    <div class="panel p-navy">
+    <div class="panel p-sea">
       <h2 id="show-title">Like one of these?</h2>
-      <figure class="panel-photo"><img src="assets/navy-gold-agate.jpg" width="1920" height="1280" loading="lazy" alt="Navy and gold birthday cake with an agate sail, gold spheres and a Happy Birthday topper"></figure>
+      <figure class="panel-photo"><img src="assets/navy-gold-agate-800.jpg" srcset="assets/navy-gold-agate-800.jpg 800w, assets/navy-gold-agate.jpg 1920w" sizes="(max-width: 860px) 260px, 50vw" width="1920" height="1280" loading="lazy" alt="Navy and gold birthday cake with an agate sail, gold spheres and a Happy Birthday topper"></figure>
       <div class="panel-foot">
         <div><p class="panel-name">Navy and gold</p><p>An agate sail, gold spheres and a gold topper</p></div>
         <div class="panel-actions">
@@ -285,8 +452,8 @@
         </div>
       </div>
     </div>
-    <div class="panel p-blush">
-      <figure class="panel-photo"><img src="assets/blush-dried-flowers.jpg" width="1920" height="1280" loading="lazy" alt="Blush birthday cake with dried flowers, roses and a palm spear"></figure>
+    <div class="panel p-apricot">
+      <figure class="panel-photo"><img src="assets/blush-dried-flowers-800.jpg" srcset="assets/blush-dried-flowers-800.jpg 800w, assets/blush-dried-flowers.jpg 1920w" sizes="(max-width: 860px) 260px, 50vw" width="1920" height="1280" loading="lazy" alt="Blush birthday cake with dried flowers, roses and a palm spear"></figure>
       <div class="panel-foot">
         <div><p class="panel-name">Blush and dried flowers</p><p>Roses, pampas and a palm spear</p></div>
         <div class="panel-actions">
@@ -302,10 +469,11 @@
     <div class="wrap about-grid">
       <div class="about-text" data-reveal>
         <h2 id="about-title">From South Africa to Provo</h2>
-        <p>Adele van Schoor left her native South Africa for Providenciales over a decade ago. What started as elaborate birthday cakes for her own kids became The Cake Lady, a private bakery that has been running for about twelve years.</p>
-        <p>Every cake is made in-house in Discovery Bay, so you will not find them on a supermarket shelf. She bakes for families who live here and for visitors celebrating on the islands, and the calendar stays busy all year.</p>
+        <p>Adele van Schoor left her native South Africa for Providenciales two decades ago. What started as elaborate birthday cakes for her own kids became The Cake Lady, her private bakery in Discovery Bay.</p>
+        <p class="about-hi">From bespoke celebrations to celebrity occasions, our creations have been commissioned for high-profile names including Kylie Jenner, Kendall Jenner and Cardi B.</p>
+        <p>Every cake is made in-house, so you will not find them on a supermarket shelf. She bakes for families who live here and for visitors celebrating on the islands, and the calendar stays busy all year.</p>
       </div>
-      <figure class="about-tile f-blue" data-reveal><img src="assets/christening-detail.jpg" width="443" height="590" loading="lazy" alt="Close-up of a christening cake: gold cross, macarons and blue and gold pearls"><figcaption>Love is a shade of blue: a christening cake from November 2026.</figcaption></figure>
+      <figure class="about-tile f-aqua" data-reveal><img src="assets/christening-detail.jpg" width="443" height="590" loading="lazy" alt="Close-up of a christening cake: gold cross, macarons and blue and gold pearls"><figcaption>Love is a shade of blue: a christening cake from November 2026.</figcaption></figure>
     </div>
   </section>
 
@@ -313,14 +481,14 @@
   <section class="proof" aria-labelledby="proof-title">
     <div class="card">
       <h2 id="proof-title">Baked for</h2>
-      <figure class="card-photo"><img src="assets/visittci-collage.jpg" width="1920" height="640" loading="lazy" alt="Twelve cakes by The Cake Lady in two rows, from a high-heel shoe and a unicorn rainbow to a baby shower butterfly cake and the navy and gold agate cake"></figure>
-      <p class="card-names">birthday parties&nbsp;· first birthdays&nbsp;· christenings&nbsp;· baby showers&nbsp;· gender reveals&nbsp;· weddings&nbsp;· anniversaries&nbsp;· fortieth birthdays&nbsp;· and any of life's other memorable moments</p>
-      <p class="card-numbers">On Instagram, <b>3,516</b> posts and <b>2,343</b> followers. On Facebook, <b>1,174</b> followers. And about <b>12</b> years of cakes in Provo.</p>
+      <figure class="card-photo"><img src="assets/visittci-collage-800.jpg" srcset="assets/visittci-collage-800.jpg 800w, assets/visittci-collage.jpg 1920w" sizes="(max-width: 860px) 260px, 860px" width="1920" height="640" loading="lazy" alt="Twelve cakes by The Cake Lady in two rows, from a high-heel shoe and a unicorn rainbow to a baby shower butterfly cake and the navy and gold agate cake"></figure>
+      <p class="card-names">birthday parties&nbsp;· first birthdays&nbsp;· christenings&nbsp;· baby showers&nbsp;· gender reveals&nbsp;· weddings&nbsp;· graduations&nbsp;· anniversaries&nbsp;· Christmas&nbsp;· and any of life's other memorable moments</p>
+      <p class="card-numbers">On Instagram, <b>3,516</b> posts and <b>2,343</b> followers. On Facebook, <b>1,174</b> followers. And <b>two decades</b> on the island.</p>
       <div class="card-review">
         <p>Had one of Adele's cakes? A review helps the next family find her.</p>
         <div class="review-btns">
           <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Cake%20Lady%20Providenciales" target="_blank" rel="noopener">Review on Google</a>
-          <a class="btn btn-gold" href="https://www.facebook.com/thecakeladytci/reviews" target="_blank" rel="noopener">Recommend on Facebook</a>
+          <a class="btn btn-yellow" href="https://www.facebook.com/thecakeladytci/reviews" target="_blank" rel="noopener">Recommend on Facebook</a>
         </div>
       </div>
     </div>
@@ -331,27 +499,27 @@
     <div class="wrap">
       <h2 id="faq-title" data-reveal>Before you order</h2>
       <div class="cards">
-        <details class="qcard c-blue" name="faq" open>
+        <details class="qcard c-aqua" name="faq" open>
           <summary><span class="tab">Timing</span><span class="q">How far ahead should I order?</span></summary>
           <p>One to two weeks before your event. Very detailed cakes can take up to three weeks, and Adele is busy all year, so the earlier you ask, the better.</p>
         </details>
-        <details class="qcard c-blush" name="faq">
+        <details class="qcard c-apricot" name="faq">
           <summary><span class="tab">Pickup</span><span class="q">Where do I collect my cake?</span></summary>
-          <p>From Adele's bakery in Discovery Bay, Providenciales. It is a private home bakery, so message her when you set off and she will send you directions.</p>
+          <p>From Adele's home bakery in Discovery Bay, Providenciales. Please specify your preferred pickup day and time. Kindly note that any early morning pickups must be arranged and placed the day before.</p>
         </details>
-        <details class="qcard c-gold" name="faq">
+        <details class="qcard c-yellow" name="faq">
           <summary><span class="tab">Delivery</span><span class="q">Can you deliver it?</span></summary>
           <p>Yes, for an extra charge. Wedding cakes are delivered at no extra cost.</p>
         </details>
-        <details class="qcard c-blue" name="faq">
-          <summary><span class="tab">Diet</span><span class="q">Do you make gluten-free or vegan cakes?</span></summary>
-          <p>Both, on request. Mention it when you order so Adele can plan the recipe.</p>
+        <details class="qcard c-aqua" name="faq">
+          <summary><span class="tab">Diet</span><span class="q">Do you make gluten-free, vegan or nut-free cakes?</span></summary>
+          <p>Yes, all three, on request. Mention it when you order so Adele can plan the recipe.</p>
         </details>
-        <details class="qcard c-blush" name="faq">
+        <details class="qcard c-apricot" name="faq">
           <summary><span class="tab">Design</span><span class="q">Can I send a picture of what I want?</span></summary>
           <p>Please do: a photo you love, your party colours, a theme or a name. Adele rarely makes the same cake twice, so yours will be made for your day.</p>
         </details>
-        <details class="qcard c-gold" name="faq">
+        <details class="qcard c-yellow" name="faq">
           <summary><span class="tab">Visiting</span><span class="q">I'm on holiday here. Can I still order?</span></summary>
           <p>Yes. Adele bakes for visitors as well as residents. Send her your dates and where you are staying, and plan pickup or delivery together.</p>
         </details>
@@ -364,10 +532,10 @@
     <div class="strip" aria-hidden="true">
       <div class="strip-track">
         <img src="assets/christening-blue.jpg" width="480" height="640" loading="lazy" alt="">
-        <img src="assets/navy-gold-agate.jpg" width="1920" height="1280" loading="lazy" alt="">
+        <img src="assets/navy-gold-agate-800.jpg" width="800" height="533" loading="lazy" alt="">
         <img src="assets/pistachio-cake-board.jpg" width="720" height="720" loading="lazy" alt="">
         <img src="assets/braided-buttercream.jpg" width="585" height="640" loading="lazy" alt="">
-        <img src="assets/blush-dried-flowers.jpg" width="1920" height="1280" loading="lazy" alt="">
+        <img src="assets/blush-dried-flowers-800.jpg" width="800" height="533" loading="lazy" alt="">
         <img src="assets/he-or-she.jpg" width="485" height="640" loading="lazy" alt="">
         <img src="assets/sea-turtle.jpg" width="720" height="960" loading="lazy" alt="">
         <img src="assets/strawberries.jpg" width="485" height="640" loading="lazy" alt="">
@@ -412,16 +580,16 @@
       </ul>
       <div class="foot-contact">
         <p>Discovery Bay, Providenciales<br>Turks and Caicos Islands</p>
-        <p>Pickup by arrangement. Message for directions.</p>
+        <p>Pickup by arrangement, at the day and time you agree with Adele.</p>
       </div>
     </div>
     <div class="foot-last">
-      <p>Photos: The Cake Lady on Instagram and Facebook, and VisitTCI. Prices and story from her VisitTCI listing. Concept by Alex Fernandez.</p>
+      <p>Photos: Adele, The Cake Lady on Instagram and Facebook, and VisitTCI. Prices and story from Adele and her VisitTCI listing. Concept by Alex Fernandez.</p>
       <a class="btn btn-paper btn-small" href="#top">Back to top</a>
     </div>
   </div>
 </footer>
 
-<script src="script.js?v=1"></script>
+<script src="script.js?v=2"></script>
 </body>
 </html>
