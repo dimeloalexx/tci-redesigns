@@ -148,6 +148,7 @@ function read() {
     delivery: d.get("handover") === "delivery",
     pickup: tidy(d.get("pickup")),
     details: tidy(d.get("details")),
+    candles: d.get("candles") === "on",
   };
 }
 
@@ -195,6 +196,7 @@ function brief(s) {
     `Message on the cake: ${s.message ? `"${s.message}"` : "none"}`,
     s.delivery ? "I'd like it delivered." : "I'll pick it up in Discovery Bay.",
     ...(s.delivery ? [] : [`Preferred pickup day and time: ${s.pickup || "to agree with you"}`]),
+    ...(s.candles ? ["Candles: yes, please"] : []),
     ...(s.details ? ["", `More about the cake: ${s.details}`] : []),
     "",
     "Is that date free? I can send you pictures of cakes I like.",
