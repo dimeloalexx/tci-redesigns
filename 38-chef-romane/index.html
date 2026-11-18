@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,6 +24,7 @@
     "name": "Chef Romane",
     "description": "Private chef who cooks, serves and clears up at villas in Providenciales, Turks and Caicos.",
     "telephone": "+1-649-347-5343",
+    "email": "dwyerromaine@gmail.com",
     "areaServed": "Providenciales, Turks and Caicos Islands",
     "priceRange": "$150 to $270 a guest",
     "image": "https://dimeloalexx.github.io/tci-redesigns/38-chef-romane/img/chef-portrait-720.jpg",
@@ -73,8 +74,9 @@
         <figure class="plate p2" data-from="left">
           <img src="img/skewers-420.jpg" srcset="img/skewers-420.jpg 420w, img/skewers-720.jpg 720w" sizes="(min-width: 1100px) 17vw, 44vw" width="420" height="748" alt="Skewers with peppers and onions, salads and a jug of gravy laid out in a kitchen">
         </figure>
-        <figure class="plate p3" data-from="right">
-          <img src="img/pool-breakfast-420.jpg" srcset="img/pool-breakfast-420.jpg 420w, img/pool-breakfast-720.jpg 538w" sizes="(min-width: 1100px) 17vw, 44vw" width="420" height="525" alt="A breakfast tray floating in a villa pool, with fruit, waffles, fried chicken, dumplings and juice">
+        <figure class="plate p3 is-video" data-from="right">
+          <video class="hero-video" src="img/lobster-loop.mp4" poster="img/lobster-loop.jpg" width="400" height="500" muted loop playsinline preload="auto" aria-label="Chef Romane in a villa kitchen, holding up a large spiny lobster"></video>
+          <button type="button" class="vid-toggle" data-video=".hero-video" aria-pressed="false">Pause</button>
         </figure>
         <figure class="plate p4" data-from="right">
           <img src="img/board-420.jpg" srcset="img/board-420.jpg 420w, img/board-720.jpg 720w" sizes="(min-width: 1100px) 17vw, 44vw" width="420" height="747" alt="A sharing board of cheese, crackers, nuts, grapes, olives and salami">
@@ -223,8 +225,9 @@
     </section>
 
     <section class="meet" id="chef" aria-labelledby="chef-title">
-      <figure class="meet-photo" data-rise>
-        <img src="img/chef-portrait-720.jpg" srcset="img/chef-portrait-420.jpg 420w, img/chef-portrait-720.jpg 720w" sizes="(min-width: 1100px) 34vw, 92vw" width="720" height="720" loading="lazy" alt="Chef Romane in chef whites and a black cap">
+      <figure class="meet-photo is-video" data-rise>
+        <video class="meet-video" src="img/chef-romane-promo.mp4" poster="img/chef-romane-promo.jpg" width="478" height="850" muted loop playsinline preload="none" aria-label="Chef Romane's own video: holding a large spiny lobster in a villa kitchen, then the name Chef Romane with an email address and a phone number"></video>
+        <button type="button" class="vid-toggle" data-video=".meet-video" aria-pressed="false">Pause</button>
       </figure>
       <div class="meet-copy">
         <h2 id="chef-title" data-split data-i18n="meetTitle">Meet Chef Romane</h2>
@@ -294,6 +297,7 @@
         <a class="btn wa big" data-wa href="https://wa.me/16493475343?text=Hi%20Chef%20Romane%21%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20you." target="_blank" rel="noopener" data-i18n="bookWa">Book on WhatsApp</a>
         <ul class="visit-facts">
           <li><span data-i18n="call">WhatsApp or call</span> <a href="tel:+16493475343">+1 649 347 5343</a></li>
+          <li><span data-i18n="email">Email</span> <a href="mailto:dwyerromaine@gmail.com">dwyerromaine@gmail.com</a></li>
           <li data-i18n="villas">Villas across Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail and more</li>
           <li><span data-i18n="tiktok">Videos on TikTok:</span> <a href="https://www.tiktok.com/@romainedwyergenas" target="_blank" rel="noopener">@romainedwyergenas</a></li>
         </ul>
@@ -312,6 +316,6 @@
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/ScrollTrigger.min.js"></script>
   <script src="vendor/SplitText.min.js"></script>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

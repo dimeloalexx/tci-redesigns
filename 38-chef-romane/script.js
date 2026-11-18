@@ -65,7 +65,7 @@
       bookTitle: "Lo que escriben los huéspedes", scoreNote: "sobre 5 en Take a Chef, con 4 reseñas", done: "reservas completadas en Take a Chef",
       readTac: "Léalas en Take a Chef", reviewG: "Reseñar a Chef Romane en Google", quotesNote: "Las reseñas aparecen en su inglés original.",
       visitTitle: "Reserve su noche libre", visitLede: "Envíe a Chef Romane el menú que le guste, la fecha, cuántos invitados son y dónde se alojan.",
-      call: "WhatsApp o llamada", villas: "Villas en todo Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail y más", tiktok: "Vídeos en TikTok:",
+      call: "WhatsApp o llamada", email: "Correo", villas: "Villas en todo Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail y más", tiktok: "Vídeos en TikTok:",
       backLine: "Chef a domicilio en su villa en Providenciales, Islas Turcas y Caicos.",
     },
     fr: {
@@ -105,7 +105,7 @@
       bookTitle: "Ce qu'écrivent les clients", scoreNote: "sur 5 sur Take a Chef, d'après 4 avis", done: "réservations réalisées via Take a Chef",
       readTac: "Les lire sur Take a Chef", reviewG: "Laisser un avis sur Google", quotesNote: "Les avis sont affichés dans leur anglais d'origine.",
       visitTitle: "Réservez votre soirée libre", visitLede: "Envoyez à Chef Romane le menu qui vous plaît, la date, le nombre d'invités et votre lieu de séjour.",
-      call: "WhatsApp ou appel", villas: "Villas dans tout Providenciales : Grace Bay, Long Bay, Chalk Sound, Turtle Tail et plus", tiktok: "Vidéos sur TikTok :",
+      call: "WhatsApp ou appel", email: "E-mail", villas: "Villas dans tout Providenciales : Grace Bay, Long Bay, Chalk Sound, Turtle Tail et plus", tiktok: "Vidéos sur TikTok :",
       backLine: "Chef à domicile dans votre villa à Providenciales, îles Turques-et-Caïques.",
     },
     de: {
@@ -145,7 +145,7 @@
       bookTitle: "Was Gäste schreiben", scoreNote: "von 5 auf Take a Chef, aus 4 Bewertungen", done: "über Take a Chef abgeschlossene Buchungen",
       readTac: "Auf Take a Chef lesen", reviewG: "Chef Romane auf Google bewerten", quotesNote: "Die Bewertungen stehen im englischen Original.",
       visitTitle: "Buchen Sie Ihren freien Abend", visitLede: "Schicken Sie Chef Romane Ihr Wunschmenü, das Datum, die Zahl der Gäste und Ihre Unterkunft.",
-      call: "WhatsApp oder Anruf", villas: "Villen in ganz Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail und mehr", tiktok: "Videos auf TikTok:",
+      call: "WhatsApp oder Anruf", email: "E-Mail", villas: "Villen in ganz Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail und mehr", tiktok: "Videos auf TikTok:",
       backLine: "Private Chef in Ihrer Villa in Providenciales, Turks- und Caicosinseln.",
     },
     pt: {
@@ -185,7 +185,7 @@
       bookTitle: "O que os hóspedes escrevem", scoreNote: "de 5 no Take a Chef, com 4 avaliações", done: "reservas concluídas pelo Take a Chef",
       readTac: "Leia no Take a Chef", reviewG: "Avaliar Chef Romane no Google", quotesNote: "As avaliações aparecem no inglês original.",
       visitTitle: "Reserve a sua noite de folga", visitLede: "Envie a Chef Romane o menu que preferir, a data, quantos convidados são e onde estão hospedados.",
-      call: "WhatsApp ou ligação", villas: "Villas em toda Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail e mais", tiktok: "Vídeos no TikTok:",
+      call: "WhatsApp ou ligação", email: "E-mail", villas: "Villas em toda Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail e mais", tiktok: "Vídeos no TikTok:",
       backLine: "Chef particular na sua villa em Providenciales, Turcas e Caicos.",
     },
     it: {
@@ -225,11 +225,14 @@
       bookTitle: "Cosa scrivono gli ospiti", scoreNote: "su 5 su Take a Chef, da 4 recensioni", done: "prenotazioni completate tramite Take a Chef",
       readTac: "Leggile su Take a Chef", reviewG: "Recensisci Chef Romane su Google", quotesNote: "Le recensioni sono nell'inglese originale.",
       visitTitle: "Prenota la tua serata libera", visitLede: "Manda a Chef Romane il menù che preferisci, la data, quanti ospiti siete e dove alloggiate.",
-      call: "WhatsApp o chiamata", villas: "Ville in tutta Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail e altro", tiktok: "Video su TikTok:",
+      call: "WhatsApp o chiamata", email: "Email", villas: "Ville in tutta Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail e altro", tiktok: "Video su TikTok:",
       backLine: "Chef a domicilio nella tua villa a Providenciales, Turks e Caicos.",
     },
   };
   const ORDER = ["en", "es", "fr", "de", "pt", "it"];
+  const VID = { en: ["Pause", "Play"], es: ["Pausar", "Reproducir"], fr: ["Pause", "Lecture"], de: ["Pause", "Abspielen"], pt: ["Pausar", "Reproduzir"], it: ["Pausa", "Riproduci"] };
+  document.documentElement.classList.add("js-video");
+  let heroPaused = false;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const motion = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined" && !reduce;
 
@@ -278,6 +281,7 @@
     if (note) note.hidden = lang === "en";
     const now = document.querySelector(".lang-now");
     if (now) now.innerHTML = LANGS[lang].langNow(`<b>${LANGS[lang].name}</b>`);
+    document.querySelectorAll(".vid-toggle").forEach(b => { b.textContent = VID[lang][b.dataset.paused === "true" ? 1 : 0]; });
     document.documentElement.lang = lang;
   }
   function paint() {
@@ -306,7 +310,7 @@
     if (!motion || chosen || cycle) return;
     let i = 0;
     cycle = setInterval(() => {
-      if (document.hidden) return;
+      if (document.hidden || heroPaused) return;
       i = (i + 1) % ORDER.length;
       showGreeting(ORDER[i], true);
     }, 2800);
@@ -415,6 +419,31 @@
     showStep(lit ? +rows[lit - 1].dataset.step : 0);
   };
 
+  /* ---------- Chef Romane's own videos: they play while on screen, each has a pause button, and under reduced
+     motion they wait on their still frame. Pausing the lobster in the hero also stops the plates and the greeting. ---------- */
+  const paused = new Set();
+  const label = (btn, isPaused) => { btn.dataset.paused = String(isPaused); btn.textContent = VID[lang][isPaused ? 1 : 0]; };
+  const tryPlay = v => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  document.querySelectorAll(".vid-toggle").forEach(btn => {
+    const v = document.querySelector(btn.dataset.video);
+    if (!v) return;
+    if (reduce) paused.add(v);
+    label(btn, reduce);
+    btn.addEventListener("click", () => {
+      const nowPaused = !paused.has(v);
+      if (nowPaused) { paused.add(v); v.pause(); } else { paused.delete(v); tryPlay(v); }
+      label(btn, nowPaused);
+      if (v.classList.contains("hero-video")) heroPaused = nowPaused;
+    });
+  });
+  if ("IntersectionObserver" in window) {
+    const vio = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting && !paused.has(e.target)) tryPlay(e.target);
+      else if (!e.isIntersecting) e.target.pause();
+    }), { threshold: 0.25 });
+    document.querySelectorAll("video").forEach(v => vio.observe(v));
+  }
+
   /* ---------- Rolling numbers ---------- */
   function count(el) {
     const to = parseFloat(el.dataset.count);
@@ -448,13 +477,14 @@
   ];
   const plates = [...document.querySelectorAll(".plate")];
   const plateImgs = plates.map(p => p.querySelector("img"));
-  const onPlate = [0, 1, 2, 3];
-  const waiting = [4, 5];
+  const swappable = plates.map((p, i) => i).filter(i => plateImgs[i]);
+  const onPlate = plateImgs.map(img => (img ? POOL.findIndex(x => x.src === img.getAttribute("src")) : -1));
+  const waiting = POOL.map((x, k) => k).filter(k => !onPlate.includes(k));
   POOL.forEach(p => { const im = new Image(); im.src = p.src; });
   let turn = 0;
   function swapPlate() {
-    if (document.hidden || !plateImgs.length) return;
-    const i = [0, 2, 1, 3][turn++ % 4];
+    if (heroPaused || document.hidden || !swappable.length || !waiting.length) return;
+    const i = swappable[turn++ % swappable.length];
     const img = plateImgs[i];
     const next = waiting.shift();
     waiting.push(onPlate[i]);

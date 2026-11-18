@@ -274,6 +274,21 @@ mark {
 .stub.is-on { transform: none; }
 .stub small { font-size: var(--step-small); font-weight: 400; opacity: .9; }
 
+/* ---------- Chef Romane's own videos, each with a pause button ---------- */
+.plate video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: var(--surface); }
+.plate.is-video { pointer-events: auto; }
+.meet-photo.is-video { max-width: 400px; }
+.meet-photo video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; background: var(--surface); }
+.vid-toggle { display: none; }
+.js-video .vid-toggle {
+  position: absolute; right: 8px; bottom: 8px; z-index: 1; display: inline-flex; align-items: center;
+  min-height: 40px; padding: 0 14px; border: 0; border-radius: 0;
+  background: rgba(43, 23, 10, .82); color: var(--paper); font: 700 var(--step-small)/1 var(--text); cursor: pointer;
+  transition: background-color .2s, transform .15s var(--ease);
+}
+.js-video .vid-toggle:hover { background: var(--paper-ink); }
+.js-video .vid-toggle:active { transform: scale(.95); }
+
 /* ---------- Christmas band and the breakfast photos ---------- */
 .xmas { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 24px; padding: 18px var(--m); background: var(--accent); color: var(--accent-ink); text-align: center; }
 .xmas[hidden] { display: none; }
@@ -299,6 +314,7 @@ mark {
   .plate:nth-child(even) { rotate: 1.5deg; }
   .night, .menus, .book, .meet { grid-template-columns: 1fr; }
   .meet-photo { position: relative; top: auto; max-width: 520px; }
+  .plate.is-video { position: relative; inset: auto; }
   .programme { justify-self: start; }
   .menu-card { position: relative; top: auto; }
   .giant { font-size: 30cqi; }
