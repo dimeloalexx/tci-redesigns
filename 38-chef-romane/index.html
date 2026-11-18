@@ -12,11 +12,11 @@
   <meta property="og:image" content="https://dimeloalexx.github.io/tci-redesigns/38-chef-romane/img/og.jpg">
   <meta property="og:url" content="https://dimeloalexx.github.io/tci-redesigns/38-chef-romane/">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23472913'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23f1e9d8'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23472913'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23e7e4dd'%3ER%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,13 +42,13 @@
           <p class="greet" aria-hidden="true"><span class="greet-line" lang="en">Dinner is served.</span></p>
           <p class="sr-only">Dinner is served.</p>
           <ul class="facts">
-            <li>Private chef at your villa</li>
-            <li>Providenciales, Turks and Caicos</li>
-            <li>Seven menus, from $150 a guest</li>
+            <li data-i18n="f1">Private chef at your villa</li>
+            <li data-i18n="f2">Providenciales, Turks and Caicos</li>
+            <li data-i18n="f3">Seven menus, from $150 a guest</li>
           </ul>
-          <p class="lede">Chef Romane shops, cooks, serves and clears up. All you do is come to the table.</p>
+          <p class="lede" data-i18n="lede">Chef Romane shops, cooks, serves and clears up. All you do is come to the table.</p>
           <div class="langs">
-            <p class="langs-note" id="langs-note">Chef Romane speaks six languages. Pick yours and your WhatsApp message is written in it.</p>
+            <p class="langs-note" id="langs-note" data-i18n="langsNote">Chef Romane speaks six languages. Pick yours: the page and your WhatsApp message switch to it.</p>
             <div class="chips" role="group" aria-labelledby="langs-note">
               <button type="button" class="chip" data-lang="en" lang="en" aria-pressed="true">English</button>
               <button type="button" class="chip" data-lang="es" lang="es" aria-pressed="false">Español</button>
@@ -60,9 +60,9 @@
           </div>
         </div>
         <div class="card-stub">
-          <p class="stub-credit">From Jamaica, cooking since age seven</p>
-          <a class="btn wa" data-wa href="https://wa.me/16493475343?text=Hi%20Chef%20Romane%21%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20you." target="_blank" rel="noopener">Book on WhatsApp</a>
-          <a class="stub-link" href="#menus">See the menus</a>
+          <p class="stub-credit" data-i18n="credit">From Jamaica, cooking since age seven</p>
+          <a class="btn wa" data-wa href="https://wa.me/16493475343?text=Hi%20Chef%20Romane%21%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20you." target="_blank" rel="noopener" data-i18n="bookWa">Book on WhatsApp</a>
+          <a class="stub-link" href="#menus" data-i18n="seeMenus">See the menus</a>
         </div>
       </article>
 
@@ -82,10 +82,15 @@
       </div>
     </section>
 
+    <aside class="xmas" id="xmas" hidden aria-label="Christmas at your villa">
+      <p data-i18n="xmasText">Christmas dinner at your villa: lobster bisque, ham and turkey, apple pie.</p>
+      <a class="btn paper" href="#menus" data-open-tab="tab-christmas" data-i18n="xmasLink">See the Christmas menu</a>
+    </aside>
+
     <section class="night" id="night" aria-labelledby="night-title">
       <div class="night-copy">
-        <h2 id="night-title" data-split>Your night off</h2>
-        <p data-rise>You choose the menu. Chef Romane does the rest, from the shopping to a spotless kitchen.</p>
+        <h2 id="night-title" data-split data-i18n="nightTitle">Your night off</h2>
+        <p data-rise data-i18n="nightLede">You choose the menu. Chef Romane does the rest, from the shopping to a spotless kitchen.</p>
         <div class="night-photos" data-rise>
           <figure class="np is-on" data-step="0"><img src="img/chef-kitchen-720.jpg" width="720" height="1280" loading="lazy" alt="Chef Romane in a kitchen beside a tray of fruit skewers"></figure>
           <figure class="np" data-step="1"><img src="img/board-720.jpg" width="720" height="1280" loading="lazy" alt="A sharing board of cheese, crackers, nuts, grapes, olives and salami"></figure>
@@ -95,170 +100,179 @@
       </div>
 
       <div class="programme" data-rise>
-        <h3>Before the day</h3>
+        <h3 data-i18n="pBefore">Before the day</h3>
         <ol class="rows">
-          <li data-step="0"><span>Menu, date and guests agreed on WhatsApp</span><i aria-hidden="true"></i><b>any time</b></li>
-          <li data-step="0"><span>Allergies and special requests noted</span><i aria-hidden="true"></i><b>on WhatsApp</b></li>
+          <li data-step="0"><span data-i18n="r1">Menu, date and guests agreed on WhatsApp</span><i aria-hidden="true"></i><b data-i18n="t1">any time</b></li>
+          <li data-step="0"><span data-i18n="r2">Allergies and special requests noted</span><i aria-hidden="true"></i><b data-i18n="t2">on WhatsApp</b></li>
         </ol>
-        <h3>On the day</h3>
+        <h3 data-i18n="pDay">On the day</h3>
         <ol class="rows">
-          <li data-step="0"><span>Fresh groceries bought</span><i aria-hidden="true"></i><b>afternoon</b></li>
-          <li data-step="0"><span>Chef Romane arrives at your villa</span><i aria-hidden="true"></i><b>6:00 pm</b></li>
-          <li data-step="1"><span>A welcome drink from the bar</span><i aria-hidden="true"></i><b>6:30 pm</b></li>
-          <li data-step="2"><span>Starter and first course</span><i aria-hidden="true"></i><b>7:00 pm</b></li>
-          <li data-step="3"><span>Main course</span><i aria-hidden="true"></i><b>7:45 pm</b></li>
-          <li data-step="3"><span>Dessert</span><i aria-hidden="true"></i><b>8:30 pm</b></li>
+          <li data-step="0"><span data-i18n="r3">Fresh groceries bought</span><i aria-hidden="true"></i><b data-i18n="t3">afternoon</b></li>
+          <li data-step="0"><span data-i18n="r4">Chef Romane arrives at your villa</span><i aria-hidden="true"></i><b data-time="18:00">6:00 pm</b></li>
+          <li data-step="1"><span data-i18n="r5">A welcome drink from the bar</span><i aria-hidden="true"></i><b data-time="18:30">6:30 pm</b></li>
+          <li data-step="2"><span data-i18n="r6">Starter and first course</span><i aria-hidden="true"></i><b data-time="19:00">7:00 pm</b></li>
+          <li data-step="3"><span data-i18n="r7">Main course</span><i aria-hidden="true"></i><b data-time="19:45">7:45 pm</b></li>
+          <li data-step="3"><span data-i18n="r8">Dessert</span><i aria-hidden="true"></i><b data-time="20:30">8:30 pm</b></li>
         </ol>
-        <h3>After dinner</h3>
+        <h3 data-i18n="pAfter">After dinner</h3>
         <ol class="rows">
-          <li data-step="3"><span>Kitchen cleaned, dishes done</span><i aria-hidden="true"></i><b>9:30 pm</b></li>
+          <li data-step="3"><span data-i18n="r9">Kitchen cleaned, dishes done</span><i aria-hidden="true"></i><b data-time="21:30">9:30 pm</b></li>
         </ol>
-        <p class="total"><span>Dishes left for you</span><b>0</b></p>
-        <p class="fine">Times are an example. Chef Romane sets them with you.</p>
+        <p class="total"><span data-i18n="total">Dishes left for you</span><b>0</b></p>
+        <p class="fine" data-i18n="timesNote">Times are an example. Chef Romane sets them with you.</p>
       </div>
     </section>
 
     <section class="menus" id="menus" aria-labelledby="menus-title">
       <div class="menus-index">
-        <h2 id="menus-title" class="giant">Menus</h2>
+        <h2 id="menus-title" class="giant" data-i18n="menusTitle">Menus</h2>
         <div class="tabs" role="tablist" aria-label="Chef Romane's seven menus">
-          <button type="button" role="tab" id="tab-jamaican" aria-controls="menu-jamaican" aria-selected="true"><span>Jamaican Dinner</span><b>$270</b></button>
-          <button type="button" role="tab" id="tab-private-chef" aria-controls="menu-private-chef" aria-selected="false"><span>Private Chef</span><b>$200</b></button>
-          <button type="button" role="tab" id="tab-italian" aria-controls="menu-italian" aria-selected="false"><span>Italian</span><b>$230</b></button>
-          <button type="button" role="tab" id="tab-mediterranean" aria-controls="menu-mediterranean" aria-selected="false"><span>Mediterranean</span><b>$150</b></button>
-          <button type="button" role="tab" id="tab-private-dinner" aria-controls="menu-private-dinner" aria-selected="false"><span>Private Dinner</span><b>$160</b></button>
-          <button type="button" role="tab" id="tab-breakfast" aria-controls="menu-breakfast" aria-selected="false"><span>Breakfast</span><b>$200</b></button>
-          <button type="button" role="tab" id="tab-christmas" aria-controls="menu-christmas" aria-selected="false"><span>Christmas</span><b>$250</b></button>
+          <button type="button" role="tab" id="tab-jamaican" aria-controls="menu-jamaican" aria-selected="true"><span data-i18n="mJamaican">Jamaican Dinner</span><b>$270</b></button>
+          <button type="button" role="tab" id="tab-private-chef" aria-controls="menu-private-chef" aria-selected="false"><span data-i18n="mPrivateChef">Private Chef</span><b>$200</b></button>
+          <button type="button" role="tab" id="tab-italian" aria-controls="menu-italian" aria-selected="false"><span data-i18n="mItalian">Italian</span><b>$230</b></button>
+          <button type="button" role="tab" id="tab-mediterranean" aria-controls="menu-mediterranean" aria-selected="false"><span data-i18n="mMediterranean">Mediterranean</span><b>$150</b></button>
+          <button type="button" role="tab" id="tab-private-dinner" aria-controls="menu-private-dinner" aria-selected="false"><span data-i18n="mPrivateDinner">Private Dinner</span><b>$160</b></button>
+          <button type="button" role="tab" id="tab-breakfast" aria-controls="menu-breakfast" aria-selected="false"><span data-i18n="mBreakfast">Breakfast</span><b>$200</b></button>
+          <button type="button" role="tab" id="tab-christmas" aria-controls="menu-christmas" aria-selected="false"><span data-i18n="mChristmas">Christmas</span><b>$250</b></button>
         </div>
-        <p class="fine">Prices are a guest, from Chef Romane's Take a Chef menus. The size of the group, the date and extras can change the final price, so ask on WhatsApp.</p>
+        <p class="fine" data-i18n="menusNote">Prices are per guest, from Chef Romane's Take a Chef menus. The size of the group, the date and extras can change the final price, so ask on WhatsApp.</p>
       </div>
 
       <div class="menu-card" id="menu-card">
         <div class="menu" id="menu-jamaican" role="tabpanel" aria-labelledby="tab-jamaican" tabindex="0">
-          <h3>Jamaican Dinner</h3>
-          <p class="price"><b>$270</b> a guest</p>
+          <h3 data-i18n="mJamaican">Jamaican Dinner</h3>
+          <p class="price"><b>$270</b> <span data-i18n="perGuest">a guest</span></p>
           <dl class="courses">
-            <dt>Starter</dt><dd>Fresh reggae salad</dd>
-            <dt>First course</dt><dd>Jerk chicken bites, or cream of chicken and pumpkin soup</dd>
-            <dt>Main, choose two</dt><dd>Braised oxtail with butter beans, jerk pork, jerk or fried chicken, escovitch fish</dd>
-            <dt>Sides</dt><dd>Rice and peas, fried plantains and more</dd>
-            <dt>Dessert</dt><dd>Carrot cake</dd>
+            <dt data-i18n="cStarter">Starter</dt><dd data-i18n="dJ1">Fresh reggae salad</dd>
+            <dt data-i18n="cFirst">First course</dt><dd data-i18n="dJ2">Jerk chicken bites, or cream of chicken and pumpkin soup</dd>
+            <dt data-i18n="cMain2">Main, choose two</dt><dd data-i18n="dJ3">Braised oxtail with butter beans, jerk pork, jerk or fried chicken, escovitch fish</dd>
+            <dt data-i18n="cSides">Sides</dt><dd data-i18n="dJ4">Rice and peas, fried plantains and more</dd>
+            <dt data-i18n="cDessert">Dessert</dt><dd data-i18n="dJ5">Carrot cake</dd>
           </dl>
-          <a class="btn wa" data-wa data-menu="Jamaican Dinner" href="https://wa.me/16493475343" target="_blank" rel="noopener">Book this menu</a>
+          <a class="btn wa" data-wa data-menu="mJamaican" href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="bookMenu">Book this menu</a>
         </div>
         <div class="menu" id="menu-private-chef" role="tabpanel" aria-labelledby="tab-private-chef" tabindex="0">
-          <h3>Private Chef</h3>
-          <p class="price"><b>$200</b> a guest</p>
+          <h3 data-i18n="mPrivateChef">Private Chef</h3>
+          <p class="price"><b>$200</b> <span data-i18n="perGuest">a guest</span></p>
           <dl class="courses">
-            <dt>Starter</dt><dd>Chicken salad with papaya dressing</dd>
-            <dt>First course</dt><dd>Coconut shrimp with spicy tartar sauce</dd>
-            <dt>Main</dt><dd>Surf and turf with mashed potatoes</dd>
-            <dt>Dessert</dt><dd>Chocolate cake</dd>
+            <dt data-i18n="cStarter">Starter</dt><dd data-i18n="dP1">Chicken salad with papaya dressing</dd>
+            <dt data-i18n="cFirst">First course</dt><dd data-i18n="dP2">Coconut shrimp with spicy tartar sauce</dd>
+            <dt data-i18n="cMain">Main</dt><dd data-i18n="dP3">Surf and turf with mashed potatoes</dd>
+            <dt data-i18n="cDessert">Dessert</dt><dd data-i18n="dP4">Chocolate cake</dd>
           </dl>
-          <a class="btn wa" data-wa data-menu="Private Chef" href="https://wa.me/16493475343" target="_blank" rel="noopener">Book this menu</a>
+          <a class="btn wa" data-wa data-menu="mPrivateChef" href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="bookMenu">Book this menu</a>
         </div>
         <div class="menu" id="menu-italian" role="tabpanel" aria-labelledby="tab-italian" tabindex="0">
-          <h3>Italian</h3>
-          <p class="price"><b>$230</b> a guest</p>
+          <h3 data-i18n="mItalian">Italian</h3>
+          <p class="price"><b>$230</b> <span data-i18n="perGuest">a guest</span></p>
           <dl class="courses">
-            <dt>Starter</dt><dd>Caprese salad, cheese garlic bread and Italian chopped salad</dd>
-            <dt>First course</dt><dd>Chicken parmesan</dd>
-            <dt>Main</dt><dd>Chicken pasta, shrimp pasta, meatballs and veggie pasta</dd>
+            <dt data-i18n="cStarter">Starter</dt><dd data-i18n="dI1">Caprese salad, cheese garlic bread and Italian chopped salad</dd>
+            <dt data-i18n="cFirst">First course</dt><dd data-i18n="dI2">Chicken parmesan</dd>
+            <dt data-i18n="cMain">Main</dt><dd data-i18n="dI3">Chicken pasta, shrimp pasta, meatballs and veggie pasta</dd>
           </dl>
-          <a class="btn wa" data-wa data-menu="Italian" href="https://wa.me/16493475343" target="_blank" rel="noopener">Book this menu</a>
+          <a class="btn wa" data-wa data-menu="mItalian" href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="bookMenu">Book this menu</a>
         </div>
         <div class="menu" id="menu-mediterranean" role="tabpanel" aria-labelledby="tab-mediterranean" tabindex="0">
-          <h3>Mediterranean</h3>
-          <p class="price"><b>$150</b> a guest</p>
+          <h3 data-i18n="mMediterranean">Mediterranean</h3>
+          <p class="price"><b>$150</b> <span data-i18n="perGuest">a guest</span></p>
           <dl class="courses">
-            <dt>Starter</dt><dd>Fried calamari, mussels and classic bruschetta</dd>
-            <dt>First course</dt><dd>Grilled lamb chop, teriyaki salmon and grilled chicken</dd>
-            <dt>Main</dt><dd>Grilled vegetable medley and beef stew</dd>
+            <dt data-i18n="cStarter">Starter</dt><dd data-i18n="dM1">Fried calamari, mussels and classic bruschetta</dd>
+            <dt data-i18n="cFirst">First course</dt><dd data-i18n="dM2">Grilled lamb chop, teriyaki salmon and grilled chicken</dd>
+            <dt data-i18n="cMain">Main</dt><dd data-i18n="dM3">Grilled vegetable medley and beef stew</dd>
           </dl>
-          <a class="btn wa" data-wa data-menu="Mediterranean" href="https://wa.me/16493475343" target="_blank" rel="noopener">Book this menu</a>
+          <a class="btn wa" data-wa data-menu="mMediterranean" href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="bookMenu">Book this menu</a>
         </div>
         <div class="menu" id="menu-private-dinner" role="tabpanel" aria-labelledby="tab-private-dinner" tabindex="0">
-          <h3>Private Dinner</h3>
-          <p class="price"><b>$160</b> a guest</p>
+          <h3 data-i18n="mPrivateDinner">Private Dinner</h3>
+          <p class="price"><b>$160</b> <span data-i18n="perGuest">a guest</span></p>
           <dl class="courses">
-            <dt>Starter</dt><dd>Fresh reggae salad</dd>
-            <dt>First course</dt><dd>Coconut shrimp with spicy tartar sauce</dd>
-            <dt>Main</dt><dd>Jerk pork or chicken with rice and peas, or surf and turf with mashed potatoes and grilled vegetables</dd>
-            <dt>Dessert</dt><dd>Chocolate cake</dd>
+            <dt data-i18n="cStarter">Starter</dt><dd data-i18n="dJ1">Fresh reggae salad</dd>
+            <dt data-i18n="cFirst">First course</dt><dd data-i18n="dP2">Coconut shrimp with spicy tartar sauce</dd>
+            <dt data-i18n="cMain">Main</dt><dd data-i18n="dD3">Jerk pork or chicken with rice and peas, or surf and turf with mashed potatoes and grilled vegetables</dd>
+            <dt data-i18n="cDessert">Dessert</dt><dd data-i18n="dP4">Chocolate cake</dd>
           </dl>
-          <a class="btn wa" data-wa data-menu="Private Dinner" href="https://wa.me/16493475343" target="_blank" rel="noopener">Book this menu</a>
+          <a class="btn wa" data-wa data-menu="mPrivateDinner" href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="bookMenu">Book this menu</a>
         </div>
         <div class="menu" id="menu-breakfast" role="tabpanel" aria-labelledby="tab-breakfast" tabindex="0">
-          <h3>Breakfast</h3>
-          <p class="price"><b>$200</b> a guest</p>
+          <div class="menu-photos">
+            <img src="img/pool-breakfast-420.jpg" width="420" height="525" loading="lazy" alt="A breakfast tray floating in a villa pool, with fruit, waffles, fried chicken, dumplings and juice">
+            <img src="img/fruit-420.jpg" width="420" height="613" loading="lazy" alt="Three platters of carved watermelon, mango, pineapple, kiwi and berries">
+          </div>
+          <h3 data-i18n="mBreakfast">Breakfast</h3>
+          <p class="price"><b>$200</b> <span data-i18n="perGuest">a guest</span></p>
           <dl class="courses">
-            <dt>To start</dt><dd>Ackee and saltfish, fried dumplings, fried plantain, chicken and waffles</dd>
-            <dt>Fruit</dt><dd>Tropical platter of melon, mango, pineapple, strawberries and grapes</dd>
-            <dt>Hot plates</dt><dd>Eggs, bacon, sausage, waffles, pancakes, French toast, cheese grits, steamed callaloo and cabbage</dd>
+            <dt data-i18n="cToStart">To start</dt><dd data-i18n="dB1">Ackee and saltfish, fried dumplings, fried plantain, chicken and waffles</dd>
+            <dt data-i18n="cFruit">Fruit</dt><dd data-i18n="dB2">Tropical platter of melon, mango, pineapple, strawberries and grapes</dd>
+            <dt data-i18n="cHot">Hot plates</dt><dd data-i18n="dB3">Eggs, bacon, sausage, waffles, pancakes, French toast, cheese grits, steamed callaloo and cabbage</dd>
           </dl>
-          <a class="btn wa" data-wa data-menu="Breakfast" href="https://wa.me/16493475343" target="_blank" rel="noopener">Book this menu</a>
+          <a class="btn wa" data-wa data-menu="mBreakfast" href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="bookMenu">Book this menu</a>
         </div>
         <div class="menu" id="menu-christmas" role="tabpanel" aria-labelledby="tab-christmas" tabindex="0">
-          <h3>Christmas</h3>
-          <p class="price"><b>$250</b> a guest</p>
+          <h3 data-i18n="mChristmas">Christmas</h3>
+          <p class="price"><b>$250</b> <span data-i18n="perGuest">a guest</span></p>
           <dl class="courses">
-            <dt>Starter</dt><dd>Lobster bisque</dd>
-            <dt>First course</dt><dd>Fresh Christmas salad</dd>
-            <dt>Main</dt><dd>Ham and turkey with mashed potatoes, stuffing and vegetables</dd>
-            <dt>Dessert</dt><dd>Apple pie or Christmas cake</dd>
+            <dt data-i18n="cStarter">Starter</dt><dd data-i18n="dX1">Lobster bisque</dd>
+            <dt data-i18n="cFirst">First course</dt><dd data-i18n="dX2">Fresh Christmas salad</dd>
+            <dt data-i18n="cMain">Main</dt><dd data-i18n="dX3">Ham and turkey with mashed potatoes, stuffing and vegetables</dd>
+            <dt data-i18n="cDessert">Dessert</dt><dd data-i18n="dX4">Apple pie or Christmas cake</dd>
           </dl>
-          <p class="note">For Christmas Eve, Christmas Day or New Year's Eve, ask early.</p>
-          <a class="btn wa" data-wa data-menu="Christmas" href="https://wa.me/16493475343" target="_blank" rel="noopener">Book this menu</a>
+          <p class="note" data-i18n="xmasNote">For Christmas Eve, Christmas Day or New Year's Eve, ask early.</p>
+          <a class="btn wa" data-wa data-menu="mChristmas" href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="bookMenu">Book this menu</a>
         </div>
       </div>
     </section>
 
-    <section class="letter-wrap" id="chef" aria-labelledby="chef-title">
-      <h2 id="chef-title" class="sr-only">A letter from Chef Romane</h2>
-      <div class="letter" data-rise>
-        <img class="portrait" src="img/chef-portrait-420.jpg" width="420" height="420" loading="lazy" alt="Chef Romane in chef whites and a black cap">
-        <p>I started cooking at seven, next to my grandmother in Jamaica. Cooking is still my happy place.</p>
-        <p>I trained and got certified at Beaches and Riu resorts in Jamaica, and I have 16 years in food and beverage. I'm a bartender and a butler too, so your evening is looked after from the first drink to the last plate.</p>
-        <p>I cook food from around the world: Jamaican and Caribbean, seafood, Italian, Japanese and fusion. I speak English, Spanish, French, German, Portuguese and Italian, so everyone at your table can talk to me in their own language.</p>
-        <p>My promise is simple: <mark>a perfect experience, or your money back.</mark></p>
-        <p class="sign">Chef Romane Dwyer<span>Private chef in Providenciales</span></p>
-        <div class="tear">
-          <p>WhatsApp <a href="https://wa.me/16493475343" data-wa target="_blank" rel="noopener">+1 649 347 5343</a></p>
-          <a class="btn wa" data-wa href="https://wa.me/16493475343" target="_blank" rel="noopener">Message Chef Romane</a>
+    <section class="meet" id="chef" aria-labelledby="chef-title">
+      <figure class="meet-photo" data-rise>
+        <img src="img/chef-portrait-720.jpg" srcset="img/chef-portrait-420.jpg 420w, img/chef-portrait-720.jpg 720w" sizes="(min-width: 1100px) 34vw, 92vw" width="720" height="720" loading="lazy" alt="Chef Romane in chef whites and a black cap">
+      </figure>
+      <div class="meet-copy">
+        <h2 id="chef-title" data-split data-i18n="meetTitle">Meet Chef Romane</h2>
+        <div class="letter" data-rise>
+          <p data-i18n="l1">I started cooking at seven, next to my grandmother in Jamaica. Cooking is still my happy place.</p>
+          <p data-i18n="l2">I trained and got certified at Beaches and Riu resorts in Jamaica, and I have 16 years in food and beverage. I'm a bartender and a butler too, so your evening is looked after from the first drink to the last plate.</p>
+          <p data-i18n="l3">I cook food from around the world: Jamaican and Caribbean, seafood, Italian, Japanese and fusion. I speak English, Spanish, French, German, Portuguese and Italian, so everyone at your table can talk to me in their own language.</p>
+          <p data-i18n-html="l4">My promise is simple: <mark>a perfect experience, or your money back.</mark></p>
+          <p class="sign">Chef Romane Dwyer<span data-i18n="role">Private chef in Providenciales</span></p>
+          <div class="tear">
+            <p>WhatsApp <a href="https://wa.me/16493475343" data-wa target="_blank" rel="noopener">+1 649 347 5343</a></p>
+            <a class="btn wa" data-wa href="https://wa.me/16493475343" target="_blank" rel="noopener" data-i18n="msgChef">Message Chef Romane</a>
+          </div>
+          <svg class="scallop" aria-hidden="true" focusable="false" width="100%" height="14">
+            <defs><pattern id="scallop" width="28" height="14" patternUnits="userSpaceOnUse"><circle cx="14" cy="0" r="14"/></pattern></defs>
+            <rect width="100%" height="14" fill="url(#scallop)"/>
+          </svg>
         </div>
-        <svg class="scallop" aria-hidden="true" focusable="false" width="100%" height="14">
-          <defs><pattern id="scallop" width="28" height="14" patternUnits="userSpaceOnUse"><circle cx="14" cy="0" r="14"/></pattern></defs>
-          <rect width="100%" height="14" fill="url(#scallop)"/>
-        </svg>
       </div>
     </section>
 
     <section class="book" id="reviews" aria-labelledby="book-title">
       <div class="book-left">
-        <h2 id="book-title" data-split>What guests write</h2>
-        <p class="score" data-rise><b data-count="4.75" data-dec="2">4.75</b><span>out of 5 on Take a Chef, from 4 reviews</span></p>
-        <p class="done" data-rise><b data-count="18">18</b> bookings completed through Take a Chef</p>
+        <h2 id="book-title" data-split data-i18n="bookTitle">What guests write</h2>
+        <p class="score" data-rise><b data-count="4.75" data-dec="2">4.75</b><span data-i18n="scoreNote">out of 5 on Take a Chef, from 4 reviews</span></p>
+        <p class="done" data-rise><b data-count="18">18</b> <span data-i18n="done">bookings completed through Take a Chef</span></p>
         <div class="actions" data-rise>
-          <a class="btn ink" href="https://www.takeachef.com/en-en/chef/romane-dwyer" target="_blank" rel="noopener">Read them on Take a Chef</a>
-          <a class="btn ink" href="https://search.google.com/local/writereview?placeid=ChIJJZkwt8h_g0kR5JNsf-QJi7A" target="_blank" rel="noopener">Review Chef Romane on Google</a>
+          <a class="btn ink" href="https://www.takeachef.com/en-en/chef/romane-dwyer" target="_blank" rel="noopener" data-i18n="readTac">Read them on Take a Chef</a>
+          <a class="btn ink" href="https://search.google.com/local/writereview?placeid=ChIJJZkwt8h_g0kR5JNsf-QJi7A" target="_blank" rel="noopener" data-i18n="reviewG">Review Chef Romane on Google</a>
         </div>
       </div>
       <div class="book-page" data-rise>
+        <p class="fine quotes-note" data-i18n="quotesNote" hidden></p>
         <figure class="entry">
-          <blockquote><p>So professional, accommodating and personable.</p></blockquote>
-          <figcaption>Melissa<span>5 out of 5</span></figcaption>
+          <blockquote lang="en"><p>So professional, accommodating and personable.</p></blockquote>
+          <figcaption>Melissa<span data-rate="5">5 out of 5</span></figcaption>
         </figure>
         <figure class="entry">
-          <blockquote><p>You were amazing, very polite and attentive to what we might like more than other dishes.</p></blockquote>
-          <figcaption>Dalisa<span>4.8 out of 5</span></figcaption>
+          <blockquote lang="en"><p>You were amazing, very polite and attentive to what we might like more than other dishes.</p></blockquote>
+          <figcaption>Dalisa<span data-rate="4.8">4.8 out of 5</span></figcaption>
         </figure>
         <figure class="entry">
-          <blockquote><p>Chef Romane had great communication and was able to accommodate daily menu changes without issue.</p></blockquote>
-          <figcaption>Brandi<span>4.7 out of 5</span></figcaption>
+          <blockquote lang="en"><p>Chef Romane had great communication and was able to accommodate daily menu changes without issue.</p></blockquote>
+          <figcaption>Brandi<span data-rate="4.7">4.7 out of 5</span></figcaption>
         </figure>
         <figure class="entry">
-          <blockquote><p>Our whole family thoroughly enjoyed the experience. The food was delicious.</p></blockquote>
-          <figcaption>Danielle<span>4.5 out of 5</span></figcaption>
+          <blockquote lang="en"><p>Our whole family thoroughly enjoyed the experience. The food was delicious.</p></blockquote>
+          <figcaption>Danielle<span data-rate="4.5">4.5 out of 5</span></figcaption>
         </figure>
       </div>
     </section>
@@ -266,8 +280,8 @@
     <section class="visit" id="book" aria-labelledby="visit-title">
       <img class="visit-bg" src="img/pool-blur.jpg" width="1000" height="1250" loading="lazy" alt="">
       <div class="visit-card">
-        <h2 id="visit-title" data-split>Book your night off</h2>
-        <p>Send Chef Romane the menu you like, the date, how many guests and where you are staying.</p>
+        <h2 id="visit-title" data-split data-i18n="visitTitle">Book your night off</h2>
+        <p data-i18n="visitLede">Send Chef Romane the menu you like, the date, how many guests and where you are staying.</p>
         <div class="chips" role="group" aria-label="Language for your WhatsApp message">
           <button type="button" class="chip" data-lang="en" lang="en" aria-pressed="true">English</button>
           <button type="button" class="chip" data-lang="es" lang="es" aria-pressed="false">Español</button>
@@ -276,12 +290,12 @@
           <button type="button" class="chip" data-lang="pt" lang="pt" aria-pressed="false">Português</button>
           <button type="button" class="chip" data-lang="it" lang="it" aria-pressed="false">Italiano</button>
         </div>
-        <p class="lang-now" aria-live="polite">Your message will be written in <b data-lang-name>English</b>.</p>
-        <a class="btn wa big" data-wa href="https://wa.me/16493475343?text=Hi%20Chef%20Romane%21%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20you." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <p class="lang-now" aria-live="polite">Your message will be written in <b>English</b>.</p>
+        <a class="btn wa big" data-wa href="https://wa.me/16493475343?text=Hi%20Chef%20Romane%21%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20you." target="_blank" rel="noopener" data-i18n="bookWa">Book on WhatsApp</a>
         <ul class="visit-facts">
-          <li>WhatsApp or call <a href="tel:+16493475343">+1 649 347 5343</a></li>
-          <li>Villas across Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail and more</li>
-          <li>Videos on TikTok: <a href="https://www.tiktok.com/@romainedwyergenas" target="_blank" rel="noopener">@romainedwyergenas</a></li>
+          <li><span data-i18n="call">WhatsApp or call</span> <a href="tel:+16493475343">+1 649 347 5343</a></li>
+          <li data-i18n="villas">Villas across Providenciales: Grace Bay, Long Bay, Chalk Sound, Turtle Tail and more</li>
+          <li><span data-i18n="tiktok">Videos on TikTok:</span> <a href="https://www.tiktok.com/@romainedwyergenas" target="_blank" rel="noopener">@romainedwyergenas</a></li>
         </ul>
       </div>
     </section>
@@ -289,15 +303,15 @@
 
   <footer class="back">
     <p class="back-name">Chef Romane</p>
-    <p>Private chef at your villa in Providenciales, Turks and Caicos.</p>
+    <p data-i18n="backLine">Private chef at your villa in Providenciales, Turks and Caicos.</p>
     <p class="legal">Unofficial concept by Alex Fernandez, not Chef Romane's own website. Menus, prices, photos and reviews come from Chef Romane's Take a Chef profile; please confirm them with Chef Romane.</p>
   </footer>
 
-  <a class="stub" data-wa href="https://wa.me/16493475343?text=Hi%20Chef%20Romane%21%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20you." target="_blank" rel="noopener"><span>Book on WhatsApp</span><small data-lang-name>English</small></a>
+  <a class="stub" data-wa href="https://wa.me/16493475343?text=Hi%20Chef%20Romane%21%20I%20found%20your%20website%20and%20I%27d%20like%20to%20book%20you." target="_blank" rel="noopener"><span data-i18n="bookWa">Book on WhatsApp</span><small data-lang-name>English</small></a>
 
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/ScrollTrigger.min.js"></script>
   <script src="vendor/SplitText.min.js"></script>
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

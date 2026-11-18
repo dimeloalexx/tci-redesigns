@@ -42,8 +42,8 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 h1, h2, h3 { text-wrap: balance; }
 /* Gloock is set tight; at display sizes the words need their gap back, or "Chef Romane" reads as one word. */
-.card h1, .night h2, .book h2, .visit h2, .menu h3, .back-name { word-spacing: 0.14em; }
-.greet, .price, .entry blockquote p { word-spacing: 0.06em; }
+.card h1, .night h2, .book h2, .visit h2, .meet h2, .menu h3, .back-name { word-spacing: 0.14em; }
+.greet, .price, .entry blockquote p, .xmas p { word-spacing: 0.06em; }
 p, li, dd { text-wrap: pretty; }
 button { font: inherit; color: inherit; }
 
@@ -166,7 +166,7 @@ button { font: inherit; color: inherit; }
   padding: var(--section) max(var(--m), calc((100vw - 1440px) / 2 + var(--m)));
 }
 .menus-index { container-type: inline-size; }
-.giant { font: 400 34cqi/0.95 var(--display); letter-spacing: -0.035em; font-optical-sizing: none; }
+.giant { position: relative; z-index: 1; font: 400 34cqi/0.95 var(--display); letter-spacing: -0.035em; font-optical-sizing: none; }
 .tabs { display: grid; gap: 6px; margin-top: 30px; }
 .tabs [role="tab"] {
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
@@ -199,11 +199,17 @@ button { font: inherit; color: inherit; }
 .menu .btn { margin-top: 32px; }
 
 /* ---------- The letter, on a sheet with a tear-off stub and a scalloped edge ---------- */
-.letter-wrap { display: grid; justify-items: center; padding: clamp(80px, 8vw, 128px) var(--m) var(--section); }
+.meet {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 96px); align-items: start;
+  padding: clamp(80px, 8vw, 128px) max(var(--m), calc((100vw - 1440px) / 2 + var(--m))) var(--section);
+}
+.meet-photo { position: sticky; top: 40px; margin: 0; rotate: -2deg; }
+.meet-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.meet h2 { margin-bottom: 28px; font: 400 var(--step-head)/1 var(--display); letter-spacing: -0.025em; }
 .letter { position: relative; width: min(640px, 100%); background: var(--paper); color: var(--paper-ink); padding: clamp(28px, 6vw, 60px) clamp(22px, 6vw, 60px) 0; }
 .portrait { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
 .letter > p { margin-top: 1.15em; line-height: 1.6; }
-.letter > .portrait + p { margin-top: 26px; }
+.letter > p:first-child { margin-top: 0; }
 mark {
   background-color: var(--field); color: inherit; padding: 0 .15em; font-weight: 700;
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
@@ -268,14 +274,31 @@ mark {
 .stub.is-on { transform: none; }
 .stub small { font-size: var(--step-small); font-weight: 400; opacity: .9; }
 
+/* ---------- Christmas band and the breakfast photos ---------- */
+.xmas { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 24px; padding: 18px var(--m); background: var(--accent); color: var(--accent-ink); text-align: center; }
+.xmas[hidden] { display: none; }
+.xmas p { max-width: 46ch; font: 400 var(--step-lead)/1.2 var(--display); }
+.xmas :focus-visible { outline-color: var(--paper); }
+.btn.paper { background: var(--paper); color: var(--paper-ink); }
+.btn.paper:hover { background: #fff; }
+.menu-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 360px; margin: 0 auto 26px; }
+.menu-photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+
 /* ---------- Tablet ---------- */
+/* On a desktop a booking button is always in sight, so the stub only lives on tablets and phones, as a full-width bar. */
+@media (min-width: 1100px) {
+  .stub { display: none; }
+}
 @media (max-width: 1099px) {
+  .stub { left: 0; right: 0; bottom: 0; justify-content: center; min-height: 60px; padding: 0 16px env(safe-area-inset-bottom); }
+  body { padding-bottom: 60px; }
   .hero { display: flex; flex-direction: column; align-items: center; gap: 28px; min-height: 0; padding-bottom: 56px; }
   .served { position: static; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; width: min(100%, 860px); padding: 4px; pointer-events: auto; }
   .plate { position: static; width: auto; rotate: 0deg; }
   .plate:nth-child(odd) { rotate: -1.5deg; }
   .plate:nth-child(even) { rotate: 1.5deg; }
-  .night, .menus, .book { grid-template-columns: 1fr; }
+  .night, .menus, .book, .meet { grid-template-columns: 1fr; }
+  .meet-photo { position: relative; top: auto; max-width: 520px; }
   .programme { justify-self: start; }
   .menu-card { position: relative; top: auto; }
   .giant { font-size: 30cqi; }
@@ -299,8 +322,6 @@ mark {
   .tear { flex-direction: column; align-items: stretch; text-align: center; }
   .tear .btn { width: 100%; }
   .visit-card .btn { width: 100%; }
-  .stub { left: 0; right: 0; bottom: 0; justify-content: center; min-height: 60px; padding: 0 16px env(safe-area-inset-bottom); }
-  body { padding-bottom: 60px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
