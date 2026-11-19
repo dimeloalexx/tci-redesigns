@@ -63,9 +63,17 @@
     return `The sun has already set in Providenciales today. Tomorrow it sets at <b>${hhmm(sunsetAt(...provoDay(now + DAY)))}</b>`;
   }
   let sunCard = () => {};
+  function sunShort() {
+    const now = Date.now();
+    const set = sunsetAt(...provoDay(now));
+    return now < set
+      ? `Sunset tonight in Providenciales: <b>${hhmm(set)}</b>`
+      : `Sunset tomorrow in Providenciales: <b>${hhmm(sunsetAt(...provoDay(now + DAY)))}</b>`;
+  }
   function sunTick() {
-    const t = tonight();
+    const t = tonight(), s = sunShort();
     $$("[data-sun-today]").forEach(el => { el.innerHTML = t; });
+    $$("[data-sun-short]").forEach(el => { el.innerHTML = s; });
     sunCard();
   }
 
@@ -185,9 +193,15 @@
       const n = count();
       const who = n === 1 ? "1 person" : `${n} people`;
       const date = parseDate(dateInput.value);
+      const when = ($('input[name="when"]:checked', card) || {}).value || "";
+      const setText = date ? hhmm(sunsetAt(date.getFullYear(), date.getMonth() + 1, date.getDate())) : "";
+      const at = when === "morning" ? " in the morning"
+        : when === "afternoon" ? " in the afternoon"
+        : when === "sunset" ? (date ? ` at sunset (the sun sets at ${setText} that day)` : " at sunset")
+        : "";
       send.href = wa(date
-        ? `Hi EcoWave! I'd like to book the ${trip} on ${longDate(date)} for ${who}. Could you tell me the price and the times?`
-        : `Hi EcoWave! I'd like to book the ${trip} for ${who}. Could you tell me the price and which days you have free?`);
+        ? `Hi EcoWave! I'd like to book the ${trip} on ${longDate(date)} for ${who}${at}. Could you tell me the price${when ? "" : " and the times"}?`
+        : `Hi EcoWave! I'd like to book the ${trip} for ${who}${at}. Could you tell me the price and which days you have free?`);
       line.innerHTML = date
         ? `On ${dayMonth(date)} the sun sets in Providenciales at <b>${hhmm(sunsetAt(date.getFullYear(), date.getMonth() + 1, date.getDate()))}</b>`
         : tonight();
@@ -195,7 +209,7 @@
     }
     sunCard = update;
 
-    $$('input[name="trip"]', card).forEach(r => r.addEventListener("change", update));
+    $$('input[name="trip"], input[name="when"]', card).forEach(r => r.addEventListener("change", update));
     $$(".step", card).forEach(b => b.addEventListener("click", () => {
       people.value = String(Math.min(20, Math.max(1, count() + Number(b.dataset.step))));
       update();
@@ -457,10 +471,19 @@
     const fromImage = (u, vv) => [((u - map[2]) / map[0]) * GW, ((vv - map[3]) / map[1]) * GH];
     const inside = (gx, gy) => gx > 1 && gy > 1 && gx < GW - 2 && gy < GH - 2;
 
-    let running = false, raf = 0, visible = true, nextAmbient = 0, lastPointer = 0;
+    let running = false, raf = 0, visible = true, nextAmbient = 0, lastPointer = 0, nextWake = performance.now() + 4200;
     function frame(now) {
       raf = 0;
       if (!running) return;
+      if (now > nextWake) {
+        // the boat leaves a wake: a run of rings from the stern back along the water
+        [0.37, 0.335, 0.30, 0.265, 0.23, 0.195].forEach((u, i) => setTimeout(() => {
+          if (!running) return;
+          const [gx, gy] = fromImage(u, 0.545 + (i % 2 ? 0.012 : 0));
+          if (inside(gx, gy)) drop(gx, gy, 3, 34 - i * 3);
+        }, i * 130));
+        nextWake = now + 6500 + Math.random() * 3500;
+      }
       if (now > nextAmbient) {
         const [gx, gy] = fromImage(0.06 + Math.random() * 0.88, 0.58 + Math.random() * 0.36);
         if (inside(gx, gy)) drop(gx, gy, 2.5, 22 + Math.random() * 18);
@@ -594,9 +617,12 @@
       ScrollTrigger.refresh();
     });
 
-    // Trips: the photo comes forward, the rows arrive one after another.
+    // Trips: the photo comes forward, tonight's sunset, then each package with its rows one after another.
     g.from(".trips-photo", { scale: 0.94, autoAlpha: 0, duration: 1.1, ease: "power2.out", scrollTrigger: { trigger: ".trips", start: "top 80%", once: true } });
-    g.from(".row", { y: 26, autoAlpha: 0, duration: 0.7, stagger: 0.07, scrollTrigger: { trigger: ".rows", start: "top 85%", once: true } });
+    g.from(".sun-badge", { y: 14, autoAlpha: 0, duration: 0.6, scrollTrigger: { trigger: ".sun-badge", start: "top 90%", once: true } });
+    $$(".pack").forEach(p => g.from(p.querySelectorAll(".pack-name, .row, .pack-ask"), {
+      y: 26, autoAlpha: 0, duration: 0.7, stagger: 0.07, scrollTrigger: { trigger: p, start: "top 85%", once: true },
+    }));
     g.from(".trips-note", { y: 16, autoAlpha: 0, duration: 0.6, scrollTrigger: { trigger: ".trips-note", start: "top 92%", once: true } });
 
     // The boat: the first half of the sentence slides in as the stage arrives.
