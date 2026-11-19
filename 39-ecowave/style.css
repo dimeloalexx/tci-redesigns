@@ -239,8 +239,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: var(--radius); background: var(--surface);
   font-size: var(--step-small); line-height: 1.35;
 }
-.sun-dot { width: 10px; height: 10px; flex: none; border-radius: 50%; background: var(--accent); animation: sun-pulse 2.4s ease-in-out infinite; }
-@keyframes sun-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.6); opacity: 0.55; } }
+.sun-dot { width: 10px; height: 10px; flex: none; border-radius: 50%; background: var(--accent); }
 .packs { display: grid; gap: 48px; }
 .pack-name { font: 500 var(--step-lead)/1.15 var(--display); letter-spacing: -0.005em; margin-bottom: 8px; }
 .pack-ask {
@@ -508,5 +507,4 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
   .bf-3.is-on { transform: none; }
-  .sun-dot { animation: none; }
 }
