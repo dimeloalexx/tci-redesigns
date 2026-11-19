@@ -323,6 +323,11 @@ ul { padding: 0; list-style: none; }
 }
 .field input:focus, .field textarea:focus { border-color: var(--ink); }
 .field textarea { resize: vertical; min-height: 120px; }
+/* Date field: on iPhone its built-in width pushed it over the next column */
+.field { min-width: 0; }
+.field input, .field textarea { min-width: 0; max-width: 100%; display: block; }
+.field input[type="date"] { -webkit-appearance: none; appearance: none; text-align: left; }
+.field input[type="date"]::-webkit-date-and-time-value { text-align: left; }
 .field.invalid input { border-color: #9E3445; }
 .form-status { min-height: 1.5em; font-weight: 600; font-size: 18px; }
 .form-status.error { color: #9E3445; }
@@ -586,3 +591,10 @@ main { position: relative; z-index: 1; background: var(--bg); }
 
 /* Bridal page: the wedding columns follow the page title closely */
 .page-head + .included { padding-top: 32px; }
+
+/* Phone: one column for the form and the classes (these base rules sit later in the file, so the phone rule must follow them) */
+@media (max-width: 859px) {
+  .fs-grid, .choices-2 { grid-template-columns: minmax(0, 1fr); }
+  .classes { grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 56px; }
+}
+.bp-blush { background: var(--blush); }
