@@ -191,7 +191,42 @@
     });
   }
 
-  /* 6. Motion */
+  /* 6. Gallery: a simple photo viewer */
+  const dlg = $(".lightbox");
+  const items = $$(".g-item");
+  if (dlg && items.length && typeof dlg.showModal === "function") {
+    const img = $(".lb-img", dlg);
+    const count = $(".lb-count", dlg);
+    let at = 0;
+    const show = (n) => {
+      at = (n + items.length) % items.length;
+      const a = items[at];
+      img.src = a.dataset.full;
+      img.alt = $("img", a).alt;
+      count.textContent = at + 1 + " of " + items.length;
+      dlg.classList.toggle("lb-blush", a.dataset.bg === "blush");
+    };
+    items.forEach((a, n) => a.addEventListener("click", (e) => { e.preventDefault(); show(n); dlg.showModal(); }));
+    $(".lb-prev", dlg).addEventListener("click", () => show(at - 1));
+    $(".lb-next", dlg).addEventListener("click", () => show(at + 1));
+    $(".lb-close", dlg).addEventListener("click", () => dlg.close());
+    dlg.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") show(at + 1);
+      if (e.key === "ArrowLeft") show(at - 1);
+    });
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    let px = null;
+    dlg.addEventListener("pointerdown", (e) => { px = e.clientX; });
+    dlg.addEventListener("pointerup", (e) => {
+      if (px === null) return;
+      const dx = e.clientX - px;
+      px = null;
+      if (Math.abs(dx) > 50) show(at + (dx < 0 ? 1 : -1));
+    });
+    dlg.addEventListener("close", () => items[at].focus());
+  }
+
+  /* 7. Motion */
   function motion() {
     const g = window.gsap;
     const ST = window.ScrollTrigger;
@@ -199,15 +234,19 @@
     g.registerPlugin(ST);
     if (reduce) { root.classList.add("anim-ready"); return; }
     const late = root.classList.contains("anim-off");
+    const hero = $(".hero");
 
     if (!late) {
-      const tl = g.timeline({ defaults: { ease: "power3.out" } });
-      tl.set(".hero-copy", { opacity: 1 }, 0)
-        .fromTo(".hero-frame", { opacity: 0, clipPath: "inset(100% 0% 0% 0%)" }, { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 1.15, ease: "power4.inOut" }, 0)
-        .fromTo(".hero-ring", { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 1.3 }, 0.45)
-        .fromTo(".hero-bride", { opacity: 0, yPercent: 6 }, { opacity: 1, yPercent: 0, duration: 1.2 }, 0.5)
-        .fromTo(".m-line", { opacity: 0, yPercent: 45 }, { opacity: 1, yPercent: 0, duration: 1, stagger: 0.12 }, 0.35)
-        .fromTo(".hero-copy > *", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.09 }, 0.7);
+      if (hero) {
+        const tl = g.timeline({ defaults: { ease: "power3.out" } });
+        tl.set(".hero-copy", { opacity: 1 }, 0)
+          .fromTo(".hero-frame", { opacity: 0, clipPath: "inset(100% 0% 0% 0%)" }, { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 1.15, ease: "power4.inOut" }, 0)
+          .fromTo(".hero-photo", { scale: 1.12 }, { scale: 1, duration: 1.6, ease: "power2.out" }, 0.2)
+          .fromTo(".m-line", { opacity: 0, yPercent: 45 }, { opacity: 1, yPercent: 0, duration: 1, stagger: 0.12 }, 0.35)
+          .fromTo(".hero-copy > *", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.09 }, 0.7);
+      }
+      const head = $(".page-head");
+      if (head) g.fromTo(head.children, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: "power3.out" });
 
       const ins = g.utils.toArray("[data-in]");
       g.set(ins, { opacity: 0, y: 26 });
@@ -216,25 +255,38 @@
         once: true,
         onEnter: (batch) => g.to(batch, { opacity: 1, y: 0, duration: 0.85, stagger: 0.08, ease: "power3.out", overwrite: true, clearProps: "transform" }),
       });
-      g.from(".frame", {
-        x: 60, opacity: 0, duration: 0.9, stagger: 0.05, ease: "power3.out", clearProps: "transform,opacity",
-        scrollTrigger: { trigger: ".work", start: "top 72%", once: true },
-      });
+      if ($(".work")) {
+        g.from(".frame", {
+          x: 60, opacity: 0, duration: 0.9, stagger: 0.05, ease: "power3.out", clearProps: "transform,opacity",
+          scrollTrigger: { trigger: ".work", start: "top 72%", once: true },
+        });
+      }
+      const tiles = g.utils.toArray(".g-grid li");
+      if (tiles.length) {
+        g.set(tiles, { opacity: 0, y: 30 });
+        ST.batch(tiles, {
+          start: "top 92%",
+          once: true,
+          onEnter: (batch) => g.to(batch, { opacity: 1, y: 0, duration: 0.8, stagger: 0.06, ease: "power3.out", clearProps: "transform" }),
+        });
+      }
     }
     root.classList.add("anim-ready");
 
     /* The signature move: the name settles as the first screen leaves, and grows back in the footer */
-    g.to(".monument", { scale: 0.94, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-    g.fromTo(".foot-mark", { scale: 0.94 }, { scale: 1, ease: "none", scrollTrigger: { trigger: ".foot", start: "top bottom", end: "bottom bottom", scrub: true } });
-
-    /* The moving picture: the bride breathes in her frame */
-    g.to(".hero-bride", { yPercent: -1.4, scale: 1.015, duration: 5.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: late ? 0 : 1.7 });
+    if (hero) {
+      g.to(".monument", { scale: 0.94, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+      /* The moving picture: the cover photo breathes in its frame */
+      g.to(".hero-photo", { scale: 1.05, duration: 7, ease: "sine.inOut", yoyo: true, repeat: -1, delay: late ? 0 : 1.8 });
+    }
+    const foot = $(".foot");
+    if (foot) g.fromTo(".foot-mark", { scale: 0.94 }, { scale: 1, ease: "none", scrollTrigger: { trigger: foot, start: "top bottom", end: "bottom bottom", scrub: true } });
 
     /* The step photographs drift behind their verbs */
-    g.utils.toArray(".step-img").forEach((img) => {
-      g.fromTo(img, { scale: 1.1, yPercent: -3 }, {
+    g.utils.toArray(".step-img").forEach((im) => {
+      g.fromTo(im, { scale: 1.1, yPercent: -3 }, {
         scale: 1.02, yPercent: 3, ease: "none",
-        scrollTrigger: { trigger: img.parentElement, start: "top bottom", end: "bottom top", scrub: true },
+        scrollTrigger: { trigger: im.parentElement, start: "top bottom", end: "bottom top", scrub: true },
       });
     });
   }
