@@ -304,10 +304,11 @@ ul { padding: 0; list-style: none; }
   font-stretch: 85%; font-variation-settings: "wdth" 85;
   font-size: var(--step-head); line-height: 1.05; letter-spacing: -0.015em; text-wrap: balance;
 }
+.card-copy { position: sticky; top: 32px; align-self: start; }
 .card-copy p { margin-top: 18px; color: var(--ink); max-width: 46ch; text-wrap: pretty; }
 .card-copy .card-note { font-size: var(--step-small); color: var(--muted-blush); }
-.form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; align-content: start; }
-.field-wide, .form .btn, .form-status, .form-alt { grid-column: 1 / -1; }
+.form { display: grid; gap: 44px; align-content: start; min-width: 0; }
+.field-wide { grid-column: 1 / -1; }
 .field label { display: block; margin-bottom: 6px; font-size: 15px; font-weight: 600; }
 .opt { font-weight: 400; color: var(--muted-blush); }
 .field input, .field textarea {
@@ -428,13 +429,54 @@ main { position: relative; z-index: 1; background: var(--bg); }
 
   .inquiry { padding: 72px 12px; }
   .card { width: 100%; grid-template-columns: minmax(0, 1fr); padding: 30px 20px; }
-  .form { grid-template-columns: minmax(0, 1fr); }
+  .card-copy { position: static; }
+  .fs-grid, .choices-2 { grid-template-columns: minmax(0, 1fr); }
+  .classes { grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 56px; }
 
   .foot { position: relative; min-height: 0; grid-template-rows: auto; padding: 36px 20px 18px; }
   .foot-cols { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
   .foot-mark { display: grid; margin-top: 64px; }
   .fm-line { display: block; }
 }
+
+/* Bridal inquiry: her five-part form */
+.card-logo { width: min(260px, 70%); height: auto; margin: -8px 0 22px; }
+.form-alt { margin-top: 22px; }
+.fs { border: 0; margin: 0; padding: 0; min-width: 0; }
+.fs-title {
+  padding: 0; margin-bottom: 18px;
+  font-family: var(--display); font-weight: 400;
+  font-stretch: 85%; font-variation-settings: "wdth" 85;
+  font-size: var(--step-lead); line-height: 1.2;
+}
+.fs-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; }
+.group { border: 0; margin: 0; padding: 0; min-width: 0; }
+.group-label { padding: 0; margin-bottom: 6px; font-size: 15px; font-weight: 600; }
+.req { font-weight: 600; }
+.choices { display: grid; }
+.choices-row { display: flex; flex-wrap: wrap; gap: 0 32px; }
+.choices-2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18px; }
+.choice { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; font-size: var(--step-body); line-height: 1.35; cursor: pointer; }
+.choice input { flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--ink); cursor: pointer; }
+.hint { margin-top: 6px; font-size: 15px; color: var(--muted-blush); }
+.note { background: var(--white); padding: 20px 22px; }
+.note p { font-size: var(--step-body); color: var(--ink); }
+.note-title { font-weight: 700; margin-bottom: 8px; }
+.choice-agree { margin-top: 14px; }
+.group.invalid .group-label, .choice-agree.invalid { color: #9E3445; }
+.form > .btn { width: 100%; }
+
+/* Prices: the two classes in detail */
+.classes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; max-width: 1120px; margin-top: 88px; }
+.class-name { font-family: var(--display); font-style: italic; font-weight: 400; font-size: var(--step-lead); line-height: 1.2; }
+.class-fact { margin-top: 4px; font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.class-text { margin-top: 12px; max-width: 48ch; text-wrap: pretty; }
+.text-link {
+  display: inline-block; margin-top: 12px; padding: 8px 0;
+  font-size: 15px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .35em;
+  transition: color .2s var(--ease);
+}
+.text-link:hover { color: var(--gold-ink); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }

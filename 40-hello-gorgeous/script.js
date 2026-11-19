@@ -109,7 +109,7 @@
     });
   }
 
-  /* 4. Bridal inquiry form, sent to her email through FormSubmit */
+  /* 4. Bridal inquiry form (her five parts), sent to her email through FormSubmit */
   const form = $(".form");
   if (form) {
     const status = $(".form-status", form);
@@ -122,28 +122,36 @@
     };
     setMin();
     const words = (a) => (a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]);
+    const sentText = "Inquiry sent. Jas will reply by email or WhatsApp.";
     const done = () => {
       form.reset();
       setMin();
       btn.textContent = "Inquiry sent";
       btn.disabled = true;
       status.classList.remove("error");
-      status.textContent = "Inquiry sent. Jas will reply by email.";
+      status.textContent = sentText;
     };
-    if (location.hash === "#sent") status.textContent = "Inquiry sent. Jas will reply by email.";
+    if (location.hash === "#sent") status.textContent = sentText;
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       status.classList.remove("error");
-      const need = [["f-name", "your name"], ["f-email", "your email"], ["f-date", "your wedding date"], ["f-people", "how many people need makeup"]];
       const bad = [];
-      need.forEach(([id, label]) => {
+      const fields = [["f-name", "your full name"], ["f-email", "a valid email"], ["f-phone", "your phone or WhatsApp number"], ["f-date", "your wedding date"], ["f-venue", "your venue or resort"], ["f-people", "how many people need makeup"]];
+      fields.forEach(([id, label]) => {
         const el = document.getElementById(id);
         const ok = el.value.trim() !== "" && el.checkValidity();
         el.closest(".field").classList.toggle("invalid", !ok);
         if (ok) el.removeAttribute("aria-invalid");
         else { el.setAttribute("aria-invalid", "true"); bad.push([el, label]); }
       });
+      const services = $("#g-services", form);
+      const anyService = $$('input[name="Services"]', form).some((i) => i.checked);
+      services.classList.toggle("invalid", !anyService);
+      if (!anyService) bad.push([$('input[name="Services"]', form), "at least one service"]);
+      const agree = $("#f-agree", form);
+      $("#agree-label", form).classList.toggle("invalid", !agree.checked);
+      if (!agree.checked) bad.push([agree, "a tick in the box at the end"]);
       if (bad.length) {
         status.classList.add("error");
         status.textContent = "Please add " + words(bad.map((b) => b[1])) + ".";
@@ -154,9 +162,11 @@
 
       btn.disabled = true;
       btn.textContent = "Sending";
-      const data = Object.fromEntries(new FormData(form).entries());
-      delete data._next;
-      delete data._honey;
+      const data = {};
+      for (const [k, v] of new FormData(form).entries()) {
+        if (k === "_next" || k === "_honey") continue;
+        data[k] = k in data ? data[k] + ", " + v : v;
+      }
       try {
         const res = await fetch("https://formsubmit.co/ajax/hellogorgeoustci@gmail.com", {
           method: "POST",
