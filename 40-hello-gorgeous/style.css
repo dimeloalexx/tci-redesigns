@@ -21,7 +21,7 @@
   --step-body: 1.125rem;
   --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
   --step-head: clamp(1.75rem, 1.35rem + 1.3vw, 2.5rem);
-  --mono: clamp(64px, 11.5vw, 220px); /* refined by script.js to fit the name exactly */
+  --mono: calc((63vw - var(--m) - 20px) / 5.31); /* "hello gorgeous" measures 5.31em in Noto Serif Display at wdth 70 */
 
   --m: clamp(20px, 2.2vw, 32px);
   --ease: cubic-bezier(.2, .7, .2, 1);
@@ -40,6 +40,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
   overflow-x: clip;
 }
 img { display: block; max-width: 100%; height: auto; }
@@ -90,7 +91,7 @@ ul { padding: 0; list-style: none; }
 .menu-toggle { display: none; }
 
 /* Hero: the name as a monument, crossing the portrait */
-.hero { position: relative; height: 100svh; min-height: 620px; overflow: clip; }
+.hero { position: relative; height: 100svh; min-height: 620px; overflow: hidden; overflow: clip; }
 .hero-frame {
   position: absolute; left: 20px; top: 20px; bottom: 20px; width: 47vw;
   background: var(--blush); overflow: hidden;
@@ -125,7 +126,7 @@ ul { padding: 0; list-style: none; }
 .looks {
   --rot-soft: 48deg; --rot-shimmer: 0deg; --rot-bold: -48deg;
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: center;
-  padding: clamp(96px, 16vh, 180px) var(--m); overflow-x: clip;
+  padding: clamp(96px, 16vh, 180px) var(--m); overflow-x: hidden; overflow-x: clip;
 }
 .looks[data-look="soft"] { --rot: var(--rot-soft); }
 .looks[data-look="shimmer"] { --rot: var(--rot-shimmer); }
@@ -177,11 +178,14 @@ ul { padding: 0; list-style: none; }
 .mirror-ring {
   position: absolute; inset: -16px; border-radius: 50%;
   border: 1.5px solid var(--gold); pointer-events: none;
+}
+.mirror-arm {
+  position: absolute; left: -16px; right: -16px; top: calc(var(--D) / 2); height: 0; pointer-events: none;
   transform: rotate(var(--rot, 48deg)); transition: transform .8s var(--ease-out);
 }
 .mirror-dot {
-  position: absolute; left: -7.5px; top: 50%;
-  width: 14px; height: 14px; margin-top: -7px; border-radius: 50%;
+  position: absolute; left: -7.5px; top: -7px;
+  width: 14px; height: 14px; border-radius: 50%;
   background: var(--gold); outline: 4px solid var(--bg);
 }
 .dial { position: absolute; inset: 0; border: 0; padding: 0; min-width: 0; pointer-events: none; }
@@ -226,7 +230,7 @@ ul { padding: 0; list-style: none; }
 
 /* How it comes together: one verb at a time */
 .steps { position: relative; }
-.step { position: relative; height: 100svh; overflow: clip; color: var(--step-ink); }
+.step { position: relative; height: 100svh; overflow: hidden; overflow: clip; color: var(--step-ink); }
 .step-light { --step-ink: #FBF7F7; --scrim: rgba(42, 32, 36, .64); }
 .step-dark { --step-ink: #2A2024; --scrim: rgba(251, 247, 247, .88); }
 .step-img {
@@ -328,7 +332,8 @@ ul { padding: 0; list-style: none; }
 /* Footer: columns above, wordmark below, uncovered by the page */
 main { position: relative; z-index: 1; background: var(--bg); }
 .foot {
-  position: relative;
+  position: relative; overflow: hidden; overflow: clip;
+  grid-template-columns: minmax(0, 1fr);
   min-height: 100svh;
   display: grid; grid-template-rows: auto auto 1fr auto auto;
   background: var(--ink); color: var(--bg); padding: 40px var(--m) 20px;
@@ -343,15 +348,15 @@ main { position: relative; z-index: 1; background: var(--bg); }
 .foot-logo { width: 104px; height: auto; }
 .foot-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
 .foot .btn-inv:hover { text-decoration: none; color: var(--ink); }
-.foot-mark {
-  align-self: end; justify-self: start; width: max-content; max-width: none; margin: 0;
+.foot-mark { align-self: end; width: 100%; margin: 0; color: var(--bg); transform-origin: 0 100%; }
+.fm { display: block; width: 100%; height: auto; overflow: visible; }
+.fm text {
   font-family: var(--display); font-weight: 400;
   font-stretch: 70%; font-variation-settings: "wdth" 70;
-  font-size: var(--foot, 15vw); line-height: .8; letter-spacing: -0.035em;
-  white-space: nowrap; color: var(--bg); transform-origin: 0 100%;
+  font-size: 100px; letter-spacing: -0.035em; fill: currentColor;
 }
-.fm-line { display: inline-block; }
-.legal { margin-top: calc(var(--foot, 15vw) * .27 + 10px); font-size: var(--step-small); color: var(--inv-muted); }
+.fm-two { display: none; }
+.legal { margin-top: 24px; font-size: var(--step-small); color: var(--inv-muted); }
 
 /* Load states: hidden only until the motion script takes over */
 .js:not(.anim-ready):not(.anim-off) [data-in],
@@ -361,6 +366,7 @@ main { position: relative; z-index: 1; background: var(--bg); }
 
 /* Tablet and phone */
 @media (max-width: 859px) {
+  :root { --mono: calc((100vw - 32px) / 3.35); } /* "gorgeous" measures 3.34em */
   .top { padding: 22px 24px; }
   .nav { justify-content: space-between; }
   .js .menu-toggle {
@@ -400,6 +406,7 @@ main { position: relative; z-index: 1; background: var(--bg); }
   .mirror-wrap { --D: min(76vw, 420px); order: 3; height: auto; margin: 44px auto 0; }
   .mirror { position: relative; inset: auto; width: 100%; aspect-ratio: 1; }
   .mirror-ring { inset: auto; top: -12px; left: -12px; width: calc(var(--D) + 24px); height: calc(var(--D) + 24px); }
+  .mirror-arm { left: -12px; right: auto; width: calc(var(--D) + 24px); }
   .dial { position: static; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 2px; margin-top: 26px; pointer-events: auto; }
   .dial label { position: static; width: auto; height: auto; transform: none; }
   .dial-text { position: static; translate: none; display: block; padding: 12px 7px; font-size: 18px; }
@@ -435,8 +442,9 @@ main { position: relative; z-index: 1; background: var(--bg); }
 
   .foot { position: relative; min-height: 0; grid-template-rows: auto; padding: 36px 20px 18px; }
   .foot-cols { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
-  .foot-mark { display: grid; margin-top: 64px; }
-  .fm-line { display: block; }
+  .foot-mark { margin-top: 64px; }
+  .fm-one { display: none; }
+  .fm-two { display: block; }
 }
 
 /* Bridal inquiry: her five-part form */

@@ -7,51 +7,23 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
-  /* 1. The name, fitted to its space (hero, poster list and footer) */
-  const monument = $(".monument");
-  const foot = $(".foot");
-  const footMark = $(".foot-mark");
+  /* 1. The giant name is sized in CSS from the measured width of her typeface.
+        Here we only make sure the longest price line never runs past its row. */
   const poster = $(".poster");
 
-  const widest = (els) => Math.max(...els.map((el) => el.offsetWidth));
-  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-
   function fit() {
-    const vw = root.clientWidth;
-    const m = clamp(vw * 0.022, 20, 32);
-
-    if (monument) {
-      root.style.setProperty("--mono", "100px");
-      let w;
-      let target;
-      if (phone.matches) {
-        w = widest($$(".m-line", monument));
-        target = vw - 32;
-      } else {
-        w = monument.offsetWidth;
-        target = vw * 0.63 - m - 20;
-      }
-      const size = w ? clamp((100 * target) / w, 56, 260) : 120;
-      root.style.setProperty("--mono", size.toFixed(1) + "px");
-
-      root.style.removeProperty("--poster");
-      if (poster && !phone.matches) {
-        const avail = poster.clientWidth;
-        let worst = 1;
-        $$("a", poster).forEach((a) => {
-          const need = $(".p-name", a).offsetWidth + $(".p-fact", a).offsetWidth + 24;
-          worst = Math.min(worst, avail / need);
-        });
-        if (worst < 1) root.style.setProperty("--poster", (size * worst * 0.97).toFixed(1) + "px");
-      }
-    }
-
-    if (foot && footMark) {
-      foot.style.setProperty("--foot", "100px");
-      const lines = $$(".fm-line", footMark);
-      const w = phone.matches ? widest(lines) : footMark.offsetWidth;
-      const target = phone.matches ? vw - 40 : vw - 2 * m;
-      if (w) foot.style.setProperty("--foot", clamp((100 * target) / w, 48, 420).toFixed(1) + "px");
+    if (!poster) return;
+    root.style.removeProperty("--poster");
+    if (phone.matches) return;
+    const avail = poster.clientWidth;
+    let worst = 1;
+    $$("a", poster).forEach((a) => {
+      const need = $(".p-name", a).offsetWidth + $(".p-fact", a).offsetWidth + 24;
+      worst = Math.min(worst, avail / need);
+    });
+    if (worst < 1) {
+      const size = parseFloat(getComputedStyle($(".p-name", poster)).fontSize);
+      root.style.setProperty("--poster", (size * worst * 0.97).toFixed(1) + "px");
     }
   }
 
