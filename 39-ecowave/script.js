@@ -12,7 +12,7 @@
   const safe = (name, fn) => { try { fn(); } catch (e) { if (window.console) console.warn("[" + name + "]", e); } };
 
   /* ---------- WhatsApp ---------- */
-  const PHONE = "16493436421";
+  const PHONE = "16492421357";
   const enc = s => encodeURIComponent(s).replace(/[!'()*]/g, c => "%" + c.charCodeAt(0).toString(16).toUpperCase());
   const wa = text => `https://wa.me/${PHONE}?text=${enc(text)}`;
   const GENERAL = "Hi EcoWave! I'd like to book a day on the water.";
