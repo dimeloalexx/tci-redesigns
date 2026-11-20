@@ -259,7 +259,7 @@ ul { padding: 0; list-style: none; }
 /* Her work: small frames, wide space */
 .work { position: relative; height: 100svh; min-height: 560px; display: flex; flex-direction: column; justify-content: center; }
 .work-title {
-  position: relative; z-index: 2; margin: 0 0 -42px var(--m);
+  position: relative; z-index: 2; margin: 0 0 -16px var(--m);
   font-family: var(--display); font-weight: 400; font-style: italic;
   font-size: var(--step-lead); line-height: 1.2;
 }
@@ -598,3 +598,15 @@ main { position: relative; z-index: 1; background: var(--bg); }
   .classes { grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 56px; }
 }
 .bp-blush { background: var(--blush); }
+
+/* Hero words from Jas: her line first, then what she does and where */
+.hero-tag {
+  font-family: var(--display); font-style: italic; font-weight: 400;
+  font-stretch: 85%; font-variation-settings: "wdth" 85;
+  font-size: var(--step-head); line-height: 1.05; letter-spacing: -0.01em; text-wrap: balance;
+  margin-bottom: 16px;
+}
+.hero-where { margin-top: 10px; max-width: 34ch; font-size: var(--step-small); color: var(--muted-blush); text-wrap: balance; }
+@media (max-width: 859px) {
+  .hero-tag { margin-bottom: 10px; }
+}
