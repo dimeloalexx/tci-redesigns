@@ -89,70 +89,73 @@ p, li { text-wrap: pretty; }
   .nav a { padding: 0 12px; font-size: 1rem; }
 }
 
-/* ---------- home: the pinned covers ---------- */
+/* ---------- home: the covers, each one with its own masthead ---------- */
 .covers { position: relative; }
-.mast-layer {
-  position: sticky; top: 0; z-index: 3;
-  height: 100svh;
-  pointer-events: none;
+.cover-panel {
+  --mt: 32px; /* where the masthead starts inside this cover */
+  --mast: min(11.5rem, calc(84vw / var(--mast-em)));
+  position: relative; height: 100svh; min-height: 680px;
+  background: var(--water);
 }
-/* the first cover slides up under the pinned layer; the layer itself keeps a normal
-   margin box, so it lets go exactly when the last cover starts to leave */
-.mast-layer + .cover-panel { margin-top: -100svh; }
-.mast-layer a { pointer-events: auto; }
+.cover-panel:first-child { --mt: 76px; } /* room for the header on the first cover */
 .mast {
-  position: absolute; left: 0; right: 0; top: 76px; margin: 0;
+  position: absolute; left: 0; right: 0; top: var(--mt); z-index: 2; margin: 0;
   text-align: center; white-space: nowrap;
-  font: 400 min(11.5rem, calc(84vw / var(--mast-em)))/0.84 var(--display);
+  font: 400 var(--mast)/0.84 var(--display);
   letter-spacing: -0.005em; color: var(--cobalt);
 }
 .issue {
-  position: absolute; left: 0; right: 0; top: calc(84px + min(11.5rem, calc(84vw / var(--mast-em))) * 0.86);
+  position: absolute; left: 0; right: 0; top: calc(var(--mt) + 8px + var(--mast) * 0.86); z-index: 2;
   margin: 0; display: flex; justify-content: center; gap: 28px;
   font-weight: 600; font-size: var(--step-small); color: var(--cobalt);
 }
 .flash {
-  position: absolute; right: clamp(16px, 7vw, 120px); top: calc(76px + min(11.5rem, calc(84vw / var(--mast-em))) * 0.7);
+  position: absolute; right: clamp(16px, 7vw, 120px); top: calc(var(--mt) + var(--mast) * 0.7); z-index: 2;
   width: 128px; height: 128px; margin: 0; border-radius: 50%;
   display: grid; place-content: center; text-align: center;
   background: var(--sun); color: var(--sun-ink); transform: rotate(-10deg);
 }
 .flash span { font: 400 1rem/1 var(--display); }
 .flash b { font: 400 2.5rem/0.95 var(--display); }
-.cover-cta { position: absolute; right: var(--m); bottom: 32px; }
-.cover-panel {
-  position: relative; height: 100svh; min-height: 680px;
-  background: var(--water);
-}
+.cover-cta { position: absolute; right: var(--m); bottom: 32px; z-index: 2; }
 .cover-photo {
-  position: absolute; top: 150px; bottom: 0; left: 50%; margin: 0;
-  height: calc(100% - 150px); aspect-ratio: 2 / 3;
+  position: absolute; top: calc(var(--mt) + 74px); bottom: 0; left: 50%; margin: 0;
+  height: calc(100% - var(--mt) - 74px); aspect-ratio: 2 / 3;
   transform: translateX(-50%); overflow: hidden;
 }
 .cover-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* after the first cover the photo starts under the masthead, so the name never sits on a face */
+.cover-panel + .cover-panel .cover-photo { top: calc(var(--mt) + var(--mast) * 0.92 + 44px); height: calc(100% - var(--mt) - var(--mast) * 0.92 - 44px); }
 .cover-lines { position: absolute; left: var(--m); bottom: 32px; width: min(28ch, 27vw); }
 .cover-title { margin: 0 0 10px; font: 700 var(--step-lead)/1.15 var(--text); color: var(--ink); }
 .cover-lines p { margin: 0; color: var(--ink); }
 @media (max-width: 899px) {
-  .mast { top: 104px; font-size: calc(92vw / var(--mast-em)); }
-  .issue { top: calc(108px + 92vw / var(--mast-em) * 0.86); gap: 18px; }
-  .flash { width: 84px; height: 84px; right: 12px; top: calc(118px + 92vw / var(--mast-em)); }
+  .cover-panel {
+    --mt: 24px; --mast: calc(92vw / var(--mast-em));
+    height: auto; min-height: 100svh; padding: calc(var(--mt) + 12px + var(--mast) * 0.5) 16px 40px;
+    display: flex; flex-direction: column;
+  }
+  .cover-panel:first-child { --mt: 104px; }
+  .issue { top: calc(var(--mt) + 4px + var(--mast) * 0.86); gap: 18px; }
+  .flash { width: 84px; height: 84px; right: 12px; top: calc(var(--mt) + 14px + var(--mast)); }
   .flash span { font-size: 0.8125rem; }
   .flash b { font-size: 1.625rem; }
   .cover-cta { display: none; }
-  .cover-panel { height: auto; min-height: 100svh; padding: calc(116px + 92vw / var(--mast-em) * 0.5) 16px 40px; display: flex; flex-direction: column; }
   .cover-photo { position: relative; top: auto; bottom: auto; left: auto; transform: none; align-self: center; width: auto; height: min(calc(100svh - 390px), calc((100vw - 32px) * 1.5)); }
   .cover-lines { position: static; width: auto; margin-top: 20px; }
+  .cover-panel + .cover-panel { padding-top: calc(var(--mt) + var(--mast) * 0.92 + 36px); }
+  .cover-panel + .cover-panel .cover-photo { top: auto; height: min(calc(100svh - 390px), calc((100vw - 32px) * 1.5)); }
 }
 
 /* ---------- home: one verb at a time ---------- */
 .verb-panel { position: relative; height: 100svh; min-height: 600px; overflow: hidden; overflow: clip; }
 .verb-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .verb {
-  position: sticky; top: calc(50% - 0.42em); z-index: 1; width: fit-content;
+  position: absolute; top: 9%; left: 0; z-index: 1;
   margin: 0; padding-left: var(--m);
-  font: 400 clamp(96px, 17vw, 300px)/0.84 var(--display); color: var(--cobalt);
+  font: 400 clamp(80px, 11vw, 190px)/0.84 var(--display); color: var(--cobalt);
 }
+.verb-panel:first-child .verb { left: auto; right: 0; padding: 0 var(--m) 0 0; }
 .verb-card {
   position: absolute; left: var(--m); bottom: 32px; z-index: 2; max-width: 36ch;
   padding: 22px 26px; border-radius: var(--radius);
@@ -161,7 +164,8 @@ p, li { text-wrap: pretty; }
 .verb-card h3 { margin: 0 0 6px; font: 400 var(--step-lead)/1 var(--display); }
 .verb-card p { margin: 0; }
 @media (max-width: 899px) {
-  .verb { top: 16px; font-size: 24vw; padding: 0 14px; margin-left: 16px; background: var(--paper); border-radius: var(--radius); }
+  .verb { top: 16px; left: 16px; font-size: 18vw; padding: 0 12px; background: var(--paper); border-radius: var(--radius); }
+  .verb-panel:first-child .verb { left: 16px; right: auto; padding: 0 12px; }
   .verb-card { left: 16px; right: 16px; bottom: 16px; max-width: none; padding: 18px 20px; font-size: 1rem; }
 }
 

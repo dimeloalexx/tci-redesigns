@@ -208,16 +208,16 @@
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.from($(".cover-photo img", first), { scale: 1.16, duration: 1.7, ease: "power2.out" }, 0)
         .from(chars, { yPercent: 70, opacity: 0, duration: 0.8, stagger: 0.04 }, 0.15)
-        .from($$(".issue span"), { y: 14, opacity: 0, duration: 0.6, stagger: 0.08 }, 0.65)
-        .from(".flash", { scale: 0, rotate: -50, duration: 0.8, ease: "back.out(2.2)" }, 0.8)
+        .from($$(".issue span", first), { y: 14, opacity: 0, duration: 0.6, stagger: 0.08 }, 0.65)
+        .from($(".flash", first), { scale: 0, rotate: -50, duration: 0.8, ease: "back.out(2.2)" }, 0.8)
         .from($$(".cover-lines > *", first), { y: 24, opacity: 0, duration: 0.7, stagger: 0.09 }, 0.75)
-        .from(".cover-cta", { y: 18, opacity: 0, duration: 0.6 }, 0.95);
+        .from($(".cover-cta", first), { y: 18, opacity: 0, duration: 0.6 }, 0.95);
       /* the drone hovers: a slow drift on every cover photo */
       gsap.to($$(".cover-photo img"), { scale: 1.04, duration: 7, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.8 });
-      /* each cover's lines fade before they reach the pinned masthead */
-      if (window.ScrollTrigger) $$(".cover-lines").forEach((el) => gsap.to(el, { opacity: 0, ease: "none", scrollTrigger: { trigger: el, start: "top 46%", end: "top 24%", scrub: true } }));
+      /* the next covers arrive whole: their masthead, then their lines */
       $$(".cover-panel").slice(1).forEach((p) => {
-        rise($$(".cover-lines > *", p), p, { y: 34 });
+        rise([$(".mast", p), $(".issue", p)], p, { y: 40 });
+        rise($$(".cover-lines > *, .cover-cta", p), p, { y: 34 });
         if (ST) gsap.from($(".cover-photo", p), { opacity: 0, duration: 0.9, ease: "power2.out", scrollTrigger: { trigger: p, start: "top 75%", once: true } });
       });
     }
