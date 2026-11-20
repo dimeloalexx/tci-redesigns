@@ -112,12 +112,13 @@ p, li { text-wrap: pretty; }
 .flash {
   position: absolute; right: clamp(16px, 7vw, 120px); top: calc(var(--mt) + var(--mast) * 0.7); z-index: 2;
   width: 128px; height: 128px; margin: 0; border-radius: 50%;
-  display: grid; place-content: center; text-align: center;
+  display: grid; place-content: center; gap: 4px; text-align: center;
   background: var(--sun); color: var(--sun-ink); transform: rotate(-10deg);
 }
-.flash span { font: 400 1rem/1 var(--display); }
-.flash b { font: 400 2.5rem/0.95 var(--display); }
-.cover-cta { position: absolute; right: var(--m); bottom: 32px; z-index: 2; }
+.flash span { font: 400 1rem/1.2 var(--display); }
+.flash b { font: 400 2.5rem/1.1 var(--display); }
+/* the action sits under the price, well away from the next cover's masthead */
+.cover-cta { position: absolute; right: var(--m); top: calc(var(--mt) + var(--mast) * 0.7 + 160px); z-index: 2; }
 .cover-photo {
   position: absolute; top: calc(var(--mt) + 74px); bottom: 0; left: 50%; margin: 0;
   height: calc(100% - var(--mt) - 74px); aspect-ratio: 2 / 3;
@@ -221,10 +222,10 @@ legend { padding: 0; margin-bottom: 10px; }
 .mag-lines li { font-weight: 700; font-size: max(13px, 3.6cqi); line-height: 1.1; color: var(--cobalt); }
 .mag-flash {
   position: absolute; right: 4cqi; top: 34%; width: 22cqi; height: 22cqi; margin: 0; border-radius: 50%;
-  display: grid; place-content: center; text-align: center; background: var(--sun); color: var(--sun-ink); transform: rotate(-10deg);
+  display: grid; place-content: center; gap: 0.6cqi; text-align: center; background: var(--sun); color: var(--sun-ink); transform: rotate(-10deg);
 }
-.mag-flash span { font: 400 max(13px, 2.8cqi)/1 var(--display); }
-.mag-flash b { font: 400 6.4cqi/0.95 var(--display); }
+.mag-flash span { font: 400 max(13px, 2.8cqi)/1.2 var(--display); }
+.mag-flash b { font: 400 6.4cqi/1.1 var(--display); }
 .mag-head { position: absolute; left: 4cqi; right: 4cqi; bottom: 4cqi; }
 .mag-name { margin: 0; font: 400 10.5cqi/0.98 var(--display); color: var(--cobalt); overflow-wrap: anywhere; text-wrap: balance; }
 .mag-sub { margin: 1.5cqi 0 0; font-weight: 700; font-size: max(13px, 3.6cqi); color: var(--ink); }
