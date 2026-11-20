@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Book a photoshoot | Aqua Media TCI</title>
+  <meta name="description" content="Book a clear kayak drone photoshoot on Leeward Beach with Aqua Media: pick a calm morning, your people and your occasion, and send it on WhatsApp.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0034eb">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book a photoshoot | Aqua Media TCI">
+  <meta property="og:description" content="Book a clear kayak drone photoshoot on Leeward Beach with Aqua Media: pick a calm morning, your people and your occasion, and send it on WhatsApp.">
+  <meta property="og:image" content="https://dimeloalexx.github.io/tci-redesigns/41-aqua-media/img/og.jpg">
+  <meta property="og:url" content="https://dimeloalexx.github.io/tci-redesigns/41-aqua-media/book.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&amp;family=Rozha+One&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+</head><body class="page-book">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html" aria-label="Aqua Media TCI, home">Aqua Media<span>TCI</span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="sessions.html">Sessions</a><a href="gallery.html">Gallery</a><a href="book.html" aria-current="page">Book</a></nav>
+  <a class="btn btn-ink top-cta" href="https://wa.me/16492413753?text=Hi%20Aqua%20Media%21%20I%27d%20like%20to%20book%20a%20clear%20kayak%20drone%20photoshoot.">Book on WhatsApp</a>
+</header>
+<main id="main">
+  <section class="page-head page-head-plain">
+    <h1>Book your shoot</h1>
+    <p class="lead">Pick a day, tell us who is coming and send it to us on WhatsApp. We reply with your time and the exact spot on Sunset Beach.</p>
+  </section>
+
+  <section class="forecast" id="forecast" aria-labelledby="fc-title" hidden>
+    <h2 id="fc-title">Pick a calm morning</h2>
+    <p>Mornings on Leeward are usually the calmest, and calm water gives the clearest photos. Wind for 8 to 11 am, from the forecast:</p>
+    <ol class="fc-days" id="fc-days"></ol>
+  </section>
+
+  <section class="booking" aria-labelledby="form-title">
+    <form class="book-form" id="book-form" novalidate>
+      <h2 id="form-title">Your session</h2>
+      <label class="field"><span>Your name</span><input name="name" type="text" required autocomplete="name"></label>
+      <label class="field"><span>Day</span><input name="date" id="f-date" type="date" required></label>
+      <fieldset><legend>Time of day</legend><div class="chips">
+        <label class="chip"><input type="radio" name="time" value="morning (8 to 11 am)" checked><span>Morning</span></label>
+        <label class="chip"><input type="radio" name="time" value="midday (11 am to 2 pm)"><span>Midday</span></label>
+        <label class="chip"><input type="radio" name="time" value="afternoon (2 to 6 pm)"><span>Afternoon</span></label>
+      </div></fieldset>
+      <fieldset><legend>Who is coming</legend><div class="chips">
+        <label class="chip"><input type="radio" name="who" value="just me" checked><span>Just me</span></label>
+        <label class="chip"><input type="radio" name="who" value="a couple"><span>Couple</span></label>
+        <label class="chip"><input type="radio" name="who" value="friends or family"><span>Friends or family</span></label>
+      </div></fieldset>
+      <label class="field"><span>How many people</span><input name="people" type="number" min="1" max="8" value="1" inputmode="numeric"></label>
+      <label class="field"><span>Occasion (optional)</span><select name="occasion"><option value="">Just because</option><option>Birthday</option><option>Honeymoon</option><option>Anniversary</option><option>Proposal</option><option>Girls' trip</option></select></label>
+      <label class="field"><span>Anything else (optional)</span><textarea name="notes" rows="3"></textarea></label>
+      <p class="form-status" id="form-status" role="status"></p>
+      <button class="btn btn-sun" type="submit">Send on WhatsApp</button>
+      <p class="form-note">This opens WhatsApp with your message ready to send. Prefer to talk? <a href="tel:+16492413753">Call +1 649 241 3753</a>.</p>
+    </form>
+    <aside class="meet" aria-labelledby="meet-title">
+      <h2 id="meet-title">Where we meet</h2>
+      <p>Sunset Beach, Leeward, at the end of Tranquility Lane, Providenciales. Open 8 am to 6 pm.</p>
+      <div class="map"><iframe title="Map of Sunset Beach in Leeward, Providenciales" src="https://www.google.com/maps?q=21.8159915,-72.1623377&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <a class="btn btn-ink" href="https://www.google.com/maps/dir/?api=1&destination=21.8159915,-72.1623377">Get directions</a>
+    </aside>
+  </section>
+  <section class="strip-band" aria-label="More from our sessions">
+    <ul class="strip"><li><a href="gallery.html"><img src="img/am-9-900.webp" srcset="img/am-9-900.webp 900w, img/am-9-1600.webp 1600w" sizes="(min-width: 900px) 25vw, 50vw" width="900" height="600" alt="A woman in a purple swimsuit with her arms raised in a clear kayak, seen from the drone over calm turquoise water" loading="lazy" decoding="async"></a></li><li><a href="gallery.html"><img src="img/am-2-900.webp" srcset="img/am-2-900.webp 900w, img/am-2-1600.webp 1600w" sizes="(min-width: 900px) 25vw, 50vw" width="900" height="600" alt="A woman in an orange and yellow bikini posing in a clear kayak over pale turquoise water" loading="lazy" decoding="async"></a></li><li><a href="gallery.html"><img src="img/am-7-900.webp" srcset="img/am-7-900.webp 900w, img/am-7-1600.webp 1600w" sizes="(min-width: 900px) 25vw, 50vw" width="900" height="600" alt="A woman in a yellow swimsuit posing in a clear kayak, seen from high above the turquoise water" loading="lazy" decoding="async"></a></li><li><a href="gallery.html"><img src="img/am-5-900.webp" srcset="img/am-5-900.webp 900w, img/am-5-1600.webp 1600w" sizes="(min-width: 900px) 25vw, 50vw" width="900" height="600" alt="A woman in a blue swimsuit and visor stretching her arms along a clear kayak on rippling water" loading="lazy" decoding="async"></a></li></ul>
+    <p class="strip-link"><a class="btn btn-line" href="gallery.html">See all the covers</a></p>
+  </section>
+</main>
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <p class="foot-name">Aqua Media</p>
+      <p>Clear kayak drone photoshoots on Leeward Beach, Providenciales, Turks and Caicos.</p>
+    </div>
+    <div>
+      <p><a href="https://www.google.com/maps/dir/?api=1&destination=21.8159915,-72.1623377">Sunset Beach, Leeward</a><br>Open 8 am – 6 pm</p>
+      <p><a href="https://wa.me/16492413753?text=Hi%20Aqua%20Media%21%20I%27d%20like%20to%20book%20a%20clear%20kayak%20drone%20photoshoot.">WhatsApp +1 649 241 3753</a><br><a href="tel:+16492413753">Call +1 649 241 3753</a></p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer"><a href="index.html">Home</a><a href="sessions.html">Sessions</a><a href="gallery.html">Gallery</a><a href="book.html">Book</a></nav>
+  </div>
+  <p class="foot-small">Photos by Aqua Media TCI. Website concept by Alex Fernandez.</p>
+</footer>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="script.js?v=1" defer></script>
+</body>
+</html>
