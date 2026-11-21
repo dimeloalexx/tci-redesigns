@@ -508,3 +508,59 @@ ul { margin: 0; padding: 0; list-style: none; }
   *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
   .bf-3.is-on { transform: none; }
 }
+
+/* ---------- inner pages: charters and before you go (added 2026-11-20 with EcoWave's own text) ---------- */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.page-top {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+  padding: max(20px, env(safe-area-inset-top)) var(--margin) 0;
+  color: var(--ink); font-size: var(--step-small); line-height: 1.35;
+}
+.page-head { padding: clamp(150px, 14vw, 200px) var(--margin) clamp(48px, 6vw, 88px); }
+.page-title { font: 500 clamp(2.6rem, 1.4rem + 5vw, 6rem)/1.02 var(--display); letter-spacing: -0.01em; max-width: 16ch; }
+.page-lead { margin-top: 24px; font-size: var(--step-lead); color: var(--muted); max-width: 46ch; }
+.charters { display: grid; gap: clamp(64px, 9vw, 128px); padding: 0 var(--margin) clamp(72px, 9vw, 128px); }
+.charter { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: clamp(28px, 4vw, 72px); }
+.charter:nth-child(even) .charter-photo { order: 2; }
+.charter-photo { margin: 0; overflow: hidden; border-radius: var(--radius); }
+.charter-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.charter-name { font: 500 var(--step-head)/1.05 var(--display); }
+.charter-time { margin-top: 10px; font-size: var(--step-lead); color: var(--accent); }
+.charter-desc { margin-top: 18px; max-width: 52ch; }
+.ticks { list-style: none; margin: 22px 0 30px; padding: 0; display: grid; gap: 10px; }
+.ticks li { position: relative; padding-left: 30px; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 16px; height: 2px; background: var(--accent); }
+.charter-text .btn { margin-top: 26px; }
+.charter-text .ticks + .btn { margin-top: 0; }
+.included { margin: 0 var(--margin) clamp(72px, 9vw, 128px); padding: clamp(32px, 5vw, 72px); background: var(--surface); border-radius: var(--radius); }
+.section-title { font: 500 var(--step-head)/1.05 var(--display); }
+.ticks-big li { font-size: var(--step-lead); }
+.page-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 36px; }
+.btn-line { display: inline-flex; align-items: center; min-height: 48px; color: var(--ink); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.btn-line:hover { color: var(--accent-hover); }
+.strip { padding: 0 var(--margin) clamp(72px, 9vw, 128px); }
+.strip ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.strip-4 ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.strip img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+.faq-wrap { padding: 0 var(--margin) clamp(72px, 9vw, 128px); }
+.faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(36px, 4vw, 56px) clamp(28px, 4vw, 72px); margin: 0; }
+.faq div { padding: 0; }
+.faq dt { font: 500 clamp(1.4rem, 1.1rem + 1.2vw, 2rem)/1.15 var(--display); }
+.faq dd { margin: 14px 0 0; color: var(--muted); max-width: 52ch; }
+.policy { padding: 0 var(--margin) clamp(72px, 9vw, 128px); }
+.policy > p { margin-top: 16px; max-width: 64ch; color: var(--muted); }
+.policy .section-title + p { margin-top: 24px; }
+.policy-table { width: 100%; max-width: 980px; margin-top: 36px; border-collapse: collapse; }
+.policy-table th, .policy-table td { padding: 18px 24px 18px 0; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(238, 242, 238, 0.22); }
+.policy-table th { font-weight: 500; color: var(--accent); }
+.policy-table td:first-child { width: 48%; }
+.policy-sub { margin-top: 48px; font: 500 clamp(1.4rem, 1.1rem + 1.2vw, 2rem)/1.15 var(--display); }
+@media (max-width: 899px) {
+  .charter { grid-template-columns: minmax(0, 1fr); }
+  .charter:nth-child(even) .charter-photo { order: 0; }
+  .faq { grid-template-columns: minmax(0, 1fr); }
+  .strip ul, .strip-4 ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .strip li:nth-child(3):last-child { grid-column: span 2; }
+  .strip li:nth-child(3):last-child img { aspect-ratio: 16 / 9; }
+  .policy-table th, .policy-table td { padding-right: 14px; }
+}

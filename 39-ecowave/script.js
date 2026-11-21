@@ -1,4 +1,4 @@
-// EcoWave Charters & Water Sports: sample site script.
+// EcoWave Excursions: sample site script.
 // WhatsApp links, the sunset in Providenciales, the trips list, the boat stage, the booking card and its calendar,
 // the water under the boat (WebGL ripples you can touch) and the GSAP motion layer.
 // Every part is optional: if one fails or a browser lacks it, the page still reads and books.
@@ -185,11 +185,11 @@
     let dateBtn = null;
     const count = () => {
       const n = Math.round(Number(people.value));
-      return Number.isFinite(n) ? Math.min(20, Math.max(1, n)) : 2;
+      return Number.isFinite(n) ? Math.min(12, Math.max(1, n)) : 2;
     };
 
     function update() {
-      const trip = ($('input[name="trip"]:checked', card) || {}).value || "Watersports Experience";
+      const trip = ($('input[name="trip"]:checked', card) || {}).value || "Half-Day Charter (3 hours)";
       const n = count();
       const who = n === 1 ? "1 person" : `${n} people`;
       const date = parseDate(dateInput.value);
@@ -211,7 +211,7 @@
 
     $$('input[name="trip"], input[name="when"]', card).forEach(r => r.addEventListener("change", update));
     $$(".step", card).forEach(b => b.addEventListener("click", () => {
-      people.value = String(Math.min(20, Math.max(1, count() + Number(b.dataset.step))));
+      people.value = String(Math.min(12, Math.max(1, count() + Number(b.dataset.step))));
       update();
     }));
     people.addEventListener("input", update);
@@ -639,6 +639,18 @@
     g.from(".foot-blocks > div, .legal", { y: 18, autoAlpha: 0, duration: 0.7, stagger: 0.1, scrollTrigger: { trigger: ".foot-blocks", start: "top 92%", once: true } });
   }
 
+  // Inner pages (charters, before you go): each block comes up as it arrives; the photos settle as they pass.
+  function pageMotion() {
+    const g = window.gsap;
+    if (!g || !window.ScrollTrigger || reduce || !$(".page-head")) return;
+    g.registerPlugin(window.ScrollTrigger);
+    g.from(".page-head > *", { y: 28, autoAlpha: 0, duration: 0.85, stagger: 0.1, ease: "power3.out" });
+    $$(".charter-photo, .charter-text > *, .included > *, .faq > div, .policy > *, .policy-table tbody tr, .strip li").forEach(el => {
+      g.from(el, { y: 26, autoAlpha: 0, duration: 0.7, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 92%", once: true } });
+    });
+    $$(".charter-photo img").forEach(im => g.fromTo(im, { scale: 1.1 }, { scale: 1, ease: "none", scrollTrigger: { trigger: im, start: "top bottom", end: "bottom top", scrub: true } }));
+  }
+
   safe("links", paintLinks);
   safe("trips", trips);
   safe("boat", boat);
@@ -647,4 +659,5 @@
   safe("float", floatBook);
   safe("water", water);
   safe("motion", motion);
+  safe("pages", pageMotion);
 })();
