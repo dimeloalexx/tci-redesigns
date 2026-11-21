@@ -1,4 +1,4 @@
-// EcoWave Excursions: sample site script.
+// EcoWave Charters & Water Sports: sample site script.
 // WhatsApp links, the sunset in Providenciales, the trips list, the boat stage, the booking card and its calendar,
 // the water under the boat (WebGL ripples you can touch) and the GSAP motion layer.
 // Every part is optional: if one fails or a browser lacks it, the page still reads and books.
