@@ -548,7 +548,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .faq dt { font: 500 clamp(1.4rem, 1.1rem + 1.2vw, 2rem)/1.15 var(--display); }
 .faq dd { margin: 14px 0 0; color: var(--muted); max-width: 52ch; }
 .policy { padding: 0 var(--margin) clamp(72px, 9vw, 128px); }
-.policy > p { margin-top: 16px; max-width: 64ch; color: var(--muted); }
+.policy > p { margin-top: 16px; max-width: 56ch; color: var(--muted); }
 .policy .section-title + p { margin-top: 24px; }
 .policy-table { width: 100%; max-width: 980px; margin-top: 36px; border-collapse: collapse; }
 .policy-table th, .policy-table td { padding: 18px 24px 18px 0; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(238, 242, 238, 0.22); }
