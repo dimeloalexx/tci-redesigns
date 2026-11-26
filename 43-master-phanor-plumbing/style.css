@@ -306,7 +306,7 @@ p, li { text-wrap: pretty; }
 .timer-ring { width: min(220px, 60vw); height: auto; transform: rotate(-90deg); grid-area: 1 / 1; }
 .timer-track { fill: none; stroke: #23457d; stroke-width: 10; }
 .timer-fill { fill: none; stroke: var(--gold); stroke-width: 10; stroke-linecap: round; stroke-dasharray: 326.73; stroke-dashoffset: 0; }
-.timer-time { grid-area: 1 / 1; align-self: center; position: relative; z-index: 1; margin: 0; font-size: 3.4rem; font-weight: 800; color: var(--white); font-variant-numeric: tabular-nums; }
+.timer-time { grid-area: 1 / 1; align-self: center; position: relative; z-index: 1; margin: 0; font-size: 2.6rem; font-weight: 800; color: var(--white); font-variant-numeric: tabular-nums; }
 .timer-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .timer-done { color: var(--white) !important; font-weight: 600; max-width: 26em; }
 .test-source { font-size: .9375rem; color: var(--soft) !important; }
